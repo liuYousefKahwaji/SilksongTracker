@@ -1,0 +1,27 @@
+{
+  "version": "silksong-0.1-researched",
+  "officialCap": 100,
+  "trackedPoints": 100,
+  "completionNotes": [
+    "The official completion counter is available after constructing Farsight.",
+    "The 100 points are one each for 51 Tools, 6 Silk Skills, 8 Upgrades, 3 Silk Hearts, 6 Crests, 7 Abilities, 5 Mask Upgrades, 9 Silk Upgrades, 4 Needle Upgrades and Everbloom.",
+    "Act 3 gates seven points: one Mask upgrade, Pale Steel Needle, Pin Badge, Pale Nails, Shaman Crest, Silk Soar and Everbloom.",
+    "A blank or unrecognised save is shown as unknown, never as complete or left."
+  ],
+  "sections": [
+    {"id":"tools","name":"Tools","icon":"🔧","points":51,"items":["Straight Pin","Threefold Pin","Sting Shard","Tacks","Longpin","Curveclaw / Curvesickle","Throwing Ring","Pimpillo","Conchcutter","Silkshot","Delver's Drill","Cogwork Wheel","Cogfly","Rosary Cannon","Voltvessels","Flintslate","Flea Brew","Plasmium Phial","Druid's Eye / Druid's Eyes","Magma Bell","Warding Bell","Pollip Pouch","Fractured Mask","Multibinder","Weavelight","Sawtooth Circlet","Injector Band","Spool Extender","Reserve Bind","Claw Mirror / Claw Mirrors","Memory Crystal","Snitch Pick","Volt Filament","Quick Sling","Wreath of Purity","Longclaw","Wispfire Lantern","Egg of Flealia","Pin Badge","Compass","Shard Pendant","Magnetite Brooch","Weighted Belt","Barbed Bracelet","Dead Bug's Purse / Shell Satchel","Magnetite Dice","Scuttlebrace","Ascendant's Grip","Spider Strings","Silkspeed Anklets","Thief's Mark"]},
+    {"id":"silk-skills","name":"Silk Skills","icon":"🕸️","points":6,"items":["Silkspear","Thread Storm","Cross Stitch","Sharpdart","Rune Rage","Pale Nails"]},
+    {"id":"upgrades","name":"Upgrades","icon":"⬆️","points":8,"items":["Crafting Kit upgrade 1","Crafting Kit upgrade 2","Crafting Kit upgrade 3","Crafting Kit upgrade 4","Tool Pouch upgrade 1","Tool Pouch upgrade 2","Tool Pouch upgrade 3","Tool Pouch upgrade 4"]},
+    {"id":"silk-hearts","name":"Silk Hearts","icon":"💗","points":3,"items":["Silk Heart 1","Silk Heart 2","Silk Heart 3"]},
+    {"id":"crests","name":"Crests","icon":"🛡️","points":6,"items":["Reaper Crest","Wanderer Crest","Beast Crest","Witch Crest","Architect Crest","Shaman Crest"]},
+    {"id":"abilities","name":"Abilities","icon":"🪽","points":7,"items":["Needolin","Swift Step","Cling Grip","Clawline","Silk Soar","Sylphsong","Needle Strike"]},
+    {"id":"mask-upgrades","name":"Mask Upgrades","icon":"🎭","points":5,"items":["Mask Upgrade 1 (4 shards)","Mask Upgrade 2 (4 shards)","Mask Upgrade 3 (4 shards)","Mask Upgrade 4 (4 shards)","Mask Upgrade 5 (4 shards)"]},
+    {"id":"silk-upgrades","name":"Silk Upgrades","icon":"🧵","points":9,"items":["Silk Upgrade 1 (2 spool fragments)","Silk Upgrade 2 (2 spool fragments)","Silk Upgrade 3 (2 spool fragments)","Silk Upgrade 4 (2 spool fragments)","Silk Upgrade 5 (2 spool fragments)","Silk Upgrade 6 (2 spool fragments)","Silk Upgrade 7 (2 spool fragments)","Silk Upgrade 8 (2 spool fragments)","Silk Upgrade 9 (2 spool fragments)"]},
+    {"id":"needle-upgrades","name":"Needle Upgrades","icon":"🪡","points":4,"items":["Needle → Sharpened Needle","Sharpened Needle → Shining Needle","Shining Needle → Hivesteel Needle","Hivesteel Needle → Pale Steel Needle"]},
+    {"id":"items","name":"Items","icon":"🌸","points":1,"items":["Everbloom"]},
+    {"id":"fleas","name":"Lost Fleas","icon":"🦋","counts":false,"items":["Lost Flea #1","Lost Flea #2","Lost Flea #3","Lost Flea #4","Lost Flea #5","Lost Flea #6","Lost Flea #7","Lost Flea #8","Lost Flea #9","Lost Flea #10","Lost Flea #11","Lost Flea #12","Lost Flea #13","Lost Flea #14","Lost Flea #15","Lost Flea #16","Lost Flea #17","Lost Flea #18","Lost Flea #19","Lost Flea #20","Lost Flea #21","Lost Flea #22","Lost Flea #23","Lost Flea #24","Lost Flea #25","Lost Flea #26","Lost Flea #27","Lost Flea #28","Lost Flea #29","Lost Flea #30"]},
+    {"id":"bellways","name":"Bellway Stations","icon":"🔔","counts":false,"items":["Marrow","Bone Bottom","Deep Docks","Far Fields","Greymoor","Bellhart","Shellwood","Blasted Steps","Bilewater","The Slab","Putrified Ducts","Grand Bellway"]},
+    {"id":"ventrica","name":"Ventrica Stations","icon":"🚋","counts":false,"items":["First Shrine","Choral Chambers","Underworks","Memorium","High Halls","Terminus","Grand Bellway"]},
+    {"id":"bosses","name":"Bosses","icon":"☠️","counts":false,"items":["Bell Beast","Bell Eater","Broodmother","Clover Dancers","Cogwork Dancers","Crawfather","Crust King Khann","Disgraced Chef Lugoli","Father of the Flame","First Sinner","Forebrothers Signis & Gron","Fourth Chorus","Garmond & Zaza","Grand Mother Silk","Great Conchflies","Groal the Great","Gurr the Outcast","Lace","Last Judge","Lost Garmond","Lost Lace","Moorwing","Moss Mother","Nyleth","Palestag","Phantom","Pinstress","Plasmified Zango","Raging Vonchfly","Savage Beastfly","Savage Beastfly II","Second Sentinel","Shakra","Shrine Guardian Seth","Sister Splinter","Skarrsinger Karmelita","Skull Tyrant","Summoned Saviour","The Unravelled","Tormented Trobbio","Trobbio","Voltvyrm","Watcher at the Edge","Widow"]}
+  ]
+}

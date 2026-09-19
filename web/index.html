@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Silksong Tracker</title><link rel="icon" href="/map/icons/silkspear.png"><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar"><div><p class="eyebrow">PHARLOOM / OFFLINE-FIRST</p><h1>Silksong Tracker</h1><p class="subtitle">A save-aware checklist for Hollow Knight: Silksong</p></div><nav><a class="active" href="/">Checklist</a><a href="/map">Map</a><button id="refresh" title="Rescan save folders">↻ Refresh</button></nav></header>
+  <main class="shell">
+    <section id="save-banner" class="notice waiting"><strong>No save loaded</strong><span>Start Silksong once and this page will discover <code>userN.dat</code> automatically.</span></section>
+    <section class="dashboard">
+      <div class="hero-card"><div class="hero-label">Official completion</div><div class="hero-value"><span id="percent">—</span><small>%</small></div><div id="hero-note">Waiting for a Silksong save</div><div class="meter"><i id="meter-fill"></i></div></div>
+      <div class="stat-card"><span>Tracked points</span><b id="complete">0 / 100</b><small id="left">unknown until a save is loaded</small></div>
+      <div class="stat-card"><span>Save slot</span><b id="slot">—</b><small id="version">No save detected</small></div>
+      <div class="stat-card"><span>Mode</span><b>read-only</b><small>never writes your save</small></div>
+    </section>
+    <section class="toolbar"><label class="search"><span>⌕</span><input id="search" placeholder="Search items, areas, bosses…" autocomplete="off"></label><label class="check"><input type="checkbox" id="only-left"> Only left</label><label class="check"><input type="checkbox" id="hide-unknown"> Hide unknown</label><label class="check"><input type="checkbox" id="hide-supporting"> 100% points only</label></section>
+    <div class="layout"><aside id="section-nav" class="section-nav"></aside><section id="sections" class="sections"></section></div>
+  </main>
+  <footer><span>Silksong Tracker <b>0.1</b></span><span>Data-driven · local-only · unknown-safe</span><a href="/api/meta">data / provenance</a></footer>
+  <script src="/app.js"></script>
+</body></html>

@@ -1,0 +1,2 @@
+# Only required for initial map/icon setup, not normal tracker operation.
+Pillow>=10,<13

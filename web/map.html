@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pharloom · Silksong Tracker</title>
+<link rel="icon" href="/map/icons/silkspear.png">
+<link rel="stylesheet" href="/vendor/leaflet.css"><link rel="stylesheet" href="/map.css">
+</head>
+<body>
+<header class="map-header">
+  <a class="back" href="/">← Checklist</a><h1>Pharloom</h1>
+  <span id="save-status">Loading…</span>
+  <input id="map-search" type="search" placeholder="Search items, bosses, places…" aria-label="Search map">
+  <label><input id="only-left" type="checkbox"> Only left</label>
+  <button id="map-style" title="Switch map artwork">Screenshots</button><button id="fit">Whole map</button><button id="toggle-layers" aria-expanded="true">Layers</button>
+</header>
+<main id="workspace">
+  <aside id="sidebar" aria-label="Map filters">
+    <div class="panel-heading"><span>EXPLORE PHARLOOM</span><span id="visible-count"></span></div>
+    <div class="quick-actions"><button id="all-layers">All</button><button id="no-layers">None</button><button id="default-layers">Reset</button></div>
+    <section id="results" hidden aria-label="Search results"></section>
+    <div id="layers"></div>
+    <p id="tracking-summary" class="help"></p>
+    <p class="help">Click an icon for details. Use + / − or scroll to zoom. Drag to pan.</p>
+    <p class="credit">Map &amp; placement: <a href="https://scripterswar.com/silksong/map" target="_blank" rel="noreferrer">RainingChain &amp; IdoManti</a><br>Game artwork © Team Cherry</p>
+  </aside>
+  <section class="stage"><div id="map" aria-label="Interactive Pharloom map"></div><div id="map-message" role="status" hidden></div></section>
+</main>
+<div id="error" role="alert" hidden></div>
+<script src="/vendor/leaflet.js"></script><script src="/map.js"></script>
+</body>
+</html>

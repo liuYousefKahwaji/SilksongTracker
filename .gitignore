@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+*.dat
+*.save.json
+*.log
+.playwright-cli/
+output/
+source/
+data/map/
+data/map_tracking_audit.json
+web/assets/

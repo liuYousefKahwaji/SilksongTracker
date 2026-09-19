@@ -1,0 +1,54 @@
+{
+  "researchDate": "2026-09-13",
+  "primary": [
+    {
+      "topic": "completion",
+      "url": "https://hollowknight.wiki/w/Completion_(Silksong)",
+      "note": "100-point requirements, names and Act 3 gating."
+    },
+    {
+      "topic": "save-locations",
+      "url": "https://hollowknight.wiki/w/Save_Data_(Silksong)",
+      "note": "Windows, Microsoft Store, macOS and Linux locations."
+    },
+    {
+      "topic": "map-research",
+      "url": "https://github.com/RainingChain/silksong-map-data",
+      "note": "Original reference dataset; v3 tile URLs obsolete. Active map uses current Scripterswar bundle and matching v4 assets."
+    },
+    {
+      "topic": "decoder-research",
+      "url": "https://github.com/zohnannor/hk-save-logger",
+      "note": "Silksong-aware save monitoring and observed playerData fields."
+    },
+    {
+      "topic": "decoder-research",
+      "url": "https://github.com/dizzyfrogs/stagstation",
+      "note": "Unity header/base64/AES-ECB wrapper hypothesis."
+    }
+  ],
+  "secondary": [
+    {
+      "topic": "tracker-cross-check",
+      "url": "https://github.com/BlueOrcaz/silksong-save-viewer",
+      "note": "Checklist surface and save-viewer categories."
+    },
+    {
+      "topic": "tracker-cross-check",
+      "url": "https://github.com/Lu-Jiejie/hk-silksong-savegame-analyzer-zh",
+      "note": "Additional category vocabulary."
+    }
+  ],
+  "mapAsset": {
+    "path": "data/map/",
+    "source": "https://scripterswar.com/silksong/map",
+    "bundle": "https://scripterswar.com/compiled/hollowknight/ssMap/ssMap.js?831e557f1d68ec7915c1",
+    "sprites": "https://scripterswar.com/webpackAssets/ssIconSheet@6fca861c5f6d2f56caf9.png",
+    "tiles": "https://scripterswarmap.b-cdn.net/ss_v4/{z}_{x}_{y}.webp?v=1",
+    "sketchTiles": "https://scripterswarmap.b-cdn.net/ss_sketch_v2/{z}_{x}_{y}.webp?v=1",
+    "credit": "RainingChain & IdoManti; game artwork Team Cherry",
+    "coordinatePolicy": "Preserve source pos for Screenshots and pos2 for Sketch. Six pins lack pos2 and are Screenshots-only; never substitute coordinate systems.",
+    "integrity": "SHA-256 of archived source bundle in data/map/map.json"
+  },
+  "rights": "Third-party map data and artwork are attributed for this local tracker; they are not relicensed under the code's GPL license. The earlier mapsilksong.com preview terms do not establish a license for these different source assets."
+}
