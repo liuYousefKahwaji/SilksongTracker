@@ -21,13 +21,13 @@ Map artwork, icons, and the upstream map dataset are **not bundled in this repos
 ## Current limits
 
 - **Spoilers:** the checklist and map expose game content; there is no spoiler-safe mode yet.
-- Of 1,419 map pins, 1,188 have save rules, 166 are reference locations, and **65 objectives still need verified tracking**. “Only left” excludes unverified and informational pins.
+- Of 1,419 map pins, 1,206 have save rules, 166 are reference locations, and **47 objectives still need verified tracking**. “Only left” excludes unverified and informational pins.
 - All 193 checklist entries resolve against the tested early-game save, but late-game transitions and every supported game version have **not** been independently validated. Missing fields remain unknown rather than being guessed.
 - Six pins lack sketch coordinates and use the Screenshots view. Some source locations may be inaccurate.
 - Clean-machine installation, multiple slots, malformed saves, and cross-platform behavior need broader testing. This is a beta, not a guaranteed 100% completion authority.
 - Third-party asset redistribution permission is not established; no artwork redistribution rights are claimed.
 
-Tests (after map setup): `python -m unittest discover -s tests -v`. The current suite has 25 tests; passing tests do not prove full in-game coverage.
+Tests (after map setup): `python -m unittest discover -s tests -v`. The current suite has 43 tests; passing tests do not prove full in-game coverage. `python tools/validate_progress.py` performs a read-only, count-only check of discovered saves without printing game-content names. See [validation evidence and remaining gaps](TRACKING_VALIDATION.md) (contains spoilers).
 
 Please report bugs with the tracker/game version and expected versus observed behavior. **Do not post your save file or personal paths publicly.** Mark game-content reports as spoilers.
 

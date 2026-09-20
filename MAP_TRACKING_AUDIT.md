@@ -4,6 +4,8 @@ This file and the JSON audit contain game-content names; avoid them during a spo
 
 ## Outcome
 
+Follow-up through 2026-09-20: coverage is now 1,206 save-rule pins, 166 reference pins, and 47 unresolved objectives, with 43 tests. See [TRACKING_VALIDATION.md](TRACKING_VALIDATION.md) for 18 additional mappings, reviewed upstream correction, evidence strength, and remaining accuracy gaps. The sections below retain the original audit baseline.
+
 The previous blanket label covered 256 pins. This pass supplies 25 researched rules, classifies 166 pins as reference locations, and leaves 65 objectives explicitly awaiting verified tracking. Together with existing source rules, 1,188 pins now have a tracking rule. Classification does not depend on which save is loaded.
 
 Reference means the **pin's role**, not a claim that the game cannot save visits to that place. Unflagged benches represent rest locations; NPCs and shops represent locations rather than an entire character's progress. Requirement/intersection annotations describe routes, not completion. Bench unlocks and other locations already carrying source predicates keep those predicates.

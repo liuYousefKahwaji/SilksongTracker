@@ -7,6 +7,7 @@ from .analyzer import known_rule
 
 from .flags import flag_status
 from .maptracking import supplemental_flag, reference_reason, unresolved_reason, alternative_unavailable
+from .maptracking import CORRECTIONS
 
 def build_map(raw):
     data = load_map()
@@ -20,7 +21,7 @@ def build_map(raw):
     for original in data['markers']:
         marker = dict(original)
         entries = reverse.get(marker['id'], [])
-        flag = marker.get('flag') or supplemental_flag(marker)
+        flag = CORRECTIONS.get(marker['id']) or marker.get('flag') or supplemental_flag(marker)
         status = flag_status(flag, raw)
         rule = None
         if status == 'unknown' and not flag and entries:
@@ -35,6 +36,6 @@ def build_map(raw):
             status = 'unavailable'
             reason = 'An alternative version is already owned. This is not a missing collectible.'
         markers.append({**marker, 'status':status, 'tracking':tracking,
-                        'trackingNote':reason, 'trackingSource':'supplement' if supplemental_flag(marker) else 'source', 'entries':entries})
+                        'trackingNote':reason, 'trackingSource':'correction' if marker['id'] in CORRECTIONS else 'supplement' if supplemental_flag(marker) else 'source', 'entries':entries})
     return {**data, 'markers':markers, 'links':links(), 'hasSave':raw is not None,
             'saveStatus':'loaded' if raw is not None else 'waiting'}

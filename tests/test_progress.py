@@ -12,7 +12,7 @@ from silksongtracker.database import load_map
 class ProgressTests(unittest.TestCase):
     def test_supplements_have_real_unique_targets(self):
         pins={m['id']:m for m in load_map()['markers']}
-        self.assertEqual(len(FLAGS),25)
+        self.assertEqual(len(FLAGS),43)
         for marker_id in FLAGS:
             self.assertIn(marker_id,pins)
             self.assertFalse(pins[marker_id]['flag'])
@@ -21,7 +21,13 @@ class ProgressTests(unittest.TestCase):
     def test_all_new_rules_handle_true_false_and_missing(self):
         for marker_id,flag in FLAGS.items():
             parts=flag.split(',')
-            if parts[0]=='@wish':
+            if parts[0]=='@bool':
+                complete={'sceneData':{'persistentBools':{'serializedList':[{'SceneName':parts[1],'ID':parts[2],'Value':True}]}}}
+                left={'sceneData':{'persistentBools':{'serializedList':[]}}}
+            elif parts[0]=='@collectable':
+                complete={'playerData':{'Collectables':{'savedData':[{'Name':parts[1],'Data':{'Amount':1}}]}}}
+                left={'playerData':{'Collectables':{'savedData':[]}}}
+            elif parts[0]=='@wish':
                 complete={'playerData':{'QuestCompletionData':{'savedData':[{'Name':parts[1],'Data':{'IsCompleted':True,'WasEverCompleted':True}}]}}}
                 left={'playerData':{'QuestCompletionData':{'savedData':[]}}}
             else:
@@ -41,14 +47,15 @@ class ProgressTests(unittest.TestCase):
         pins={m['id']:m for m in before}
         self.assertEqual(pins['0']['tracking'],'reference')
         self.assertEqual(pins['940']['tracking'],'reference')
-        self.assertEqual(pins['1395']['tracking'],'unverified')
+        self.assertEqual(pins['1395']['tracking'],'save')
+        self.assertEqual(pins['1401']['tracking'],'unverified')
         self.assertEqual(pins['56']['tracking'],'save')
 
     def test_aggregate_quest_not_individual_object(self):
         raw={'playerData':{'QuestCompletionData':{'savedData':[{'Name':'Destroy Thread Cores','Data':{'IsCompleted':True,'WasEverCompleted':True}}]}}}
         pin=next(m for m in build_map(raw)['markers'] if m['id']=='1395')
         self.assertEqual(pin['status'],'unknown')
-        self.assertEqual(pin['tracking'],'unverified')
+        self.assertEqual(pin['tracking'],'save')
 
     def test_alternative_quills_not_missing(self):
         for state,owned in [(1,'1183'),(2,'911'),(3,'912')]:
@@ -108,7 +115,7 @@ class ProgressTests(unittest.TestCase):
         self.assertEqual(evaluate(rule,SaveView({})),'unknown')
 
     def test_checklist_uses_linked_source_flags(self):
-        state=analyze({'playerData':{'SavedFlea_Crawl_06':True,'CompletedRedMemory':False}})
+        state=analyze({'playerData':{'SavedFlea_Crawl_06':True,'Collectables':{'savedData':[]}}})
         entries={e['id']:e for g in state['groups'] for e in g['entries']}
         self.assertEqual(entries['fleas-01']['status'],'complete')
         self.assertEqual(entries['items-01']['status'],'left')

@@ -25,6 +25,7 @@ TOOL_MATCHES = [
     ["Sprintmaster"], ["Thief Charm"],
 ]
 SILK_SKILL_FLAGS = ["hasNeedleThrow", "hasThreadSphere", "hasParry", "hasSilkCharge", "hasSilkBomb", "hasSilkBossNeedle"]
+SILK_SKILL_TOOLS = ['Silk Spear','Thread Sphere','Parry','Silk Charge','Silk Bomb','Silk Boss Needle']
 ABILITY_FLAGS = {"Needolin":"hasNeedolin", "Swift Step":"hasDash", "Cling Grip":"hasWalljump", "Clawline":"hasHarpoonDash", "Silk Soar":"hasSuperJump", "Sylphsong":"HasSeenEvaHeal", "Needle Strike":"hasChargeSlash"}
 CREST_FLAGS = {"Reaper Crest":"Reaper", "Wanderer Crest":"Wanderer", "Beast Crest":"Warrior", "Witch Crest":"Witch", "Architect Crest":"Toolmaster", "Shaman Crest":"Spell"}
 BOSS_FLAGS = {"Bell Beast":"defeatedBellBeast", "Phantom":"defeatedPhantom", "Lace":"defeatedLaceTower", "Widow":"visitedBellhartSaved", "First Sinner":"defeatedFirstWeaver", "The Unravelled":"wardBossDefeated", "Trobbio":"defeatedTrobbio", "Tormented Trobbio":"defeatedTormentedTrobbio", "Voltvyrm":"defeatedZapCoreEnemy", "Broodmother":"defeatedBroodMother", "Second Sentinel":"defeatedSongChevalierBoss", "Clover Dancers":"defeatedCloverDancers", "Sister Splinter":"defeatedSplinterQueen", "Savage Beastfly":"defeatedBoneFlyerGiant", "Great Conchflies":"defeatedCoralDrillers", "Last Judge":"defeatedLastJudge", "Cogwork Dancers":"defeatedCogworkDancers", "Disgraced Chef Lugoli":"defeatedRoachkeeperChef", "Father of the Flame":"defeatedWispPyreEffigy", "Groal the Great":"DefeatedSwampShaman", "Palestag":"defeatedWhiteCloverstag", "Gurr the Outcast":"defeatedAntTrapper", "Pinstress":"PinstressPeakBattleAccepted", "Shrine Guardian Seth":"defeatedSeth", "Nyleth":"defeatedFlowerQueen", "Skarrsinger Karmelita":"defeatedAntQueen", "Crust King Khann":"defeatedCoralKing", "Lost Garmond":"garmondBlackThreadDefeated", "Plasmified Zango":"BlueScientistDead"}
@@ -35,6 +36,11 @@ VENTRICA_FLAGS = {"Terminus":["UnlockedArboriumTube", "UnlockedHangTube", "Unloc
 def known_rule(entry: dict) -> dict | None:
     entry_id = entry.get("id", "")
     name = entry.get("name", "")
+    # Checked against PlayerData.CountGameCompletion in the installed game.
+    if name == 'Sylphsong': return {'type':'bool','path':'playerData.HasBoundCrestUpgrader'}
+    if entry_id == 'items-01': return {'type':'source_flag','flag':'@collectable,White Flower'}
+    if entry_id.startswith('bosses-') and name == 'Pinstress':
+        return {'type':'source_flag','flag':'@wish,Pinstress Battle'}
     number = int(entry_id.rsplit('-',1)[-1]) if entry_id.rsplit('-',1)[-1].isdigit() else 0
     if entry_id.startswith('upgrades-'):
         field = 'ToolKitUpgrades' if number <= 4 else 'ToolPouchUpgrades'
@@ -48,10 +54,10 @@ def known_rule(entry: dict) -> dict | None:
     if entry_id.startswith('bosses-') and name in journal: return {'type':'journal','name':journal[name]}
     if entry_id.startswith("tools-"):
         index = int(entry_id.rsplit("-", 1)[-1]) - 1
-        if index < len(TOOL_MATCHES): return {"type":"list_item_bool", "path":"playerData.Tools.savedData", "matchAny":TOOL_MATCHES[index], "valuePath":"Data.IsUnlocked"}
+        if 0 <= index < len(TOOL_MATCHES): return {'type':'tool_completion','names':TOOL_MATCHES[index]}
     if entry_id.startswith("silk-skills-"):
         index = int(entry_id.rsplit("-", 1)[-1]) - 1
-        if index < len(SILK_SKILL_FLAGS): return {"type":"bool", "path":f"playerData.{SILK_SKILL_FLAGS[index]}"}
+        if 0 <= index < len(SILK_SKILL_FLAGS): return {'type':'tool_completion','names':[SILK_SKILL_TOOLS[index]],'alternate':SILK_SKILL_FLAGS[index]}
     if name in ABILITY_FLAGS: return {"type":"bool", "path":f"playerData.{ABILITY_FLAGS[name]}"}
     if name in CREST_FLAGS: return {"type":"list_item_bool", "path":"playerData.ToolEquips.savedData", "match":CREST_FLAGS[name], "valuePath":"Data.IsUnlocked"}
     if entry_id.startswith("needle-upgrades-"):
@@ -75,12 +81,9 @@ def _entry_result(entry: dict, save: SaveView | None) -> dict:
         # Probes are deliberately conservative aliases.  They let a future
         # schema adapter light up entries without changing the content file.
         rule = {"type": "any", "rules": [{"type": "bool", "path": path} for path in entry["probe"]]}
-    if rule is None and entry.get("id"):
-        slug = entry["id"]
-        rule = {"type": "any", "rules": [{"type": "bool", "path": f"playerData.{slug}"}, {"type": "bool", "path": slug}]}
     result = evaluate(rule, save)
     link = links().get(entry.get('id'))
-    if result == 'unknown' and save is not None and link and link['kind'] != 'components':
+    if rule is None and save is not None and link and link['kind'] != 'components':
         outcomes = [flag_status(source_flags().get(marker_id),save.raw) for marker_id in link['ids']]
         if 'complete' in outcomes: result = 'complete'
         elif outcomes and all(x == 'left' for x in outcomes): result = 'left'
@@ -109,7 +112,7 @@ def analyze(raw: dict | None, slot: int | None = None, path: str | None = None) 
         "path": path,
         "hasSave": raw is not None,
         "saveStatus": "loaded" if raw is not None else "waiting",
-        "saveVersion": first(raw or {}, ("version", "gameVersion", "buildVersion", "playerData.gameVersion"), None),
+        "saveVersion": first(raw or {}, ("playerData.version", "version", "gameVersion", "buildVersion", "playerData.gameVersion"), None),
         "playerName": first(raw or {}, ("playerName", "playerData.playerName", "name"), None),
         "summary": {"complete": complete, "total": total, "left": left, "unknown": unknown, "percent": round(complete / total * 100, 1) if total else 0},
         "completion": {"officialCap": content.get("officialCap", 100), "trackedPoints": content.get("trackedPoints", 100), "notes": content.get("completionNotes", [])},

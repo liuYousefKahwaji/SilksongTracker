@@ -15,6 +15,8 @@ QUESTS = {
     '490':'Steel Sentinel Pt2',
 }
 FLAGS = {
+    '695':'@,playerData.UnlockedFastTravelTeleport,true',
+    '1038':'@collectable,Plasmium Gland',
     '56':'@,playerData.HasMossGrottoMap,true',
     '58':'@,playerData.HasBoneforestMap,true',
     '174':'@,playerData.PurchasedPilgrimsRestToolPouch,true',
@@ -33,6 +35,38 @@ FLAGS = {
     '535':'@,playerData.CollectedHeartHunter,true',
 }
 FLAGS.update({key:'@wish,'+value for key,value in QUESTS.items()})
+
+# Scene/object identities cross-checked against installed scene bundles and
+# independently authored scene lists. See TRACKING_VALIDATION.md for evidence
+# and the distinction between a researched mapping and playthrough validation.
+CORE_LOCATIONS = {
+    '1395':('Bone_04','Black_Thread_Core'),
+    '1396':('Mosstown_02','Black_Thread_Core'),
+    '1398':('Bone_07','Black_Thread_Core'),
+    '1407':('Shellwood_26','Black_Thread_Core'),
+    '1409':('Shellwood_01b','Black_Thread_Core'),
+    '1415':('Greymoor_07','Black_Thread_Core'),
+    '1418':('Dust_03','Black_Thread_Core'),
+    '1419':('Greymoor_02','Black_Thread_Core'),
+    '1421':('Shadow_05','Black_Thread_Core'),
+    '1423':('Song_01','Black_Thread_Core_Citadel'),
+    '1433':('Library_04','Black_Thread_Core_Citadel'),
+    '1434':('Library_04','Black_Thread_Core_Citadel (1)'),
+}
+FLAGS.update({key:f'@bool,{scene},{item},true' for key,(scene,item) in CORE_LOCATIONS.items()})
+
+# Additional room matches: lever components were followed to their connected
+# gates, and the currency pickup's persistence component was checked directly.
+SCENE_LOCATIONS = {
+    '1378':('Bone_East_18','ant_lever_persistent (1)'),
+    '1466':('Bone_01','Bone Lever'),
+    '760':('Greymoor_15b','Greymoor Stand Lever'),
+    '1332':('Hang_06_bank','Geo Small Persistent (1)'),
+}
+FLAGS.update({key:f'@bool,{scene},{item},true' for key,(scene,item) in SCENE_LOCATIONS.items()})
+
+# Deliberate, reviewed corrections: related story events are not ownership.
+CORRECTIONS = {'1039':'@collectable,White Flower'}
 
 
 def alternative_unavailable(marker, raw):
