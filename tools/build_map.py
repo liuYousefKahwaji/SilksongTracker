@@ -11,12 +11,47 @@ import hashlib
 import json
 import re
 import urllib.request
+from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / 'source' / 'silksong_map_data.json'
 OUT = ROOT / 'data' / 'map'
 BASE = 'https://raw.githubusercontent.com/RainingChain/silksong-map-data/main/'
+
+
+def interior_groups(markers, labels):
+    """Find rooms collapsed to one doorway on the in-game sketch map."""
+    groups = defaultdict(list)
+    for marker in markers:
+        pos2 = marker.get('pos2')
+        if isinstance(pos2, list) and len(pos2) == 2:
+            groups[tuple(pos2)].append(marker)
+    interiors = []
+    for pos2, members in groups.items():
+        positions = {tuple(m['pos']) for m in members}
+        if len(positions) < 2:
+            continue
+        spread = max(sum((a[i]-b[i])**2 for i in (0,1))**.5 for a in positions for b in positions)
+        if spread < 4:
+            continue
+        centre = [sum(m['pos'][i] for m in members)/len(members) for i in (0,1)]
+        nearest = min(labels, key=lambda l:sum((centre[i]-l['pos'][i])**2 for i in (0,1))**.5) if labels else None
+        distance = sum((centre[i]-nearest['pos'][i])**2 for i in (0,1))**.5 if nearest else float('inf')
+        name = nearest['name'] if distance < 35 else 'Interior'
+        stable_id = hashlib.sha256(json.dumps(pos2).encode()).hexdigest()[:10]
+        interiors.append({'id':f'interior-{stable_id}', 'name':name,
+                          'entrance':list(pos2), 'members':[m['id'] for m in members],
+                          'bounds':[[min(p[0] for p in positions),min(p[1] for p in positions)],
+                                    [max(p[0] for p in positions),max(p[1] for p in positions)]]})
+    return interiors
+
+
+def map_connections(raw):
+    links = raw.get('interactiveMap',{}).get('mapLinks',{})
+    return [{'kind':kind, 'from':line[0], 'to':line[1]}
+            for kind, lines in links.items() for line in lines
+            if isinstance(line,list) and len(line)==2]
 
 def live_config(bundle, required='categories'):
     # The same JSON.parse payload extraction used by Hollow Tracker's builder.
@@ -85,8 +120,10 @@ def main():
     valid = raw['interactiveMap']['validImages'].split(',')
     selected = [key for key in valid if 7-args.max_zoom <= int(key.split('_')[0]) <= 7]
     ext = '.webp' if '.webp' in raw['interactiveMap']['url'] else '.png'
-    data = {'version':'source-tiles-v4', 'title':'Pharloom', 'groups':groups, 'categories':categories,
+    data = {'version':'source-tiles-v5', 'title':'Pharloom', 'groups':groups, 'categories':categories,
             'markers':markers, 'labels':raw['locations'],
+            'interiors':interior_groups(markers, raw['locations']),
+            'connections':map_connections(raw),
             'image':{'tileSize':1024, 'maxZoom':args.max_zoom, 'bounds':[[-944,0],[0,1280]],
                      'url':'/map/tiles/{z}/{x}_{y}' + ext},
             'validTiles':[f"{7-int(k.split('_')[0])}/{k.split('_')[1]}_{k.split('_')[2]}" for k in selected],

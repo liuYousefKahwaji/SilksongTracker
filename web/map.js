@@ -4,12 +4,12 @@
   'use strict';
   const $ = s => document.querySelector(s);
   const node = (tag, cls, text) => {const e=document.createElement(tag); if(cls)e.className=cls; if(text!==undefined)e.textContent=text; return e;};
-  let data, map, pins, labels, tileLayer, selected=null, category=null, scope=null;
+  let data, map, pins, labels, connections, entrances, tileLayer, selected=null, category=null, scope=null;
   let style=new URLSearchParams(location.search).get('style')||localStorage.getItem('ss.map.style')||'sketch';
   if(style!=='real')style='sketch';
   const meta=()=>style==='sketch'?data.sketch:data.image;
   const position=m=>{const p=m[style==='sketch'?'pos2':'pos'];return Array.isArray(p)&&p.length===2&&p.every(Number.isFinite)?p:null;};
-  const objects=new Map(), cats=new Map(), shown=new Set();
+  const objects=new Map(), cats=new Map(), shown=new Set(), entranceObjects=new Map(), interiorByMember=new Map();
   let hidden=new Set(), query='', onlyLeft=false;
   try {hidden=new Set(JSON.parse(localStorage.getItem('ss.map.hidden.v2')||'null')||[]);onlyLeft=localStorage.getItem('ss.map.left')==='1';} catch {}
   const NEVER_DIM=new Set(['benches','bellway','ventrica','maps']);
@@ -19,7 +19,8 @@
   function resetLayers(){hidden=new Set(['shortcut','permFlags','rosary','shard','rosaryitem','sharditem','tradable','memento','silkeater','npc','wish','questitem','arena']);persist();}
   function title(m){return m.name.replace(/^(Tool|Ability|Upgrade|Boss)\s*-\s*/i,'');}
   function matches(m){return (!scope||scope.has(m.id))&&(!category||m.cat===category)&&(!query||(m.name+' '+cats.get(m.cat).name).toLowerCase().includes(query));}
-  function visible(m){if(!position(m))return false;if(m.id===selected)return true;if(onlyLeft&&m.status!=='left')return false;if(query||category||scope)return matches(m);return !hidden.has(m.cat);}
+  function eligible(m){if(m.id===selected)return true;if(onlyLeft&&m.status!=='left')return false;if(query||category||scope)return matches(m);return !hidden.has(m.cat);}
+  function visible(m){if(!position(m))return false;if(style==='sketch'&&interiorByMember.has(m.id))return false;return eligible(m);}
   function icon(m){const size=map&&map.getZoom()<1?16:28;return L.icon({iconUrl:'/map/icons/'+encodeURIComponent(m.icon),iconSize:[size,size],iconAnchor:[size/2,size/2],popupAnchor:[0,-size/2],className:'pin'+(m.status==='complete'&&!NEVER_DIM.has(m.cat)?' done':'')+(selected===m.id?' selected':'')});}
   function popup(m){
     const box=node('div'),heading=node('div','popup-heading');
@@ -49,11 +50,44 @@
     }
     return objects.get(m.id);
   }
+  function interiorPopup(interior,members){
+    const box=node('div'),heading=node('div','popup-heading'),door=node('span','interior-door','↳');
+    heading.append(door,node('b',null,interior.name));box.append(heading,node('div','popup-category','Interior · '+members.length+' visible location'+(members.length===1?'':'s')));
+    const list=node('div','interior-list');
+    for(const m of members.slice(0,8))list.append(node('span',null,title(m)));
+    if(members.length>8)list.append(node('span',null,'+'+(members.length-8)+' more'));
+    box.append(list);
+    const open=node('button','interior-open','Open interior');open.onclick=()=>openInterior(interior);box.append(open);
+    return box;
+  }
+  function drawEntrances(){
+    entrances.clearLayers();entranceObjects.clear();
+    if(style!=='sketch')return;
+    for(const interior of data.interiors||[]){
+      const members=interior.members.map(id=>data.markers.find(m=>m.id===id)).filter(m=>m&&eligible(m));
+      if(!members.length)continue;
+      const place=interior.name==='Interior'?'interior':interior.name+' interior',locations=members.length+' visible location'+(members.length===1?'':'s');
+      const icon=L.divIcon({className:'interior-entrance',html:'<span aria-hidden="true">↳</span><small>'+members.length+'</small>',iconSize:[34,34],iconAnchor:[17,17]});
+      const pin=L.marker(interior.entrance,{icon,title:'Open '+place,alt:'Open '+place,keyboard:true,riseOnHover:true});
+      pin.bindPopup(()=>interiorPopup(interior,members),{maxWidth:300});pin.addTo(entrances);
+      pin.getElement()?.setAttribute('aria-label','Open '+place+', '+locations);entranceObjects.set(interior.id,pin);
+    }
+    return entranceObjects.size;
+  }
+  function openInterior(interior){
+    selected=null;setStyle('real');
+    const all=interior.members.map(id=>data.markers.find(m=>m.id===id)).filter(Boolean),members=all.filter(eligible);
+    const points=members.map(m=>L.latLng(m.pos));
+    if(points.length)map.fitBounds(L.latLngBounds(points),{padding:[90,90],maxZoom:3});
+    message((interior.name==='Interior'?'Interior':interior.name+' interior')+' · '+members.length+' visible location'+(members.length===1?'':'s'));
+    history.replaceState(null,'','/map?interior='+encodeURIComponent(interior.id)+'&style=real');
+  }
   function draw(){
     const wanted=new Set(data.markers.filter(visible).map(m=>m.id));
     for(const id of shown)if(!wanted.has(id)){pins.removeLayer(objects.get(id));shown.delete(id);}
     for(const m of data.markers)if(wanted.has(m.id)&&!shown.has(m.id)){marker(m).addTo(pins);shown.add(m.id);}
-    $('#visible-count').textContent=shown.size+' pins';
+    const interiorCount=drawEntrances()||0;
+    $('#visible-count').textContent=shown.size+' pins'+(interiorCount?' · '+interiorCount+' interiors':'');
     const reference=data.markers.filter(m=>m.tracking==='reference').length,unverified=data.markers.filter(m=>m.tracking==='unverified').length;
     $('#tracking-summary').textContent=reference+' reference locations · '+unverified+' objectives awaiting verified tracking. Only left shows confirmed incomplete objectives; an explicitly focused pin stays visible.';
     $('#save-status').textContent=data.hasSave?'Save loaded · '+data.markers.filter(m=>m.status==='complete').length+' completed':'No save loaded';
@@ -61,17 +95,17 @@
     if(!result.hidden){
       const found=data.markers.filter(m=>matches(m)&&(!onlyLeft||m.status==='left'||m.id===selected));
       result.append(node('h2',null,found.length+' locations'));
-      for(const m of found.slice(0,100)){const b=node('button','result'),label=node('span',null,title(m));label.append(node('small',null,cats.get(m.cat).name+(!position(m)?' · Screenshots only':'')));b.append(image(m.icon),label);b.onclick=()=>focus(m);result.append(b);}
+      for(const m of found.slice(0,100)){const b=node('button','result'),label=node('span',null,title(m));label.append(node('small',null,cats.get(m.cat).name+(!position(m)?' · Screenshots only':style==='sketch'&&interiorByMember.has(m.id)?' · Interior':'')));b.append(image(m.icon),label);b.onclick=()=>focus(m);result.append(b);}
       if(!found.length)result.append(node('p','empty-results','No mapped location matches this search.'));
       if(found.length>100)result.append(node('p','help','Showing the first 100 results. All matching pins remain on the map.'));
     }
   }
   function focus(m){
-    const missing=!position(m);
-    if(missing)setStyle('real');
+    const inside=interiorByMember.get(m.id),missing=!position(m);
+    if(missing||(style==='sketch'&&inside))setStyle('real');
     selected=m.id;draw();map.setView(position(m),Math.min(3,meta().maxZoom),{animate:false});
     const pin=marker(m);pin.setIcon(icon(m));pin.openPopup();
-    message(missing?'This location has no researched sketch position; showing Screenshots.':'');history.replaceState(null,'','/map?focus='+encodeURIComponent(m.id)+'&style='+style);
+    message(missing?'This location has no researched sketch position; showing Screenshots.':inside?'Opened its interior in Screenshots.':'');history.replaceState(null,'','/map?focus='+encodeURIComponent(m.id)+'&style='+style);
   }
   function setStyle(next){
     const oldCentre=map.getCenter(),oldZoom=map.getZoom(),oldMax=meta().maxZoom;
@@ -84,6 +118,11 @@
     const valid=new Set(style==='sketch'?info.validTiles:data.validTiles),blank='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
     const Tiles=L.TileLayer.extend({getTileUrl(c){return valid.has(c.z+'/'+c.x+'_'+c.y)?L.TileLayer.prototype.getTileUrl.call(this,c):blank;}});
     tileLayer=new Tiles(info.url,{tileSize:info.tileSize,minZoom:-2,minNativeZoom:0,maxNativeZoom:info.maxZoom,maxZoom:info.maxZoom,noWrap:true,bounds,keepBuffer:2,attribution:'Map: RainingChain & IdoManti · © Team Cherry'}).addTo(map);
+    connections.clearLayers();
+    if(style==='real')for(const line of data.connections||[]){
+      const cls=line.kind==='smallGaps'?'short':line.kind==='largeGapsConnectingOverMaps'?'over-map':'over-void';
+      L.polyline([line.from,line.to],{className:'room-connection '+cls,color:'#9ba7aa',weight:cls==='short'?2:3,opacity:cls==='over-map'?.55:.8,dashArray:cls==='short'?'3 4':'7 7',interactive:false}).addTo(connections);
+    }
     for(const m of data.markers)if(objects.has(m.id)&&position(m))objects.get(m.id).setLatLng(position(m));
     labels.clearLayers();
     for(const label of data.labels){
@@ -96,7 +135,10 @@
     $('#map').setAttribute('data-map-style',style);
     const chosen=data.markers.find(m=>m.id===selected);
     map.closePopup();draw();
-    if(chosen&&position(chosen)){map.setView(position(chosen),Math.min(oldZoom,info.maxZoom),{animate:false});marker(chosen).openPopup();}
+    if(chosen&&style==='sketch'&&interiorByMember.has(chosen.id)){
+      const interior=interiorByMember.get(chosen.id);selected=null;draw();map.setView(interior.entrance,Math.min(oldZoom,info.maxZoom),{animate:false});entranceObjects.get(interior.id)?.openPopup();
+      history.replaceState(null,'','/map?style=sketch');
+    }else if(chosen&&position(chosen)){map.setView(position(chosen),Math.min(oldZoom,info.maxZoom),{animate:false});marker(chosen).openPopup();}
     else if(anchor){const p=position(anchor);map.setView([p[0]+oldCentre.lat-oldAnchor[0],p[1]+oldCentre.lng-oldAnchor[1]],Math.min(oldZoom+info.maxZoom-oldMax,info.maxZoom),{animate:false});}
     else map.fitBounds(bounds);
     message(chosen&&!position(chosen)?'This location has no researched sketch position. Switch to Screenshots to see it.':'');
@@ -131,10 +173,11 @@
     try{
       const res=await fetch('/api/map');if(!res.ok)throw Error('Map data could not be loaded.');data=await res.json();
       for(const c of data.categories)cats.set(c.id,c);
+      for(const interior of data.interiors||[])for(const id of interior.members)interiorByMember.set(id,interior);
       if(!localStorage.getItem('ss.map.hidden.v2'))resetLayers();
       const bounds=L.latLngBounds(meta().bounds);
       map=L.map('map',{crs:L.CRS.Simple,minZoom:-1,maxZoom:meta().maxZoom,zoomSnap:.5,maxBounds:bounds.pad(.12),maxBoundsViscosity:.8,attributionControl:true});
-      pins=L.layerGroup().addTo(map);labels=L.layerGroup().addTo(map);
+      connections=L.layerGroup().addTo(map);pins=L.layerGroup().addTo(map);labels=L.layerGroup().addTo(map);entrances=L.layerGroup().addTo(map);
       map.fitBounds(bounds);
       setStyle(style);map.fitBounds(bounds);
       $('#map-style').onclick=()=>setStyle(style==='sketch'?'real':'sketch');
@@ -143,8 +186,9 @@
       map.on('zoomend',()=>{for(const m of data.markers)if(objects.has(m.id))objects.get(m.id).setIcon(icon(m));});
       new ResizeObserver(()=>map.invalidateSize({animate:false})).observe($('#map'));
       buildLayers();draw();
-      const params=new URLSearchParams(location.search),id=params.get('focus'),entry=params.get('entry');
+      const params=new URLSearchParams(location.search),id=params.get('focus'),entry=params.get('entry'),interiorId=params.get('interior');
       if(id){const m=data.markers.find(m=>m.id===id);if(m)focus(m);else message('This location is not in the current map dataset.');}
+      else if(interiorId){const interior=(data.interiors||[]).find(x=>x.id===interiorId);if(interior)openInterior(interior);}
       else if(entry){
         const link=data.links[entry];
         if(link){const found=data.markers.filter(m=>link.ids.includes(m.id));if(found.length===1)focus(found[0]);else{scope=new Set(link.ids);category=link.category;query='';$('#map-search').value=query;draw();const located=found.filter(position);if(located.length)map.fitBounds(L.latLngBounds(located.map(position)),{padding:[80,80],maxZoom:meta().maxZoom});message(link.kind==='components'?'Component locations for '+link.name:found.length+' locations for '+link.name);}}

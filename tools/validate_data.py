@@ -19,6 +19,8 @@ def main() -> int:
     if len(ids) != len(set(ids)): errors.append("map marker ids are not unique")
     if not areas: errors.append("areas.json is empty")
     if not map_data.get("markers"): errors.append("map has no markers")
+    if not map_data.get('connections'): errors.append('map room connections are missing')
+    if not map_data.get('interiors'): errors.append('map interiors are missing')
     for marker in map_data['markers']:
         if not (ROOT / 'data/map/icons' / marker['icon']).is_file(): errors.append('Missing icon: '+marker['icon'])
     for key in map_data['validTiles']:

@@ -16,7 +16,7 @@ from silksongtracker.database import load_content  # noqa: E402
 from silksongtracker.rules import evaluate  # noqa: E402
 from silksongtracker.schema import SaveView  # noqa: E402
 from silksongtracker.mapdata import build_map, flag_status  # noqa: E402
-from tools.build_map import live_config  # noqa: E402
+from tools.build_map import interior_groups, live_config, map_connections  # noqa: E402
 from silksongtracker.server import App  # noqa: E402
 
 
@@ -99,6 +99,31 @@ class CoreTests(unittest.TestCase):
         self.assertEqual(len(data['sketch']['validTiles']),84)
         for key in data['sketch']['validTiles']:
             self.assertTrue((ROOT / 'data/map/sketch' / (key+'.webp')).is_file(),key)
+
+    def test_collapsed_sketch_locations_become_stable_interiors(self):
+        markers = [
+            {'id':'one','pos':[10,20],'pos2':[3,4]},
+            {'id':'two','pos':[30,40],'pos2':[3,4]},
+            {'id':'nearby','pos':[10,21],'pos2':[8,9]},
+            {'id':'nearby-too','pos':[10,22],'pos2':[8,9]},
+        ]
+        labels = [{'name':'Named room','pos':[20,30]}]
+        first = interior_groups(markers, labels)
+        second = interior_groups(list(reversed(markers)), labels)
+        self.assertEqual(len(first), 1)
+        self.assertEqual(first[0]['id'], second[0]['id'])
+        self.assertEqual(first[0]['entrance'], [3,4])
+        self.assertEqual(set(first[0]['members']), {'one','two'})
+
+    def test_source_room_connections_are_flattened(self):
+        raw = {'interactiveMap':{'mapLinks':{
+            'smallGaps':[[[1,2],[3,4]]],
+            'largeGapsConnectingOverMaps':[[[5,6],[7,8]]],
+        }}}
+        self.assertEqual(map_connections(raw), [
+            {'kind':'smallGaps','from':[1,2],'to':[3,4]},
+            {'kind':'largeGapsConnectingOverMaps','from':[5,6],'to':[7,8]},
+        ])
 
 
 if __name__ == "__main__": unittest.main()
