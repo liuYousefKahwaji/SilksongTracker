@@ -23,7 +23,7 @@ On Windows, use `py` instead of `python` if needed. Use `--save-dir "path/to/fol
 ## Optional live-position mod (Windows)
 
 1. Download the **separate mod archive** from the same release and extract `SilksongLiveBridge.dll`. The tracker works without this mod.
-2. Install [BepInEx for Unity Mono](https://docs.bepinex.dev/master/articles/user_guide/installation/unity_mono.html) in your Silksong game folder. Choose the Windows x64 Unity Mono build for a 64-bit game, extract it beside `Hollow Knight Silksong.exe`, then launch and quit the game once to generate `BepInEx/config`. Do not copy BepInEx into the tracker folder.
+2. Install [BepInEx](https://www.nexusmods.com/hollowknightsilksong/mods/26) in your Silksong game folder. Extract it beside `Hollow Knight Silksong.exe`, then launch and quit the game once to generate `BepInEx/config`. Do not copy BepInEx into the tracker folder.
 3. With the game closed, from the tracker folder run:
 
 ```powershell
