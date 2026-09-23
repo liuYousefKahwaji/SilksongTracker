@@ -51,6 +51,9 @@ class App:
         with self.lock:
             if kind == "state": return self.state.state()
             if kind == "map": return self.state.map()
+            if kind == "live-transforms":
+                path = ROOT / "data/live_positions.json"
+                return json.loads(path.read_text(encoding="utf-8")) if path.is_file() else {"format": 1, "rooms": {}}
             if kind == "live":
                 return {"connected": bool(self.live and time.monotonic() - self.live_time < LIVE_TTL),
                         "position": self.live if self.live and time.monotonic() - self.live_time < LIVE_TTL else None}
@@ -62,7 +65,7 @@ class App:
 
 def make_handler(app: App):
     class Handler(BaseHTTPRequestHandler):
-        server_version = "SilksongTracker/0.2.2"
+        server_version = "SilksongTracker/0.3.0-beta"
 
         def log_message(self, fmt, *args):
             if os.environ.get("SILKSONG_TRACKER_LOG"):
@@ -78,6 +81,7 @@ def make_handler(app: App):
             if route == "/api/state": return self.send_json(app.payload("state"))
             if route == "/api/map": return self.send_json(app.payload("map"))
             if route == "/api/live-position": return self.send_json(app.payload("live"))
+            if route == "/api/live-transforms": return self.send_json(app.payload("live-transforms"))
             if route == "/api/meta": return self.send_json(app.payload("meta"))
             if route == "/health": return self.send_json({"ok": True, "game": "silksong"})
             if route == "/events":

@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--game-dir", required=True, type=Path, help="Hollow Knight Silksong install directory")
+    parser.add_argument("--dll", type=Path, help="DLL from the separate mod release archive; omit when building from source")
     parser.add_argument("--port", type=int, default=7397, help="local tracker port")
     args = parser.parse_args()
     game = args.game_dir.resolve()
@@ -19,9 +20,9 @@ def main() -> None:
         parser.error("Not a Silksong installation with BepInEx. Install BepInEx first.")
     if not 1 <= args.port <= 65535:
         parser.error("Port must be in 1..65535.")
-    source = ROOT / "live-bridge/bin/Release/netstandard2.1/SilksongLiveBridge.dll"
+    source = args.dll.resolve() if args.dll else ROOT / "live-bridge/bin/Release/netstandard2.1/SilksongLiveBridge.dll"
     if not source.is_file():
-        parser.error("Build the bridge first: dotnet build live-bridge/SilksongLiveBridge.csproj -c Release")
+        parser.error("Bridge DLL not found. Pass --dll from the mod archive or build the bridge from source.")
     destination = game / "BepInEx/plugins/SilksongLiveBridge.dll"
     config = game / "BepInEx/config/dev.silksongtracker.livebridge.cfg"
     if destination.exists() or config.exists():

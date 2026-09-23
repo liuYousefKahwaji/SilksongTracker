@@ -1,0 +1,951 @@
+{
+  "format": 1,
+  "maxResidualPixels": 20,
+  "method": "scene-object-similarity",
+  "rooms": {
+    "Aqueduct_04": {
+      "anchors": 4,
+      "imag": 0.0213811,
+      "maxError": 5.714,
+      "real": 0.6569468,
+      "reflected": false,
+      "rms": 4.477,
+      "sketch": [
+        1474.155,
+        -653.0525
+      ],
+      "source": [
+        93.0625,
+        28.0033
+      ]
+    },
+    "Arborium_06": {
+      "anchors": 3,
+      "imag": -0.011914,
+      "maxError": 0.544,
+      "real": 0.6450161,
+      "reflected": false,
+      "rms": 0.408,
+      "sketch": [
+        1152.8533,
+        -547.12
+      ],
+      "source": [
+        44.7467,
+        19.9833
+      ]
+    },
+    "Belltown_04": {
+      "anchors": 3,
+      "imag": -0.0110786,
+      "maxError": 1.841,
+      "real": 0.7371636,
+      "reflected": false,
+      "rms": 1.363,
+      "sketch": [
+        865.6733,
+        -1109.1467
+      ],
+      "source": [
+        47.0881,
+        25.1912
+      ]
+    },
+    "Belltown_basement_03": {
+      "anchors": 10,
+      "imag": 0.0385315,
+      "maxError": 5.958,
+      "real": 0.6532257,
+      "reflected": false,
+      "rms": 3.464,
+      "sketch": [
+        874.238,
+        -1262.964
+      ],
+      "source": [
+        86.4093,
+        50.6962
+      ]
+    },
+    "Bone_01": {
+      "anchors": 3,
+      "imag": 0.0447106,
+      "maxError": 7.67,
+      "real": 0.6526716,
+      "reflected": false,
+      "rms": 5.451,
+      "sketch": [
+        571.1,
+        -1351.0733
+      ],
+      "source": [
+        82.8103,
+        43.15
+      ]
+    },
+    "Bone_04": {
+      "anchors": 3,
+      "imag": -0.0678536,
+      "maxError": 1.762,
+      "real": 0.637379,
+      "reflected": false,
+      "rms": 1.524,
+      "sketch": [
+        529.9633,
+        -1308.4767
+      ],
+      "source": [
+        26.1312,
+        12.2224
+      ]
+    },
+    "Bone_10": {
+      "anchors": 4,
+      "imag": 0.0209093,
+      "maxError": 4.532,
+      "real": 0.6469821,
+      "reflected": false,
+      "rms": 3.045,
+      "sketch": [
+        734.6625,
+        -1324.5675
+      ],
+      "source": [
+        75.2174,
+        40.0155
+      ]
+    },
+    "Bone_19": {
+      "anchors": 3,
+      "imag": -0.0186088,
+      "maxError": 0.596,
+      "real": 0.6229213,
+      "reflected": false,
+      "rms": 0.47,
+      "sketch": [
+        771.7333,
+        -1258.85
+      ],
+      "source": [
+        57.5466,
+        14.5372
+      ]
+    },
+    "Bone_East_07": {
+      "anchors": 4,
+      "imag": 0.0084224,
+      "maxError": 2.236,
+      "real": 0.6242176,
+      "reflected": false,
+      "rms": 1.519,
+      "sketch": [
+        1408.0725,
+        -1363.6675
+      ],
+      "source": [
+        25.8111,
+        99.2694
+      ]
+    },
+    "Bone_East_11": {
+      "anchors": 5,
+      "imag": -0.0126107,
+      "maxError": 7.377,
+      "real": 0.5867028,
+      "reflected": false,
+      "rms": 4.053,
+      "sketch": [
+        1403.194,
+        -1239.12
+      ],
+      "source": [
+        19.526,
+        102.1438
+      ]
+    },
+    "Bone_East_13": {
+      "anchors": 3,
+      "imag": 0.0004192,
+      "maxError": 4.575,
+      "real": 0.7115526,
+      "reflected": false,
+      "rms": 3.375,
+      "sketch": [
+        1103.3633,
+        -1443.7133
+      ],
+      "source": [
+        79.3267,
+        17.585
+      ]
+    },
+    "Bone_East_14": {
+      "anchors": 5,
+      "imag": -0.0418556,
+      "maxError": 5.659,
+      "real": 0.647716,
+      "reflected": false,
+      "rms": 3.726,
+      "sketch": [
+        1626.574,
+        -1412.658
+      ],
+      "source": [
+        74.948,
+        35.8469
+      ]
+    },
+    "Bone_East_17": {
+      "anchors": 3,
+      "imag": -0.081073,
+      "maxError": 1.767,
+      "real": 0.781325,
+      "reflected": false,
+      "rms": 1.312,
+      "sketch": [
+        1346.49,
+        -1308.3533
+      ],
+      "source": [
+        34.95,
+        93.2933
+      ]
+    },
+    "Bone_East_24": {
+      "anchors": 6,
+      "imag": 0.0081566,
+      "maxError": 4.213,
+      "real": 0.614955,
+      "reflected": false,
+      "rms": 3.284,
+      "sketch": [
+        1531.1183,
+        -1233.5867
+      ],
+      "source": [
+        178.6834,
+        42.1323
+      ]
+    },
+    "Bonetown": {
+      "anchors": 4,
+      "imag": -0.0225718,
+      "maxError": 3.658,
+      "real": 0.6990885,
+      "reflected": false,
+      "rms": 3.069,
+      "sketch": [
+        423.1525,
+        -1337.5375
+      ],
+      "source": [
+        201.1653,
+        57.9357
+      ]
+    },
+    "Clover_18": {
+      "anchors": 4,
+      "imag": 0.0095459,
+      "maxError": 1.977,
+      "real": 0.5919567,
+      "reflected": false,
+      "rms": 1.224,
+      "sketch": [
+        1988.1725,
+        -1083.14
+      ],
+      "source": [
+        127.1828,
+        31.2129
+      ]
+    },
+    "Cog_04": {
+      "anchors": 3,
+      "imag": 0.02666,
+      "maxError": 1.752,
+      "real": 0.5913702,
+      "reflected": false,
+      "rms": 1.269,
+      "sketch": [
+        1037.7267,
+        -675.1433
+      ],
+      "source": [
+        55.7766,
+        84.9833
+      ]
+    },
+    "Coral_02": {
+      "anchors": 4,
+      "imag": 0.0292711,
+      "maxError": 8.294,
+      "real": 0.6293984,
+      "reflected": false,
+      "rms": 5.882,
+      "sketch": [
+        334.115,
+        -1073.9425
+      ],
+      "source": [
+        148.025,
+        23.3004
+      ]
+    },
+    "Coral_41": {
+      "anchors": 3,
+      "imag": -0.0042335,
+      "maxError": 0.864,
+      "real": 0.6065732,
+      "reflected": false,
+      "rms": 0.707,
+      "sketch": [
+        288.86,
+        -826.2967
+      ],
+      "source": [
+        97.568,
+        47.454
+      ]
+    },
+    "Crawl_02": {
+      "anchors": 4,
+      "imag": -0.0237041,
+      "maxError": 5.174,
+      "real": 0.6513856,
+      "reflected": false,
+      "rms": 3.13,
+      "sketch": [
+        276.555,
+        -1277.54
+      ],
+      "source": [
+        10.0754,
+        52.9436
+      ]
+    },
+    "Dock_02": {
+      "anchors": 4,
+      "imag": 0.0464042,
+      "maxError": 1.93,
+      "real": 0.5983519,
+      "reflected": false,
+      "rms": 1.472,
+      "sketch": [
+        1192.88,
+        -1438.6925
+      ],
+      "source": [
+        70.224,
+        51.2378
+      ]
+    },
+    "Dock_06_Church": {
+      "anchors": 4,
+      "imag": 0.0105577,
+      "maxError": 2.291,
+      "real": 0.6266853,
+      "reflected": false,
+      "rms": 1.671,
+      "sketch": [
+        1012.4875,
+        -1468.31
+      ],
+      "source": [
+        27.9745,
+        23.6544
+      ]
+    },
+    "Dock_08": {
+      "anchors": 3,
+      "imag": 0.0617687,
+      "maxError": 3.813,
+      "real": 0.229601,
+      "reflected": true,
+      "rms": 2.989,
+      "sketch": [
+        970.4367,
+        -1363.2133
+      ],
+      "source": [
+        35.0733,
+        15.2467
+      ]
+    },
+    "Dust_05": {
+      "anchors": 3,
+      "imag": 0.0071351,
+      "maxError": 1.931,
+      "real": 0.6490752,
+      "reflected": false,
+      "rms": 1.518,
+      "sketch": [
+        1287.8533,
+        -981.7767
+      ],
+      "source": [
+        66.18,
+        17.3437
+      ]
+    },
+    "Dust_06": {
+      "anchors": 3,
+      "imag": 0.0294286,
+      "maxError": 2.059,
+      "real": 0.6975905,
+      "reflected": false,
+      "rms": 1.59,
+      "sketch": [
+        1474.9567,
+        -975.69
+      ],
+      "source": [
+        15.2753,
+        110.3886
+      ]
+    },
+    "Greymoor_02": {
+      "anchors": 7,
+      "imag": -0.0739794,
+      "maxError": 7.528,
+      "real": 0.5605075,
+      "reflected": false,
+      "rms": 5.71,
+      "sketch": [
+        1471.1429,
+        -1084.1086
+      ],
+      "source": [
+        45.9765,
+        103.156
+      ]
+    },
+    "Greymoor_04": {
+      "anchors": 7,
+      "imag": 0.0080977,
+      "maxError": 3.178,
+      "real": 0.6394133,
+      "reflected": false,
+      "rms": 2.293,
+      "sketch": [
+        1158.8429,
+        -1089.9614
+      ],
+      "source": [
+        22.4607,
+        73.595
+      ]
+    },
+    "Greymoor_11": {
+      "anchors": 4,
+      "imag": 0.2172011,
+      "maxError": 8.168,
+      "real": 0.8180336,
+      "reflected": false,
+      "rms": 5.604,
+      "sketch": [
+        1106.3575,
+        -1071.1625
+      ],
+      "source": [
+        53.8853,
+        43.4938
+      ]
+    },
+    "Greymoor_15": {
+      "anchors": 3,
+      "imag": 0.0011499,
+      "maxError": 1.469,
+      "real": 0.5974351,
+      "reflected": false,
+      "rms": 1.057,
+      "sketch": [
+        1542.7167,
+        -1121.5133
+      ],
+      "source": [
+        65.74,
+        47.0833
+      ]
+    },
+    "Greymoor_15b": {
+      "anchors": 7,
+      "imag": 0.0397115,
+      "maxError": 6.626,
+      "real": 0.6067042,
+      "reflected": false,
+      "rms": 4.254,
+      "sketch": [
+        1596.1171,
+        -1101.8314
+      ],
+      "source": [
+        146.2921,
+        72.299
+      ]
+    },
+    "Greymoor_16": {
+      "anchors": 5,
+      "imag": -0.0364932,
+      "maxError": 4.491,
+      "real": 0.6195237,
+      "reflected": false,
+      "rms": 3.109,
+      "sketch": [
+        1126.522,
+        -1182.73
+      ],
+      "source": [
+        126.058,
+        34.547
+      ]
+    },
+    "Greymoor_22": {
+      "anchors": 3,
+      "imag": 0.3059255,
+      "maxError": 1.141,
+      "real": 0.5849788,
+      "reflected": true,
+      "rms": 0.81,
+      "sketch": [
+        1621.1467,
+        -1039.5167
+      ],
+      "source": [
+        87.6578,
+        30.2912
+      ]
+    },
+    "Library_04": {
+      "anchors": 5,
+      "imag": -0.0523442,
+      "maxError": 7.02,
+      "real": 0.6416663,
+      "reflected": false,
+      "rms": 4.624,
+      "sketch": [
+        1277.84,
+        -725.78
+      ],
+      "source": [
+        33.4316,
+        94.042
+      ]
+    },
+    "Library_08": {
+      "anchors": 3,
+      "imag": -0.1115829,
+      "maxError": 0.921,
+      "real": 0.3994089,
+      "reflected": false,
+      "rms": 0.738,
+      "sketch": [
+        1351.6867,
+        -688.3333
+      ],
+      "source": [
+        72.7967,
+        27.4033
+      ]
+    },
+    "Library_11b": {
+      "anchors": 3,
+      "imag": 0.0270108,
+      "maxError": 1.852,
+      "real": 0.6557713,
+      "reflected": false,
+      "rms": 1.318,
+      "sketch": [
+        1154.9033,
+        -901.6233
+      ],
+      "source": [
+        30.0,
+        80.6433
+      ]
+    },
+    "Library_12": {
+      "anchors": 5,
+      "imag": 0.0130919,
+      "maxError": 7.661,
+      "real": 0.5532542,
+      "reflected": false,
+      "rms": 5.02,
+      "sketch": [
+        1282.586,
+        -846.606
+      ],
+      "source": [
+        75.674,
+        64.9329
+      ]
+    },
+    "Library_13": {
+      "anchors": 3,
+      "imag": -0.0041931,
+      "maxError": 3.951,
+      "real": 0.7344112,
+      "reflected": false,
+      "rms": 3.21,
+      "sketch": [
+        1166.71,
+        -750.1733
+      ],
+      "source": [
+        52.2349,
+        22.0469
+      ]
+    },
+    "Mosstown_01": {
+      "anchors": 3,
+      "imag": 0.0744347,
+      "maxError": 3.73,
+      "real": 0.7649839,
+      "reflected": false,
+      "rms": 2.776,
+      "sketch": [
+        465.58,
+        -1285.2133
+      ],
+      "source": [
+        66.2688,
+        20.5099
+      ]
+    },
+    "Mosstown_02": {
+      "anchors": 5,
+      "imag": -0.0082329,
+      "maxError": 6.966,
+      "real": 0.7260688,
+      "reflected": false,
+      "rms": 5.015,
+      "sketch": [
+        477.568,
+        -1266.81
+      ],
+      "source": [
+        74.2567,
+        41.2677
+      ]
+    },
+    "Peak_01": {
+      "anchors": 4,
+      "imag": 0.0094745,
+      "maxError": 3.502,
+      "real": 0.6210764,
+      "reflected": false,
+      "rms": 2.919,
+      "sketch": [
+        458.6575,
+        -685.2475
+      ],
+      "source": [
+        67.7775,
+        178.575
+      ]
+    },
+    "Room_Forge": {
+      "anchors": 4,
+      "imag": -0.0420598,
+      "maxError": 3.294,
+      "real": 0.4758254,
+      "reflected": false,
+      "rms": 2.259,
+      "sketch": [
+        1084.7125,
+        -1411.3275
+      ],
+      "source": [
+        33.915,
+        25.4308
+      ]
+    },
+    "Shadow_20": {
+      "anchors": 3,
+      "imag": 0.0209021,
+      "maxError": 3.172,
+      "real": 0.6535439,
+      "reflected": false,
+      "rms": 2.338,
+      "sketch": [
+        1380.7867,
+        -867.2733
+      ],
+      "source": [
+        95.6787,
+        27.7393
+      ]
+    },
+    "Shellwood_01": {
+      "anchors": 4,
+      "imag": 0.0625016,
+      "maxError": 2.272,
+      "real": 0.5744039,
+      "reflected": false,
+      "rms": 1.479,
+      "sketch": [
+        754.265,
+        -1170.1925
+      ],
+      "source": [
+        53.295,
+        34.415
+      ]
+    },
+    "Shellwood_01b": {
+      "anchors": 3,
+      "imag": -0.2659343,
+      "maxError": 8.326,
+      "real": 0.4379867,
+      "reflected": false,
+      "rms": 6.653,
+      "sketch": [
+        732.09,
+        -1130.0133
+      ],
+      "source": [
+        37.7457,
+        43.14
+      ]
+    },
+    "Slab_03": {
+      "anchors": 5,
+      "imag": 0.0062396,
+      "maxError": 6.591,
+      "real": 0.6320042,
+      "reflected": false,
+      "rms": 3.571,
+      "sketch": [
+        552.244,
+        -710.568
+      ],
+      "source": [
+        15.864,
+        110.2545
+      ]
+    },
+    "Slab_07": {
+      "anchors": 3,
+      "imag": -0.1463371,
+      "maxError": 3.807,
+      "real": 0.5335452,
+      "reflected": false,
+      "rms": 3.174,
+      "sketch": [
+        524.9467,
+        -770.42
+      ],
+      "source": [
+        58.0996,
+        21.3837
+      ]
+    },
+    "Slab_18": {
+      "anchors": 3,
+      "imag": -0.050627,
+      "maxError": 1.45,
+      "real": 0.645499,
+      "reflected": false,
+      "rms": 1.171,
+      "sketch": [
+        586.2333,
+        -629.5733
+      ],
+      "source": [
+        38.8315,
+        39.7168
+      ]
+    },
+    "Song_01": {
+      "anchors": 5,
+      "imag": -0.0015319,
+      "maxError": 3.694,
+      "real": 0.6641404,
+      "reflected": false,
+      "rms": 2.124,
+      "sketch": [
+        728.928,
+        -820.144
+      ],
+      "source": [
+        65.1843,
+        88.0034
+      ]
+    },
+    "Song_09": {
+      "anchors": 4,
+      "imag": -0.1055317,
+      "maxError": 6.459,
+      "real": 0.6286504,
+      "reflected": false,
+      "rms": 4.722,
+      "sketch": [
+        932.3925,
+        -657.965
+      ],
+      "source": [
+        32.4093,
+        38.271
+      ]
+    },
+    "Song_09b": {
+      "anchors": 3,
+      "imag": -0.0284703,
+      "maxError": 4.881,
+      "real": 0.611277,
+      "reflected": false,
+      "rms": 3.467,
+      "sketch": [
+        957.52,
+        -692.9433
+      ],
+      "source": [
+        84.2221,
+        134.4663
+      ]
+    },
+    "Tut_01": {
+      "anchors": 4,
+      "imag": -0.0069848,
+      "maxError": 1.602,
+      "real": 0.5650006,
+      "reflected": false,
+      "rms": 1.138,
+      "sketch": [
+        419.29,
+        -1435.31
+      ],
+      "source": [
+        62.3425,
+        31.41
+      ]
+    },
+    "Tut_01b": {
+      "anchors": 3,
+      "imag": -0.0372892,
+      "maxError": 2.432,
+      "real": 0.6221634,
+      "reflected": false,
+      "rms": 2.057,
+      "sketch": [
+        449.5533,
+        -1417.8267
+      ],
+      "source": [
+        105.867,
+        63.0909
+      ]
+    },
+    "Tut_02": {
+      "anchors": 4,
+      "imag": 0.0234915,
+      "maxError": 1.208,
+      "real": 0.6285077,
+      "reflected": false,
+      "rms": 0.926,
+      "sketch": [
+        333.66,
+        -1434.8375
+      ],
+      "source": [
+        73.8849,
+        38.2392
+      ]
+    },
+    "Under_02": {
+      "anchors": 4,
+      "imag": -0.0229606,
+      "maxError": 6.381,
+      "real": 0.6346612,
+      "reflected": false,
+      "rms": 4.536,
+      "sketch": [
+        764.365,
+        -953.4475
+      ],
+      "source": [
+        20.3444,
+        103.1579
+      ]
+    },
+    "Under_07c": {
+      "anchors": 4,
+      "imag": -0.0185276,
+      "maxError": 2.469,
+      "real": 0.6432157,
+      "reflected": false,
+      "rms": 1.92,
+      "sketch": [
+        807.5025,
+        -854.935
+      ],
+      "source": [
+        49.5275,
+        79.4068
+      ]
+    },
+    "Under_08": {
+      "anchors": 5,
+      "imag": 0.0836993,
+      "maxError": 8.084,
+      "real": 0.5179937,
+      "reflected": false,
+      "rms": 5.232,
+      "sketch": [
+        888.188,
+        -881.056
+      ],
+      "source": [
+        90.864,
+        24.1473
+      ]
+    },
+    "Under_17": {
+      "anchors": 3,
+      "imag": 0.0951968,
+      "maxError": 2.983,
+      "real": 0.6333362,
+      "reflected": false,
+      "rms": 2.487,
+      "sketch": [
+        1067.17,
+        -883.53
+      ],
+      "source": [
+        51.4606,
+        20.5906
+      ]
+    },
+    "Under_27": {
+      "anchors": 4,
+      "imag": -0.0798746,
+      "maxError": 6.308,
+      "real": 0.5985187,
+      "reflected": false,
+      "rms": 4.691,
+      "sketch": [
+        641.8225,
+        -993.5325
+      ],
+      "source": [
+        57.24,
+        48.4675
+      ]
+    },
+    "Weave_03": {
+      "anchors": 3,
+      "imag": -0.1259977,
+      "maxError": 4.241,
+      "real": 0.7610096,
+      "reflected": false,
+      "rms": 3.34,
+      "sketch": [
+        411.3433,
+        -1460.5667
+      ],
+      "source": [
+        105.0963,
+        20.2952
+      ]
+    }
+  }
+}

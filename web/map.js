@@ -11,7 +11,7 @@
   const position=m=>{const p=m[style==='sketch'?'pos2':'pos'];return Array.isArray(p)&&p.length===2&&p.every(Number.isFinite)?p:null;};
   const objects=new Map(), cats=new Map(), shown=new Set(), interiorByMember=new Map(), sketchGroupByMember=new Map();
   const sketchGroups=[];
-  let live=null,livePin=null,calibration={},pendingAnchor=null;
+  let live=null,livePin=null,calibration={},pendingAnchor=null,autoRooms={};
   try {calibration=JSON.parse(localStorage.getItem('ss.map.live.calibration.v1')||'{}')||{};} catch {}
   function liveSource(p){return p.map&&p.map.length===2?{key:'native',point:p.map}:{key:'world:'+p.scene,point:[p.x,p.y]};}
   function transformLive(point,anchors){
@@ -23,6 +23,12 @@
     const px=point[0]-a.source[0],py=point[1]-a.source[1];
     return [a.sketch[0]+imag*px+real*py,a.sketch[1]+real*px-imag*py];
   }
+  function autoPosition(room,world){
+    if(!room)return null;
+    let dx=world[0]-room.source[0],dy=world[1]-room.source[1];
+    if(room.reflected)dy=-dy;
+    return [room.sketch[1]+room.imag*dx+room.real*dy,room.sketch[0]+room.real*dx-room.imag*dy];
+  }
   function redrawLive(){
     const hide=()=>{if(livePin){map.removeLayer(livePin);livePin=null;}};
     const connected=live?.connected&&live.position;
@@ -33,16 +39,19 @@
     const source=liveSource(live.position),anchors=calibration[source.key]||[];
     $('#calibrate-hornet').textContent='Place calibration point '+(anchors.length===1?'2':'1');
     if(style!=='sketch'){hide();$('#live-detail').textContent='Live position appears on Sketch only.';return;}
-    if(anchors.length!==2){hide();$('#live-detail').textContent='Connected. Set '+(anchors.length===1?'one more':'two')+' calibration point'+(anchors.length===1?'':'s')+' on Sketch.';return;}
-    const p=transformLive(source.point,anchors),bounds=L.latLngBounds(data.sketch.bounds);
+    const manual=anchors.length===2;
+    const room=autoRooms[live.position.scene];
+    if(!manual&&!room){hide();$('#live-detail').textContent='Connected, but this room has no verified automatic position. Calibrate on Sketch to locate Hornet.';return;}
+    const p=manual?transformLive(source.point,anchors):autoPosition(room,[live.position.x,live.position.y]);
+    const bounds=L.latLngBounds(data.sketch.bounds);
     if(!p||!bounds.contains(p)){hide();$('#live-detail').textContent='Position is outside the calibrated Sketch; recalibrate in this area.';return;}
     if(livePin)livePin.setLatLng(p);
     else {
-      livePin=L.marker(p,{zIndexOffset:10000,icon:L.divIcon({className:'hornet-live',iconSize:[30,30],iconAnchor:[15,15]}),title:'Hornet · live position',alt:'Hornet live position'}).addTo(map);
+      livePin=L.marker(p,{zIndexOffset:10000,icon:L.icon({iconUrl:'/hornet-head.svg',className:'hornet-live',iconSize:[38,38],iconAnchor:[19,31],popupAnchor:[0,-25]}),title:'Hornet · live position',alt:'Hornet live position'}).addTo(map);
       livePin.bindPopup('Hornet · live position');
     }
     $('#center-hornet').disabled=false;
-    $('#live-detail').textContent='Live position on Sketch'+(source.key==='native'?'':' · calibrated for current room')+'.';
+    $('#live-detail').textContent=manual?'Live position on Sketch'+(source.key==='native'?' · manually calibrated':' · manually calibrated for this room')+'.':'Auto-located from '+room.anchors+' matched map points · estimated; calibration can refine it.';
   }
   async function pollLive(){
     try {const response=await fetch('/api/live-position',{cache:'no-store'});if(response.ok)live=await response.json();else live=null;}
@@ -284,6 +293,7 @@
   async function boot(){
     try{
       const res=await fetch('/api/map');if(!res.ok)throw Error('Map data could not be loaded.');data=await res.json();
+      try {const transforms=await fetch('/api/live-transforms').then(r=>r.json());autoRooms=transforms.rooms||{};} catch {}
       loadManual();
       for(const c of data.categories)cats.set(c.id,c);
       indexGroups();
