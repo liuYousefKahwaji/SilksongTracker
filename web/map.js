@@ -11,47 +11,34 @@
   const position=m=>{const p=m[style==='sketch'?'pos2':'pos'];return Array.isArray(p)&&p.length===2&&p.every(Number.isFinite)?p:null;};
   const objects=new Map(), cats=new Map(), shown=new Set(), interiorByMember=new Map(), sketchGroupByMember=new Map();
   const sketchGroups=[];
-  let live=null,livePin=null,calibration={},pendingAnchor=null,autoRooms={};
-  try {calibration=JSON.parse(localStorage.getItem('ss.map.live.calibration.v1')||'{}')||{};} catch {}
-  function liveSource(p){return p.map&&p.map.length===2?{key:'native',point:p.map}:{key:'world:'+p.scene,point:[p.x,p.y]};}
-  function transformLive(point,anchors){
-    if(!Array.isArray(anchors)||anchors.length!==2)return null;
-    const [a,b]=anchors,dx=b.source[0]-a.source[0],dy=b.source[1]-a.source[1],length=dx*dx+dy*dy;
-    if(length<1e-6)return null;
-    const ux=b.sketch[1]-a.sketch[1],uy=b.sketch[0]-a.sketch[0];
-    const real=(ux*dx+uy*dy)/length,imag=(uy*dx-ux*dy)/length;
-    const px=point[0]-a.source[0],py=point[1]-a.source[1];
-    return [a.sketch[0]+imag*px+real*py,a.sketch[1]+real*px-imag*py];
-  }
-  function autoPosition(room,world){
-    if(!room)return null;
-    let dx=world[0]-room.source[0],dy=world[1]-room.source[1];
-    if(room.reflected)dy=-dy;
-    return [room.sketch[1]+room.imag*dx+room.real*dy,room.sketch[0]+room.real*dx-room.imag*dy];
-  }
+  const liveMath=window.SilksongLiveMath;
+  let live=null,livePin=null,calibration={},pendingAnchor=null,autoRooms={},calibrationNotice='',noticeUntil=0;
+  try {calibration=JSON.parse(localStorage.getItem('ss.map.live.calibration.v2')||'{}')||{};} catch {}
+  function liveDetail(text){$('#live-detail').textContent=Date.now()<noticeUntil?calibrationNotice:text;}
+  function liveNotice(text){calibrationNotice=text;noticeUntil=Date.now()+6500;liveDetail(text);}
   function redrawLive(){
     const hide=()=>{if(livePin){map.removeLayer(livePin);livePin=null;}};
     const connected=live?.connected&&live.position;
     $('#live-status').textContent=connected?'Live: connected':'Live: waiting';
     $('#calibrate-hornet').disabled=!connected||style!=='sketch';
     $('#center-hornet').disabled=true;
-    if(!connected){hide();$('#live-detail').textContent='Waiting for the optional local bridge.';return;}
-    const source=liveSource(live.position),anchors=calibration[source.key]||[];
-    $('#calibrate-hornet').textContent='Place calibration point '+(anchors.length===1?'2':'1');
-    if(style!=='sketch'){hide();$('#live-detail').textContent='Live position appears on Sketch only.';return;}
-    const manual=anchors.length===2;
-    const room=autoRooms[live.position.scene];
-    if(!manual&&!room){hide();$('#live-detail').textContent='Connected, but this room has no verified automatic position. Calibrate on Sketch to locate Hornet.';return;}
-    const p=manual?transformLive(source.point,anchors):autoPosition(room,[live.position.x,live.position.y]);
+    if(!connected){hide();liveDetail('Waiting for the optional local bridge.');return;}
+    const scene=live.position.scene,anchors=calibration[scene]||[];
+    $('#calibrate-hornet').textContent=anchors.length===1?'Refine calibration (optional)':anchors.length===2?'Replace calibration':'Calibrate current room';
+    if(style!=='sketch'){hide();liveDetail('Live position appears on Sketch only.');return;}
+    const located=liveMath.position(autoRooms,scene,[live.position.x,live.position.y],anchors);
+    if(!located){hide();liveDetail('Connected, but this room has no verified automatic position. Click Calibrate current room, then click where Hornet stands.');return;}
+    const p=located.point;
     const bounds=L.latLngBounds(data.sketch.bounds);
-    if(!p||!bounds.contains(p)){hide();$('#live-detail').textContent='Position is outside the calibrated Sketch; recalibrate in this area.';return;}
+    if(!p||!bounds.contains(p)){hide();liveDetail('Position is outside Sketch. Clear and redo this room’s calibration.');return;}
     if(livePin)livePin.setLatLng(p);
     else {
-      livePin=L.marker(p,{zIndexOffset:10000,icon:L.icon({iconUrl:'/hornet-head.svg',className:'hornet-live',iconSize:[38,38],iconAnchor:[19,31],popupAnchor:[0,-25]}),title:'Hornet · live position',alt:'Hornet live position'}).addTo(map);
+      livePin=L.marker(p,{zIndexOffset:10000,icon:L.icon({iconUrl:'/hornet-head-source.png',className:'hornet-live',iconSize:[36,48],iconAnchor:[18,47],popupAnchor:[0,-36]}),title:'Hornet · live position',alt:'Hornet live position'}).addTo(map);
       livePin.bindPopup('Hornet · live position');
     }
     $('#center-hornet').disabled=false;
-    $('#live-detail').textContent=manual?'Live position on Sketch'+(source.key==='native'?' · manually calibrated':' · manually calibrated for this room')+'.':'Auto-located from '+room.anchors+' matched map points · estimated; calibration can refine it.';
+    const room=autoRooms[scene];
+    liveDetail(located.mode==='auto'?'Auto-located from '+room.anchors+' map points · estimated. One click can correct it.':located.mode==='refined'?'Room calibration refined and locked to world coordinates.':located.confidence==='room'?'Room position corrected. A second, distant point can refine scale.':'Room position placed with '+located.confidence+' scale estimate. A distant second point can refine it.');
   }
   async function pollLive(){
     try {const response=await fetch('/api/live-position',{cache:'no-store'});if(response.ok)live=await response.json();else live=null;}
@@ -307,30 +294,35 @@
       $('#center-hornet').onclick=()=>{if(livePin)map.setView(livePin.getLatLng(),Math.max(map.getZoom(),1));};
       $('#calibrate-hornet').onclick=()=>{
         if(!live?.connected||!live.position||style!=='sketch')return;
-        const source=liveSource(live.position),anchors=calibration[source.key]||[];
-        pendingAnchor={key:source.key,source:[...source.point],index:anchors.length===1?1:0};
-        $('#live-detail').textContent='Now click Hornet’s exact position on Sketch.';
+        const scene=live.position.scene,anchors=calibration[scene]||[];
+        pendingAnchor={scene,source:[live.position.x,live.position.y],index:anchors.length===1?1:0};
+        noticeUntil=0;
+        liveDetail('Now click Hornet’s exact position on Sketch. Press Esc to cancel.');
       };
       $('#reset-calibration').onclick=()=>{
         if(!live?.position)return;
-        const key=liveSource(live.position).key;delete calibration[key];pendingAnchor=null;
-        localStorage.setItem('ss.map.live.calibration.v1',JSON.stringify(calibration));redrawLive();
+        delete calibration[live.position.scene];pendingAnchor=null;noticeUntil=0;
+        localStorage.setItem('ss.map.live.calibration.v2',JSON.stringify(calibration));redrawLive();
       };
-      map.on('click',event=>{
+      $('#map').addEventListener('click',event=>{
         if(!pendingAnchor||style!=='sketch')return;
-        const {key,source,index}=pendingAnchor;pendingAnchor=null;
-        const anchors=index===1?(calibration[key]||[]).slice(0,1):[];
-        const sketch=[event.latlng.lat,event.latlng.lng];
-        if(index===1&&anchors.length===1){
-          const first=anchors[0],dx=source[0]-first.source[0],dy=source[1]-first.source[1];
-          if(dx*dx+dy*dy<1||Math.hypot(sketch[0]-first.sketch[0],sketch[1]-first.sketch[1])<5){
-            $('#live-detail').textContent='The two points are too close. Move farther and capture point 2 again.';return;
-          }
+        event.preventDefault();event.stopImmediatePropagation();
+        const {scene,source,index}=pendingAnchor;pendingAnchor=null;
+        const current=live?.position;
+        if(!live?.connected||!current||current.scene!==scene||Math.hypot(current.x-source[0],current.y-source[1])>3){
+          liveNotice('Hornet moved or changed rooms before the click. Stand still and capture again.');redrawLive();return;
         }
-        anchors.push({source,sketch});
-        calibration[key]=anchors;
-        localStorage.setItem('ss.map.live.calibration.v1',JSON.stringify(calibration));redrawLive();
-      });
+        const clicked=map.mouseEventToLatLng(event),point={source,sketch:[clicked.lat,clicked.lng]};
+        const first=(calibration[scene]||[])[0];
+        if(index===1&&first){
+          const prior=liveMath.priorForScene(autoRooms,scene);
+          if(!prior||!liveMath.refine([first,point],prior.matrix)){
+            liveNotice('Second point rejected: move farther within this room and click its exact spot. Your first point is kept.');redrawLive();return;
+          }
+          calibration[scene]=[first,point];
+        }else calibration[scene]=[point];
+        localStorage.setItem('ss.map.live.calibration.v2',JSON.stringify(calibration));redrawLive();
+      },true);
       pollLive();setInterval(pollLive,750);
       map.on('zoomend moveend resize',tidyLabels);
       tidyLabels();
@@ -356,7 +348,7 @@
       $('#import-marks').onclick=()=>$('#marks-file').click();
       $('#marks-file').onchange=async e=>{await importMarks(e.target.files[0]);e.target.value='';};
       $('#toggle-layers').onclick=()=>{const mobile=matchMedia('(max-width:600px)').matches;$('#workspace').classList.toggle(mobile?'mobile-open':'collapsed');$('#toggle-layers').setAttribute('aria-expanded',String(mobile?$('#workspace').classList.contains('mobile-open'):!$('#workspace').classList.contains('collapsed')));map.invalidateSize();};
-      document.addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement!==$('#map-search')){e.preventDefault();$('#map-search').focus();}});
+      document.addEventListener('keydown',e=>{if(e.key==='Escape'&&pendingAnchor){pendingAnchor=null;redrawLive();}if(e.key==='/'&&document.activeElement!==$('#map-search')){e.preventDefault();$('#map-search').focus();}});
       let signature='';
       const events=new EventSource('/events');events.addEventListener('state',async event=>{
         const state=JSON.parse(event.data),sig=JSON.stringify([state.hasSave,state.slot,state.groups]);

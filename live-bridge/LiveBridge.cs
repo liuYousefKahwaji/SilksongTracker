@@ -1,6 +1,5 @@
 using System;
 using System.Net;
-using System.Reflection;
 using System.Threading;
 using BepInEx;
 using BepInEx.Configuration;
@@ -9,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 namespace SilksongLiveBridge
 {
-    [BepInPlugin("dev.silksongtracker.livebridge", "Silksong Tracker Live Bridge", "0.1.0")]
+    [BepInPlugin("dev.silksongtracker.livebridge", "Silksong Tracker Live Bridge", "0.2.0")]
     public sealed class LiveBridge : BaseUnityPlugin
     {
         private ConfigEntry<bool> bridgeEnabled;
@@ -17,8 +16,6 @@ namespace SilksongLiveBridge
         private ConfigEntry<string> endpoint;
         private float nextSend;
         private int sending;
-        private GameMap gameMap;
-        private static readonly BindingFlags Fields = BindingFlags.Instance | BindingFlags.NonPublic;
 
         private void Awake()
         {
@@ -49,41 +46,9 @@ namespace SilksongLiveBridge
             var world = hero.transform.position;
             var payload = new PositionMessage { scene = SceneManager.GetActiveScene().name, x = world.x, y = world.y };
             if (string.IsNullOrEmpty(payload.scene)) { Interlocked.Exchange(ref sending, 0); return; }
-            Vector2 native;
-            if (TryMapPosition(world, out native)) payload.map = new[] { native.x, native.y };
             var json = JsonUtility.ToJson(payload);
             var secret = token.Value;
             ThreadPool.QueueUserWorkItem(_ => Send(uri, secret, json));
-        }
-
-        private bool TryMapPosition(Vector3 world, out Vector2 native)
-        {
-            native = default(Vector2);
-            try
-            {
-                if (gameMap == null)
-                {
-                    var maps = Resources.FindObjectsOfTypeAll<GameMap>();
-                    foreach (var candidate in maps)
-                        if (candidate != null && typeof(GameMap).GetField("currentScene", Fields)?.GetValue(candidate) != null)
-                        { gameMap = candidate; break; }
-                }
-                if (gameMap == null) return false;
-                var type = typeof(GameMap);
-                var method = type.GetMethod("GetMapPosition", Fields);
-                if (method == null) return false;
-                var args = new object[] {
-                    (Vector2)world,
-                    type.GetField("currentScene", Fields)?.GetValue(gameMap),
-                    type.GetField("currentSceneObj", Fields)?.GetValue(gameMap),
-                    type.GetField("currentScenePos", Fields)?.GetValue(gameMap),
-                    type.GetField("currentSceneSize", Fields)?.GetValue(gameMap)
-                };
-                if (args[1] == null || args[2] == null || args[3] == null || args[4] == null) return false;
-                native = (Vector2)method.Invoke(gameMap, args);
-                return !float.IsNaN(native.x) && !float.IsNaN(native.y) && !float.IsInfinity(native.x) && !float.IsInfinity(native.y);
-            }
-            catch { gameMap = null; return false; }
         }
 
         private void Send(Uri uri, string secret, string json)
@@ -109,7 +74,6 @@ namespace SilksongLiveBridge
             public string scene;
             public float x;
             public float y;
-            public float[] map;
         }
     }
 }

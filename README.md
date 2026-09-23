@@ -1,10 +1,10 @@
 # Silksong Tracker
 
-**v0.3.0 beta** — a local, read-only progress tracker for Hollow Knight: Silksong, inspired by Hollow Tracker.
+**v0.3.1 beta** — a local, read-only progress tracker for Hollow Knight: Silksong, inspired by Hollow Tracker.
 
 Reads your save to show a completion checklist and an interactive map, with Sketch/Screenshots views, navigable interiors, item pins, search, filters, multiple save selection, and automatic save refresh. Unverified map locations can be marked manually in this browser. Runs on your computer at `http://127.0.0.1:7397`; saves are not uploaded or modified.
 
-An **optional BepInEx live bridge** can show Hornet's current position on **Sketch only**, using a Hornet-head marker. It sends coordinates to the tracker on your own computer; it does not modify saves or send data to the internet. Auto-placement is available in 59 rooms with independently matched map points; optional calibration refines it or covers other rooms. This feature is experimental and has not yet been verified in a live game session.
+An **optional BepInEx live bridge** can show Hornet's current position on **Sketch only**, using the supplied Hornet-head image with its outside background clipped away. It sends room-scoped world coordinates to the tracker on your own computer; it does not modify saves or send data to the internet. Auto-placement is available in 59 rooms with independently matched map points. Elsewhere, one click places the marker using an area/global scale estimate; an optional second, distant point can refine that estimate. This feature is experimental and has not yet been verified in a live game session.
 
 ## Download and run (Windows)
 
@@ -30,7 +30,7 @@ On Windows, use `py` instead of `python` if needed. Use `--save-dir "path/to/fol
 py tools/install_live_bridge.py --game-dir "C:\path\to\Hollow Knight Silksong" --dll "C:\path\to\SilksongLiveBridge.dll"
 ```
 
-The installer copies the DLL to the game's `BepInEx/plugins`, creates a private tracker token, and configures the plugin to send only to `127.0.0.1:7397`. It refuses to overwrite an existing installation. If the tracker runs on another port, add `--port NUMBER`. Restart the game and tracker, then refresh Sketch. The status should say **Live: connected**. The dot appears automatically in supported rooms; otherwise use the two on-map calibration points. Calibration stays in your browser and never changes a save. Full [spoiler-free mod setup, verification, and troubleshooting](live-bridge/README.md).
+The installer copies the DLL to the game's `BepInEx/plugins`, creates a private tracker token, and configures the plugin to send only to `127.0.0.1:7397`. For an existing installation, close the game and add `--upgrade` to replace only this bridge DLL while keeping your token/settings. If the tracker runs on another port, add `--port NUMBER` on first install. Restart the game and tracker, then refresh Sketch. The status should say **Live: connected**. The marker appears automatically in supported rooms; otherwise one on-map click places it approximately and a second can refine it. Calibration stays in your browser and never changes a save. Full [spoiler-free mod setup, verification, and troubleshooting](live-bridge/README.md).
 
 The token in `.live-bridge-token` and the matching BepInEx config is private: do not share either file or post its contents. To disable live tracking, set `Enabled = false` in the plugin config or remove the DLL.
 
@@ -42,11 +42,11 @@ Map artwork, icons, and the upstream map dataset are **not bundled in this repos
 - Of 1,419 map pins, 1,206 have save rules, 166 are reference locations, and **47 objectives still need verified automatic tracking**. You can mark those 47 manually per save; these marks live in this browser and never change a game save. Use Export/Import backup in the map sidebar to move or safeguard those marks (the import replaces marks for the selected save after confirmation). “Only left” includes confirmed incomplete and manually marked incomplete pins.
 - All 193 checklist entries resolve against the tested early-game save, but late-game transitions and every supported game version have **not** been independently validated. Missing fields remain unknown rather than being guessed.
 - Sketch groups pins that share an in-game map point into numbered item icons. A group opens its member locations and can switch to their exact placement in Screenshots, including detached interiors. Six pins lack sketch coordinates and use the Screenshots view. Some source locations may be inaccurate.
-- Live auto-placement currently covers 59 rooms; this was derived from 236 matched in-game objects and map pins, not an in-game runtime check. It may be approximate or unavailable in other rooms. Manual two-point calibration remains optional where auto-placement works and necessary for precise positioning in unrecognized rooms. The mod's game-version compatibility and native-map fallback still need in-game validation.
+- Live auto-placement currently covers 59 rooms; this was derived from 236 matched in-game objects and map pins, not an in-game runtime check. It may be approximate or unavailable in other rooms. One-click room calibration uses a verified area or global scale estimate; its position can drift as you move, so a second distant point can refine scale. Both modes still need in-game alignment checks. Previous calibration data is intentionally ignored after a coordinate-system bug; manual marks are unaffected.
 - A clean-clone Windows installation and a two-slot selection were tested. Malformed saves, further slot layouts, and cross-platform behavior need broader testing. This is a beta, not a guaranteed 100% completion authority.
 - Third-party asset redistribution permission is not established; no artwork redistribution rights are claimed.
 
-Tests (after map setup): `python -m unittest discover -s tests -v`. Passing tests do not prove full in-game coverage. `python tools/validate_progress.py` performs a read-only, count-only check of discovered saves without printing game-content names. See [validation evidence and remaining gaps](TRACKING_VALIDATION.md) (contains spoilers).
+Tests (after map setup): `python -m unittest discover -s tests -v` and `node tests/test_live_math.js`. Passing tests do not prove full in-game coverage. `python tools/validate_progress.py` performs a read-only, count-only check of discovered saves without printing game-content names. See [validation evidence and remaining gaps](TRACKING_VALIDATION.md) (contains spoilers).
 
 Please report bugs with the tracker/game version and expected versus observed behavior. **Do not post your save file or personal paths publicly.** Mark game-content reports as spoilers.
 

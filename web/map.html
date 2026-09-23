@@ -32,9 +32,9 @@
       <span>HORNET · LIVE</span>
       <p id="live-detail" class="help">Waiting for the optional local bridge.</p>
       <button id="center-hornet" type="button" disabled>Center on Hornet</button>
-      <button id="calibrate-hornet" type="button" disabled>Place calibration point 1</button>
+      <button id="calibrate-hornet" type="button" disabled>Calibrate current room</button>
       <button id="reset-calibration" type="button">Clear calibration</button>
-      <p class="help">On Sketch, capture two different standing positions. After each capture, click that exact spot on the map. This never changes your save.</p>
+      <p class="help">Stand still, click Calibrate, then click Hornet’s exact spot on Sketch. One point corrects this room; a distant second point may refine scale. This never changes your save.</p>
     </section>
     <p class="help">Numbered icons on Sketch group locations that share one map point. Open a group to choose a pin or see its exact position in Screenshots. Use + / − or scroll to zoom. Drag to pan.</p>
     <p class="credit">Map &amp; placement: <a href="https://scripterswar.com/silksong/map" target="_blank" rel="noreferrer">RainingChain &amp; IdoManti</a><br>Game artwork © Team Cherry</p>
@@ -42,6 +42,7 @@
   <section class="stage"><div id="map" aria-label="Interactive Pharloom map"></div><div id="map-message" role="status" hidden></div></section>
 </main>
 <div id="error" role="alert" hidden></div>
-<script src="/vendor/leaflet.js"></script><script src="/map.js"></script>
+<svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs><clipPath id="hornet-head-cutout" clipPathUnits="objectBoundingBox"><path d="M .340 .002 C .323 .000 .290 .045 .250 .110 C .147 .276 .117 .460 .125 .560 C .134 .746 .221 .938 .366 .985 C .411 1.002 .461 1.003 .500 1 C .539 1.003 .589 1.002 .634 .985 C .779 .938 .866 .746 .875 .560 C .883 .460 .853 .276 .750 .110 C .710 .045 .677 .000 .660 .002 C .648 .003 .652 .022 .668 .070 C .711 .200 .731 .325 .706 .440 C .678 .540 .607 .606 .535 .615 C .512 .620 .488 .620 .465 .615 C .393 .606 .322 .540 .294 .440 C .269 .325 .289 .200 .332 .070 C .348 .022 .352 .003 .340 .002 Z"/></clipPath></defs></svg>
+<script src="/vendor/leaflet.js"></script><script src="/live-position.js"></script><script src="/map.js"></script>
 </body>
 </html>

@@ -13,6 +13,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--game-dir", required=True, type=Path, help="Hollow Knight Silksong install directory")
     parser.add_argument("--dll", type=Path, help="DLL from the separate mod release archive; omit when building from source")
+    parser.add_argument("--upgrade", action="store_true", help="replace only this bridge DLL while keeping its existing config/token")
     parser.add_argument("--port", type=int, default=7397, help="local tracker port")
     args = parser.parse_args()
     game = args.game_dir.resolve()
@@ -26,7 +27,18 @@ def main() -> None:
     destination = game / "BepInEx/plugins/SilksongLiveBridge.dll"
     config = game / "BepInEx/config/dev.silksongtracker.livebridge.cfg"
     if destination.exists() or config.exists():
-        parser.error("Bridge already installed. No files were overwritten; update it manually after checking existing config.")
+        if not args.upgrade or not destination.is_file() or not config.is_file():
+            parser.error("Bridge already installed. Use --upgrade with the game closed to replace only its DLL.")
+        token_file = ROOT / ".live-bridge-token"
+        if not token_file.is_file():
+            parser.error("Tracker token is missing; existing installation was not changed.")
+        token = token_file.read_text(encoding="ascii").strip()
+        configured = config.read_text(encoding="utf-8")
+        if len(token) != 64 or not any(line.strip() == "Token = " + token for line in configured.splitlines()):
+            parser.error("Existing plugin token does not match this tracker; nothing was changed.")
+        shutil.copy2(source, destination)
+        print("Updated only the bridge DLL; existing token and settings were kept. Restart the game.")
+        return
     token_file = ROOT / ".live-bridge-token"
     if token_file.exists():
         token = token_file.read_text(encoding="ascii").strip()
