@@ -11,6 +11,47 @@
   const position=m=>{const p=m[style==='sketch'?'pos2':'pos'];return Array.isArray(p)&&p.length===2&&p.every(Number.isFinite)?p:null;};
   const objects=new Map(), cats=new Map(), shown=new Set(), interiorByMember=new Map(), sketchGroupByMember=new Map();
   const sketchGroups=[];
+  let live=null,livePin=null,calibration={},pendingAnchor=null;
+  try {calibration=JSON.parse(localStorage.getItem('ss.map.live.calibration.v1')||'{}')||{};} catch {}
+  function liveSource(p){return p.map&&p.map.length===2?{key:'native',point:p.map}:{key:'world:'+p.scene,point:[p.x,p.y]};}
+  function transformLive(point,anchors){
+    if(!Array.isArray(anchors)||anchors.length!==2)return null;
+    const [a,b]=anchors,dx=b.source[0]-a.source[0],dy=b.source[1]-a.source[1],length=dx*dx+dy*dy;
+    if(length<1e-6)return null;
+    const ux=b.sketch[1]-a.sketch[1],uy=b.sketch[0]-a.sketch[0];
+    const real=(ux*dx+uy*dy)/length,imag=(uy*dx-ux*dy)/length;
+    const px=point[0]-a.source[0],py=point[1]-a.source[1];
+    return [a.sketch[0]+imag*px+real*py,a.sketch[1]+real*px-imag*py];
+  }
+  function redrawLive(){
+    const hide=()=>{if(livePin){map.removeLayer(livePin);livePin=null;}};
+    const connected=live?.connected&&live.position;
+    $('#live-status').textContent=connected?'Live: connected':'Live: waiting';
+    $('#calibrate-hornet').disabled=!connected||style!=='sketch';
+    $('#center-hornet').disabled=true;
+    if(!connected){hide();$('#live-detail').textContent='Waiting for the optional local bridge.';return;}
+    const source=liveSource(live.position),anchors=calibration[source.key]||[];
+    $('#calibrate-hornet').textContent='Place calibration point '+(anchors.length===1?'2':'1');
+    if(style!=='sketch'){hide();$('#live-detail').textContent='Live position appears on Sketch only.';return;}
+    if(anchors.length!==2){hide();$('#live-detail').textContent='Connected. Set '+(anchors.length===1?'one more':'two')+' calibration point'+(anchors.length===1?'':'s')+' on Sketch.';return;}
+    const p=transformLive(source.point,anchors),bounds=L.latLngBounds(data.sketch.bounds);
+    if(!p||!bounds.contains(p)){hide();$('#live-detail').textContent='Position is outside the calibrated Sketch; recalibrate in this area.';return;}
+    if(livePin)livePin.setLatLng(p);
+    else {
+      livePin=L.marker(p,{zIndexOffset:10000,icon:L.divIcon({className:'hornet-live',iconSize:[30,30],iconAnchor:[15,15]}),title:'Hornet · live position',alt:'Hornet live position'}).addTo(map);
+      livePin.bindPopup('Hornet · live position');
+    }
+    $('#center-hornet').disabled=false;
+    $('#live-detail').textContent='Live position on Sketch'+(source.key==='native'?'':' · calibrated for current room')+'.';
+  }
+  async function pollLive(){
+    try {const response=await fetch('/api/live-position',{cache:'no-store'});if(response.ok)live=await response.json();else live=null;}
+    catch {live=null;}
+    if(map&&data){
+      redrawLive();
+      if(pendingAnchor&&live?.connected&&style==='sketch')$('#live-detail').textContent='Now click Hornet’s exact position on Sketch.';
+    }
+  }
   let hidden=new Set(), query='', onlyLeft=false, manual={}, manualKey='';
   try {hidden=new Set(JSON.parse(localStorage.getItem('ss.map.hidden.v2')||'null')||[]);onlyLeft=localStorage.getItem('ss.map.left')==='1';} catch {}
   const NEVER_DIM=new Set(['benches','bellway','ventrica','maps']);
@@ -170,6 +211,7 @@
     const anchor=data.markers.filter(m=>Array.isArray(m.pos2)&&m.pos2.every(Number.isFinite)).sort((a,b)=>oldCentre.distanceTo(L.latLng(position(a)))-oldCentre.distanceTo(L.latLng(position(b))))[0];
     const oldAnchor=anchor&&position(anchor);
     style=next;localStorage.setItem('ss.map.style',style);
+    pendingAnchor=null;
     const info=meta(),bounds=L.latLngBounds(info.bounds);
     if(tileLayer)map.removeLayer(tileLayer);
     map.stop();map.setMaxBounds(null);map.setMaxZoom(info.maxZoom);map.stop();
@@ -203,6 +245,7 @@
     message(chosen&&style==='sketch'&&sketchGroupByMember.has(chosen.id)?'This location shares a Sketch point. Click the numbered icon to choose it.':chosen&&!position(chosen)?'This location has no researched sketch position. Switch to Screenshots to see it.':'');
     const url=new URL(location.href);url.searchParams.set('style',style);history.replaceState(null,'',url);
     tidyLabels();
+    redrawLive();
   }
   function buildLayers(){
     const host=$('#layers');host.replaceChildren();
@@ -251,6 +294,34 @@
       map.fitBounds(bounds);
       setStyle(style);map.fitBounds(bounds);
       $('#map-style').onclick=()=>setStyle(style==='sketch'?'real':'sketch');
+      $('#center-hornet').onclick=()=>{if(livePin)map.setView(livePin.getLatLng(),Math.max(map.getZoom(),1));};
+      $('#calibrate-hornet').onclick=()=>{
+        if(!live?.connected||!live.position||style!=='sketch')return;
+        const source=liveSource(live.position),anchors=calibration[source.key]||[];
+        pendingAnchor={key:source.key,source:[...source.point],index:anchors.length===1?1:0};
+        $('#live-detail').textContent='Now click Hornet’s exact position on Sketch.';
+      };
+      $('#reset-calibration').onclick=()=>{
+        if(!live?.position)return;
+        const key=liveSource(live.position).key;delete calibration[key];pendingAnchor=null;
+        localStorage.setItem('ss.map.live.calibration.v1',JSON.stringify(calibration));redrawLive();
+      };
+      map.on('click',event=>{
+        if(!pendingAnchor||style!=='sketch')return;
+        const {key,source,index}=pendingAnchor;pendingAnchor=null;
+        const anchors=index===1?(calibration[key]||[]).slice(0,1):[];
+        const sketch=[event.latlng.lat,event.latlng.lng];
+        if(index===1&&anchors.length===1){
+          const first=anchors[0],dx=source[0]-first.source[0],dy=source[1]-first.source[1];
+          if(dx*dx+dy*dy<1||Math.hypot(sketch[0]-first.sketch[0],sketch[1]-first.sketch[1])<5){
+            $('#live-detail').textContent='The two points are too close. Move farther and capture point 2 again.';return;
+          }
+        }
+        anchors.push({source,sketch});
+        calibration[key]=anchors;
+        localStorage.setItem('ss.map.live.calibration.v1',JSON.stringify(calibration));redrawLive();
+      });
+      pollLive();setInterval(pollLive,750);
       map.on('zoomend moveend resize',tidyLabels);
       tidyLabels();
       map.on('zoomend',()=>{for(const m of data.markers)if(objects.has(m.id))objects.get(m.id).setIcon(icon(m));});

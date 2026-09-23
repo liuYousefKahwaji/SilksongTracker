@@ -12,3 +12,6 @@ source/
 data/map/
 data/map_tracking_audit.json
 web/assets/
+live-bridge/**/bin/
+live-bridge/**/obj/
+.live-bridge-token

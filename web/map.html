@@ -10,6 +10,7 @@
 <header class="map-header">
   <a class="back" href="/">← Checklist</a><h1>Pharloom</h1>
   <span id="save-status">Loading…</span>
+  <span id="live-status" aria-live="polite">Live: waiting</span>
   <input id="map-search" type="search" placeholder="Search items, bosses, places…" aria-label="Search map">
   <label><input id="only-left" type="checkbox"> Only left</label>
   <button id="map-style" title="Switch map artwork">Screenshots</button><button id="fit">Whole map</button><button id="toggle-layers" aria-expanded="true">Layers</button>
@@ -27,6 +28,14 @@
     <section id="results" hidden aria-label="Search results"></section>
     <div id="layers"></div>
     <p id="tracking-summary" class="help"></p>
+    <section class="live-tools" aria-label="Live position">
+      <span>HORNET · LIVE</span>
+      <p id="live-detail" class="help">Waiting for the optional local bridge.</p>
+      <button id="center-hornet" type="button" disabled>Center on Hornet</button>
+      <button id="calibrate-hornet" type="button" disabled>Place calibration point 1</button>
+      <button id="reset-calibration" type="button">Clear calibration</button>
+      <p class="help">On Sketch, capture two different standing positions. After each capture, click that exact spot on the map. This never changes your save.</p>
+    </section>
     <p class="help">Numbered icons on Sketch group locations that share one map point. Open a group to choose a pin or see its exact position in Screenshots. Use + / − or scroll to zoom. Drag to pan.</p>
     <p class="credit">Map &amp; placement: <a href="https://scripterswar.com/silksong/map" target="_blank" rel="noreferrer">RainingChain &amp; IdoManti</a><br>Game artwork © Team Cherry</p>
   </aside>

@@ -1,8 +1,10 @@
 # Silksong Tracker
 
-**v0.2.1 beta** — a local, read-only progress tracker for Hollow Knight: Silksong, inspired by Hollow Tracker.
+**v0.2.2 beta** — a local, read-only progress tracker for Hollow Knight: Silksong, inspired by Hollow Tracker.
 
 Reads your save to show a completion checklist and an interactive map, with Sketch/Screenshots views, navigable interiors, item pins, search, filters, multiple save selection, and automatic save refresh. Unverified map locations can be marked manually in this browser. Runs on your computer at `http://127.0.0.1:7397`; saves are not uploaded or modified.
+
+An **optional BepInEx live bridge** can show Hornet's current position on **Sketch only**. It sends coordinates to the tracker on your own computer; it does not modify saves or send data to the internet. See [spoiler-free setup and calibration](live-bridge/README.md). This feature is experimental and has not yet been verified in a live game session.
 
 ## Run
 

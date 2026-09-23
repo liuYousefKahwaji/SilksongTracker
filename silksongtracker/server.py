@@ -6,9 +6,11 @@ import argparse
 import json
 import mimetypes
 import os
+import secrets
 import threading
 import time
 import webbrowser
+import math
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
@@ -18,6 +20,7 @@ from .state import TrackerState
 from .codec import find_saves
 
 WEB = ROOT / "web"
+LIVE_TTL = 5.0
 
 
 class App:
@@ -25,6 +28,14 @@ class App:
         self.state = TrackerState(extra_dirs)
         self.lock = threading.RLock()
         self.stop = False
+        self.live = None
+        self.live_time = 0.0
+        token_file = ROOT / ".live-bridge-token"
+        if token_file.is_file():
+            self.live_token = token_file.read_text(encoding="ascii").strip()
+        else:
+            self.live_token = secrets.token_hex(32)
+            token_file.write_text(self.live_token + "\n", encoding="ascii")
 
     def refresh(self):
         with self.lock: self.state.refresh()
@@ -40,6 +51,9 @@ class App:
         with self.lock:
             if kind == "state": return self.state.state()
             if kind == "map": return self.state.map()
+            if kind == "live":
+                return {"connected": bool(self.live and time.monotonic() - self.live_time < LIVE_TTL),
+                        "position": self.live if self.live and time.monotonic() - self.live_time < LIVE_TTL else None}
             if kind == "meta":
                 content = load_content()
                 return {"game": "Hollow Knight: Silksong", "version": content.get("version"), "areas": load_areas(), "sections": [{"id": x["id"], "name": x["name"], "total": len(x.get("entries", []))} for x in content.get("sections", [])]}
@@ -48,7 +62,7 @@ class App:
 
 def make_handler(app: App):
     class Handler(BaseHTTPRequestHandler):
-        server_version = "SilksongTracker/0.2.1"
+        server_version = "SilksongTracker/0.2.2"
 
         def log_message(self, fmt, *args):
             if os.environ.get("SILKSONG_TRACKER_LOG"):
@@ -63,6 +77,7 @@ def make_handler(app: App):
             parsed = urlparse(self.path); route = parsed.path
             if route == "/api/state": return self.send_json(app.payload("state"))
             if route == "/api/map": return self.send_json(app.payload("map"))
+            if route == "/api/live-position": return self.send_json(app.payload("live"))
             if route == "/api/meta": return self.send_json(app.payload("meta"))
             if route == "/health": return self.send_json({"ok": True, "game": "silksong"})
             if route == "/events":
@@ -94,6 +109,29 @@ def make_handler(app: App):
 
         def do_POST(self):
             parsed = urlparse(self.path)
+            if parsed.path == "/api/live-position":
+                if not secrets.compare_digest(self.headers.get("X-Silksong-Live-Token", ""), app.live_token):
+                    return self.send_json({"error": "unauthorized"}, 403)
+                try:
+                    size = int(self.headers.get("Content-Length", "0"))
+                    if not 0 < size <= 1024: raise ValueError("invalid payload size")
+                    value = json.loads(self.rfile.read(size))
+                    if not isinstance(value, dict): raise ValueError("invalid payload")
+                    scene = value.get("scene")
+                    if not isinstance(scene, str) or not 0 < len(scene) <= 100: raise ValueError("invalid scene")
+                    for key in ("x", "y"):
+                        if isinstance(value.get(key), bool) or not isinstance(value.get(key), (int, float)) or not math.isfinite(value[key]):
+                            raise ValueError("invalid coordinate")
+                    native = value.get("map")
+                    if native == []: native = None
+                    if native is not None and (not isinstance(native, list) or len(native) != 2 or any(isinstance(v, bool) or not isinstance(v, (int, float)) or not math.isfinite(v) for v in native)):
+                        raise ValueError("invalid map coordinate")
+                except (ValueError, TypeError, json.JSONDecodeError):
+                    return self.send_json({"error": "invalid live position"}, 400)
+                with app.lock:
+                    app.live = {"scene": scene, "x": value["x"], "y": value["y"], "map": native}
+                    app.live_time = time.monotonic()
+                return self.send_json({"ok": True})
             if parsed.path == "/api/select":
                 query = parse_qs(parsed.query)
                 try:
