@@ -18,9 +18,28 @@ from silksongtracker.schema import SaveView  # noqa: E402
 from silksongtracker.mapdata import build_map, flag_status  # noqa: E402
 from tools.build_map import interior_groups, live_config, map_connections  # noqa: E402
 from silksongtracker.server import App  # noqa: E402
+from silksongtracker.state import TrackerState  # noqa: E402
 
 
 class CoreTests(unittest.TestCase):
+    def test_save_selection_keeps_exact_file_when_slots_repeat(self):
+        state = TrackerState.__new__(TrackerState)
+        state.extra_dirs = []
+        state.saves = []
+        state.selected_slot = None
+        state.selected_path = None
+        files = [
+            {'slot': 1, 'path': 'first.dat', 'size': 2, 'mtime': 1},
+            {'slot': 1, 'path': 'second.dat', 'size': 2, 'mtime': 1},
+        ]
+        with patch('silksongtracker.state.find_saves', side_effect=[files, files, list(reversed(files))]), patch('silksongtracker.state.read_save', side_effect=lambda path: {'chosen':path}):
+            state.refresh()
+            state.select_index(1)
+            self.assertEqual(state.raw['chosen'], 'second.dat')
+            state.refresh()
+        self.assertEqual(state.state()['selectedSaveIndex'], 0)
+        with self.assertRaises(ValueError): state.select_index(2)
+
     def test_save_changes_refresh_live_map_state(self):
         app = App.__new__(App)
         app.lock = threading.RLock()

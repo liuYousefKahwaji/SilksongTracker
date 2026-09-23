@@ -9,25 +9,46 @@
   if(style!=='real')style='sketch';
   const meta=()=>style==='sketch'?data.sketch:data.image;
   const position=m=>{const p=m[style==='sketch'?'pos2':'pos'];return Array.isArray(p)&&p.length===2&&p.every(Number.isFinite)?p:null;};
-  const objects=new Map(), cats=new Map(), shown=new Set(), entranceObjects=new Map(), interiorByMember=new Map();
-  let hidden=new Set(), query='', onlyLeft=false;
+  const objects=new Map(), cats=new Map(), shown=new Set(), interiorByMember=new Map(), sketchGroupByMember=new Map();
+  const sketchGroups=[];
+  let hidden=new Set(), query='', onlyLeft=false, manual={}, manualKey='';
   try {hidden=new Set(JSON.parse(localStorage.getItem('ss.map.hidden.v2')||'null')||[]);onlyLeft=localStorage.getItem('ss.map.left')==='1';} catch {}
   const NEVER_DIM=new Set(['benches','bellway','ventrica','maps']);
   function image(file, alt='') {const e=node('img');e.src='/map/icons/'+encodeURIComponent(file);e.alt=alt;return e;}
   function message(text) {$('#map-message').textContent=text;$('#map-message').hidden=!text;}
   function persist(){localStorage.setItem('ss.map.hidden.v2',JSON.stringify([...hidden]));localStorage.setItem('ss.map.left',onlyLeft?'1':'0');}
+  function loadManual(){
+    const key='ss.map.manual.v1.'+(data.saveKey||'no-save');
+    if(key===manualKey)return;
+    manualKey=key;manual={};
+    try {const saved=JSON.parse(localStorage.getItem(key)||'{}');if(saved&&typeof saved==='object'&&!Array.isArray(saved))for(const [id,value] of Object.entries(saved))if(value==='left'||value==='complete')manual[id]=value;} catch {}
+  }
+  function manualStatus(m){return m.tracking==='unverified'&&manual[m.id]||m.status;}
+  function setManual(m,value){
+    if(value)manual[m.id]=value;else delete manual[m.id];
+    localStorage.setItem(manualKey,JSON.stringify(manual));
+    if(objects.has(m.id)){objects.get(m.id).setIcon(icon(m));objects.get(m.id).setPopupContent(()=>popup(m));}
+    draw();
+  }
   function resetLayers(){hidden=new Set(['shortcut','permFlags','rosary','shard','rosaryitem','sharditem','tradable','memento','silkeater','npc','wish','questitem','arena']);persist();}
   function title(m){return m.name.replace(/^(Tool|Ability|Upgrade|Boss)\s*-\s*/i,'');}
   function matches(m){return (!scope||scope.has(m.id))&&(!category||m.cat===category)&&(!query||(m.name+' '+cats.get(m.cat).name).toLowerCase().includes(query));}
-  function eligible(m){if(m.id===selected)return true;if(onlyLeft&&m.status!=='left')return false;if(query||category||scope)return matches(m);return !hidden.has(m.cat);}
-  function visible(m){if(!position(m))return false;if(style==='sketch'&&interiorByMember.has(m.id))return false;return eligible(m);}
-  function icon(m){const size=map&&map.getZoom()<1?16:28;return L.icon({iconUrl:'/map/icons/'+encodeURIComponent(m.icon),iconSize:[size,size],iconAnchor:[size/2,size/2],popupAnchor:[0,-size/2],className:'pin'+(m.status==='complete'&&!NEVER_DIM.has(m.cat)?' done':'')+(selected===m.id?' selected':'')});}
+  function eligible(m){if(m.id===selected)return true;if(onlyLeft&&manualStatus(m)!=='left')return false;if(query||category||scope)return matches(m);return !hidden.has(m.cat);}
+  function visible(m){if(!position(m))return false;if(style==='sketch'&&sketchGroupByMember.has(m.id))return false;return eligible(m);}
+  function icon(m){const size=map&&map.getZoom()<1?16:28;return L.icon({iconUrl:'/map/icons/'+encodeURIComponent(m.icon),iconSize:[size,size],iconAnchor:[size/2,size/2],popupAnchor:[0,-size/2],className:'pin'+(manualStatus(m)==='complete'&&!NEVER_DIM.has(m.cat)?' done':'')+(selected===m.id?' selected':'')});}
   function popup(m){
     const box=node('div'),heading=node('div','popup-heading');
     heading.append(image(m.icon),node('b',null,title(m)));box.append(heading,node('div','popup-category',cats.get(m.cat).name));
-    const status=m.tracking==='reference'?'Reference location':m.tracking==='unverified'?'Tracking needs verification':!data.hasSave?'No save loaded':m.status==='unavailable'?'Alternative already owned':m.status==='complete'?'Collected / completed':m.status==='left'?'Not completed':'Save data unavailable';
-    box.append(node('span','popup-state '+m.status,status));
+    const status=m.tracking==='reference'?'Reference location':m.tracking==='unverified'&&manual[m.id]?'Manually marked '+(manual[m.id]==='complete'?'complete':'incomplete'):m.tracking==='unverified'?'Tracking needs verification':!data.hasSave?'No save loaded':m.status==='unavailable'?'Alternative already owned':m.status==='complete'?'Collected / completed':m.status==='left'?'Not completed':'Save data unavailable';
+    box.append(node('span','popup-state '+manualStatus(m),status));
     if(m.trackingNote)box.append(node('p','popup-note',m.trackingNote));
+    if(m.tracking==='unverified'){
+      const controls=node('div','popup-manual');
+      const done=node('button',null,'Mark done'),left=node('button',null,'Mark left');
+      done.onclick=e=>{L.DomEvent.stop(e);setManual(m,'complete');};left.onclick=e=>{L.DomEvent.stop(e);setManual(m,'left');};controls.append(done,left);
+      if(manual[m.id]){const clear=node('button',null,'Clear mark');clear.onclick=e=>{L.DomEvent.stop(e);setManual(m,null);};controls.append(clear);}
+      box.append(controls,node('p','popup-note','Manual marks stay in this browser for this save; they do not change the game file.'));
+    }
     if(Array.isArray(m.acts))box.append(node('p','popup-note','Act '+m.acts.join(' / ')));
     const note=typeof m.note==='string'?m.note:typeof m.notes==='string'?m.notes:'';
     if(note)box.append(node('p','popup-note',note));
@@ -50,62 +71,71 @@
     }
     return objects.get(m.id);
   }
-  function interiorPopup(interior,members){
-    const box=node('div'),heading=node('div','popup-heading'),door=node('span','interior-door','↳');
-    heading.append(door,node('b',null,interior.name));box.append(heading,node('div','popup-category','Interior · '+members.length+' visible location'+(members.length===1?'':'s')));
-    const list=node('div','interior-list');
-    for(const m of members.slice(0,8))list.append(node('span',null,title(m)));
-    if(members.length>8)list.append(node('span',null,'+'+(members.length-8)+' more'));
+  function sketchGroupPopup(group,members){
+    const box=node('div'),heading=node('div','popup-heading');
+    heading.append(image(members[0].icon),node('b',null,group.interior?.name&&group.interior.name!=='Interior'?group.interior.name:'Locations here'));
+    box.append(heading,node('div','popup-category',members.length+' location'+(members.length===1?'':'s')+' at this map point'));
+    const list=node('div','sketch-stack-list');
+    for(const m of members){
+      const item=node('button','sketch-stack-item');item.append(image(m.icon),node('span',null,title(m)));
+      if(manualStatus(m)==='complete')item.append(node('small',null,'✓'));
+      item.onclick=()=>focus(m);list.append(item);
+    }
     box.append(list);
-    const open=node('button','interior-open','Open interior');open.onclick=()=>openInterior(interior);box.append(open);
+    if(group.interior){const open=node('button','interior-open','View in Screenshots');open.onclick=()=>openInterior(group.interior);box.append(open);}
     return box;
   }
-  function drawEntrances(){
-    entrances.clearLayers();entranceObjects.clear();
+  function drawSketchGroups(){
+    entrances.clearLayers();
     if(style!=='sketch')return;
-    for(const interior of data.interiors||[]){
-      const members=interior.members.map(id=>data.markers.find(m=>m.id===id)).filter(m=>m&&eligible(m));
+    for(const group of sketchGroups){
+      const members=group.members.filter(eligible);
       if(!members.length)continue;
-      const place=interior.name==='Interior'?'interior':interior.name+' interior',locations=members.length+' visible location'+(members.length===1?'':'s');
-      const icon=L.divIcon({className:'interior-entrance',html:'<span aria-hidden="true">↳</span><small>'+members.length+'</small>',iconSize:[34,34],iconAnchor:[17,17]});
-      const pin=L.marker(interior.entrance,{icon,title:'Open '+place,alt:'Open '+place,keyboard:true,riseOnHover:true});
-      pin.bindPopup(()=>interiorPopup(interior,members),{maxWidth:300});pin.addTo(entrances);
-      pin.getElement()?.setAttribute('aria-label','Open '+place+', '+locations);entranceObjects.set(interior.id,pin);
+      if(members.length===1){
+        const m=members[0],pin=L.marker(group.pos,{icon:icon(m),title:title(m),alt:title(m),keyboard:true,riseOnHover:true});
+        pin.on('click',()=>focus(m));pin.addTo(entrances);continue;
+      }
+      const representative=members[0],size=24;
+      const html='<img alt="" src="/map/icons/'+encodeURIComponent(representative.icon)+'"><small>'+members.length+'</small>';
+      const stackIcon=L.divIcon({className:'sketch-stack'+(members.every(m=>manualStatus(m)==='complete')?' done':''),html,iconSize:[size,size],iconAnchor:[size/2,size/2]});
+      const pin=L.marker(group.pos,{icon:stackIcon,title:members.length+' locations',alt:members.length+' locations',keyboard:true,riseOnHover:true});
+      pin.bindPopup(()=>sketchGroupPopup(group,members),{maxWidth:300});pin.addTo(entrances);
+      pin.getElement()?.setAttribute('aria-label',members.length+' locations at this map point');
     }
-    return entranceObjects.size;
   }
   function openInterior(interior){
     selected=null;setStyle('real');
     const all=interior.members.map(id=>data.markers.find(m=>m.id===id)).filter(Boolean),members=all.filter(eligible);
     const points=members.map(m=>L.latLng(m.pos));
     if(points.length)map.fitBounds(L.latLngBounds(points),{padding:[90,90],maxZoom:3});
-    message((interior.name==='Interior'?'Interior':interior.name+' interior')+' · '+members.length+' visible location'+(members.length===1?'':'s'));
+    message((interior.name==='Interior'?'Detailed map':interior.name)+' · '+members.length+' visible location'+(members.length===1?'':'s'));
     history.replaceState(null,'','/map?interior='+encodeURIComponent(interior.id)+'&style=real');
   }
   function draw(){
     const wanted=new Set(data.markers.filter(visible).map(m=>m.id));
     for(const id of shown)if(!wanted.has(id)){pins.removeLayer(objects.get(id));shown.delete(id);}
     for(const m of data.markers)if(wanted.has(m.id)&&!shown.has(m.id)){marker(m).addTo(pins);shown.add(m.id);}
-    const interiorCount=drawEntrances()||0;
-    $('#visible-count').textContent=shown.size+' pins'+(interiorCount?' · '+interiorCount+' interiors':'');
+    drawSketchGroups();
+    $('#visible-count').textContent=data.markers.filter(m=>position(m)&&eligible(m)).length+' locations';
     const reference=data.markers.filter(m=>m.tracking==='reference').length,unverified=data.markers.filter(m=>m.tracking==='unverified').length;
-    $('#tracking-summary').textContent=reference+' reference locations · '+unverified+' objectives awaiting verified tracking. Only left shows confirmed incomplete objectives; an explicitly focused pin stays visible.';
-    $('#save-status').textContent=data.hasSave?'Save loaded · '+data.markers.filter(m=>m.status==='complete').length+' completed':'No save loaded';
+    $('#tracking-summary').textContent=reference+' reference locations · '+unverified+' objectives awaiting verified save rules. These can be marked manually; Only left includes confirmed and manually marked incomplete locations. An explicitly focused pin stays visible.';
+    $('#save-status').textContent=data.saveError?'Slot '+data.slot+' · save unreadable':data.hasSave?'Slot '+data.slot+' · '+data.markers.filter(m=>m.status==='complete').length+' completed':'No save loaded';
+    $('#save-status').title=data.saveError||'';
     const result=$('#results'); result.replaceChildren();result.hidden=!(query||category||scope);
     if(!result.hidden){
-      const found=data.markers.filter(m=>matches(m)&&(!onlyLeft||m.status==='left'||m.id===selected));
+      const found=data.markers.filter(m=>matches(m)&&(!onlyLeft||manualStatus(m)==='left'||m.id===selected));
       result.append(node('h2',null,found.length+' locations'));
-      for(const m of found.slice(0,100)){const b=node('button','result'),label=node('span',null,title(m));label.append(node('small',null,cats.get(m.cat).name+(!position(m)?' · Screenshots only':style==='sketch'&&interiorByMember.has(m.id)?' · Interior':'')));b.append(image(m.icon),label);b.onclick=()=>focus(m);result.append(b);}
+      for(const m of found.slice(0,100)){const b=node('button','result'),label=node('span',null,title(m));label.append(node('small',null,cats.get(m.cat).name+(!position(m)?' · Screenshots only':style==='sketch'&&sketchGroupByMember.has(m.id)?' · Stacked location':'')));b.append(image(m.icon),label);b.onclick=()=>focus(m);result.append(b);}
       if(!found.length)result.append(node('p','empty-results','No mapped location matches this search.'));
       if(found.length>100)result.append(node('p','help','Showing the first 100 results. All matching pins remain on the map.'));
     }
   }
   function focus(m){
-    const inside=interiorByMember.get(m.id),missing=!position(m);
-    if(missing||(style==='sketch'&&inside))setStyle('real');
+    const inside=interiorByMember.get(m.id),stacked=sketchGroupByMember.has(m.id),missing=!position(m);
+    if(missing||(style==='sketch'&&stacked))setStyle('real');
     selected=m.id;draw();map.setView(position(m),Math.min(3,meta().maxZoom),{animate:false});
     const pin=marker(m);pin.setIcon(icon(m));pin.openPopup();
-    message(missing?'This location has no researched sketch position; showing Screenshots.':inside?'Opened its interior in Screenshots.':'');history.replaceState(null,'','/map?focus='+encodeURIComponent(m.id)+'&style='+style);
+    message(missing?'This location has no researched sketch position; showing Screenshots.':inside?'Opened its exact location in Screenshots.':'');history.replaceState(null,'','/map?focus='+encodeURIComponent(m.id)+'&style='+style);
   }
   function setStyle(next){
     const oldCentre=map.getCenter(),oldZoom=map.getZoom(),oldMax=meta().maxZoom;
@@ -114,7 +144,7 @@
     style=next;localStorage.setItem('ss.map.style',style);
     const info=meta(),bounds=L.latLngBounds(info.bounds);
     if(tileLayer)map.removeLayer(tileLayer);
-    map.setMaxZoom(info.maxZoom);map.setMaxBounds(bounds.pad(.12));
+    map.stop();map.setMaxBounds(null);map.setMaxZoom(info.maxZoom);map.stop();
     const valid=new Set(style==='sketch'?info.validTiles:data.validTiles),blank='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
     const Tiles=L.TileLayer.extend({getTileUrl(c){return valid.has(c.z+'/'+c.x+'_'+c.y)?L.TileLayer.prototype.getTileUrl.call(this,c):blank;}});
     tileLayer=new Tiles(info.url,{tileSize:info.tileSize,minZoom:-2,minNativeZoom:0,maxNativeZoom:info.maxZoom,maxZoom:info.maxZoom,noWrap:true,bounds,keepBuffer:2,attribution:'Map: RainingChain & IdoManti · © Team Cherry'}).addTo(map);
@@ -135,13 +165,14 @@
     $('#map').setAttribute('data-map-style',style);
     const chosen=data.markers.find(m=>m.id===selected);
     map.closePopup();draw();
-    if(chosen&&style==='sketch'&&interiorByMember.has(chosen.id)){
-      const interior=interiorByMember.get(chosen.id);selected=null;draw();map.setView(interior.entrance,Math.min(oldZoom,info.maxZoom),{animate:false});entranceObjects.get(interior.id)?.openPopup();
+    if(chosen&&style==='sketch'&&sketchGroupByMember.has(chosen.id)){
+      const group=sketchGroupByMember.get(chosen.id);selected=null;draw();map.setView(group.pos,Math.min(oldZoom,info.maxZoom),{animate:false});
       history.replaceState(null,'','/map?style=sketch');
     }else if(chosen&&position(chosen)){map.setView(position(chosen),Math.min(oldZoom,info.maxZoom),{animate:false});marker(chosen).openPopup();}
     else if(anchor){const p=position(anchor);map.setView([p[0]+oldCentre.lat-oldAnchor[0],p[1]+oldCentre.lng-oldAnchor[1]],Math.min(oldZoom+info.maxZoom-oldMax,info.maxZoom),{animate:false});}
     else map.fitBounds(bounds);
-    message(chosen&&!position(chosen)?'This location has no researched sketch position. Switch to Screenshots to see it.':'');
+    map.setMaxBounds(bounds.pad(.12));
+    message(chosen&&style==='sketch'&&sketchGroupByMember.has(chosen.id)?'This location shares a Sketch point. Click the numbered icon to choose it.':chosen&&!position(chosen)?'This location has no researched sketch position. Switch to Screenshots to see it.':'');
     const url=new URL(location.href);url.searchParams.set('style',style);history.replaceState(null,'',url);
     tidyLabels();
   }
@@ -169,14 +200,25 @@
       else occupied.push(r);
     });
   }
+  function indexGroups(){
+    interiorByMember.clear();sketchGroupByMember.clear();sketchGroups.length=0;
+    for(const interior of data.interiors||[])for(const id of interior.members)interiorByMember.set(id,interior);
+    const byPosition=new Map();
+    for(const m of data.markers)if(Array.isArray(m.pos2)&&m.pos2.length===2){const key=JSON.stringify(m.pos2);if(!byPosition.has(key))byPosition.set(key,[]);byPosition.get(key).push(m);}
+    for(const members of byPosition.values())if(members.length>1){
+      const group={pos:members[0].pos2,members,interior:interiorByMember.get(members[0].id)};
+      sketchGroups.push(group);for(const m of members)sketchGroupByMember.set(m.id,group);
+    }
+  }
   async function boot(){
     try{
       const res=await fetch('/api/map');if(!res.ok)throw Error('Map data could not be loaded.');data=await res.json();
+      loadManual();
       for(const c of data.categories)cats.set(c.id,c);
-      for(const interior of data.interiors||[])for(const id of interior.members)interiorByMember.set(id,interior);
+      indexGroups();
       if(!localStorage.getItem('ss.map.hidden.v2'))resetLayers();
       const bounds=L.latLngBounds(meta().bounds);
-      map=L.map('map',{crs:L.CRS.Simple,minZoom:-1,maxZoom:meta().maxZoom,zoomSnap:.5,maxBounds:bounds.pad(.12),maxBoundsViscosity:.8,attributionControl:true});
+      map=L.map('map',{crs:L.CRS.Simple,minZoom:-1,maxZoom:meta().maxZoom,zoomSnap:.5,zoomAnimation:false,maxBounds:bounds.pad(.12),maxBoundsViscosity:.8,attributionControl:true});
       connections=L.layerGroup().addTo(map);pins=L.layerGroup().addTo(map);labels=L.layerGroup().addTo(map);entrances=L.layerGroup().addTo(map);
       map.fitBounds(bounds);
       setStyle(style);map.fitBounds(bounds);
@@ -207,7 +249,7 @@
       const events=new EventSource('/events');events.addEventListener('state',async event=>{
         const state=JSON.parse(event.data),sig=JSON.stringify([state.hasSave,state.slot,state.groups]);
         if(sig===signature)return;signature=sig;
-        const updated=await fetch('/api/map').then(r=>r.json());data=updated;
+        const updated=await fetch('/api/map').then(r=>r.json());data=updated;loadManual();indexGroups();
         for(const m of data.markers)if(objects.has(m.id)){objects.get(m.id).setIcon(icon(m));objects.get(m.id).setPopupContent(()=>popup(m));}
         draw();
       });

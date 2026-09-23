@@ -48,7 +48,7 @@ class App:
 
 def make_handler(app: App):
     class Handler(BaseHTTPRequestHandler):
-        server_version = "SilksongTracker/0.1"
+        server_version = "SilksongTracker/0.2"
 
         def log_message(self, fmt, *args):
             if os.environ.get("SILKSONG_TRACKER_LOG"):
@@ -95,7 +95,15 @@ def make_handler(app: App):
         def do_POST(self):
             parsed = urlparse(self.path)
             if parsed.path == "/api/select":
-                query = parse_qs(parsed.query); slot = int(query.get("slot", [0])[0]); app.state.select(slot); return self.send_json(app.payload("state"))
+                query = parse_qs(parsed.query)
+                try:
+                    with app.lock:
+                        if "index" in query: app.state.select_index(int(query["index"][0]))
+                        elif "slot" in query: app.state.select(int(query["slot"][0]))
+                        else: raise ValueError("Save index is required")
+                        result = app.state.state()
+                except (TypeError, ValueError) as exc: return self.send_json({"error":str(exc)},400)
+                return self.send_json(result)
             if parsed.path == "/api/refresh": app.refresh(); return self.send_json(app.payload("state"))
             self.send_json({"error": "not found"}, 404)
 

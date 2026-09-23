@@ -11,13 +11,25 @@
     $('#percent').textContent = has ? (sum.percent ?? 0) : '—';
     $('#meter-fill').style.width = `${has ? (sum.percent || 0) : 0}%`;
     $('#complete').textContent = has ? `${sum.complete} / ${sum.total}` : `— / ${sum.total || 100}`;
-    $('#left').textContent = has ? `${sum.left} left · ${sum.unknown} unverified` : 'unknown until a save is loaded';
+    $('#left').textContent = has ? `${sum.left} confirmed left · ${sum.unknown} unknown` : 'unknown until a save is loaded';
     $('#slot').textContent = has ? `Slot ${state.slot}` : '—';
     $('#version').textContent = state.saveVersion || (has ? 'version not exposed' : 'No save detected');
-    $('#hero-note').textContent = has ? `${sum.left} completion point${sum.left === 1 ? '' : 's'} remaining` : 'Waiting for a Silksong save';
+    $('#hero-note').textContent = has ? `${sum.left} confirmed left`+(sum.unknown?` · ${sum.unknown} unknown`:'') : 'Waiting for a Silksong save';
     const banner = $('#save-banner'); banner.className = `notice ${has ? 'loaded' : 'waiting'}`;
     banner.querySelector('strong').textContent = state.error ? 'Save needs attention' : has ? `Slot ${state.slot} loaded` : 'No save loaded';
     banner.querySelector('span').innerHTML = esc(state.error || (has ? `${state.path || ''} · the tracker is read-only` : 'Start Silksong once and this page will discover <code>userN.dat</code> automatically.'));
+    const saves = state.saves || [], picker = $('#slot-picker'), slot = $('#save-slot');
+    picker.hidden = saves.length < 2;
+    const signature = saves.map(s => `${s.slot}|${s.path}`).join('\n');
+    if (slot.dataset.signature !== signature) {
+      slot.replaceChildren(...saves.map((save, index) => {
+        const option = document.createElement('option');option.value=String(index);
+        option.textContent = `Slot ${save.slot}`+(saves.filter(s=>s.slot===save.slot).length>1?` · ${save.path.replace(/\\/g,'/').split('/').slice(-2).join('/')}`:'');
+        return option;
+      }));
+      slot.dataset.signature=signature;
+    }
+    slot.value=String(state.selectedSaveIndex ?? 0);
     const q = $('#search').value.trim().toLowerCase(), onlyLeft = $('#only-left').checked, hideUnknown = $('#hide-unknown').checked, hideSupporting = $('#hide-supporting').checked;
     const visibleSections = [];
     for (const group of state.groups || []) {
@@ -34,6 +46,7 @@
   function focusEntry() { if (!initial || focused) return; const entry = document.getElementById(initial); if (entry) { focused = true; entry.scrollIntoView({block:'center'}); entry.classList.add('entry-focused'); } }
   async function load() { try { state = await json('/api/state'); render(); focusEntry(); } catch (e) { $('#save-banner').className = 'notice error'; $('#save-banner span').textContent = e.message; } }
   $('#refresh').addEventListener('click', async () => { $('#refresh').disabled = true; try { state = await json('/api/refresh', {method:'POST'}); render(); } finally { $('#refresh').disabled = false; } });
+  $('#save-slot').addEventListener('change', async () => { const slot=$('#save-slot');slot.disabled=true;try { state=await json('/api/select?index='+encodeURIComponent(slot.value),{method:'POST'});render(); } catch(e) { $('#save-banner').className='notice error';$('#save-banner span').textContent=e.message; } finally { slot.disabled=false; } });
   ['search','only-left','hide-unknown','hide-supporting'].forEach(id => $(`#${id}`).addEventListener(id === 'search' ? 'input' : 'change', render));
   if (initial) { const all = ['only-left','hide-unknown','hide-supporting']; all.forEach(id => $('#'+id).checked = false); }
   load();
