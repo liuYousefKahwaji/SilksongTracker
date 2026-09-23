@@ -5,12 +5,11 @@ This BepInEx plugin samples Hornet's position twice per second and posts it to t
 ## Install (Windows)
 
 1. Install BepInEx for your Silksong game. Close the game before copying files. You need the .NET SDK to build the bridge.
-2. Start the tracker once with `python -m silksongtracker`. This creates a private `.live-bridge-token` file in the tracker folder. Treat its contents like a password; never post it in a bug report or commit it.
-3. From the tracker folder, build with `dotnet build live-bridge/SilksongLiveBridge.csproj -c Release -p:GameDir="C:\path\to\Hollow Knight Silksong"`. If your game is at the default Steam Windows path, omit `-p:GameDir`.
-4. Copy `live-bridge/bin/Release/netstandard2.1/SilksongLiveBridge.dll` to `Hollow Knight Silksong/BepInEx/plugins/`.
-5. Start and quit the game once so BepInEx creates `BepInEx/config/dev.silksongtracker.livebridge.cfg`. In its `[Bridge]` section, set `Enabled = true` and set `Token =` to the contents of `.live-bridge-token`. Keep `Endpoint = http://127.0.0.1:7397/api/live-position` unless your tracker uses a different local port. Restart the game.
+2. From the tracker folder, build with `dotnet build live-bridge/SilksongLiveBridge.csproj -c Release -p:GameDir="C:\path\to\Hollow Knight Silksong"`. If your game is at the default Steam Windows path, omit `-p:GameDir`.
+3. Run `python tools/install_live_bridge.py --game-dir "C:\path\to\Hollow Knight Silksong"`. This creates the private `.live-bridge-token`, copies the DLL, and configures BepInEx. It refuses to overwrite an existing installation. If you use a different tracker port, add `--port 7398` (or your port).
+4. Start the tracker and game. Keep `.live-bridge-token` private; never post it in a bug report or commit it.
 
-The plugin is disabled by default. Disable it again by setting `Enabled = false` or removing its DLL. The tracker never opens an inbound internet port; the endpoint accepts only a matching private token. The token is ignored by Git.
+The plugin defaults to disabled if copied manually; the opt-in installer enables it. Disable it again by setting `Enabled = false` in `BepInEx/config/dev.silksongtracker.livebridge.cfg` or removing its DLL. The tracker never opens an inbound internet port; the endpoint accepts only a matching private token. The token is ignored by Git.
 
 ## Spoiler-free calibration
 
