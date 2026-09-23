@@ -30,11 +30,13 @@
       slot.dataset.signature=signature;
     }
     slot.value=String(state.selectedSaveIndex ?? 0);
-    const q = $('#search').value.trim().toLowerCase(), onlyLeft = $('#only-left').checked, hideUnknown = $('#hide-unknown').checked, hideSupporting = $('#hide-supporting').checked;
+    const q = $('#search').value.trim().toLowerCase(), onlyLeft = $('#only-left').checked, hideUnknown = $('#hide-unknown').checked, hideSupporting = $('#hide-supporting').checked, spoilerLight = $('#spoiler-light').checked;
+    $('#spoiler-note').hidden = !spoilerLight;
+    $('#only-left').disabled = spoilerLight;
     const visibleSections = [];
     for (const group of state.groups || []) {
       if (hideSupporting && !group.points) continue;
-      const entries = (group.entries || []).filter(e => (!q || `${e.name} ${group.name}`.toLowerCase().includes(q)) && (!onlyLeft || e.status === 'left') && (!hideUnknown || e.status !== 'unknown'));
+      const entries = (group.entries || []).filter(e => (!spoilerLight || e.status === 'complete') && (!q || `${e.name} ${group.name}`.toLowerCase().includes(q)) && (spoilerLight || !onlyLeft || e.status === 'left') && (!hideUnknown || e.status !== 'unknown'));
       if (!entries.length) continue;
       visibleSections.push({group, entries});
     }
@@ -47,6 +49,8 @@
   async function load() { try { state = await json('/api/state'); render(); focusEntry(); } catch (e) { $('#save-banner').className = 'notice error'; $('#save-banner span').textContent = e.message; } }
   $('#refresh').addEventListener('click', async () => { $('#refresh').disabled = true; try { state = await json('/api/refresh', {method:'POST'}); render(); } finally { $('#refresh').disabled = false; } });
   $('#save-slot').addEventListener('change', async () => { const slot=$('#save-slot');slot.disabled=true;try { state=await json('/api/select?index='+encodeURIComponent(slot.value),{method:'POST'});render(); } catch(e) { $('#save-banner').className='notice error';$('#save-banner span').textContent=e.message; } finally { slot.disabled=false; } });
+  $('#spoiler-light').checked = localStorage.getItem('ss.checklist.acquired-only') === '1';
+  $('#spoiler-light').addEventListener('change', () => { localStorage.setItem('ss.checklist.acquired-only', $('#spoiler-light').checked ? '1' : '0'); render(); });
   ['search','only-left','hide-unknown','hide-supporting'].forEach(id => $(`#${id}`).addEventListener(id === 'search' ? 'input' : 'change', render));
   if (initial) { const all = ['only-left','hide-unknown','hide-supporting']; all.forEach(id => $('#'+id).checked = false); }
   load();

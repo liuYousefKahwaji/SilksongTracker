@@ -55,3 +55,9 @@ Browser smoke checks exercised the Sketch/Screenshots switch and Only left filte
 `py tools/validate_progress.py` checks discovered saves without modifying or uploading them. Output contains counts, schema version, and a before/after file-hash comparison, not item names or personal paths. The current real-save check resolves all 193 checklist entries and reports an unchanged file; this is early-game schema evidence, not a full playthrough validation. Explicit save paths can be supplied for privately obtained representative samples.
 
 Still needed: exact identities for the remaining 47 objectives, genuine before/after late-game samples, reachable equipment/crest state checks, and broader version/slot/platform testing. Future samples should be volunteered privately with consent; an early-game player need not visit spoiler locations or publicly share saves.
+
+## 2026-09-23 follow-up
+
+The current suite has 46 passing unit tests. Data validation finds 100 official points, 1,419 source pins, and all expected locally downloaded map assets. The read-only real-save check still resolves all 193 checklist entries for version 1.0.30000 and confirms the file hash did not change. These results do not close the late-game evidence gap above.
+
+Browser checks covered manual-mark export, clear, and restore; a malformed import retained the prior mark. The acquired-only checklist reduced the tested save's visible entries from 193 to 46 and persisted after reload. The full map remains spoiler-bearing. The six pins without Sketch coordinates are absent from the upstream Sketch placement data; no positions were inferred for them, and one upstream placement is explicitly marked suspect.

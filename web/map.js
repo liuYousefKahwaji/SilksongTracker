@@ -26,9 +26,37 @@
   function manualStatus(m){return m.tracking==='unverified'&&manual[m.id]||m.status;}
   function setManual(m,value){
     if(value)manual[m.id]=value;else delete manual[m.id];
-    localStorage.setItem(manualKey,JSON.stringify(manual));
+    try {localStorage.setItem(manualKey,JSON.stringify(manual));}
+    catch {$('#marks-status').textContent='Browser storage is unavailable. Export a backup before closing this page.';}
     if(objects.has(m.id)){objects.get(m.id).setIcon(icon(m));objects.get(m.id).setPopupContent(()=>popup(m));}
     draw();
+  }
+  function exportMarks(){
+    const marks=Object.fromEntries(Object.entries(manual).filter(([id,value])=>data.markers.some(m=>m.id===id&&m.tracking==='unverified')&&['left','complete'].includes(value)));
+    const backup={format:'silksong-tracker-map-marks',version:1,saveKey:data.saveKey||'no-save',slot:data.slot??null,marks};
+    const url=URL.createObjectURL(new Blob([JSON.stringify(backup,null,2)+'\n'],{type:'application/json'}));
+    const link=node('a');link.href=url;link.download='silksong-map-marks-slot-'+(data.slot??'none')+'.json';document.body.append(link);link.click();link.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+    $('#marks-status').textContent='Exported '+Object.keys(marks).length+' manual mark(s). This file contains no save data or location names.';
+  }
+  async function importMarks(file){
+    if(!file)return;
+    try {
+      if(file.size>1024*1024)throw Error('Backup is too large.');
+      const backup=JSON.parse(await file.text());
+      if(!backup||backup.format!=='silksong-tracker-map-marks'||backup.version!==1||!backup.marks||typeof backup.marks!=='object'||Array.isArray(backup.marks))throw Error('Not a supported manual-mark backup.');
+      const permitted=new Set(data.markers.filter(m=>m.tracking==='unverified').map(m=>m.id));
+      const entries=Object.entries(backup.marks);
+      if(entries.some(([id,value])=>!permitted.has(id)||!['left','complete'].includes(value)))throw Error('Backup contains invalid or unknown marks.');
+      const otherSave=backup.saveKey!==data.saveKey;
+      const target=data.hasSave?'selected slot '+data.slot:'the no-save profile';
+      const question='Replace all manual marks for '+target+' with '+entries.length+' mark(s) from this backup?'+(otherSave?'\n\nWarning: it was exported for a different save or computer.':'');
+      if(!window.confirm(question)){$('#marks-status').textContent='Import cancelled; current marks were kept.';return;}
+      const replacement=Object.fromEntries(entries);
+      localStorage.setItem(manualKey,JSON.stringify(replacement));manual=replacement;
+      for(const m of data.markers)if(objects.has(m.id)){objects.get(m.id).setIcon(icon(m));objects.get(m.id).setPopupContent(()=>popup(m));}
+      draw();$('#marks-status').textContent='Imported '+entries.length+' manual mark(s) for '+target+'.';
+    }catch(err){$('#marks-status').textContent='Import failed: '+err.message;}
   }
   function resetLayers(){hidden=new Set(['shortcut','permFlags','rosary','shard','rosaryitem','sharditem','tradable','memento','silkeater','npc','wish','questitem','arena']);persist();}
   function title(m){return m.name.replace(/^(Tool|Ability|Upgrade|Boss)\s*-\s*/i,'');}
@@ -243,6 +271,9 @@
       $('#all-layers').onclick=()=>{hidden.clear();selected=null;persist();buildLayers();draw();};
       $('#no-layers').onclick=()=>{hidden=new Set(data.categories.map(c=>c.id));selected=null;query='';category=null;scope=null;$('#map-search').value='';persist();buildLayers();draw();};
       $('#default-layers').onclick=()=>{resetLayers();onlyLeft=false;$('#only-left').checked=false;selected=null;category=null;scope=null;query='';$('#map-search').value='';persist();buildLayers();draw();};
+      $('#export-marks').onclick=exportMarks;
+      $('#import-marks').onclick=()=>$('#marks-file').click();
+      $('#marks-file').onchange=async e=>{await importMarks(e.target.files[0]);e.target.value='';};
       $('#toggle-layers').onclick=()=>{const mobile=matchMedia('(max-width:600px)').matches;$('#workspace').classList.toggle(mobile?'mobile-open':'collapsed');$('#toggle-layers').setAttribute('aria-expanded',String(mobile?$('#workspace').classList.contains('mobile-open'):!$('#workspace').classList.contains('collapsed')));map.invalidateSize();};
       document.addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement!==$('#map-search')){e.preventDefault();$('#map-search').focus();}});
       let signature='';

@@ -18,6 +18,12 @@
   <aside id="sidebar" aria-label="Map filters">
     <div class="panel-heading"><span>EXPLORE PHARLOOM</span><span id="visible-count"></span></div>
     <div class="quick-actions"><button id="all-layers">All</button><button id="no-layers">None</button><button id="default-layers">Reset</button></div>
+    <section class="marks-tools" aria-label="Manual marks backup">
+      <span>MANUAL MARKS</span>
+      <div><button id="export-marks" type="button">Export backup</button><button id="import-marks" type="button">Import backup</button></div>
+      <input id="marks-file" type="file" accept=".json,application/json" hidden>
+      <p id="marks-status" role="status" class="help"></p>
+    </section>
     <section id="results" hidden aria-label="Search results"></section>
     <div id="layers"></div>
     <p id="tracking-summary" class="help"></p>

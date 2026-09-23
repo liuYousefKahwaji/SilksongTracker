@@ -1,6 +1,6 @@
 # Silksong Tracker
 
-**v0.2.0 beta** — a local, read-only progress tracker for Hollow Knight: Silksong, inspired by Hollow Tracker.
+**v0.2.1 beta** — a local, read-only progress tracker for Hollow Knight: Silksong, inspired by Hollow Tracker.
 
 Reads your save to show a completion checklist and an interactive map, with Sketch/Screenshots views, navigable interiors, item pins, search, filters, multiple save selection, and automatic save refresh. Unverified map locations can be marked manually in this browser. Runs on your computer at `http://127.0.0.1:7397`; saves are not uploaded or modified.
 
@@ -20,8 +20,8 @@ Map artwork, icons, and the upstream map dataset are **not bundled in this repos
 
 ## Current limits
 
-- **Spoilers:** the checklist and map expose game content; there is no spoiler-safe mode yet.
-- Of 1,419 map pins, 1,206 have save rules, 166 are reference locations, and **47 objectives still need verified automatic tracking**. You can mark those 47 manually per save; these marks live in this browser and never change a game save. “Only left” includes confirmed incomplete and manually marked incomplete pins.
+- **Spoilers:** the checklist has an optional **Acquired only** view that hides unfinished entries and searches only acquired ones. It is not a fully spoiler-safe mode: the map exposes future geography and items, and switching the view off reveals the full checklist. The map link is labeled accordingly.
+- Of 1,419 map pins, 1,206 have save rules, 166 are reference locations, and **47 objectives still need verified automatic tracking**. You can mark those 47 manually per save; these marks live in this browser and never change a game save. Use Export/Import backup in the map sidebar to move or safeguard those marks (the import replaces marks for the selected save after confirmation). “Only left” includes confirmed incomplete and manually marked incomplete pins.
 - All 193 checklist entries resolve against the tested early-game save, but late-game transitions and every supported game version have **not** been independently validated. Missing fields remain unknown rather than being guessed.
 - Sketch groups pins that share an in-game map point into numbered item icons. A group opens its member locations and can switch to their exact placement in Screenshots, including detached interiors. Six pins lack sketch coordinates and use the Screenshots view. Some source locations may be inaccurate.
 - A clean-clone Windows installation and a two-slot selection were tested. Malformed saves, further slot layouts, and cross-platform behavior need broader testing. This is a beta, not a guaranteed 100% completion authority.
