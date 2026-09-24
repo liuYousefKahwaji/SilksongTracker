@@ -21,14 +21,14 @@ const fallback=math.position(rooms,'Unknown_02',[10,10],[{source:[10,10],sketch:
 assert.equal(fallback.confidence,'global');
 close(fallback.point[0],-800);close(fallback.point[1],700);
 
-assert.equal(math.refine([first,{source:[120,20],sketch:[-705,516]}],math.priorForScene(rooms,'Sample_01').matrix),null,
+assert.equal(math.solveAnchors([first,{source:[120,20],sketch:[-705,516]}],math.priorForScene(rooms,'Sample_01').matrix),null,
   'nearby points must not amplify clicking error');
-assert.equal(math.refine([first,{source:[160,20],sketch:[-670,510]}],math.priorForScene(rooms,'Sample_01').matrix),null,
-  'perpendicular click must be rejected');
+assert.equal(math.solveAnchors([first,{source:[160,20],sketch:[-670,510]}],math.priorForScene(rooms,'Sample_01').matrix),null,
+  'a direction inconsistent with the room map must be rejected');
 
 const second={source:[160,20],sketch:[-705,545]};
 const refined=math.position(rooms,'Sample_01',[160,20],[first,second]);
-assert.equal(refined.mode,'refined');
+assert.equal(refined.mode,'calibrated');
 close(refined.point[0],second.sketch[0]);close(refined.point[1],second.sketch[1]);
 close(math.position(rooms,'Sample_01',[170,20],[first,second]).point[1],552);
 

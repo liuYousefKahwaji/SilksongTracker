@@ -65,7 +65,7 @@ class App:
 
 def make_handler(app: App):
     class Handler(BaseHTTPRequestHandler):
-        server_version = "SilksongTracker/0.3.1-beta"
+        server_version = "SilksongTracker/0.3.2-beta"
 
         def log_message(self, fmt, *args):
             if os.environ.get("SILKSONG_TRACKER_LOG"):

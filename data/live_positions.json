@@ -1,8 +1,203 @@
 {
-  "format": 1,
-  "maxResidualPixels": 20,
-  "method": "scene-object-similarity",
+  "format": 2,
+  "maxResidualPixelsForMultiLandmarkFit": 20,
+  "method": "scene-object-matches+regional-prior",
   "rooms": {
+    "Abyss_03": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        1223.55,
+        -1635.28
+      ],
+      "source": [
+        75.19,
+        8.53
+      ]
+    },
+    "Abyss_05": {
+      "anchors": 2,
+      "imag": 0.0324008,
+      "quality": "paired-landmarks",
+      "real": 0.724815,
+      "reflected": false,
+      "sketch": [
+        1064.215,
+        -1697.325
+      ],
+      "source": [
+        96.8068,
+        54.775
+      ]
+    },
+    "Abyss_08": {
+      "anchors": 2,
+      "imag": 0.0320438,
+      "quality": "paired-landmarks",
+      "real": 0.5922528,
+      "reflected": false,
+      "sketch": [
+        1163.1,
+        -1677.77
+      ],
+      "source": [
+        87.61,
+        79.55
+      ]
+    },
+    "Abyss_11": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        1005.52,
+        -1621.89
+      ],
+      "source": [
+        34.06,
+        5.03
+      ]
+    },
+    "Ant_02": {
+      "anchors": 2,
+      "imag": 0.070117,
+      "quality": "paired-landmarks",
+      "real": 0.3077443,
+      "reflected": false,
+      "sketch": [
+        907.09,
+        -1306.88
+      ],
+      "source": [
+        36.45,
+        7.52
+      ]
+    },
+    "Ant_04": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        1186.03,
+        -1276.25
+      ],
+      "source": [
+        335.24,
+        20.97
+      ]
+    },
+    "Ant_04_left": {
+      "anchors": 2,
+      "imag": 0.0213549,
+      "quality": "paired-landmarks",
+      "real": 0.5247113,
+      "reflected": false,
+      "sketch": [
+        1010.285,
+        -1274.385
+      ],
+      "source": [
+        45.54,
+        28.835
+      ]
+    },
+    "Ant_05b": {
+      "anchors": 2,
+      "imag": 0.0159594,
+      "quality": "paired-landmarks",
+      "real": 0.304919,
+      "reflected": true,
+      "sketch": [
+        1194.8,
+        -1296.965
+      ],
+      "source": [
+        54.7714,
+        3.0799
+      ]
+    },
+    "Ant_08": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        1205.02,
+        -1144.52
+      ],
+      "source": [
+        44.85,
+        24.93
+      ]
+    },
+    "Ant_19": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        1342.55,
+        -1278.5
+      ],
+      "source": [
+        89.29,
+        35.4761
+      ]
+    },
+    "Ant_Merchant": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        1205.16,
+        -1240.88
+      ],
+      "source": [
+        141.1,
+        17.63
+      ]
+    },
+    "Aqueduct_01": {
+      "anchors": 2,
+      "imag": -0.024562,
+      "quality": "paired-landmarks",
+      "real": 0.6398548,
+      "reflected": false,
+      "sketch": [
+        1504.155,
+        -597.225
+      ],
+      "source": [
+        234.41,
+        17.155
+      ]
+    },
+    "Aqueduct_03": {
+      "anchors": 1,
+      "imag": 0.0213811,
+      "quality": "single-landmark-estimate",
+      "real": 0.6569468,
+      "reflected": false,
+      "sketch": [
+        1669.56,
+        -639.55
+      ],
+      "source": [
+        199.07,
+        36.98
+      ]
+    },
     "Aqueduct_04": {
       "anchors": 4,
       "imag": 0.0213811,
@@ -17,6 +212,96 @@
       "source": [
         93.0625,
         28.0033
+      ]
+    },
+    "Aqueduct_05": {
+      "anchors": 2,
+      "imag": 0.0424723,
+      "quality": "paired-landmarks",
+      "real": 0.6183192,
+      "reflected": false,
+      "sketch": [
+        1891.825,
+        -647.34
+      ],
+      "source": [
+        292.8442,
+        28.9226
+      ]
+    },
+    "Aqueduct_08": {
+      "anchors": 1,
+      "imag": 0.0213811,
+      "quality": "single-landmark-estimate",
+      "real": 0.6569468,
+      "reflected": false,
+      "sketch": [
+        1542.54,
+        -628.56
+      ],
+      "source": [
+        2.48,
+        8.74
+      ]
+    },
+    "Arborium_01": {
+      "anchors": 1,
+      "imag": -0.011914,
+      "quality": "single-landmark-estimate",
+      "real": 0.6450161,
+      "reflected": false,
+      "sketch": [
+        1119.01,
+        -579.53
+      ],
+      "source": [
+        25.35,
+        57.59
+      ]
+    },
+    "Arborium_02": {
+      "anchors": 1,
+      "imag": -0.011914,
+      "quality": "single-landmark-estimate",
+      "real": 0.6450161,
+      "reflected": false,
+      "sketch": [
+        1187.52,
+        -584.65
+      ],
+      "source": [
+        111.0465,
+        8.9351
+      ]
+    },
+    "Arborium_04": {
+      "anchors": 1,
+      "imag": -0.011914,
+      "quality": "single-landmark-estimate",
+      "real": 0.6450161,
+      "reflected": false,
+      "sketch": [
+        1169.27,
+        -600.4
+      ],
+      "source": [
+        71.21,
+        15.9252
+      ]
+    },
+    "Arborium_05": {
+      "anchors": 1,
+      "imag": -0.011914,
+      "quality": "single-landmark-estimate",
+      "real": 0.6450161,
+      "reflected": false,
+      "sketch": [
+        1129.52,
+        -568.53
+      ],
+      "source": [
+        3.95,
+        7.27
       ]
     },
     "Arborium_06": {
@@ -35,6 +320,66 @@
         19.9833
       ]
     },
+    "Arborium_10": {
+      "anchors": 1,
+      "imag": -0.011914,
+      "quality": "single-landmark-estimate",
+      "real": 0.6450161,
+      "reflected": false,
+      "sketch": [
+        1237.03,
+        -584.65
+      ],
+      "source": [
+        17.81,
+        5.7
+      ]
+    },
+    "Arborium_11": {
+      "anchors": 1,
+      "imag": -0.011914,
+      "quality": "single-landmark-estimate",
+      "real": 0.6450161,
+      "reflected": false,
+      "sketch": [
+        1347.76,
+        -603.6
+      ],
+      "source": [
+        211.22,
+        10.27
+      ]
+    },
+    "Bellshrine_Coral": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        575.48,
+        -845.67
+      ],
+      "source": [
+        28.32,
+        16.54
+      ]
+    },
+    "Belltown": {
+      "anchors": 1,
+      "imag": 0.0434122,
+      "quality": "single-landmark-estimate",
+      "real": 0.7359676,
+      "reflected": false,
+      "sketch": [
+        870.66,
+        -1152.57
+      ],
+      "source": [
+        59.1687,
+        66.165
+      ]
+    },
     "Belltown_04": {
       "anchors": 3,
       "imag": -0.0110786,
@@ -49,6 +394,51 @@
       "source": [
         47.0881,
         25.1912
+      ]
+    },
+    "Belltown_06": {
+      "anchors": 1,
+      "imag": 0.0434122,
+      "quality": "single-landmark-estimate",
+      "real": 0.7359676,
+      "reflected": false,
+      "sketch": [
+        924.78,
+        -1179.66
+      ],
+      "source": [
+        28.0,
+        70.0
+      ]
+    },
+    "Belltown_07": {
+      "anchors": 1,
+      "imag": 0.0434122,
+      "quality": "single-landmark-estimate",
+      "real": 0.7359676,
+      "reflected": false,
+      "sketch": [
+        826.09,
+        -1176.13
+      ],
+      "source": [
+        24.28,
+        25.24
+      ]
+    },
+    "Belltown_Shrine": {
+      "anchors": 1,
+      "imag": 0.0434122,
+      "quality": "single-landmark-estimate",
+      "real": 0.7359676,
+      "reflected": false,
+      "sketch": [
+        857.59,
+        -1137.39
+      ],
+      "source": [
+        22.79,
+        20.98
       ]
     },
     "Belltown_basement_03": {
@@ -67,6 +457,111 @@
         50.6962
       ]
     },
+    "Bellway_03": {
+      "anchors": 2,
+      "imag": -0.0197129,
+      "quality": "paired-landmarks",
+      "real": 0.6115652,
+      "reflected": false,
+      "sketch": [
+        1476.21,
+        -1364.695
+      ],
+      "source": [
+        91.555,
+        11.785
+      ]
+    },
+    "Bellway_04": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        1155.27,
+        -1162.01
+      ],
+      "source": [
+        41.88,
+        10.24
+      ]
+    },
+    "Bellway_08": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        376.05,
+        -956.28
+      ],
+      "source": [
+        120.58,
+        11.67
+      ]
+    },
+    "Bellway_Aqueduct": {
+      "anchors": 2,
+      "imag": 0.0874392,
+      "quality": "paired-landmarks",
+      "real": 0.4736773,
+      "reflected": false,
+      "sketch": [
+        1564.79,
+        -585.855
+      ],
+      "source": [
+        66.5465,
+        40.1536
+      ]
+    },
+    "Bellway_City": {
+      "anchors": 2,
+      "imag": -0.0845373,
+      "quality": "paired-landmarks",
+      "real": 0.465973,
+      "reflected": true,
+      "sketch": [
+        1192.59,
+        -772.04
+      ],
+      "source": [
+        80.24,
+        26.82
+      ]
+    },
+    "Bellway_Peak_02": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        152.75,
+        -703.38
+      ],
+      "source": [
+        26.557,
+        24.36
+      ]
+    },
+    "Bellway_Shadow": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        1418.04,
+        -938.01
+      ],
+      "source": [
+        37.5,
+        20.76
+      ]
+    },
     "Bone_01": {
       "anchors": 3,
       "imag": 0.0447106,
@@ -81,6 +576,21 @@
       "source": [
         82.8103,
         43.15
+      ]
+    },
+    "Bone_02": {
+      "anchors": 2,
+      "imag": 0.0050177,
+      "quality": "paired-landmarks",
+      "real": 0.4731518,
+      "reflected": false,
+      "sketch": [
+        674.52,
+        -1358.855
+      ],
+      "source": [
+        37.4263,
+        34.0351
       ]
     },
     "Bone_04": {
@@ -99,6 +609,36 @@
         12.2224
       ]
     },
+    "Bone_07": {
+      "anchors": 2,
+      "imag": -0.0700777,
+      "quality": "paired-landmarks",
+      "real": 0.5672817,
+      "reflected": false,
+      "sketch": [
+        807.84,
+        -1295.38
+      ],
+      "source": [
+        44.4401,
+        22.9881
+      ]
+    },
+    "Bone_09": {
+      "anchors": 1,
+      "imag": 0.0003814,
+      "quality": "single-landmark-estimate",
+      "real": 0.6473198,
+      "reflected": false,
+      "sketch": [
+        926.07,
+        -1353.48
+      ],
+      "source": [
+        133.5856,
+        36.5475
+      ]
+    },
     "Bone_10": {
       "anchors": 4,
       "imag": 0.0209093,
@@ -113,6 +653,66 @@
       "source": [
         75.2174,
         40.0155
+      ]
+    },
+    "Bone_11": {
+      "anchors": 1,
+      "imag": 0.0003814,
+      "quality": "single-landmark-estimate",
+      "real": 0.6473198,
+      "reflected": false,
+      "sketch": [
+        438.66,
+        -1305.62
+      ],
+      "source": [
+        9.73,
+        12.47
+      ]
+    },
+    "Bone_11b": {
+      "anchors": 1,
+      "imag": 0.0003814,
+      "quality": "single-landmark-estimate",
+      "real": 0.6473198,
+      "reflected": false,
+      "sketch": [
+        501.65,
+        -1323.01
+      ],
+      "source": [
+        31.37,
+        7.2411
+      ]
+    },
+    "Bone_14": {
+      "anchors": 1,
+      "imag": 0.0003814,
+      "quality": "single-landmark-estimate",
+      "real": 0.6473198,
+      "reflected": false,
+      "sketch": [
+        765.9,
+        -1286.88
+      ],
+      "source": [
+        101.7,
+        35.16
+      ]
+    },
+    "Bone_16": {
+      "anchors": 1,
+      "imag": 0.0003814,
+      "quality": "single-landmark-estimate",
+      "real": 0.6473198,
+      "reflected": false,
+      "sketch": [
+        760.66,
+        -1372.17
+      ],
+      "source": [
+        98.8772,
+        12.876
       ]
     },
     "Bone_19": {
@@ -131,6 +731,66 @@
         14.5372
       ]
     },
+    "Bone_East_01": {
+      "anchors": 1,
+      "imag": 0.0003814,
+      "quality": "single-landmark-estimate",
+      "real": 0.6473198,
+      "reflected": false,
+      "sketch": [
+        1042.53,
+        -1353.26
+      ],
+      "source": [
+        5.41,
+        55.8
+      ]
+    },
+    "Bone_East_02b": {
+      "anchors": 1,
+      "imag": 0.0003814,
+      "quality": "single-landmark-estimate",
+      "real": 0.6473198,
+      "reflected": false,
+      "sketch": [
+        1350.7,
+        -1377.25
+      ],
+      "source": [
+        293.44,
+        19.04
+      ]
+    },
+    "Bone_East_03": {
+      "anchors": 1,
+      "imag": 0.0003814,
+      "quality": "single-landmark-estimate",
+      "real": 0.6473198,
+      "reflected": false,
+      "sketch": [
+        1350.45,
+        -1369.13
+      ],
+      "source": [
+        181.8401,
+        31.7008
+      ]
+    },
+    "Bone_East_04b": {
+      "anchors": 1,
+      "imag": 0.0003814,
+      "quality": "single-landmark-estimate",
+      "real": 0.6473198,
+      "reflected": false,
+      "sketch": [
+        1166.55,
+        -1311.9
+      ],
+      "source": [
+        6.462,
+        87.1857
+      ]
+    },
     "Bone_East_07": {
       "anchors": 4,
       "imag": 0.0084224,
@@ -145,6 +805,96 @@
       "source": [
         25.8111,
         99.2694
+      ]
+    },
+    "Bone_East_08": {
+      "anchors": 1,
+      "imag": 0.0003814,
+      "quality": "single-landmark-estimate",
+      "real": 0.6473198,
+      "reflected": false,
+      "sketch": [
+        1504.93,
+        -1407.14
+      ],
+      "source": [
+        126.73,
+        35.09
+      ]
+    },
+    "Bone_East_09": {
+      "anchors": 1,
+      "imag": 0.0003814,
+      "quality": "single-landmark-estimate",
+      "real": 0.6473198,
+      "reflected": false,
+      "sketch": [
+        1533.56,
+        -1386.27
+      ],
+      "source": [
+        30.69,
+        75.0
+      ]
+    },
+    "Bone_East_09b": {
+      "anchors": 1,
+      "imag": 0.0003814,
+      "quality": "single-landmark-estimate",
+      "real": 0.6473198,
+      "reflected": false,
+      "sketch": [
+        1555.85,
+        -1342.39
+      ],
+      "source": [
+        61.83,
+        142.71
+      ]
+    },
+    "Bone_East_10": {
+      "anchors": 1,
+      "imag": 0.0003814,
+      "quality": "single-landmark-estimate",
+      "real": 0.6473198,
+      "reflected": false,
+      "sketch": [
+        1431.33,
+        -1293.4
+      ],
+      "source": [
+        27.38,
+        20.25
+      ]
+    },
+    "Bone_East_10_Church": {
+      "anchors": 1,
+      "imag": 0.0003814,
+      "quality": "single-landmark-estimate",
+      "real": 0.6473198,
+      "reflected": false,
+      "sketch": [
+        1495.09,
+        -1304.65
+      ],
+      "source": [
+        129.9,
+        11.89
+      ]
+    },
+    "Bone_East_10_Room": {
+      "anchors": 1,
+      "imag": 0.0003814,
+      "quality": "single-landmark-estimate",
+      "real": 0.6473198,
+      "reflected": false,
+      "sketch": [
+        1461.1,
+        -1306.52
+      ],
+      "source": [
+        60.1988,
+        12.2819
       ]
     },
     "Bone_East_11": {
@@ -195,6 +945,36 @@
         35.8469
       ]
     },
+    "Bone_East_14b": {
+      "anchors": 2,
+      "imag": -0.0541861,
+      "quality": "paired-landmarks",
+      "real": 0.6790208,
+      "reflected": false,
+      "sketch": [
+        1723.03,
+        -1409.13
+      ],
+      "source": [
+        220.295,
+        38.04
+      ]
+    },
+    "Bone_East_16": {
+      "anchors": 1,
+      "imag": 0.0003814,
+      "quality": "single-landmark-estimate",
+      "real": 0.6473198,
+      "reflected": false,
+      "sketch": [
+        1290.44,
+        -1354.51
+      ],
+      "source": [
+        13.05,
+        18.37
+      ]
+    },
     "Bone_East_17": {
       "anchors": 3,
       "imag": -0.081073,
@@ -209,6 +989,36 @@
       "source": [
         34.95,
         93.2933
+      ]
+    },
+    "Bone_East_17b": {
+      "anchors": 1,
+      "imag": 0.0003814,
+      "quality": "single-landmark-estimate",
+      "real": 0.6473198,
+      "reflected": false,
+      "sketch": [
+        1326.94,
+        -1345.89
+      ],
+      "source": [
+        10.88,
+        32.08
+      ]
+    },
+    "Bone_East_18b": {
+      "anchors": 1,
+      "imag": 0.0003814,
+      "quality": "single-landmark-estimate",
+      "real": 0.6473198,
+      "reflected": false,
+      "sketch": [
+        1686.56,
+        -1327.5
+      ],
+      "source": [
+        107.4689,
+        19.2543
       ]
     },
     "Bone_East_24": {
@@ -227,6 +1037,36 @@
         42.1323
       ]
     },
+    "Bone_East_25": {
+      "anchors": 1,
+      "imag": 0.0003814,
+      "quality": "single-landmark-estimate",
+      "real": 0.6473198,
+      "reflected": false,
+      "sketch": [
+        1711.81,
+        -1235.15
+      ],
+      "source": [
+        151.9525,
+        6.3469
+      ]
+    },
+    "Bone_East_26": {
+      "anchors": 1,
+      "imag": 0.0003814,
+      "quality": "single-landmark-estimate",
+      "real": 0.6473198,
+      "reflected": false,
+      "sketch": [
+        1650.05,
+        -1250.27
+      ],
+      "source": [
+        107.97,
+        26.02
+      ]
+    },
     "Bonetown": {
       "anchors": 4,
       "imag": -0.0225718,
@@ -241,6 +1081,36 @@
       "source": [
         201.1653,
         57.9357
+      ]
+    },
+    "Clover_02c": {
+      "anchors": 1,
+      "imag": 0.0095459,
+      "quality": "single-landmark-estimate",
+      "real": 0.5919567,
+      "reflected": false,
+      "sketch": [
+        1764.81,
+        -1119.51
+      ],
+      "source": [
+        13.641,
+        29.6
+      ]
+    },
+    "Clover_05c": {
+      "anchors": 1,
+      "imag": 0.0095459,
+      "quality": "single-landmark-estimate",
+      "real": 0.5919567,
+      "reflected": false,
+      "sketch": [
+        1764.04,
+        -1074.01
+      ],
+      "source": [
+        25.82,
+        69.1683
       ]
     },
     "Clover_18": {
@@ -275,6 +1145,81 @@
         84.9833
       ]
     },
+    "Cog_05": {
+      "anchors": 1,
+      "imag": 0.02666,
+      "quality": "single-landmark-estimate",
+      "real": 0.5913702,
+      "reflected": false,
+      "sketch": [
+        967.65,
+        -669.99
+      ],
+      "source": [
+        0.0,
+        0.0
+      ]
+    },
+    "Cog_07": {
+      "anchors": 1,
+      "imag": 0.02666,
+      "quality": "single-landmark-estimate",
+      "real": 0.5913702,
+      "reflected": false,
+      "sketch": [
+        1100.77,
+        -729.77
+      ],
+      "source": [
+        83.57,
+        16.28
+      ]
+    },
+    "Cog_08": {
+      "anchors": 1,
+      "imag": 0.02666,
+      "quality": "single-landmark-estimate",
+      "real": 0.5913702,
+      "reflected": false,
+      "sketch": [
+        1028.4,
+        -558.52
+      ],
+      "source": [
+        37.53,
+        81.73
+      ]
+    },
+    "Cog_10": {
+      "anchors": 2,
+      "imag": 0.0353282,
+      "quality": "paired-landmarks",
+      "real": 0.4689058,
+      "reflected": true,
+      "sketch": [
+        986.465,
+        -647.81
+      ],
+      "source": [
+        34.535,
+        46.1
+      ]
+    },
+    "Cog_Bench": {
+      "anchors": 1,
+      "imag": 0.02666,
+      "quality": "single-landmark-estimate",
+      "real": 0.5913702,
+      "reflected": false,
+      "sketch": [
+        1012.65,
+        -642.13
+      ],
+      "source": [
+        21.5439,
+        15.5689
+      ]
+    },
     "Coral_02": {
       "anchors": 4,
       "imag": 0.0292711,
@@ -289,6 +1234,201 @@
       "source": [
         148.025,
         23.3004
+      ]
+    },
+    "Coral_03": {
+      "anchors": 2,
+      "imag": -0.0527125,
+      "quality": "paired-landmarks",
+      "real": 0.6241718,
+      "reflected": false,
+      "sketch": [
+        410.32,
+        -1048.5
+      ],
+      "source": [
+        29.73,
+        64.745
+      ]
+    },
+    "Coral_10": {
+      "anchors": 1,
+      "imag": 0.0292711,
+      "quality": "single-landmark-estimate",
+      "real": 0.6293984,
+      "reflected": false,
+      "sketch": [
+        640.47,
+        -909.4
+      ],
+      "source": [
+        110.66,
+        7.23
+      ]
+    },
+    "Coral_11": {
+      "anchors": 1,
+      "imag": 0.0292711,
+      "quality": "single-landmark-estimate",
+      "real": 0.6293984,
+      "reflected": false,
+      "sketch": [
+        300.28,
+        -1009.6
+      ],
+      "source": [
+        51.47,
+        21.75
+      ]
+    },
+    "Coral_12": {
+      "anchors": 1,
+      "imag": 0.0292711,
+      "quality": "single-landmark-estimate",
+      "real": 0.6293984,
+      "reflected": false,
+      "sketch": [
+        435.51,
+        -1022.57
+      ],
+      "source": [
+        6.1698,
+        47.7197
+      ]
+    },
+    "Coral_19": {
+      "anchors": 1,
+      "imag": 0.0292711,
+      "quality": "single-landmark-estimate",
+      "real": 0.6293984,
+      "reflected": false,
+      "sketch": [
+        336.38,
+        -1096.18
+      ],
+      "source": [
+        258.49,
+        43.25
+      ]
+    },
+    "Coral_19b": {
+      "anchors": 1,
+      "imag": 0.0292711,
+      "quality": "single-landmark-estimate",
+      "real": 0.6293984,
+      "reflected": false,
+      "sketch": [
+        223.02,
+        -1044.09
+      ],
+      "source": [
+        74.86,
+        109.02
+      ]
+    },
+    "Coral_23": {
+      "anchors": 1,
+      "imag": 0.0292711,
+      "quality": "single-landmark-estimate",
+      "real": 0.6293984,
+      "reflected": false,
+      "sketch": [
+        182.03,
+        -905.13
+      ],
+      "source": [
+        90.74,
+        50.4
+      ]
+    },
+    "Coral_27": {
+      "anchors": 1,
+      "imag": 0.0292711,
+      "quality": "single-landmark-estimate",
+      "real": 0.6293984,
+      "reflected": false,
+      "sketch": [
+        236.78,
+        -798.8
+      ],
+      "source": [
+        57.2599,
+        26.78
+      ]
+    },
+    "Coral_29": {
+      "anchors": 1,
+      "imag": 0.0292711,
+      "quality": "single-landmark-estimate",
+      "real": 0.6293984,
+      "reflected": false,
+      "sketch": [
+        332.5,
+        -774.27
+      ],
+      "source": [
+        201.65,
+        81.75
+      ]
+    },
+    "Coral_32": {
+      "anchors": 1,
+      "imag": 0.0292711,
+      "quality": "single-landmark-estimate",
+      "real": 0.6293984,
+      "reflected": false,
+      "sketch": [
+        478.72,
+        -962.89
+      ],
+      "source": [
+        74.8414,
+        9.6373
+      ]
+    },
+    "Coral_35b": {
+      "anchors": 1,
+      "imag": 0.0292711,
+      "quality": "single-landmark-estimate",
+      "real": 0.6293984,
+      "reflected": false,
+      "sketch": [
+        330.79,
+        -813.13
+      ],
+      "source": [
+        126.04,
+        245.39
+      ]
+    },
+    "Coral_37": {
+      "anchors": 1,
+      "imag": 0.0292711,
+      "quality": "single-landmark-estimate",
+      "real": 0.6293984,
+      "reflected": false,
+      "sketch": [
+        495.02,
+        -1029.02
+      ],
+      "source": [
+        19.1101,
+        12.7
+      ]
+    },
+    "Coral_40": {
+      "anchors": 1,
+      "imag": 0.0292711,
+      "quality": "single-landmark-estimate",
+      "real": 0.6293984,
+      "reflected": false,
+      "sketch": [
+        302.53,
+        -858.12
+      ],
+      "source": [
+        16.356,
+        20.88
       ]
     },
     "Coral_41": {
@@ -307,6 +1447,36 @@
         47.454
       ]
     },
+    "Cradle_02": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        1066.8,
+        -430.59
+      ],
+      "source": [
+        57.2616,
+        34.7892
+      ]
+    },
+    "Cradle_03": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        1042.29,
+        -376.02
+      ],
+      "source": [
+        74.3,
+        84.06
+      ]
+    },
     "Crawl_02": {
       "anchors": 4,
       "imag": -0.0237041,
@@ -323,6 +1493,66 @@
         52.9436
       ]
     },
+    "Crawl_03": {
+      "anchors": 1,
+      "imag": -0.0237041,
+      "quality": "single-landmark-estimate",
+      "real": 0.6513856,
+      "reflected": false,
+      "sketch": [
+        231.27,
+        -1268.26
+      ],
+      "source": [
+        132.58,
+        24.39
+      ]
+    },
+    "Crawl_07": {
+      "anchors": 1,
+      "imag": -0.0237041,
+      "quality": "single-landmark-estimate",
+      "real": 0.6513856,
+      "reflected": false,
+      "sketch": [
+        264.05,
+        -1319.53
+      ],
+      "source": [
+        86.85,
+        18.86
+      ]
+    },
+    "Crawl_09": {
+      "anchors": 2,
+      "imag": 0.0250952,
+      "quality": "paired-landmarks",
+      "real": 0.4873158,
+      "reflected": false,
+      "sketch": [
+        182.225,
+        -1326.035
+      ],
+      "source": [
+        81.24,
+        15.88
+      ]
+    },
+    "Crawl_10": {
+      "anchors": 1,
+      "imag": -0.0237041,
+      "quality": "single-landmark-estimate",
+      "real": 0.6513856,
+      "reflected": false,
+      "sketch": [
+        128.53,
+        -1316.16
+      ],
+      "source": [
+        16.774,
+        7.98
+      ]
+    },
     "Dock_02": {
       "anchors": 4,
       "imag": 0.0464042,
@@ -337,6 +1567,66 @@
       "source": [
         70.224,
         51.2378
+      ]
+    },
+    "Dock_02b": {
+      "anchors": 1,
+      "imag": 0.0464042,
+      "quality": "single-landmark-estimate",
+      "real": 0.5983519,
+      "reflected": false,
+      "sketch": [
+        1248.92,
+        -1448.0
+      ],
+      "source": [
+        34.29,
+        31.45
+      ]
+    },
+    "Dock_03": {
+      "anchors": 2,
+      "imag": -0.0234244,
+      "quality": "paired-landmarks",
+      "real": 0.5412662,
+      "reflected": false,
+      "sketch": [
+        1312.48,
+        -1411.7
+      ],
+      "source": [
+        38.395,
+        95.8
+      ]
+    },
+    "Dock_03c": {
+      "anchors": 2,
+      "imag": -0.0435558,
+      "quality": "paired-landmarks",
+      "real": 0.6803098,
+      "reflected": false,
+      "sketch": [
+        1333.99,
+        -1449.69
+      ],
+      "source": [
+        66.519,
+        32.2532
+      ]
+    },
+    "Dock_04": {
+      "anchors": 1,
+      "imag": 0.0464042,
+      "quality": "single-landmark-estimate",
+      "real": 0.5983519,
+      "reflected": false,
+      "sketch": [
+        1044.77,
+        -1424.89
+      ],
+      "source": [
+        4.4005,
+        68.3161
       ]
     },
     "Dock_06_Church": {
@@ -371,6 +1661,96 @@
         15.2467
       ]
     },
+    "Dock_10": {
+      "anchors": 1,
+      "imag": 0.0464042,
+      "quality": "single-landmark-estimate",
+      "real": 0.5983519,
+      "reflected": false,
+      "sketch": [
+        1058.14,
+        -1478.0
+      ],
+      "source": [
+        5.01,
+        29.87
+      ]
+    },
+    "Dock_13": {
+      "anchors": 1,
+      "imag": 0.0464042,
+      "quality": "single-landmark-estimate",
+      "real": 0.5983519,
+      "reflected": false,
+      "sketch": [
+        1068.02,
+        -1528.86
+      ],
+      "source": [
+        15.26,
+        3.29
+      ]
+    },
+    "Dock_14": {
+      "anchors": 1,
+      "imag": 0.0464042,
+      "quality": "single-landmark-estimate",
+      "real": 0.5983519,
+      "reflected": false,
+      "sketch": [
+        1113.03,
+        -1484.13
+      ],
+      "source": [
+        23.34,
+        9.38
+      ]
+    },
+    "Dust_01": {
+      "anchors": 1,
+      "imag": 0.0294286,
+      "quality": "single-landmark-estimate",
+      "real": 0.6975905,
+      "reflected": false,
+      "sketch": [
+        1284.06,
+        -1069.54
+      ],
+      "source": [
+        76.43,
+        2.7178
+      ]
+    },
+    "Dust_02": {
+      "anchors": 2,
+      "imag": 0.0001522,
+      "quality": "paired-landmarks",
+      "real": 0.3796607,
+      "reflected": false,
+      "sketch": [
+        1350.32,
+        -1020.05
+      ],
+      "source": [
+        37.085,
+        89.575
+      ]
+    },
+    "Dust_04": {
+      "anchors": 1,
+      "imag": 0.0294286,
+      "quality": "single-landmark-estimate",
+      "real": 0.6975905,
+      "reflected": false,
+      "sketch": [
+        1404.57,
+        -1016.55
+      ],
+      "source": [
+        77.01,
+        55.99
+      ]
+    },
     "Dust_05": {
       "anchors": 3,
       "imag": 0.0071351,
@@ -403,6 +1783,66 @@
         110.3886
       ]
     },
+    "Dust_10": {
+      "anchors": 2,
+      "imag": 0.1195246,
+      "quality": "paired-landmarks",
+      "real": 0.525244,
+      "reflected": false,
+      "sketch": [
+        1289.685,
+        -1020.8
+      ],
+      "source": [
+        95.945,
+        51.955
+      ]
+    },
+    "Dust_11": {
+      "anchors": 2,
+      "imag": -0.0954892,
+      "quality": "paired-landmarks",
+      "real": 0.510418,
+      "reflected": false,
+      "sketch": [
+        1521.885,
+        -1037.835
+      ],
+      "source": [
+        71.269,
+        10.4235
+      ]
+    },
+    "Dust_Chef": {
+      "anchors": 1,
+      "imag": 0.0294286,
+      "quality": "single-landmark-estimate",
+      "real": 0.6975905,
+      "reflected": false,
+      "sketch": [
+        1416.14,
+        -1028.5
+      ],
+      "source": [
+        5.9604,
+        35.0139
+      ]
+    },
+    "Greymoor_01": {
+      "anchors": 1,
+      "imag": 0.0078588,
+      "quality": "single-landmark-estimate",
+      "real": 0.6205478,
+      "reflected": false,
+      "sketch": [
+        1438.34,
+        -1120.3
+      ],
+      "source": [
+        117.24,
+        17.0507
+      ]
+    },
     "Greymoor_02": {
       "anchors": 7,
       "imag": -0.0739794,
@@ -417,6 +1857,21 @@
       "source": [
         45.9765,
         103.156
+      ]
+    },
+    "Greymoor_03": {
+      "anchors": 1,
+      "imag": 0.0078588,
+      "quality": "single-landmark-estimate",
+      "real": 0.6205478,
+      "reflected": false,
+      "sketch": [
+        1230.06,
+        -1075.03
+      ],
+      "source": [
+        89.767,
+        100.7155
       ]
     },
     "Greymoor_04": {
@@ -435,6 +1890,66 @@
         73.595
       ]
     },
+    "Greymoor_05": {
+      "anchors": 2,
+      "imag": 0.0590192,
+      "quality": "paired-landmarks",
+      "real": 0.7390886,
+      "reflected": false,
+      "sketch": [
+        1096.545,
+        -1126.9
+      ],
+      "source": [
+        33.18,
+        44.345
+      ]
+    },
+    "Greymoor_06": {
+      "anchors": 1,
+      "imag": 0.0078588,
+      "quality": "single-landmark-estimate",
+      "real": 0.6205478,
+      "reflected": false,
+      "sketch": [
+        1054.04,
+        -1097.03
+      ],
+      "source": [
+        14.49,
+        137.036
+      ]
+    },
+    "Greymoor_07": {
+      "anchors": 2,
+      "imag": -0.2017092,
+      "quality": "paired-landmarks",
+      "real": 0.824373,
+      "reflected": false,
+      "sketch": [
+        1031.035,
+        -1155.895
+      ],
+      "source": [
+        45.9747,
+        20.9164
+      ]
+    },
+    "Greymoor_08": {
+      "anchors": 1,
+      "imag": 0.0078588,
+      "quality": "single-landmark-estimate",
+      "real": 0.6205478,
+      "reflected": false,
+      "sketch": [
+        1042.92,
+        -1173.54
+      ],
+      "source": [
+        140.0825,
+        33.8159
+      ]
+    },
     "Greymoor_11": {
       "anchors": 4,
       "imag": 0.2172011,
@@ -449,6 +1964,21 @@
       "source": [
         53.8853,
         43.4938
+      ]
+    },
+    "Greymoor_12": {
+      "anchors": 1,
+      "imag": 0.0078588,
+      "quality": "single-landmark-estimate",
+      "real": 0.6205478,
+      "reflected": false,
+      "sketch": [
+        1285.03,
+        -1104.52
+      ],
+      "source": [
+        61.29,
+        14.4
       ]
     },
     "Greymoor_15": {
@@ -515,6 +2045,141 @@
         30.2912
       ]
     },
+    "Halfway_01": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        1205.02,
+        -1126.02
+      ],
+      "source": [
+        8.2928,
+        13.0
+      ]
+    },
+    "Hang_03_top": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        873.55,
+        -456.61
+      ],
+      "source": [
+        14.79,
+        160.62
+      ]
+    },
+    "Hang_04": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        883.3,
+        -604.33
+      ],
+      "source": [
+        33.19,
+        12.14
+      ]
+    },
+    "Hang_06": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        925.56,
+        -614.32
+      ],
+      "source": [
+        28.9106,
+        0.26
+      ]
+    },
+    "Hang_08": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        953.81,
+        -472.86
+      ],
+      "source": [
+        19.36,
+        195.09
+      ]
+    },
+    "Hang_09": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        932.56,
+        -551.09
+      ],
+      "source": [
+        105.1,
+        16.7293
+      ]
+    },
+    "Hang_15": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        853.55,
+        -573.83
+      ],
+      "source": [
+        70.131,
+        13.188
+      ]
+    },
+    "Hang_16": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        923.06,
+        -591.58
+      ],
+      "source": [
+        67.81,
+        6.38
+      ]
+    },
+    "Library_02": {
+      "anchors": 1,
+      "imag": -0.0036757,
+      "quality": "single-landmark-estimate",
+      "real": 0.6437873,
+      "reflected": false,
+      "sketch": [
+        1195.28,
+        -664.53
+      ],
+      "source": [
+        88.897,
+        7.8056
+      ]
+    },
     "Library_04": {
       "anchors": 5,
       "imag": -0.0523442,
@@ -531,6 +2196,36 @@
         94.042
       ]
     },
+    "Library_05": {
+      "anchors": 1,
+      "imag": -0.0036757,
+      "quality": "single-landmark-estimate",
+      "real": 0.6437873,
+      "reflected": false,
+      "sketch": [
+        1309.26,
+        -711.82
+      ],
+      "source": [
+        16.84,
+        71.22
+      ]
+    },
+    "Library_06": {
+      "anchors": 1,
+      "imag": -0.0036757,
+      "quality": "single-landmark-estimate",
+      "real": 0.6437873,
+      "reflected": false,
+      "sketch": [
+        1354.26,
+        -716.07
+      ],
+      "source": [
+        36.16,
+        67.13
+      ]
+    },
     "Library_08": {
       "anchors": 3,
       "imag": -0.1115829,
@@ -545,6 +2240,36 @@
       "source": [
         72.7967,
         27.4033
+      ]
+    },
+    "Library_10": {
+      "anchors": 1,
+      "imag": -0.0036757,
+      "quality": "single-landmark-estimate",
+      "real": 0.6437873,
+      "reflected": false,
+      "sketch": [
+        1351.83,
+        -775.32
+      ],
+      "source": [
+        133.41,
+        21.59
+      ]
+    },
+    "Library_11": {
+      "anchors": 1,
+      "imag": -0.0036757,
+      "quality": "single-landmark-estimate",
+      "real": 0.6437873,
+      "reflected": false,
+      "sketch": [
+        1208.08,
+        -868.8
+      ],
+      "source": [
+        1.75,
+        91.34
       ]
     },
     "Library_11b": {
@@ -579,6 +2304,21 @@
         64.9329
       ]
     },
+    "Library_12b": {
+      "anchors": 1,
+      "imag": -0.0036757,
+      "quality": "single-landmark-estimate",
+      "real": 0.6437873,
+      "reflected": false,
+      "sketch": [
+        1353.33,
+        -836.31
+      ],
+      "source": [
+        159.5973,
+        16.43
+      ]
+    },
     "Library_13": {
       "anchors": 3,
       "imag": -0.0041931,
@@ -593,6 +2333,36 @@
       "source": [
         52.2349,
         22.0469
+      ]
+    },
+    "Library_14": {
+      "anchors": 1,
+      "imag": -0.0036757,
+      "quality": "single-landmark-estimate",
+      "real": 0.6437873,
+      "reflected": false,
+      "sketch": [
+        1332.76,
+        -677.08
+      ],
+      "source": [
+        54.51,
+        17.26
+      ]
+    },
+    "Library_16": {
+      "anchors": 1,
+      "imag": -0.0036757,
+      "quality": "single-landmark-estimate",
+      "real": 0.6437873,
+      "reflected": false,
+      "sketch": [
+        1243.78,
+        -757.92
+      ],
+      "source": [
+        49.3627,
+        3.6735
       ]
     },
     "Mosstown_01": {
@@ -627,6 +2397,21 @@
         41.2677
       ]
     },
+    "Mosstown_03": {
+      "anchors": 2,
+      "imag": 0.0066884,
+      "quality": "paired-landmarks",
+      "real": 0.7594106,
+      "reflected": false,
+      "sketch": [
+        597.91,
+        -1208.78
+      ],
+      "source": [
+        13.545,
+        115.545
+      ]
+    },
     "Peak_01": {
       "anchors": 4,
       "imag": 0.0094745,
@@ -641,6 +2426,51 @@
       "source": [
         67.7775,
         178.575
+      ]
+    },
+    "Peak_04c": {
+      "anchors": 1,
+      "imag": 0.0094745,
+      "quality": "single-landmark-estimate",
+      "real": 0.6210764,
+      "reflected": false,
+      "sketch": [
+        95.0,
+        -685.13
+      ],
+      "source": [
+        67.63,
+        27.43
+      ]
+    },
+    "Peak_05": {
+      "anchors": 1,
+      "imag": 0.0094745,
+      "quality": "single-landmark-estimate",
+      "real": 0.6210764,
+      "reflected": false,
+      "sketch": [
+        226.13,
+        -562.82
+      ],
+      "source": [
+        222.3684,
+        164.5121
+      ]
+    },
+    "Peak_07": {
+      "anchors": 1,
+      "imag": 0.0094745,
+      "quality": "single-landmark-estimate",
+      "real": 0.6210764,
+      "reflected": false,
+      "sketch": [
+        436.5,
+        -562.44
+      ],
+      "source": [
+        30.35,
+        54.58
       ]
     },
     "Room_Forge": {
@@ -659,6 +2489,156 @@
         25.4308
       ]
     },
+    "Room_Pinstress": {
+      "anchors": 1,
+      "imag": -0.0420598,
+      "quality": "single-landmark-estimate",
+      "real": 0.4758254,
+      "reflected": false,
+      "sketch": [
+        171.51,
+        -1005.92
+      ],
+      "source": [
+        30.6957,
+        7.3118
+      ]
+    },
+    "Shadow_01": {
+      "anchors": 2,
+      "imag": -0.0230457,
+      "quality": "paired-landmarks",
+      "real": 0.6118996,
+      "reflected": false,
+      "sketch": [
+        1499.08,
+        -721.085
+      ],
+      "source": [
+        45.145,
+        98.41
+      ]
+    },
+    "Shadow_02": {
+      "anchors": 1,
+      "imag": 0.0209021,
+      "quality": "single-landmark-estimate",
+      "real": 0.6535439,
+      "reflected": false,
+      "sketch": [
+        1514.08,
+        -816.56
+      ],
+      "source": [
+        49.21,
+        161.48
+      ]
+    },
+    "Shadow_04": {
+      "anchors": 1,
+      "imag": 0.0209021,
+      "quality": "single-landmark-estimate",
+      "real": 0.6535439,
+      "reflected": false,
+      "sketch": [
+        1367.03,
+        -938.76
+      ],
+      "source": [
+        10.73,
+        7.99
+      ]
+    },
+    "Shadow_05": {
+      "anchors": 2,
+      "imag": 0.012224,
+      "quality": "paired-landmarks",
+      "real": 0.797809,
+      "reflected": false,
+      "sketch": [
+        1520.795,
+        -972.275
+      ],
+      "source": [
+        53.4546,
+        20.3826
+      ]
+    },
+    "Shadow_08": {
+      "anchors": 1,
+      "imag": 0.0209021,
+      "quality": "single-landmark-estimate",
+      "real": 0.6535439,
+      "reflected": false,
+      "sketch": [
+        1681.1,
+        -775.07
+      ],
+      "source": [
+        10.68,
+        7.89
+      ]
+    },
+    "Shadow_10": {
+      "anchors": 1,
+      "imag": 0.0209021,
+      "quality": "single-landmark-estimate",
+      "real": 0.6535439,
+      "reflected": false,
+      "sketch": [
+        1713.6,
+        -740.08
+      ],
+      "source": [
+        168.17,
+        5.18
+      ]
+    },
+    "Shadow_11": {
+      "anchors": 2,
+      "imag": -0.0126133,
+      "quality": "paired-landmarks",
+      "real": 0.6467523,
+      "reflected": false,
+      "sketch": [
+        1557.08,
+        -810.565
+      ],
+      "source": [
+        9.43,
+        59.62
+      ]
+    },
+    "Shadow_13": {
+      "anchors": 2,
+      "imag": 0.0584615,
+      "quality": "paired-landmarks",
+      "real": 0.6111692,
+      "reflected": true,
+      "sketch": [
+        1713.105,
+        -795.82
+      ],
+      "source": [
+        262.2067,
+        59.4631
+      ]
+    },
+    "Shadow_15": {
+      "anchors": 1,
+      "imag": 0.0209021,
+      "quality": "single-landmark-estimate",
+      "real": 0.6535439,
+      "reflected": false,
+      "sketch": [
+        1472.34,
+        -724.58
+      ],
+      "source": [
+        11.6,
+        45.13
+      ]
+    },
     "Shadow_20": {
       "anchors": 3,
       "imag": 0.0209021,
@@ -673,6 +2653,96 @@
       "source": [
         95.6787,
         27.7393
+      ]
+    },
+    "Shadow_25": {
+      "anchors": 1,
+      "imag": 0.0209021,
+      "quality": "single-landmark-estimate",
+      "real": 0.6535439,
+      "reflected": false,
+      "sketch": [
+        1798.12,
+        -721.59
+      ],
+      "source": [
+        8.9,
+        31.24
+      ]
+    },
+    "Shadow_26": {
+      "anchors": 1,
+      "imag": 0.0209021,
+      "quality": "single-landmark-estimate",
+      "real": 0.6535439,
+      "reflected": false,
+      "sketch": [
+        1539.85,
+        -772.06
+      ],
+      "source": [
+        0.0,
+        0.0
+      ]
+    },
+    "Shadow_27": {
+      "anchors": 1,
+      "imag": 0.0209021,
+      "quality": "single-landmark-estimate",
+      "real": 0.6535439,
+      "reflected": false,
+      "sketch": [
+        1666.6,
+        -768.57
+      ],
+      "source": [
+        195.09,
+        11.76
+      ]
+    },
+    "Shadow_Bilehaven_Room": {
+      "anchors": 1,
+      "imag": 0.0209021,
+      "quality": "single-landmark-estimate",
+      "real": 0.6535439,
+      "reflected": false,
+      "sketch": [
+        1547.58,
+        -694.59
+      ],
+      "source": [
+        26.112,
+        6.5175
+      ]
+    },
+    "Shadow_Weavehome": {
+      "anchors": 2,
+      "imag": 0.0275648,
+      "quality": "paired-landmarks",
+      "real": 0.437628,
+      "reflected": true,
+      "sketch": [
+        1783.465,
+        -960.18
+      ],
+      "source": [
+        108.121,
+        55.9885
+      ]
+    },
+    "Shellgrave": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        523.29,
+        -1158.11
+      ],
+      "source": [
+        57.5791,
+        9.2917
       ]
     },
     "Shellwood_01": {
@@ -707,6 +2777,141 @@
         43.14
       ]
     },
+    "Shellwood_02": {
+      "anchors": 1,
+      "imag": 0.0625016,
+      "quality": "single-landmark-estimate",
+      "real": 0.5744039,
+      "reflected": false,
+      "sketch": [
+        692.28,
+        -1155.81
+      ],
+      "source": [
+        32.52,
+        59.97
+      ]
+    },
+    "Shellwood_04b": {
+      "anchors": 1,
+      "imag": 0.0625016,
+      "quality": "single-landmark-estimate",
+      "real": 0.5744039,
+      "reflected": false,
+      "sketch": [
+        480.04,
+        -1173.6
+      ],
+      "source": [
+        80.2703,
+        14.7797
+      ]
+    },
+    "Shellwood_08c": {
+      "anchors": 1,
+      "imag": 0.0625016,
+      "quality": "single-landmark-estimate",
+      "real": 0.5744039,
+      "reflected": false,
+      "sketch": [
+        436.28,
+        -1178.6
+      ],
+      "source": [
+        14.86,
+        2.73
+      ]
+    },
+    "Shellwood_11": {
+      "anchors": 1,
+      "imag": 0.0625016,
+      "quality": "single-landmark-estimate",
+      "real": 0.5744039,
+      "reflected": false,
+      "sketch": [
+        586.81,
+        -1077.41
+      ],
+      "source": [
+        59.59,
+        20.27
+      ]
+    },
+    "Shellwood_13": {
+      "anchors": 1,
+      "imag": 0.0625016,
+      "quality": "single-landmark-estimate",
+      "real": 0.5744039,
+      "reflected": false,
+      "sketch": [
+        800.33,
+        -1056.16
+      ],
+      "source": [
+        82.2928,
+        67.2101
+      ]
+    },
+    "Shellwood_14": {
+      "anchors": 1,
+      "imag": 0.0625016,
+      "quality": "single-landmark-estimate",
+      "real": 0.5744039,
+      "reflected": false,
+      "sketch": [
+        691.07,
+        -1121.15
+      ],
+      "source": [
+        127.89,
+        12.6719
+      ]
+    },
+    "Shellwood_25": {
+      "anchors": 1,
+      "imag": 0.0625016,
+      "quality": "single-landmark-estimate",
+      "real": 0.5744039,
+      "reflected": false,
+      "sketch": [
+        662.28,
+        -1198.18
+      ],
+      "source": [
+        83.3,
+        25.4172
+      ]
+    },
+    "Shellwood_26": {
+      "anchors": 2,
+      "imag": 0.0248312,
+      "quality": "paired-landmarks",
+      "real": 0.5782157,
+      "reflected": false,
+      "sketch": [
+        684.07,
+        -1031.42
+      ],
+      "source": [
+        31.38,
+        109.435
+      ]
+    },
+    "Slab_02": {
+      "anchors": 1,
+      "imag": -0.0494192,
+      "quality": "single-landmark-estimate",
+      "real": 0.6301,
+      "reflected": false,
+      "sketch": [
+        558.64,
+        -706.52
+      ],
+      "source": [
+        12.81,
+        6.14
+      ]
+    },
     "Slab_03": {
       "anchors": 5,
       "imag": 0.0062396,
@@ -721,6 +2926,51 @@
       "source": [
         15.864,
         110.2545
+      ]
+    },
+    "Slab_04": {
+      "anchors": 1,
+      "imag": -0.0494192,
+      "quality": "single-landmark-estimate",
+      "real": 0.6301,
+      "reflected": false,
+      "sketch": [
+        507.78,
+        -699.02
+      ],
+      "source": [
+        46.84,
+        20.55
+      ]
+    },
+    "Slab_05": {
+      "anchors": 1,
+      "imag": -0.0494192,
+      "quality": "single-landmark-estimate",
+      "real": 0.6301,
+      "reflected": false,
+      "sketch": [
+        510.28,
+        -716.27
+      ],
+      "source": [
+        55.77,
+        28.51
+      ]
+    },
+    "Slab_06": {
+      "anchors": 1,
+      "imag": -0.0494192,
+      "quality": "single-landmark-estimate",
+      "real": 0.6301,
+      "reflected": false,
+      "sketch": [
+        535.64,
+        -737.13
+      ],
+      "source": [
+        88.8,
+        26.2729
       ]
     },
     "Slab_07": {
@@ -739,6 +2989,51 @@
         21.3837
       ]
     },
+    "Slab_12": {
+      "anchors": 1,
+      "imag": -0.0494192,
+      "quality": "single-landmark-estimate",
+      "real": 0.6301,
+      "reflected": false,
+      "sketch": [
+        579.79,
+        -783.75
+      ],
+      "source": [
+        23.47,
+        16.07
+      ]
+    },
+    "Slab_14": {
+      "anchors": 1,
+      "imag": -0.0494192,
+      "quality": "single-landmark-estimate",
+      "real": 0.6301,
+      "reflected": false,
+      "sketch": [
+        530.02,
+        -667.02
+      ],
+      "source": [
+        81.4,
+        4.39
+      ]
+    },
+    "Slab_16": {
+      "anchors": 1,
+      "imag": -0.0494192,
+      "quality": "single-landmark-estimate",
+      "real": 0.6301,
+      "reflected": false,
+      "sketch": [
+        534.0,
+        -621.88
+      ],
+      "source": [
+        81.12,
+        20.39
+      ]
+    },
     "Slab_18": {
       "anchors": 3,
       "imag": -0.050627,
@@ -755,6 +3050,21 @@
         39.7168
       ]
     },
+    "Slab_Cell_Quiet": {
+      "anchors": 1,
+      "imag": -0.0494192,
+      "quality": "single-landmark-estimate",
+      "real": 0.6301,
+      "reflected": false,
+      "sketch": [
+        572.64,
+        -718.14
+      ],
+      "source": [
+        42.4419,
+        30.4
+      ]
+    },
     "Song_01": {
       "anchors": 5,
       "imag": -0.0015319,
@@ -769,6 +3079,51 @@
       "source": [
         65.1843,
         88.0034
+      ]
+    },
+    "Song_01b": {
+      "anchors": 2,
+      "imag": -0.1265014,
+      "quality": "paired-landmarks",
+      "real": 0.8569272,
+      "reflected": true,
+      "sketch": [
+        733.285,
+        -775.655
+      ],
+      "source": [
+        37.0257,
+        7.4817
+      ]
+    },
+    "Song_03": {
+      "anchors": 2,
+      "imag": 0.0700966,
+      "quality": "paired-landmarks",
+      "real": 0.6251453,
+      "reflected": false,
+      "sketch": [
+        754.535,
+        -756.285
+      ],
+      "source": [
+        85.7059,
+        19.5428
+      ]
+    },
+    "Song_04": {
+      "anchors": 1,
+      "imag": -0.029657,
+      "quality": "single-landmark-estimate",
+      "real": 0.6367564,
+      "reflected": false,
+      "sketch": [
+        781.29,
+        -717.3
+      ],
+      "source": [
+        121.49,
+        37.57
       ]
     },
     "Song_09": {
@@ -801,6 +3156,111 @@
       "source": [
         84.2221,
         134.4663
+      ]
+    },
+    "Song_15": {
+      "anchors": 1,
+      "imag": -0.029657,
+      "quality": "single-landmark-estimate",
+      "real": 0.6367564,
+      "reflected": false,
+      "sketch": [
+        819.8,
+        -659.81
+      ],
+      "source": [
+        5.1597,
+        10.04
+      ]
+    },
+    "Song_19_entrance": {
+      "anchors": 2,
+      "imag": 0.0054351,
+      "quality": "paired-landmarks",
+      "real": 0.7928906,
+      "reflected": false,
+      "sketch": [
+        665.675,
+        -862.175
+      ],
+      "source": [
+        42.725,
+        81.175
+      ]
+    },
+    "Song_20b": {
+      "anchors": 1,
+      "imag": -0.029657,
+      "quality": "single-landmark-estimate",
+      "real": 0.6367564,
+      "reflected": false,
+      "sketch": [
+        1117.77,
+        -636.54
+      ],
+      "source": [
+        13.9675,
+        233.9786
+      ]
+    },
+    "Song_24": {
+      "anchors": 1,
+      "imag": -0.029657,
+      "quality": "single-landmark-estimate",
+      "real": 0.6367564,
+      "reflected": false,
+      "sketch": [
+        1102.79,
+        -782.83
+      ],
+      "source": [
+        52.99,
+        21.53
+      ]
+    },
+    "Song_25": {
+      "anchors": 1,
+      "imag": -0.029657,
+      "quality": "single-landmark-estimate",
+      "real": 0.6367564,
+      "reflected": false,
+      "sketch": [
+        1059.79,
+        -611.96
+      ],
+      "source": [
+        28.963,
+        22.339
+      ]
+    },
+    "Song_26": {
+      "anchors": 1,
+      "imag": -0.029657,
+      "quality": "single-landmark-estimate",
+      "real": 0.6367564,
+      "reflected": false,
+      "sketch": [
+        780.79,
+        -667.81
+      ],
+      "source": [
+        15.53,
+        5.7
+      ]
+    },
+    "Tube_Hub": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        1069.8,
+        -443.59
+      ],
+      "source": [
+        20.35,
+        8.78
       ]
     },
     "Tut_01": {
@@ -851,6 +3311,51 @@
         38.2392
       ]
     },
+    "Tut_04": {
+      "anchors": 1,
+      "imag": -0.0077047,
+      "quality": "single-landmark-estimate",
+      "real": 0.6232322,
+      "reflected": false,
+      "sketch": [
+        311.03,
+        -1398.0
+      ],
+      "source": [
+        14.75,
+        9.63
+      ]
+    },
+    "Under_01": {
+      "anchors": 1,
+      "imag": -0.0182856,
+      "quality": "single-landmark-estimate",
+      "real": 0.6348131,
+      "reflected": false,
+      "sketch": [
+        705.48,
+        -939.89
+      ],
+      "source": [
+        33.02,
+        76.87
+      ]
+    },
+    "Under_01b": {
+      "anchors": 1,
+      "imag": -0.0182856,
+      "quality": "single-landmark-estimate",
+      "real": 0.6348131,
+      "reflected": false,
+      "sketch": [
+        755.49,
+        -981.63
+      ],
+      "source": [
+        43.55,
+        5.89
+      ]
+    },
     "Under_02": {
       "anchors": 4,
       "imag": -0.0229606,
@@ -865,6 +3370,96 @@
       "source": [
         20.3444,
         103.1579
+      ]
+    },
+    "Under_03": {
+      "anchors": 1,
+      "imag": -0.0182856,
+      "quality": "single-landmark-estimate",
+      "real": 0.6348131,
+      "reflected": false,
+      "sketch": [
+        798.52,
+        -942.86
+      ],
+      "source": [
+        4.5876,
+        6.2287
+      ]
+    },
+    "Under_03b": {
+      "anchors": 1,
+      "imag": -0.0182856,
+      "quality": "single-landmark-estimate",
+      "real": 0.6348131,
+      "reflected": false,
+      "sketch": [
+        782.24,
+        -925.89
+      ],
+      "source": [
+        9.86,
+        14.01
+      ]
+    },
+    "Under_03c": {
+      "anchors": 1,
+      "imag": -0.0182856,
+      "quality": "single-landmark-estimate",
+      "real": 0.6348131,
+      "reflected": false,
+      "sketch": [
+        844.53,
+        -945.36
+      ],
+      "source": [
+        13.61,
+        7.05
+      ]
+    },
+    "Under_04": {
+      "anchors": 1,
+      "imag": -0.0182856,
+      "quality": "single-landmark-estimate",
+      "real": 0.6348131,
+      "reflected": false,
+      "sketch": [
+        861.03,
+        -934.62
+      ],
+      "source": [
+        7.8894,
+        21.9994
+      ]
+    },
+    "Under_05": {
+      "anchors": 1,
+      "imag": -0.0182856,
+      "quality": "single-landmark-estimate",
+      "real": 0.6348131,
+      "reflected": false,
+      "sketch": [
+        939.79,
+        -946.86
+      ],
+      "source": [
+        14.3215,
+        47.6928
+      ]
+    },
+    "Under_07": {
+      "anchors": 1,
+      "imag": -0.0182856,
+      "quality": "single-landmark-estimate",
+      "real": 0.6348131,
+      "reflected": false,
+      "sketch": [
+        824.56,
+        -888.85
+      ],
+      "source": [
+        78.0556,
+        20.11
       ]
     },
     "Under_07c": {
@@ -899,6 +3494,66 @@
         24.1473
       ]
     },
+    "Under_11": {
+      "anchors": 1,
+      "imag": -0.0182856,
+      "quality": "single-landmark-estimate",
+      "real": 0.6348131,
+      "reflected": false,
+      "sketch": [
+        975.3,
+        -898.88
+      ],
+      "source": [
+        48.69,
+        3.9
+      ]
+    },
+    "Under_12": {
+      "anchors": 1,
+      "imag": -0.0182856,
+      "quality": "single-landmark-estimate",
+      "real": 0.6348131,
+      "reflected": false,
+      "sketch": [
+        972.05,
+        -917.87
+      ],
+      "source": [
+        33.13,
+        10.29
+      ]
+    },
+    "Under_14": {
+      "anchors": 1,
+      "imag": -0.0182856,
+      "quality": "single-landmark-estimate",
+      "real": 0.6348131,
+      "reflected": false,
+      "sketch": [
+        828.5,
+        -1017.12
+      ],
+      "source": [
+        78.63,
+        9.76
+      ]
+    },
+    "Under_16": {
+      "anchors": 1,
+      "imag": -0.0182856,
+      "quality": "single-landmark-estimate",
+      "real": 0.6348131,
+      "reflected": false,
+      "sketch": [
+        723.98,
+        -932.39
+      ],
+      "source": [
+        32.56,
+        27.222
+      ]
+    },
     "Under_17": {
       "anchors": 3,
       "imag": 0.0951968,
@@ -913,6 +3568,51 @@
       "source": [
         51.4606,
         20.5906
+      ]
+    },
+    "Under_18": {
+      "anchors": 2,
+      "imag": -0.0741206,
+      "quality": "paired-landmarks",
+      "real": 0.6663888,
+      "reflected": false,
+      "sketch": [
+        1081.315,
+        -905.165
+      ],
+      "source": [
+        76.825,
+        38.485
+      ]
+    },
+    "Under_19b": {
+      "anchors": 1,
+      "imag": -0.0182856,
+      "quality": "single-landmark-estimate",
+      "real": 0.6348131,
+      "reflected": false,
+      "sketch": [
+        1039.56,
+        -939.28
+      ],
+      "source": [
+        7.7394,
+        8.7104
+      ]
+    },
+    "Under_23": {
+      "anchors": 2,
+      "imag": -0.0023555,
+      "quality": "paired-landmarks",
+      "real": 0.5669441,
+      "reflected": false,
+      "sketch": [
+        887.285,
+        -967.485
+      ],
+      "source": [
+        94.005,
+        13.7385
       ]
     },
     "Under_27": {
@@ -931,6 +3631,66 @@
         48.4675
       ]
     },
+    "Ward_01": {
+      "anchors": 2,
+      "imag": -0.0508049,
+      "quality": "paired-landmarks",
+      "real": 0.697418,
+      "reflected": false,
+      "sketch": [
+        963.085,
+        -818.64
+      ],
+      "source": [
+        27.338,
+        29.6761
+      ]
+    },
+    "Ward_02": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        876.91,
+        -826.38
+      ],
+      "source": [
+        41.52,
+        60.5943
+      ]
+    },
+    "Ward_04": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        1007.53,
+        -796.29
+      ],
+      "source": [
+        24.1963,
+        22.2645
+      ]
+    },
+    "Ward_06": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        1115.27,
+        -839.89
+      ],
+      "source": [
+        71.9,
+        51.74
+      ]
+    },
     "Weave_03": {
       "anchors": 3,
       "imag": -0.1259977,
@@ -945,6 +3705,126 @@
       "source": [
         105.0963,
         20.2952
+      ]
+    },
+    "Weave_05b": {
+      "anchors": 1,
+      "imag": -0.1259977,
+      "quality": "single-landmark-estimate",
+      "real": 0.7610096,
+      "reflected": false,
+      "sketch": [
+        666.66,
+        -1429.26
+      ],
+      "source": [
+        159.0673,
+        28.71
+      ]
+    },
+    "Weave_11": {
+      "anchors": 1,
+      "imag": -0.1259977,
+      "quality": "single-landmark-estimate",
+      "real": 0.7610096,
+      "reflected": false,
+      "sketch": [
+        467.51,
+        -1443.61
+      ],
+      "source": [
+        13.3,
+        15.09
+      ]
+    },
+    "Wisp_02": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        974.51,
+        -1022.62
+      ],
+      "source": [
+        111.32,
+        37.99
+      ]
+    },
+    "Wisp_03": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        962.04,
+        -1083.85
+      ],
+      "source": [
+        62.89,
+        35.37
+      ]
+    },
+    "Wisp_04": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        1084.78,
+        -1035.36
+      ],
+      "source": [
+        57.85,
+        22.42
+      ]
+    },
+    "Wisp_05": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        995.52,
+        -979.38
+      ],
+      "source": [
+        45.5531,
+        62.0491
+      ]
+    },
+    "Wisp_07": {
+      "anchors": 1,
+      "imag": 0.0003741,
+      "quality": "single-landmark-estimate",
+      "real": 0.6350763,
+      "reflected": false,
+      "sketch": [
+        1221.3,
+        -1007.37
+      ],
+      "source": [
+        251.41,
+        24.9
+      ]
+    },
+    "Wisp_09": {
+      "anchors": 2,
+      "imag": -0.0079713,
+      "quality": "paired-landmarks",
+      "real": 0.5264332,
+      "reflected": false,
+      "sketch": [
+        928.385,
+        -989.5
+      ],
+      "source": [
+        38.71,
+        15.88
       ]
     }
   }

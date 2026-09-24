@@ -14,7 +14,11 @@
   const liveMath=window.SilksongLiveMath;
   let live=null,livePin=null,calibration={},pendingAnchor=null,autoRooms={},calibrationNotice='',noticeUntil=0;
   try {calibration=JSON.parse(localStorage.getItem('ss.map.live.calibration.v2')||'{}')||{};} catch {}
-  function liveDetail(text){$('#live-detail').textContent=Date.now()<noticeUntil?calibrationNotice:text;}
+  function liveDetail(text){
+    if(pendingAnchor)text='Click Hornet’s exact spot on Sketch to set calibration point '+(pendingAnchor.index+1)+'.';
+    else if(Date.now()<noticeUntil)text=calibrationNotice;
+    $('#live-detail').textContent=text;
+  }
   function liveNotice(text){calibrationNotice=text;noticeUntil=Date.now()+6500;liveDetail(text);}
   function redrawLive(){
     const hide=()=>{if(livePin){map.removeLayer(livePin);livePin=null;}};
@@ -24,10 +28,10 @@
     $('#center-hornet').disabled=true;
     if(!connected){hide();liveDetail('Waiting for the optional local bridge.');return;}
     const scene=live.position.scene,anchors=calibration[scene]||[];
-    $('#calibrate-hornet').textContent=anchors.length===1?'Refine calibration (optional)':anchors.length===2?'Replace calibration':'Calibrate current room';
+    $('#calibrate-hornet').textContent=anchors.length===1?'Capture calibration point 2':anchors.length===2?'Replace calibration':'Calibrate current room';
     if(style!=='sketch'){hide();liveDetail('Live position appears on Sketch only.');return;}
     const located=liveMath.position(autoRooms,scene,[live.position.x,live.position.y],anchors);
-    if(!located){hide();liveDetail('Connected, but this room has no verified automatic position. Click Calibrate current room, then click where Hornet stands.');return;}
+    if(!located){hide();liveDetail('No automatic map anchor for this room. Calibrate two positions here to fit Hornet’s movement.');return;}
     const p=located.point;
     const bounds=L.latLngBounds(data.sketch.bounds);
     if(!p||!bounds.contains(p)){hide();liveDetail('Position is outside Sketch. Clear and redo this room’s calibration.');return;}
@@ -38,14 +42,13 @@
     }
     $('#center-hornet').disabled=false;
     const room=autoRooms[scene];
-    liveDetail(located.mode==='auto'?'Auto-located from '+room.anchors+' map points · estimated. One click can correct it.':located.mode==='refined'?'Room calibration refined and locked to world coordinates.':located.confidence==='room'?'Room position corrected. A second, distant point can refine scale.':'Room position placed with '+located.confidence+' scale estimate. A distant second point can refine it.');
+    liveDetail(located.mode==='auto'&&room.anchors>=3?'Auto-located from '+room.anchors+' matched map points.':located.mode==='auto'&&room.anchors===2?'Auto-located from two matched points; exact movement may vary.':located.mode==='auto'?'Approximate position aligned to one matched map point.':located.mode==='calibrated'?'Two-point calibration saved; movement scale and direction now follow both captures.':room?.anchors>=3?'First point saved; capture a second position to fit movement scale and direction.':'First point saved; movement remains approximate until point 2.');
   }
   async function pollLive(){
     try {const response=await fetch('/api/live-position',{cache:'no-store'});if(response.ok)live=await response.json();else live=null;}
     catch {live=null;}
     if(map&&data){
       redrawLive();
-      if(pendingAnchor&&live?.connected&&style==='sketch')$('#live-detail').textContent='Now click Hornet’s exact position on Sketch.';
     }
   }
   let hidden=new Set(), query='', onlyLeft=false, manual={}, manualKey='';
@@ -297,7 +300,7 @@
         const scene=live.position.scene,anchors=calibration[scene]||[];
         pendingAnchor={scene,source:[live.position.x,live.position.y],index:anchors.length===1?1:0};
         noticeUntil=0;
-        liveDetail('Now click Hornet’s exact position on Sketch. Press Esc to cancel.');
+        liveDetail('');
       };
       $('#reset-calibration').onclick=()=>{
         if(!live?.position)return;
@@ -316,12 +319,18 @@
         const first=(calibration[scene]||[])[0];
         if(index===1&&first){
           const prior=liveMath.priorForScene(autoRooms,scene);
-          if(!prior||!liveMath.refine([first,point],prior.matrix)){
-            liveNotice('Second point rejected: move farther within this room and click its exact spot. Your first point is kept.');redrawLive();return;
+          if(!prior||!liveMath.solveAnchors([first,point],prior.matrix)){
+            liveNotice('Points are too close or inconsistent. Keep point 1, move farther, then capture point 2 again.');redrawLive();return;
           }
           calibration[scene]=[first,point];
-        }else calibration[scene]=[point];
-        localStorage.setItem('ss.map.live.calibration.v2',JSON.stringify(calibration));redrawLive();
+          localStorage.setItem('ss.map.live.calibration.v2',JSON.stringify(calibration));
+          liveNotice('Two-point calibration saved. Scale and direction now follow both positions.');
+        }else{
+          calibration[scene]=[point];
+          localStorage.setItem('ss.map.live.calibration.v2',JSON.stringify(calibration));
+          liveNotice('Point 1 saved. Move a good distance in this room, then capture point 2 to fit movement accurately.');
+        }
+        redrawLive();
       },true);
       pollLive();setInterval(pollLive,750);
       map.on('zoomend moveend resize',tidyLabels);

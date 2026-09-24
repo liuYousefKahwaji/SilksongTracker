@@ -108,7 +108,73 @@ def robust_fit(pairs: list[tuple[complex, complex]]) -> dict | None:
     return best[1] if best else None
 
 
-def build(map_path: Path, cache_dir: Path, bundles_dir: Path) -> dict:
+def transform_prior(rooms: dict, scene: str) -> dict | None:
+    """Use only multi-landmark transforms as priors; estimates must not compound."""
+    trusted = {name: room for name, room in rooms.items() if room.get("anchors", 0) >= 3}
+    prefix = scene.split("_")[0]
+    area = [room for name, room in trusted.items() if name.split("_")[0] == prefix]
+    candidates = area or list(trusted.values())
+    if not candidates:
+        return None
+    scales = [math.hypot(room["real"], room["imag"]) for room in candidates]
+    angles = [math.atan2(room["imag"], room["real"]) for room in candidates]
+    scale = sorted(scales)[len(scales) // 2]
+    angle = sorted(angles)[len(angles) // 2]
+    reflected = sum(bool(room.get("reflected")) for room in candidates) > len(candidates) / 2
+    return {"real": scale * math.cos(angle), "imag": scale * math.sin(angle), "reflected": reflected}
+
+
+def paired_fit(pairs: list[tuple[complex, complex]], prior: dict | None) -> dict | None:
+    """Fit an exact two-landmark room transform when no redundant third point exists."""
+    if len(pairs) != 2:
+        return None
+    source_distance = abs(pairs[1][0] - pairs[0][0])
+    target_distance = abs(pairs[1][1] - pairs[0][1])
+    if source_distance < 25 or target_distance < 12:
+        return None
+    if prior is None:
+        prior = {"real": 0.65, "imag": 0.0, "reflected": False}
+    prior_angle = math.atan2(prior["imag"], prior["real"])
+    candidates = []
+    for reflected in (prior["reflected"], not prior["reflected"]):
+        result = fit(pairs, reflected)
+        if result is None:
+            continue
+        scale = math.hypot(result["real"], result["imag"])
+        if not 0.15 <= scale <= 1.0:
+            continue
+        angle = math.atan2(result["imag"], result["real"])
+        angle_delta = abs((angle - prior_angle + math.pi) % (2 * math.pi) - math.pi)
+        if angle_delta > math.radians(20):
+            continue
+        scale_delta = abs(math.log(scale / math.hypot(prior["real"], prior["imag"])))
+        candidates.append(((angle_delta, scale_delta), result))
+    if not candidates:
+        return None
+    _, result = min(candidates, key=lambda candidate: candidate[0])
+    result.pop("rms", None)
+    result.pop("maxError", None)
+    result["quality"] = "paired-landmarks"
+    return result
+
+
+def single_landmark_estimate(pairs: list[tuple[complex, complex]], prior: dict | None) -> dict | None:
+    """Anchor one exact map match and estimate room movement from a trusted area scale."""
+    if len(pairs) != 1:
+        return None
+    if prior is None:
+        prior = {"real": 0.65, "imag": 0.0, "reflected": False}
+    source, sketch = pairs[0]
+    return {
+        "source": [round(source.real, 4), round(source.imag, 4)],
+        "sketch": [round(sketch.real, 4), round(sketch.imag, 4)],
+        "real": round(prior["real"], 7), "imag": round(prior["imag"], 7),
+        "reflected": prior["reflected"], "anchors": 1,
+        "quality": "single-landmark-estimate",
+    }
+
+
+def build(map_path: Path, cache_dir: Path, bundles_dir: Path, trusted_rooms: dict | None = None) -> dict:
     markers = json.loads(map_path.read_text(encoding="utf-8"))["markers"]
     by_scene = defaultdict(lambda: defaultdict(set))
     for marker in markers:
@@ -119,7 +185,7 @@ def build(map_path: Path, cache_dir: Path, bundles_dir: Path) -> dict:
     bundle_index = {p.stem.lower(): p for p in bundles_dir.rglob("*.bundle")}
     result = {}
     for scene, pins in sorted(by_scene.items()):
-        if len(pins) < 3:
+        if not pins:
             continue
         cache = cache_dir / (scene + ".json")
         if cache.is_file():
@@ -143,6 +209,10 @@ def build(map_path: Path, cache_dir: Path, bundles_dir: Path) -> dict:
             qx, qy = next(iter(sketches))
             pairs.append((complex(x, y), complex(qx, qy)))
         transform = robust_fit(pairs)
+        if transform is None and len(pairs) == 2:
+            transform = paired_fit(pairs, transform_prior(trusted_rooms or {}, scene))
+        if transform is None and len(pairs) == 1:
+            transform = single_landmark_estimate(pairs, transform_prior(trusted_rooms or {}, scene))
         if transform:
             result[scene] = transform
     return result
@@ -153,11 +223,17 @@ def main() -> None:
     parser.add_argument("--game-dir", type=Path, default=Path("C:/Program Files (x86)/Steam/steamapps/common/Hollow Knight Silksong"))
     args = parser.parse_args()
     root = args.game_dir / "Hollow Knight Silksong_Data/StreamingAssets/aa"
-    result = build(ROOT / "data/map/map.json", ROOT / "source/scene-research", root)
-    path = ROOT / "data/live_positions.json"
-    path.write_text(json.dumps({"format": 1, "method": "scene-object-similarity", "maxResidualPixels": 20,
+    output_path = ROOT / "data/live_positions.json"
+    previous = json.loads(output_path.read_text(encoding="utf-8")) if output_path.is_file() else {}
+    trusted_rooms = previous.get("rooms", {})
+    result = build(ROOT / "data/map/map.json", ROOT / "source/scene-research", root, trusted_rooms)
+    output_path.write_text(json.dumps({"format": 2, "method": "scene-object-matches+regional-prior", "maxResidualPixelsForMultiLandmarkFit": 20,
                                 "rooms": result}, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    print(f"Wrote {len(result)} verified room transforms to {path}")
+    quality = {"multi-landmark": 0, "paired-landmarks": 0, "single-landmark-estimate": 0}
+    for room in result.values():
+        label = room.get("quality", "multi-landmark")
+        quality[label] += 1
+    print(f"Wrote {len(result)} room transforms to {output_path}: " + ", ".join(f"{count} {label}" for label, count in quality.items()))
 
 
 if __name__ == "__main__":
