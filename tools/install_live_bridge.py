@@ -55,7 +55,7 @@ def main() -> None:
         f"\nEndpoint = http://127.0.0.1:{args.port}/api/live-position\n",
         encoding="utf-8",
     )
-    print("Installed and enabled the local-only bridge. The token was not printed. Restart the game and tracker, then calibrate on Sketch.")
+    print("Installed and enabled the local-only bridge. The token was not printed. Restart the game and tracker; Sketch placement is automatic and calibration remains optional.")
 
 
 if __name__ == "__main__":

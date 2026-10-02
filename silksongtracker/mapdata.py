@@ -6,7 +6,7 @@ from .rules import evaluate
 from .analyzer import known_rule
 
 from .flags import flag_status
-from .maptracking import supplemental_flag, reference_reason, unresolved_reason, alternative_unavailable
+from .maptracking import supplemental_flag, reference_reason, route_waypoint_reason, unresolved_reason, alternative_unavailable
 from .maptracking import CORRECTIONS
 
 def build_map(raw):
@@ -23,6 +23,7 @@ def build_map(raw):
         entries = reverse.get(marker['id'], [])
         flag = CORRECTIONS.get(marker['id']) or marker.get('flag') or supplemental_flag(marker)
         status = flag_status(flag, raw)
+        waypoint_reason = route_waypoint_reason(marker)
         rule = None
         if status == 'unknown' and not flag and entries:
             rule = known_rule(entries[0])
@@ -30,9 +31,12 @@ def build_map(raw):
                 status = evaluate(rule, save)
         has_rule = bool(flag or (rule and not entries[0]['id'].startswith(('upgrades-', 'silk-hearts-'))))
         reason = None if has_rule else reference_reason(marker)
-        tracking = 'save' if has_rule else 'reference' if reason else 'unverified'
-        if tracking == 'unverified': reason = unresolved_reason(marker)
-        if alternative_unavailable(marker, raw):
+        tracking = 'waypoint' if waypoint_reason else 'save' if has_rule else 'reference' if reason else 'unverified'
+        if tracking == 'waypoint':
+            status = 'left'
+            reason = waypoint_reason
+        elif tracking == 'unverified': reason = unresolved_reason(marker)
+        if tracking != 'waypoint' and alternative_unavailable(marker, raw):
             status = 'unavailable'
             reason = 'An alternative version is already owned. This is not a missing collectible.'
         markers.append({**marker, 'status':status, 'tracking':tracking,

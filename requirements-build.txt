@@ -1,2 +1,2 @@
-# Only required for initial map/icon setup, not normal tracker operation.
+# Needed only for the initial map/icon build. The tracker server has no runtime dependencies.
 Pillow>=10,<13

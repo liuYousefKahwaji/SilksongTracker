@@ -3,7 +3,10 @@
   let state = null;
   const slug = (x) => x.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const esc = (x) => String(x ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  async function json(url, opts) { const r = await fetch(url, opts); if (!r.ok) throw new Error(await r.text()); return r.json(); }
+  async function json(url, opts = {}) { const r = await fetch(url, {cache:'no-store', ...opts}); if (!r.ok) { let message; try { message = (await r.json()).error; } catch {} throw new Error(message || `Request failed (${r.status})`); } return r.json(); }
+  function storageGet(key) { try { return localStorage.getItem(key); } catch { return null; } }
+  function storageSet(key, value) { try { localStorage.setItem(key, value); } catch {} }
+  const FILTER_KEY = 'ss.checklist.filters.v1';
   function statusLabel(s) { return s === 'complete' ? 'Done' : s === 'left' ? 'Left' : 'Unknown'; }
   function render() {
     if (!state) return;
@@ -36,23 +39,58 @@
     const visibleSections = [];
     for (const group of state.groups || []) {
       if (hideSupporting && !group.points) continue;
-      const entries = (group.entries || []).filter(e => (!spoilerLight || e.status === 'complete') && (!q || `${e.name} ${group.name}`.toLowerCase().includes(q)) && (spoilerLight || !onlyLeft || e.status === 'left') && (!hideUnknown || e.status !== 'unknown'));
+      const allEntries = group.entries || [];
+      const groupComplete = allEntries.filter(e => e.status === 'complete').length;
+      const groupTotal = allEntries.length;
+      const entries = allEntries.filter(e => (!spoilerLight || e.status === 'complete') && (!q || `${e.name} ${group.name}`.toLowerCase().includes(q)) && (spoilerLight || !onlyLeft || e.status === 'left') && (!hideUnknown || e.status !== 'unknown'));
       if (!entries.length) continue;
-      visibleSections.push({group, entries});
+      visibleSections.push({group, entries, groupComplete, groupTotal});
     }
-    $('#section-nav').innerHTML = visibleSections.map(({group}) => `<a href="#${esc(group.id)}"><span>${esc(group.icon || '•')}</span>${esc(group.name)}<em>${group.complete ?? 0}/${group.total || group.entryTotal || group.entries.length}</em></a>`).join('');
-    $('#sections').innerHTML = visibleSections.map(({group, entries}) => `<section class="group" id="${esc(group.id)}"><div class="group-head"><div><span class="group-icon">${esc(group.icon || '•')}</span><h2>${esc(group.name)}</h2><small>${group.points ? `${group.points} official point${group.points === 1 ? '' : 's'}` : 'supporting checklist'}</small></div><strong>${group.complete ?? 0}<i>/${group.total || group.entryTotal || entries.length}</i></strong></div><div class="cards">${entries.map(e => `<article class="entry ${e.status}${e.id === initial ? ' entry-focused' : ''}" id="${esc(e.id)}" data-name="${esc(e.name)}"><div class="entry-mark">${e.status === 'complete' ? '✓' : e.status === 'left' ? '·' : '?'}</div>${e.map ? `<img class="entry-icon" src="/map/icons/${encodeURIComponent(e.map.icon)}" alt="">` : ''}<div class="entry-body"><b>${esc(e.name)}</b><small>${statusLabel(e.status)}${e.note ? ` · ${esc(e.note)}` : ''}</small></div>${e.map ? `<a class="map-link" href="/map?entry=${encodeURIComponent(e.id)}" title="${e.map.kind === 'components' ? 'Show component locations' : 'Show on map'}">⌖</a>` : `<span class="map-unlinked" title="No researched map location linked yet">—</span>`}</article>`).join('')}</div></section>`).join('') || `<div class="empty"><b>No matching entries</b><span>Try another search or clear a filter.</span></div>`;
+    $('#section-nav').innerHTML = visibleSections.map(({group, groupComplete, groupTotal}) => `<a href="#${esc(group.id)}"><span>${esc(group.icon || '•')}</span>${esc(group.name)}<em>${groupComplete}/${groupTotal}</em></a>`).join('');
+    $('#sections').innerHTML = visibleSections.map(({group, entries, groupComplete, groupTotal}) => `<section class="group" id="${esc(group.id)}"><div class="group-head"><div><span class="group-icon">${esc(group.icon || '•')}</span><h2>${esc(group.name)}</h2><small>${group.points ? `${group.points} official point${group.points === 1 ? '' : 's'}` : 'supporting checklist'}</small></div><strong>${groupComplete}<i>/${groupTotal}</i></strong></div><div class="cards">${entries.map(e => `<article class="entry ${e.status}${e.id === initial ? ' entry-focused' : ''}" id="${esc(e.id)}" data-name="${esc(e.name)}"><div class="entry-mark">${e.status === 'complete' ? '✓' : e.status === 'left' ? '·' : '?'}</div>${e.map ? `<img class="entry-icon" src="/map/icons/${encodeURIComponent(e.map.icon)}" alt="">` : ''}<div class="entry-body"><b>${esc(e.name)}</b><small>${statusLabel(e.status)}${e.note ? ` · ${esc(e.note)}` : ''}</small></div>${e.map ? `<a class="map-link" href="/map?entry=${encodeURIComponent(e.id)}" title="${e.map.kind === 'components' ? 'Show component locations' : 'Show on map'}">⌖</a>` : `<span class="map-unlinked" title="No researched map location linked yet">—</span>`}</article>`).join('')}</div></section>`).join('') || `<div class="empty"><b>No matching entries</b><span>Try another search or clear a filter.</span></div>`;
   }
   const initial = new URLSearchParams(location.search).get('focus');
   let focused = false;
-  function focusEntry() { if (!initial || focused) return; const entry = document.getElementById(initial); if (entry) { focused = true; entry.scrollIntoView({block:'center'}); entry.classList.add('entry-focused'); } }
-  async function load() { try { state = await json('/api/state'); render(); focusEntry(); } catch (e) { $('#save-banner').className = 'notice error'; $('#save-banner span').textContent = e.message; } }
-  $('#refresh').addEventListener('click', async () => { $('#refresh').disabled = true; try { state = await json('/api/refresh', {method:'POST'}); render(); } finally { $('#refresh').disabled = false; } });
+  const filterIds = ['only-left','hide-unknown','hide-supporting'];
+  let savedFilters = {};
+  try { savedFilters = JSON.parse(storageGet(FILTER_KEY) || '{}') || {}; } catch {}
+  if (initial) {
+    $('#search').value = '';
+    $('#spoiler-light').checked = false;
+    filterIds.forEach(id => { $('#'+id).checked = false; });
+  } else {
+    if (typeof savedFilters.search === 'string') $('#search').value = savedFilters.search;
+    for (const id of filterIds) if (typeof savedFilters[id] === 'boolean') $('#'+id).checked = savedFilters[id];
+    $('#spoiler-light').checked = storageGet('ss.checklist.acquired-only') === '1' || savedFilters.acquiredOnly === true;
+  }
+  function persistFilters() {
+    storageSet(FILTER_KEY, JSON.stringify({search:$('#search').value, ...Object.fromEntries(filterIds.map(id => [id, $('#'+id).checked])), acquiredOnly:$('#spoiler-light').checked}));
+  }
+  function showRefreshStatus(text, error = false) {
+    const status = $('#refresh-status');
+    status.textContent = text;
+    status.classList.toggle('error', error);
+  }
+  function focusEntry() { if (!initial || focused) return; const entry = document.getElementById(initial); if (entry) { focused = true; entry.scrollIntoView({block:'center'}); entry.classList.add('entry-focused'); history.replaceState(null, '', '/'); } }
+  async function load() { try { state = await json('/api/state'); render(); focusEntry(); restoreScrollAfterReload(); } catch (e) { $('#save-banner').className = 'notice error'; $('#save-banner span').textContent = e.message; } }
+  $('#refresh').addEventListener('click', async () => {
+    const button = $('#refresh'); button.disabled = true; button.textContent = '↻ Scanning…'; showRefreshStatus('Reading save files…');
+    try {
+      state = await json('/api/refresh', {method:'POST'}); render();
+      showRefreshStatus(state.error ? 'Scan finished · save unreadable' : state.hasSave ? 'Save refreshed' : 'No save found');
+    } catch (e) { showRefreshStatus(`Refresh failed · ${e.message}`, true); }
+    finally { button.disabled = false; button.textContent = '↻ Refresh'; }
+  });
   $('#save-slot').addEventListener('change', async () => { const slot=$('#save-slot');slot.disabled=true;try { state=await json('/api/select?index='+encodeURIComponent(slot.value),{method:'POST'});render(); } catch(e) { $('#save-banner').className='notice error';$('#save-banner span').textContent=e.message; } finally { slot.disabled=false; } });
-  $('#spoiler-light').checked = localStorage.getItem('ss.checklist.acquired-only') === '1';
-  $('#spoiler-light').addEventListener('change', () => { localStorage.setItem('ss.checklist.acquired-only', $('#spoiler-light').checked ? '1' : '0'); render(); });
-  ['search','only-left','hide-unknown','hide-supporting'].forEach(id => $(`#${id}`).addEventListener(id === 'search' ? 'input' : 'change', render));
-  if (initial) { const all = ['only-left','hide-unknown','hide-supporting']; all.forEach(id => $('#'+id).checked = false); }
+  $('#spoiler-light').addEventListener('change', () => { storageSet('ss.checklist.acquired-only', $('#spoiler-light').checked ? '1' : '0'); persistFilters(); render(); });
+  ['search',...filterIds].forEach(id => $(`#${id}`).addEventListener(id === 'search' ? 'input' : 'change', () => { persistFilters(); render(); }));
+  let savedScroll = null;
+  function restoreScrollAfterReload() {
+    if (initial || performance.getEntriesByType('navigation')[0]?.type !== 'reload') return;
+    try { savedScroll = Number(sessionStorage.getItem('ss.checklist.scroll.v1')); } catch {}
+    if (Number.isFinite(savedScroll) && savedScroll > 0) requestAnimationFrame(() => requestAnimationFrame(() => window.scrollTo(0, savedScroll)));
+  }
+  window.addEventListener('pagehide', () => { try { sessionStorage.setItem('ss.checklist.scroll.v1', String(window.scrollY)); } catch {} });
   load();
   if (window.EventSource) { const events = new EventSource('/events'); events.addEventListener('state', e => { try { state = JSON.parse(e.data); render(); } catch (_) {} }); }
 })();

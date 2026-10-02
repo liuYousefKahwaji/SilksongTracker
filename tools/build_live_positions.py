@@ -13,9 +13,13 @@ import math
 import sys
 from collections import defaultdict
 from pathlib import Path
+from statistics import median
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "source/.deps"))
+sys.path.insert(0, str(ROOT))
+
+from silksongtracker.maptracking import CORRECTIONS, FLAGS
 
 
 def world_objects(bundle: Path) -> list[dict]:
@@ -174,14 +178,48 @@ def single_landmark_estimate(pairs: list[tuple[complex, complex]], prior: dict |
     }
 
 
+def collapse_coincident_pairs(pairs: list[tuple[complex, complex]]) -> tuple[list[tuple[complex, complex]], bool]:
+    """Treat stacked pins as one landmark instead of false triangulation."""
+    grouped: dict[tuple[float, float], list[complex]] = defaultdict(list)
+    for source, sketch in pairs:
+        grouped[(round(sketch.real, 2), round(sketch.imag, 2))].append(source)
+    collapsed = []
+    coalesced = False
+    for (x, y), sources in grouped.items():
+        source = complex(median(p.real for p in sources), median(p.imag for p in sources))
+        collapsed.append((source, complex(x, y)))
+        coalesced = coalesced or len(sources) > 1
+    return collapsed, coalesced
+
+
+def representative_object_position(positions: list[list[float]], max_spread: float = 3.0) -> tuple[list[float] | None, bool]:
+    """Collapse duplicated pickup triggers only when they are one tight cluster."""
+    if not positions:
+        return None, False
+    if any(not isinstance(point, list) or len(point) != 2 for point in positions):
+        return None, False
+    if any(math.dist(a, b) > max_spread for index, a in enumerate(positions) for b in positions[index + 1:]):
+        return None, False
+    return [median(point[0] for point in positions), median(point[1] for point in positions)], len(positions) > 1
+
+
 def build(map_path: Path, cache_dir: Path, bundles_dir: Path, trusted_rooms: dict | None = None) -> dict:
     markers = json.loads(map_path.read_text(encoding="utf-8"))["markers"]
     by_scene = defaultdict(lambda: defaultdict(set))
     for marker in markers:
-        parts = marker.get("flag", "").split(",")
         sketch = marker.get("pos2")
-        if len(parts) >= 3 and parts[0].startswith("@") and parts[1] and parts[2] and isinstance(sketch, list) and len(sketch) == 2:
-            by_scene[parts[1]][parts[2]].add((sketch[1], sketch[0]))
+        flag = CORRECTIONS.get(marker.get("id")) or marker.get("flag") or FLAGS.get(marker.get("id"), "")
+        if flag.startswith(("@all,", "@any,")):
+            _, flag = flag.split(",", 1)
+            child_flags = flag.split("|")
+        else:
+            child_flags = [flag]
+        if not isinstance(sketch, list) or len(sketch) != 2:
+            continue
+        for child in child_flags:
+            parts = child.split(",")
+            if len(parts) >= 3 and parts[0] in ("@bool", "@int", "@geo") and parts[1] and parts[2]:
+                by_scene[parts[1]][parts[2]].add((sketch[1], sketch[0]))
     bundle_index = {p.stem.lower(): p for p in bundles_dir.rglob("*.bundle")}
     result = {}
     for scene, pins in sorted(by_scene.items()):
@@ -202,17 +240,26 @@ def build(map_path: Path, cache_dir: Path, bundles_dir: Path, trusted_rooms: dic
         for obj in objects:
             by_id[obj["id"]].append(obj["pos"])
         pairs = []
+        coalesced_objects = False
         for name, sketches in pins.items():
-            if len(sketches) != 1 or len(by_id[name]) != 1:
+            if len(sketches) != 1:
                 continue
-            x, y = by_id[name][0]
+            representative, clustered = representative_object_position(by_id[name])
+            if representative is None:
+                continue
+            x, y = representative
             qx, qy = next(iter(sketches))
             pairs.append((complex(x, y), complex(qx, qy)))
+            coalesced_objects = coalesced_objects or clustered
+        pairs, coalesced = collapse_coincident_pairs(pairs)
+        coalesced = coalesced or coalesced_objects
         transform = robust_fit(pairs)
         if transform is None and len(pairs) == 2:
             transform = paired_fit(pairs, transform_prior(trusted_rooms or {}, scene))
         if transform is None and len(pairs) == 1:
             transform = single_landmark_estimate(pairs, transform_prior(trusted_rooms or {}, scene))
+            if transform and coalesced:
+                transform["quality"] = "coalesced-landmark-estimate"
         if transform:
             result[scene] = transform
     return result
@@ -227,9 +274,12 @@ def main() -> None:
     previous = json.loads(output_path.read_text(encoding="utf-8")) if output_path.is_file() else {}
     trusted_rooms = previous.get("rooms", {})
     result = build(ROOT / "data/map/map.json", ROOT / "source/scene-research", root, trusted_rooms)
-    output_path.write_text(json.dumps({"format": 2, "method": "scene-object-matches+regional-prior", "maxResidualPixelsForMultiLandmarkFit": 20,
+    metadata = {key: value for key, value in previous.items() if key not in {
+        "format", "method", "maxResidualPixelsForMultiLandmarkFit", "rooms"}}
+    output_path.write_text(json.dumps({"format": 2, "method": "scene-object-matches+regional-prior",
+                                "maxResidualPixelsForMultiLandmarkFit": 20, **metadata,
                                 "rooms": result}, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    quality = {"multi-landmark": 0, "paired-landmarks": 0, "single-landmark-estimate": 0}
+    quality = {"multi-landmark": 0, "paired-landmarks": 0, "single-landmark-estimate": 0, "coalesced-landmark-estimate": 0}
     for room in result.values():
         label = room.get("quality", "multi-landmark")
         quality[label] += 1

@@ -7,12 +7,13 @@ from silksongtracker.analyzer import analyze, known_rule
 from silksongtracker.mapdata import build_map
 from silksongtracker.maptracking import FLAGS, supplemental_flag
 from silksongtracker.database import load_map
+from tools.build_live_positions import collapse_coincident_pairs, representative_object_position
 
 
 class ProgressTests(unittest.TestCase):
     def test_supplements_have_real_unique_targets(self):
         pins={m['id']:m for m in load_map()['markers']}
-        self.assertEqual(len(FLAGS),43)
+        self.assertEqual(len(FLAGS),82)
         for marker_id in FLAGS:
             self.assertIn(marker_id,pins)
             self.assertFalse(pins[marker_id]['flag'])
@@ -21,6 +22,8 @@ class ProgressTests(unittest.TestCase):
     def test_all_new_rules_handle_true_false_and_missing(self):
         for marker_id,flag in FLAGS.items():
             parts=flag.split(',')
+            if parts[0]=='@all':
+                continue
             if parts[0]=='@bool':
                 complete={'sceneData':{'persistentBools':{'serializedList':[{'SceneName':parts[1],'ID':parts[2],'Value':True}]}}}
                 left={'sceneData':{'persistentBools':{'serializedList':[]}}}
@@ -40,6 +43,43 @@ class ProgressTests(unittest.TestCase):
             self.assertEqual(flag_status(flag,left),'left',marker_id)
             self.assertEqual(flag_status(flag,{}),'unknown',marker_id)
 
+    def test_grouped_map_pickups_require_every_exact_component(self):
+        cases=[
+            ('1309','Shellwood_11',[
+                'Shell Shard Fossil Mid','Shell Shard Fossil Tiny Egg',
+                'Shell Shard Fossil Tiny Bumpy','Shell Shard Fossil Tiny Bumpy (1)',
+                'Shell Shard Fossil Tiny Bumpy (2)']),
+            ('331','Greymoor_17',[
+                'Shell Shard Fossil Tiny Egg (3)','Shell Shard Fossil Tiny Egg (1)',
+                'Shell Shard Fossil Tiny Front','Shell Shard Fossil Tiny Front (1)',
+                'Shell Shard Fossil Tiny Front (2)']),
+        ]
+        for marker_id,scene,objects in cases:
+            flag=FLAGS[marker_id]
+            self.assertEqual(flag_status(flag,{}),'unknown',marker_id)
+            records=[{'SceneName':scene,'ID':name,'Value':0} for name in objects]
+            raw={'sceneData':{'persistentInts':{'serializedList':records}}}
+            self.assertEqual(flag_status(flag,raw),'complete',marker_id)
+            records[0]['Value']=1
+            self.assertEqual(flag_status(flag,raw),'left',marker_id)
+            records[0]['Value']=0
+            records.pop()
+            self.assertEqual(flag_status(flag,raw),'left',marker_id)
+
+        flag=FLAGS['1468']
+        records=[
+            {'SceneName':'Dock_01','ID':'Geo Small Persistent','Value':True},
+            {'SceneName':'Dock_01','ID':'Geo Small Persistent (1)','Value':True},
+            {'SceneName':'Dock_01','ID':'Geo Med Persistent','Value':True},
+        ]
+        raw={'sceneData':{'persistentBools':{'serializedList':records}}}
+        self.assertEqual(flag_status(flag,raw),'complete')
+        records[1]['Value']=False
+        self.assertEqual(flag_status(flag,raw),'left')
+        records[1]['Value']=True
+        records[1]['ID']=None
+        self.assertEqual(flag_status(flag,raw),'unknown')
+
     def test_classification_is_independent_of_save(self):
         before=build_map(None)['markers']
         after=build_map({'playerData':{'HasMossGrottoMap':True}})['markers']
@@ -48,8 +88,53 @@ class ProgressTests(unittest.TestCase):
         self.assertEqual(pins['0']['tracking'],'reference')
         self.assertEqual(pins['940']['tracking'],'reference')
         self.assertEqual(pins['1395']['tracking'],'save')
-        self.assertEqual(pins['1401']['tracking'],'unverified')
+        self.assertEqual(pins['1401']['tracking'],'reference')
+        self.assertEqual(pins['1420']['tracking'],'save')
         self.assertEqual(pins['56']['tracking'],'save')
+
+    def test_requirement_shortcuts_are_visit_waypoints_not_access_completion(self):
+        markers=load_map()['markers']
+        requirements=[m for m in markers if m['cat']=='shortcut' and m['name'].startswith('Requires ')]
+        self.assertEqual(len(requirements),115)
+        no_save={m['id']:m for m in build_map(None)['markers']}
+        raw={'playerData':{'hasDoubleJump':True,'hasWalljump':True,'hasSuperJump':True}}
+        pins={m['id']:m for m in build_map(raw)['markers']}
+        for source in requirements:
+            pin=pins[source['id']]
+            self.assertEqual(pin['tracking'],'waypoint',source['id'])
+            self.assertEqual(pin['status'],'left',source['id'])
+            self.assertEqual(no_save[source['id']]['status'],'left',source['id'])
+        faydown=[m for m in requirements if m['name']=='Requires Faydown Cloak']
+        self.assertEqual(len(faydown),18)
+        self.assertTrue(all(pins[m['id']]['trackingNote'].startswith('Route waypoint.') for m in faydown))
+
+    def test_reviewed_source_pin_correction(self):
+        data=build_map({'sceneData':{'persistentBools':{'serializedList':[
+            {'SceneName':'Bone_East_02b','ID':'Black_Thread_Core','Value':True},
+            {'SceneName':'Bone_East_03','ID':'Black_Thread_Core','Value':False},
+        ]}}})
+        pins={m['id']:m for m in data['markers']}
+        self.assertEqual(pins['1402']['status'],'complete')
+        self.assertEqual(pins['1402']['trackingSource'],'correction')
+        self.assertEqual(pins['1405']['status'],'left')
+
+    def test_stacked_map_icons_do_not_count_as_independent_room_anchors(self):
+        target=complex(5,9)
+        pairs=[(complex(1,3),target),(complex(5,7),target),
+               (complex(12,14),complex(20,30))]
+        collapsed,coalesced=collapse_coincident_pairs(pairs)
+        self.assertTrue(coalesced)
+        self.assertEqual(len(collapsed),2)
+        self.assertEqual(collapsed[0],(complex(3,5),target))
+        self.assertEqual(collapsed[1],pairs[2])
+
+    def test_duplicate_scene_items_collapse_only_when_physically_clustered(self):
+        point,clustered=representative_object_position([[359.31,6.25],[357.2,6.2]])
+        self.assertEqual(point,[358.255,6.225])
+        self.assertTrue(clustered)
+        point,clustered=representative_object_position([[0,0],[4,0]])
+        self.assertIsNone(point)
+        self.assertFalse(clustered)
 
     def test_aggregate_quest_not_individual_object(self):
         raw={'playerData':{'QuestCompletionData':{'savedData':[{'Name':'Destroy Thread Cores','Data':{'IsCompleted':True,'WasEverCompleted':True}}]}}}

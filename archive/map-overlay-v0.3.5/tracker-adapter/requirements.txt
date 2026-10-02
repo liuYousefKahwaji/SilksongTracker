@@ -1,0 +1,2 @@
+# Runtime dependency: convert locally installed WebP tiles to JPEG for Unity.
+Pillow>=10,<13

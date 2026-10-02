@@ -1,0 +1,4953 @@
+{
+  "format": 1,
+  "positioningCounts": {
+    "in-game-room-anchor": 51,
+    "in-game-room-geometry": 469,
+    "last-known-area-anchor": 26,
+    "legacy-room-transform": 3
+  },
+  "roomSceneBundles": 549,
+  "rooms": [
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "abandoned_town",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        370.0,
+        60.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "abyss_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        50.0,
+        161.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "abyss_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        192.0,
+        39.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "abyss_02b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        228.0,
+        55.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "abyss_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        82.0,
+        85.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "abyss_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        115.0,
+        81.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "abyss_05",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        190.0,
+        105.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "abyss_06",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        60.0,
+        51.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "abyss_07",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        130.0,
+        20.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "abyss_08",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        164.0,
+        106.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "abyss_09",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        60.0,
+        1023.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "abyss_11",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        44.0,
+        58.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "abyss_12",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        33.0,
+        40.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "abyss_13",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        240.0,
+        36.0
+      ]
+    },
+    {
+      "anchorSource": "label:THE ABYSS",
+      "name": "abyss_cocoon",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        65.0,
+        1024.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "ant_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        130.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "ant_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        50.0,
+        78.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "ant_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        384.0,
+        34.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "ant_04_left",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        145.0,
+        37.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "ant_04_mid",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        235.0,
+        37.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "ant_05b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        120.0,
+        20.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "ant_05c",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        84.0,
+        41.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "ant_08",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        85.0,
+        90.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "ant_09",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        170.0,
+        48.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "ant_14",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        29.0,
+        130.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "ant_17",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        60.0,
+        24.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "ant_19",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        173.0,
+        106.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "ant_20",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        222.0,
+        48.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "ant_21",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        138.0,
+        89.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "ant_merchant",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        152.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "ant_queen",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        55.0,
+        34.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "aqueduct_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        265.0,
+        42.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "aqueduct_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        29.0,
+        121.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "aqueduct_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        261.0,
+        44.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "aqueduct_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        185.0,
+        60.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "aqueduct_05",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        332.0,
+        100.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "aqueduct_06",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        150.0,
+        120.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "aqueduct_07",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        41.0,
+        40.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "aqueduct_08",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        60.0,
+        20.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "arborium_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        29.0,
+        151.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "arborium_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        132.0,
+        29.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "arborium_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        29.0,
+        110.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "arborium_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        132.0,
+        34.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "arborium_05",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        132.0,
+        29.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "arborium_06",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        132.0,
+        29.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "arborium_07",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        180.0,
+        22.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "arborium_08",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        132.0,
+        60.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "arborium_09",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        66.0,
+        112.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "arborium_10",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        39.0,
+        28.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "arborium_11",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        222.0,
+        61.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "arborium_tube",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        32.0,
+        22.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "aspid_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        80.0,
+        273.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bellshrine",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        43.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bellshrine_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        43.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bellshrine_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        43.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bellshrine_05",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        43.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bellshrine_coral",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        43.0,
+        40.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "bellshrine_enclave",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        43.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": "room:Bellshrine_Enclave",
+      "name": "bellshrine_lore_additive",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        43.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "belltown",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        109.0,
+        75.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "belltown_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        85.0,
+        97.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "belltown_06",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        80.0,
+        83.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "belltown_07",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        70.0,
+        34.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "belltown_08",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        115.0,
+        47.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "belltown_basement",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        95.0,
+        135.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "belltown_basement_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        150.0,
+        150.0
+      ]
+    },
+    {
+      "anchorSource": "room:Belltown",
+      "name": "belltown_room_doctor",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        55.0,
+        26.0
+      ]
+    },
+    {
+      "anchorSource": "room:Belltown",
+      "name": "belltown_room_pinsmith",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        55.0,
+        26.0
+      ]
+    },
+    {
+      "anchorSource": "room:Belltown",
+      "name": "belltown_room_relic",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        55.0,
+        26.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "belltown_room_shellwood",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        55.0,
+        26.0
+      ]
+    },
+    {
+      "anchorSource": "room:Belltown",
+      "name": "belltown_room_spare",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        55.0,
+        26.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "belltown_shrine",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        95.0,
+        38.0
+      ]
+    },
+    {
+      "anchorSource": "markers:[46, 47]",
+      "name": "bellway_01",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        100.0,
+        45.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bellway_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        120.0,
+        50.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bellway_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        150.0,
+        60.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bellway_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        95.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bellway_08",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        150.0,
+        33.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bellway_aqueduct",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        96.0,
+        78.0
+      ]
+    },
+    {
+      "anchorSource": "marker:46",
+      "name": "bellway_centipede_arena",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        191.0,
+        43.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bellway_city",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        112.0,
+        36.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bellway_peak",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        29.0,
+        55.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bellway_peak_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        101.0,
+        37.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bellway_shadow",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        75.0,
+        41.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        130.0,
+        91.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_01b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        38.0,
+        91.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_01c",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        198.0,
+        91.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        155.0,
+        46.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        60.0,
+        138.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        233.0,
+        31.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_05",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        201.0,
+        22.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_05b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        80.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_06",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        112.0,
+        50.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_07",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        92.0,
+        74.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_08",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        40.0,
+        95.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_09",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        164.0,
+        45.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_10",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        115.0,
+        69.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_11",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        120.0,
+        31.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_11b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        52.0,
+        18.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "bone_12",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        58.0,
+        43.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_14",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        135.0,
+        38.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_15",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        113.0,
+        29.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_16",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        135.0,
+        75.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_17",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        35.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_18",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        49.0,
+        33.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_19",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        146.0,
+        27.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        47.0,
+        83.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        162.0,
+        35.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_02b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        330.0,
+        35.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        224.0,
+        42.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        83.0,
+        100.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_04b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        44.0,
+        100.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_04c",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        68.0,
+        17.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_05",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        190.0,
+        47.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_07",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        40.0,
+        190.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_08",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        150.0,
+        50.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_09",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        100.0,
+        97.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_09b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        100.0,
+        200.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_10",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        132.0,
+        38.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_10_church",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        200.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "bone_east_10_room",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        155.0,
+        50.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_11",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        40.0,
+        278.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_12",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        180.0,
+        32.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_13",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        128.0,
+        35.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_14",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        140.0,
+        80.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_14b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        309.0,
+        75.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_15",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        173.0,
+        110.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_16",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        57.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_17",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        115.0,
+        107.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_17b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        115.0,
+        64.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_18",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        178.0,
+        62.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_18b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        327.0,
+        108.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_18c",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        80.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_20",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        150.0,
+        33.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_21",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        40.0,
+        20.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_22",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        59.0,
+        35.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_24",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        263.0,
+        76.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_25",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        157.0,
+        27.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_26",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        205.0,
+        48.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_27",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        50.0,
+        63.0
+      ]
+    },
+    {
+      "anchorSource": "legacy-room-transform",
+      "name": "bone_east_lavachallenge",
+      "positioning": "legacy-room-transform",
+      "sceneSize": [
+        29.0,
+        289.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "bone_east_umbrella",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        55.0,
+        26.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_east_weavehome",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        205.0,
+        120.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bone_steel_servant",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        130.0,
+        40.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bonegrave",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        315.0,
+        82.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "bonetown",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        315.0,
+        90.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "chapel_wanderer",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        87.0,
+        140.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "clover_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        175.0,
+        22.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "clover_01b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        175.0,
+        21.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "clover_02c",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        209.0,
+        75.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "clover_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        30.0,
+        176.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "clover_04b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        200.0,
+        95.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "clover_05c",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        31.0,
+        134.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "clover_06",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        270.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "clover_10",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        136.0,
+        54.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "clover_10_web",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        60.0,
+        54.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "clover_11",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        75.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "clover_16",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        140.0,
+        100.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "clover_18",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        195.0,
+        80.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "clover_19",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        100.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "clover_20",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        150.0,
+        47.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "clover_21",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        170.0,
+        26.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "cog_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        72.0,
+        150.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "cog_05",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        125.0,
+        50.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "cog_06",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        90.0,
+        42.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "cog_07",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        90.0,
+        87.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "cog_08",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        72.0,
+        160.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "cog_09",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        72.0,
+        117.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "cog_09_destroyed",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        72.0,
+        117.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "cog_10",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        71.0,
+        60.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "cog_10_destroyed",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        29.0,
+        187.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "cog_bench",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        45.0,
+        40.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "cog_dancers",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        80.0,
+        45.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "cog_pass",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        40.0,
+        68.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        245.0,
+        80.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        60.0,
+        215.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_10",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        120.0,
+        35.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_11",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        180.0,
+        31.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_11b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        100.0,
+        27.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_12",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        94.0,
+        78.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_19",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        427.0,
+        55.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_19b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        118.0,
+        117.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_23",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        316.0,
+        102.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_24",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        183.0,
+        55.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_25",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        149.0,
+        98.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_26",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        30.0,
+        141.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_27",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        202.0,
+        46.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_28",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        130.0,
+        56.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "coral_29",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        302.0,
+        92.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_32",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        170.0,
+        115.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_33",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        58.0,
+        74.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_34",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        222.0,
+        83.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_35",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        29.0,
+        153.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_35b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        29.0,
+        168.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_36",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        70.0,
+        58.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_37",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        80.0,
+        21.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_38",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        131.0,
+        95.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_39",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        192.0,
+        43.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_40",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        60.0,
+        24.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_41",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        153.0,
+        68.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_42",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        62.0,
+        32.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_43",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        110.0,
+        22.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_44",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        183.0,
+        55.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "coral_judge_arena",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        62.0,
+        42.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "coral_tower_01",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        138.0,
+        22.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "cradle_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        80.0,
+        68.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "cradle_01_destroyed",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        80.0,
+        89.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "cradle_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        81.0,
+        110.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "cradle_02b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        48.0,
+        47.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "cradle_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        80.0,
+        160.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "cradle_03_destroyed",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        80.0,
+        190.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "cradle_destroyed_challenge_01",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        45.0,
+        560.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "cradle_destroyed_challenge_02",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        80.0,
+        120.0
+      ]
+    },
+    {
+      "anchorSource": "room:Cradle_Destroyed_Challenge_01",
+      "name": "cradle_destroyed_challenge_bench",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        55.0,
+        28.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "crawl_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        150.0,
+        130.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "crawl_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        30.0,
+        150.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "crawl_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        180.0,
+        77.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "crawl_03b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        135.0,
+        21.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "crawl_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        165.0,
+        20.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "crawl_05",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        225.0,
+        35.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "crawl_06",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        85.0,
+        35.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "crawl_07",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        86.0,
+        58.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "crawl_08",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        105.0,
+        22.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "crawl_09",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        150.0,
+        58.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "crawl_10",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        53.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": "label:The Surface",
+      "name": "demoend",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        33.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dock_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        35.0,
+        84.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dock_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        125.0,
+        101.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dock_02b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        94.0,
+        120.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dock_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        168.0,
+        120.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dock_03b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        168.0,
+        120.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dock_03c",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        163.0,
+        80.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dock_03d",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        110.0,
+        78.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dock_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        30.0,
+        105.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dock_05",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        30.0,
+        18.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dock_06_church",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        75.0,
+        35.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dock_08",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        110.0,
+        35.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dock_09",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        77.0,
+        35.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dock_10",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        35.0,
+        60.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dock_11",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        148.0,
+        77.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dock_12",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        48.0,
+        67.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dock_13",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        35.0,
+        76.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dock_14",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        29.0,
+        17.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dock_15",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        29.0,
+        77.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dock_16",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        75.0,
+        39.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dust_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        155.0,
+        27.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dust_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        40.0,
+        130.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dust_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        145.0,
+        40.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dust_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        110.0,
+        90.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dust_05",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        352.0,
+        31.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dust_06",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        30.0,
+        190.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dust_09",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        180.0,
+        52.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dust_10",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        160.0,
+        80.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dust_11",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        140.0,
+        40.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dust_12",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        44.0,
+        16.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dust_barb",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        45.0,
+        32.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dust_chef",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        60.0,
+        74.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "dust_maze_01",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        170.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "dust_maze_02",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        86.0,
+        67.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "dust_maze_03",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        43.0,
+        150.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "dust_maze_04",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        147.0,
+        57.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "dust_maze_05",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        131.0,
+        79.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "dust_maze_06",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        131.0,
+        42.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "dust_maze_07",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        45.0,
+        70.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "dust_maze_08",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        90.0,
+        90.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "dust_maze_08_completed",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        90.0,
+        80.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "dust_maze_09_entrance",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        70.0,
+        28.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "dust_maze_crossing",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        100.0,
+        24.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "dust_maze_last_hall",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        75.0,
+        18.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "dust_shack",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        38.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "greymoor_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        130.0,
+        52.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "greymoor_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        90.0,
+        150.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "greymoor_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        120.0,
+        140.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "greymoor_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        40.0,
+        170.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "greymoor_05",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        110.0,
+        75.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "greymoor_06",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        40.0,
+        207.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "greymoor_07",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        75.0,
+        100.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "greymoor_08",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        161.0,
+        38.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "greymoor_10",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        110.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "greymoor_11",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        110.0,
+        70.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "greymoor_12",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        180.0,
+        35.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "greymoor_13",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        180.0,
+        23.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "greymoor_15",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        78.0,
+        84.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "greymoor_15b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        220.0,
+        141.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "greymoor_16",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        171.0,
+        60.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "greymoor_17",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        57.0,
+        65.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "greymoor_20b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        50.0,
+        20.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "greymoor_20c",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        52.0,
+        86.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "greymoor_21",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        80.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "greymoor_22",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        110.0,
+        50.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "greymoor_24",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        84.0,
+        26.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "halfway_01",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        56.0,
+        32.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "hang_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        50.0,
+        100.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "hang_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        114.0,
+        48.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "hang_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        30.0,
+        98.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "hang_03_top",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        30.0,
+        170.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "hang_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        71.0,
+        26.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "hang_06",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        86.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "hang_06_bank",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        129.0,
+        60.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "hang_06b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        62.0,
+        22.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "hang_07",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        148.0,
+        28.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "hang_08",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        30.0,
+        230.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "hang_09",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        114.0,
+        48.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "hang_10",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        92.0,
+        48.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "hang_12",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        64.0,
+        19.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "hang_13",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        92.0,
+        60.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "hang_14",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        105.0,
+        35.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "hang_15",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        93.0,
+        48.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "hang_16",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        104.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "hang_17b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        55.0,
+        21.0
+      ]
+    },
+    {
+      "anchorSource": "label:THE ABYSS",
+      "name": "last_dive",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        1024.0,
+        500.0
+      ]
+    },
+    {
+      "anchorSource": "label:THE ABYSS",
+      "name": "last_dive_return",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        1024.0,
+        500.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "library_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        60.0,
+        112.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "library_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        120.0,
+        64.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "library_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        117.0,
+        64.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "library_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        67.0,
+        220.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "library_05",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        49.0,
+        79.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "library_06",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        66.0,
+        78.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "library_07",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        79.0,
+        172.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "library_08",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        115.0,
+        40.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "library_09",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        160.0,
+        106.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "library_10",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        150.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "library_11",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        45.0,
+        274.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "library_11b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        115.0,
+        158.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "library_12",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        136.0,
+        116.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "library_12b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        202.0,
+        100.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "library_13",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        124.0,
+        56.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "library_13b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        73.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "library_14",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        65.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "library_15",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        90.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "library_16",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        67.0,
+        20.0
+      ]
+    },
+    {
+      "anchorSource": "room:Ant_Queen",
+      "name": "memory_ant_queen",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        200.0,
+        47.0
+      ]
+    },
+    {
+      "anchorSource": "room:Coral_Tower_01",
+      "name": "memory_coral_tower",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        110.0,
+        566.0
+      ]
+    },
+    {
+      "anchorSource": "marker:561",
+      "name": "memory_first_sinner",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        205.0,
+        280.0
+      ]
+    },
+    {
+      "anchorSource": "label:MEMORIUM",
+      "name": "memory_needolin",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        200.0,
+        210.0
+      ]
+    },
+    {
+      "anchorSource": "label:MEMORIUM",
+      "name": "memory_red",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        950.0,
+        1024.0
+      ]
+    },
+    {
+      "anchorSource": "label:MEMORIUM",
+      "name": "memory_silk_heart_bellbeast",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        50.0,
+        130.0
+      ]
+    },
+    {
+      "anchorSource": "label:MEMORIUM",
+      "name": "memory_silk_heart_lacetower",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        50.0,
+        130.0
+      ]
+    },
+    {
+      "anchorSource": "label:MEMORIUM",
+      "name": "memory_silk_heart_wardboss",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        50.0,
+        130.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "mosstown_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        140.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "mosstown_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        160.0,
+        65.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "mosstown_02c",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        55.0,
+        16.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "mosstown_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        34.0,
+        146.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "organ_01",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        160.0,
+        229.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "peak_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        100.0,
+        300.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "peak_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        100.0,
+        212.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "peak_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        352.0,
+        41.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "peak_04c",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        105.0,
+        48.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "peak_04d",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        115.0,
+        22.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "peak_05",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        232.0,
+        179.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "peak_05c",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        268.0,
+        125.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "peak_05d",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        366.0,
+        262.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "peak_05e",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        115.0,
+        64.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "peak_06",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        51.0,
+        233.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "peak_06b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        46.0,
+        55.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "peak_07",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        115.0,
+        150.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "peak_08",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        343.0,
+        186.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "peak_08b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        336.0,
+        138.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "peak_10",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        80.0,
+        50.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "peak_12",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        50.0,
+        22.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "peak_mask_maker",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        33.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": "label:GREYMOOR",
+      "name": "room_caravan_interior",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        33.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": "label:GREYMOOR",
+      "name": "room_caravan_interior_travel",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        33.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": "label:GREYMOOR",
+      "name": "room_caravan_spa",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        33.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": "legacy-room-transform",
+      "name": "room_crowcourt",
+      "positioning": "legacy-room-transform",
+      "sceneSize": [
+        70.0,
+        80.0
+      ]
+    },
+    {
+      "anchorSource": "legacy-room-transform",
+      "name": "room_crowcourt_02",
+      "positioning": "legacy-room-transform",
+      "sceneSize": [
+        70.0,
+        92.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "room_diving_bell",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        50.0,
+        26.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "room_diving_bell_abyss",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        50.0,
+        26.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "room_diving_bell_abyss_fixed",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        50.0,
+        26.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "room_forge",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        140.0,
+        69.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "room_huntress",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        35.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "room_pinstress",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        50.0,
+        26.0
+      ]
+    },
+    {
+      "anchorSource": "marker:123",
+      "name": "room_witch",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        33.0,
+        19.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        87.0,
+        177.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        70.0,
+        207.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        145.0,
+        43.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        78.0,
+        89.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_04b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        185.0,
+        74.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_05",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        212.0,
+        55.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_08",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        100.0,
+        55.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_09",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        156.0,
+        136.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_10",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        210.0,
+        70.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_11",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        29.0,
+        112.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_12",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        210.0,
+        48.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_13",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        320.0,
+        74.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_14",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        29.0,
+        71.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_15",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        55.0,
+        66.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_16",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        122.0,
+        48.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_18",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        117.0,
+        45.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_19",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        80.0,
+        96.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_20",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        230.0,
+        65.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_21",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        110.0,
+        24.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_22",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        70.0,
+        95.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_23",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        52.0,
+        19.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_24",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        296.0,
+        34.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_25",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        29.0,
+        36.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_26",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        29.0,
+        113.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_27",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        205.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_28",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        65.0,
+        34.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "shadow_bilehaven_room",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        40.0,
+        20.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shadow_weavehome",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        177.0,
+        68.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellgrave",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        138.0,
+        22.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellwood_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        132.0,
+        98.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellwood_01b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        48.0,
+        109.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellwood_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        80.0,
+        102.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellwood_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        40.0,
+        135.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellwood_04b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        230.0,
+        26.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellwood_04c",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        29.0,
+        80.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellwood_08",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        98.0,
+        19.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellwood_08c",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        42.0,
+        24.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellwood_10",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        79.0,
+        102.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellwood_11",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        102.0,
+        78.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "shellwood_11b",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        120.0,
+        170.0
+      ]
+    },
+    {
+      "anchorSource": "room:Shellwood_11b",
+      "name": "shellwood_11b_memory",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        120.0,
+        162.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellwood_13",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        141.0,
+        80.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellwood_14",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        135.0,
+        19.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellwood_15",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        135.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellwood_16",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        85.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellwood_18",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        140.0,
+        35.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellwood_19",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        127.0,
+        19.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellwood_20",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        95.0,
+        43.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellwood_22",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        182.0,
+        28.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellwood_25",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        290.0,
+        40.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "shellwood_25b",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        35.0,
+        20.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellwood_26",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        135.0,
+        130.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "shellwood_witch",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        50.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        200.0,
+        38.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        125.0,
+        31.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        29.0,
+        285.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        100.0,
+        37.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_05",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        100.0,
+        36.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_06",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        101.0,
+        35.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_07",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        88.0,
+        40.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_08",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        35.0,
+        40.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "slab_10b",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        60.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_10c",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        42.0,
+        65.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_12",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        110.0,
+        40.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_13",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        100.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_14",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        100.0,
+        29.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_15",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        100.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_16",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        100.0,
+        80.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_16b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        80.0,
+        32.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_17",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        81.0,
+        77.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_18",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        100.0,
+        76.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_19b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        44.0,
+        36.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_20",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        94.0,
+        24.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_21",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        40.0,
+        163.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_22",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        260.0,
+        50.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_23",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        102.0,
+        22.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "slab_cell",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        100.0,
+        28.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "slab_cell_creature",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        100.0,
+        28.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "slab_cell_quiet",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        53.0,
+        60.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        162.0,
+        150.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_01b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        124.0,
+        19.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_01c",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        44.0,
+        35.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        188.0,
+        34.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        140.0,
+        40.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        143.0,
+        68.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_05",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        50.0,
+        118.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_07",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        80.0,
+        24.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_08",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        76.0,
+        17.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_09",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        50.0,
+        85.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_09b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        165.0,
+        146.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_10",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        127.0,
+        70.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_11",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        60.0,
+        188.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_12",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        35.0,
+        113.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_13",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        85.0,
+        21.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_14",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        72.0,
+        21.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_15",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        85.0,
+        41.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_17",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        135.0,
+        115.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_18",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        110.0,
+        72.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_19_entrance",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        75.0,
+        109.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_20",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        50.0,
+        165.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_20b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        50.0,
+        243.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_24",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        61.0,
+        55.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_25",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        252.0,
+        28.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_26",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        35.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_27",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        215.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_28",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        41.0,
+        21.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_29",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        41.0,
+        21.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_enclave",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        120.0,
+        33.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_enclave_tube",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        52.0,
+        22.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_tower_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        130.0,
+        140.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "song_tower_destroyed",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        130.0,
+        144.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "sprintmaster_cave",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        236.0,
+        51.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "tube_hub",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        135.0,
+        145.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "tut_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        120.0,
+        120.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "tut_01b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        160.0,
+        99.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "tut_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        150.0,
+        59.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "tut_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        126.0,
+        35.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "tut_04",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        87.0,
+        36.0
+      ]
+    },
+    {
+      "anchorSource": "room:Tut_04",
+      "name": "tut_05",
+      "positioning": "last-known-area-anchor",
+      "sceneSize": [
+        310.0,
+        147.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        54.0,
+        160.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_01b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        48.0,
+        20.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        42.0,
+        230.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        60.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_03b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        95.0,
+        32.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_03c",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        29.0,
+        66.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_03d",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        65.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        120.0,
+        32.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_05",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        29.0,
+        141.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_06",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        155.0,
+        24.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_07",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        85.0,
+        27.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_07b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        105.0,
+        100.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_07c",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        85.0,
+        106.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_08",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        135.0,
+        58.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_10",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        80.0,
+        20.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_11",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        80.0,
+        19.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_12",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        40.0,
+        20.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_13",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        52.0,
+        130.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_14",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        115.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_16",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        80.0,
+        60.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_17",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        164.0,
+        48.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_18",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        160.0,
+        50.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_19",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        170.0,
+        24.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_19b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        135.0,
+        22.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_19c",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        30.0,
+        64.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "under_20",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        71.0,
+        28.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_21",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        87.0,
+        26.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_22",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        81.0,
+        20.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_23",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        160.0,
+        35.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "under_27",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        130.0,
+        90.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "ward_01",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        75.0,
+        111.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "ward_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        150.0,
+        90.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "ward_02b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        151.0,
+        31.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "ward_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        240.0,
+        52.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "ward_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        35.0,
+        28.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "ward_05",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        140.0,
+        23.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "ward_06",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        120.0,
+        60.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "ward_07",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        130.0,
+        20.0
+      ]
+    },
+    {
+      "anchorSource": "in-game-map-room-anchor",
+      "name": "ward_09",
+      "positioning": "in-game-room-anchor",
+      "sceneSize": [
+        150.0,
+        18.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "weave_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        45.0,
+        217.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "weave_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        284.0,
+        35.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "weave_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        90.0,
+        127.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "weave_05b",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        221.0,
+        43.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "weave_07",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        60.0,
+        120.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "weave_08",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        77.0,
+        67.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "weave_10",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        100.0,
+        45.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "weave_11",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        130.0,
+        32.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "weave_12",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        55.0,
+        25.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "weave_13",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        60.0,
+        20.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "weave_14",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        76.0,
+        19.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "wisp_02",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        230.0,
+        46.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "wisp_03",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        179.0,
+        47.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "wisp_04",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        79.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "wisp_05",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        57.0,
+        69.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "wisp_06",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        35.0,
+        19.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "wisp_07",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        290.0,
+        39.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "wisp_08",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        30.0,
+        125.0
+      ]
+    },
+    {
+      "anchorSource": null,
+      "name": "wisp_09",
+      "positioning": "in-game-room-geometry",
+      "sceneSize": [
+        100.0,
+        39.0
+      ]
+    }
+  ]
+}

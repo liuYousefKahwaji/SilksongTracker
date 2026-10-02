@@ -1,12 +1,13 @@
-/* Room-scoped world -> Sketch math. No native GameMap coordinates are used. */
+/* Native in-game-map -> Sketch mapping with room-local calibration fallback. */
 (function (root) {
   'use strict';
   const median = values => {const sorted=[...values].sort((a,b)=>a-b);return sorted[Math.floor(sorted.length/2)];};
   function priorForScene(rooms,scene){
-    if(rooms[scene])return {matrix:matrixOf(rooms[scene]),confidence:'room'};
-    const prefix=scene.split('_')[0];
+    const exact=Object.keys(rooms).find(name=>name.toLowerCase()===scene.toLowerCase());
+    if(exact)return {matrix:matrixOf(rooms[exact]),confidence:'room'};
+    const prefix=scene.toLowerCase().split('_')[0];
     const trusted=Object.entries(rooms).filter(([,room])=>(room.anchors||0)>=3);
-    const area=trusted.filter(([name])=>name.split('_')[0]===prefix).map(([,room])=>room);
+    const area=trusted.filter(([name])=>name.toLowerCase().split('_')[0]===prefix).map(([,room])=>room);
     const all=trusted.map(([,room])=>room);
     const candidates=area.length?area:all;
     if(!candidates.length)return null;
@@ -17,6 +18,11 @@
     const dx=point[0]-source[0],dy=(point[1]-source[1])*(matrix.reflected?-1:1);
     return [sketch[0]+matrix.imag*dx+matrix.real*dy,
             sketch[1]+matrix.real*dx-matrix.imag*dy];
+  }
+  function applyNative(point,model){
+    if(!Array.isArray(point)||point.length!==2||!point.every(Number.isFinite)||!model||!Array.isArray(model.x)||!Array.isArray(model.y)||model.x.length!==3||model.y.length!==3)return null;
+    const [x,y]=point,longitude=model.x[0]*x+model.x[1]*y+model.x[2],latitude=model.y[0]*x+model.y[1]*y+model.y[2];
+    return Number.isFinite(latitude)&&Number.isFinite(longitude)?[latitude,longitude]:null;
   }
   function solveAnchors(anchors,matrix){
     if(!Array.isArray(anchors)||anchors.length!==2)return null;
@@ -37,19 +43,24 @@
     }
     return candidates.sort((a,b)=>a.score-b.score)[0]?.matrix||null;
   }
-  function position(rooms,scene,world,anchors){
-    const room=rooms[scene],prior=priorForScene(rooms,scene);
-    if(!prior)return null;
-    if(anchors?.length){
+  function position(rooms,scene,world,anchors,nativePoint,nativeMap,mapMode){
+    const roomName=Object.keys(rooms).find(name=>name.toLowerCase()===scene.toLowerCase());
+    const room=roomName?rooms[roomName]:null,prior=priorForScene(rooms,scene);
+    if(anchors?.length&&prior){
       const matrix=anchors.length===2?solveAnchors(anchors,prior.matrix):prior.matrix;
       if(!matrix)return null;
       return {point:apply(world,anchors[0].source,anchors[0].sketch,matrix),
               mode:anchors.length===2?'calibrated':'anchored',confidence:prior.confidence};
     }
+    if(mapMode==='legacy-room-transform'&&Array.isArray(nativePoint)&&nativePoint.length===2&&nativePoint.every(Number.isFinite))
+      return {point:nativePoint,mode:'legacy',confidence:'legacy room transform'};
+    const native=applyNative(nativePoint,nativeMap);
+    if(native)return {point:native,mode:'native',confidence:'in-game map geometry'};
+    if(!prior)return null;
     if(!room)return null;
     return {point:apply(world,room.source,[room.sketch[1],room.sketch[0]],matrixOf(room)),mode:'auto',confidence:room.quality||'multi-landmark'};
   }
-  const api={priorForScene,apply,solveAnchors,position};
+  const api={priorForScene,apply,applyNative,solveAnchors,position};
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
   else root.SilksongLiveMath=api;
 })(typeof window!=='undefined'?window:globalThis);

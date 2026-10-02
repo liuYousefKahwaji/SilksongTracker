@@ -5,7 +5,10 @@ import sys
 import unittest
 from unittest.mock import Mock, patch
 import threading
+from http.server import ThreadingHTTPServer
 from pathlib import Path
+from urllib.error import HTTPError
+from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -17,7 +20,7 @@ from silksongtracker.rules import evaluate  # noqa: E402
 from silksongtracker.schema import SaveView  # noqa: E402
 from silksongtracker.mapdata import build_map, flag_status  # noqa: E402
 from tools.build_map import interior_groups, live_config, map_connections  # noqa: E402
-from silksongtracker.server import App  # noqa: E402
+from silksongtracker.server import App, make_handler  # noqa: E402
 from silksongtracker.state import TrackerState  # noqa: E402
 
 
@@ -52,6 +55,41 @@ class CoreTests(unittest.TestCase):
             app.refresh_if_changed()
         app.state.refresh.assert_called_once()
 
+    def test_refresh_route_returns_a_readable_error_when_rescan_fails(self):
+        app = App.__new__(App)
+        app.refresh = Mock(side_effect=OSError("save directory unavailable"))
+        server = ThreadingHTTPServer(("127.0.0.1", 0), make_handler(app))
+        worker = threading.Thread(target=server.serve_forever, daemon=True)
+        worker.start()
+        try:
+            request = Request(f"http://127.0.0.1:{server.server_port}/api/refresh", method="POST")
+            with self.assertRaises(HTTPError) as raised:
+                urlopen(request)
+            self.assertEqual(raised.exception.code, 500)
+            self.assertEqual(json.loads(raised.exception.read())["error"], "Save refresh failed: save directory unavailable")
+        finally:
+            server.shutdown()
+            server.server_close()
+            worker.join(timeout=2)
+
+    def test_select_route_parses_index_query(self):
+        app = App.__new__(App)
+        app.lock = threading.RLock()
+        app.state = Mock()
+        app.state.state.return_value = {"selectedSaveIndex": 1}
+        server = ThreadingHTTPServer(("127.0.0.1", 0), make_handler(app))
+        worker = threading.Thread(target=server.serve_forever, daemon=True)
+        worker.start()
+        try:
+            request = Request(f"http://127.0.0.1:{server.server_port}/api/select?index=1", method="POST")
+            with urlopen(request) as response:
+                self.assertEqual(json.loads(response.read())["selectedSaveIndex"], 1)
+            app.state.select_index.assert_called_once_with(1)
+        finally:
+            server.shutdown()
+            server.server_close()
+            worker.join(timeout=2)
+
     def test_plain_json_decode(self):
         raw = decode_save(json.dumps({"playerData": {"flag": True}}).encode())
         self.assertTrue(raw["playerData"]["flag"])
@@ -71,6 +109,22 @@ class CoreTests(unittest.TestCase):
         self.assertEqual(state["summary"]["complete"], 0)
         self.assertEqual(state["summary"]["unknown"], 100)
 
+    def test_supporting_checklist_counts_are_separate_from_official_completion(self):
+        complete_ids = {"tools-01", "fleas-01", "fleas-02", "bellways-01", "ventrica-01"}
+
+        def result(entry, _save):
+            status = "complete" if entry["id"] in complete_ids else "left"
+            return {**entry, "status": status, "known": True, "map": None}
+
+        with patch("silksongtracker.analyzer._entry_result", side_effect=result):
+            state = analyze({"playerData": {}})
+
+        groups = {group["id"]: group for group in state["groups"]}
+        self.assertEqual((groups["fleas"]["complete"], groups["fleas"]["total"]), (2, 30))
+        self.assertEqual((groups["bellways"]["complete"], groups["bellways"]["total"]), (1, 12))
+        self.assertEqual((groups["ventrica"]["complete"], groups["ventrica"]["total"]), (1, 7))
+        self.assertEqual((state["summary"]["complete"], state["summary"]["total"]), (1, 100))
+
     def test_ingame_map_has_deep_link_for_checklist(self):
         data = build_map(None)
         ids = {m['id'] for m in data['markers']}
@@ -84,7 +138,7 @@ class CoreTests(unittest.TestCase):
         self.assertEqual(data['links']['mask-upgrades-01']['kind'], 'components')
         self.assertEqual(len(data['links']['mask-upgrades-01']['ids']),20)
 
-    def test_ingame_map_asset_and_overlay_coordinates(self):
+    def test_tracker_map_asset_coordinates(self):
         source = live_config(ROOT / 'source' / 'ssMap.js')
         source_positions = {str(m['uid']):m['pos'] for c in source['categories'] for m in c['list'] if 'uid' in m}
         data = build_map(None)

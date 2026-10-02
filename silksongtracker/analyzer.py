@@ -102,7 +102,10 @@ def analyze(raw: dict | None, slot: int | None = None, path: str | None = None) 
         complete += sum(x["status"] == "complete" for x in counted)
         left += sum(x["status"] == "left" for x in counted)
         unknown += sum(x["status"] == "unknown" for x in counted)
-        groups.append({**section, "entries": entries, "complete": sum(x["status"] == "complete" for x in counted), "total": len(counted), "entryTotal": len(entries)})
+        # Section badges describe every entry in that section. The `counts`
+        # flag only controls whether an entry contributes to the official
+        # completion summary, not whether its supporting checklist can count.
+        groups.append({**section, "entries": entries, "complete": sum(x["status"] == "complete" for x in entries), "total": len(entries), "entryTotal": len(entries)})
     player = save.player if save else {}
     return {
         "game": "Hollow Knight: Silksong",

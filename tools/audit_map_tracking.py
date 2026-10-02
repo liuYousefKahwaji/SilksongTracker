@@ -16,7 +16,7 @@ def main():
     report={'schemaVersion':1,'counts':dict(counts),'markers':[
         {'id':m['id'],'category':m['cat'],'name':m['name'],'classification':m['tracking'],
          'reason':m['trackingNote'],'supplementalFlag':FLAGS.get(m['id'])}
-        for m in data['markers'] if not m.get('flag')]}
+         for m in data['markers'] if not m.get('flag') or m['tracking']=='waypoint']}
     target=ROOT/'data/map_tracking_audit.json'
     target.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(dict(counts))

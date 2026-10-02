@@ -1,0 +1,8281 @@
+{
+  "format": 1,
+  "rooms": [
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        2.682013,
+        16.933999,
+        2.682013,
+        16.933999
+      ],
+      "name": "abandoned_town",
+      "sceneSize": [
+        370.0,
+        60.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -1.3867,
+        -20.958,
+        -0.6153,
+        -18.318
+      ],
+      "name": "abyss_01",
+      "sceneSize": [
+        50.0,
+        161.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.199,
+        -18.561999,
+        6.539,
+        -18.091999
+      ],
+      "name": "abyss_02",
+      "sceneSize": [
+        192.0,
+        39.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -0.616994,
+        -18.687,
+        3.203006,
+        -17.907
+      ],
+      "name": "abyss_02b",
+      "sceneSize": [
+        228.0,
+        55.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        6.537,
+        -18.368002,
+        7.887,
+        -16.768002
+      ],
+      "name": "abyss_03",
+      "sceneSize": [
+        82.0,
+        85.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -0.61839,
+        -19.998002,
+        1.12161,
+        -18.758002
+      ],
+      "name": "abyss_04",
+      "sceneSize": [
+        115.0,
+        81.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        2.008615,
+        -20.657024,
+        4.928615,
+        -18.887024
+      ],
+      "name": "abyss_05",
+      "sceneSize": [
+        190.0,
+        105.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -2.482,
+        -20.677099,
+        -1.382,
+        -19.717099
+      ],
+      "name": "abyss_06",
+      "sceneSize": [
+        60.0,
+        51.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -0.61929,
+        -20.668002,
+        1.55071,
+        -20.288002
+      ],
+      "name": "abyss_07",
+      "sceneSize": [
+        130.0,
+        20.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        4.788,
+        -20.595023,
+        7.428,
+        -18.875023
+      ],
+      "name": "abyss_08",
+      "sceneSize": [
+        164.0,
+        106.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.950605,
+        -16.732,
+        2.880605,
+        -0.802
+      ],
+      "name": "abyss_09",
+      "sceneSize": [
+        60.0,
+        1023.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.596006,
+        -17.8392,
+        2.336006,
+        -16.8392
+      ],
+      "name": "abyss_11",
+      "sceneSize": [
+        44.0,
+        58.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.55041,
+        -20.657,
+        2.01041,
+        -19.987
+      ],
+      "name": "abyss_12",
+      "sceneSize": [
+        33.0,
+        40.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        2.331,
+        -17.317998,
+        6.551,
+        -16.727998
+      ],
+      "name": "abyss_13",
+      "sceneSize": [
+        240.0,
+        36.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "label:THE ABYSS",
+      "bounds": [
+        3.2663765894342536,
+        -17.19316958185409,
+        3.2663765894342536,
+        -17.19316958185409
+      ],
+      "inheritLastPosition": true,
+      "name": "abyss_cocoon",
+      "sceneSize": [
+        65.0,
+        1024.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -1.683812,
+        -9.855018,
+        0.496188,
+        -9.595018
+      ],
+      "name": "ant_02",
+      "sceneSize": [
+        130.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        0.494038,
+        -9.806018,
+        1.358338,
+        -8.616018
+      ],
+      "name": "ant_03",
+      "sceneSize": [
+        50.0,
+        78.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.356665,
+        -9.225619,
+        7.556665,
+        -8.715619
+      ],
+      "name": "ant_04",
+      "sceneSize": [
+        384.0,
+        34.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.352464,
+        -9.225619,
+        3.653914,
+        -8.715619
+      ],
+      "name": "ant_04_left",
+      "sceneSize": [
+        145.0,
+        37.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.360189,
+        -9.225619,
+        5.240189,
+        -8.715619
+      ],
+      "name": "ant_04_mid",
+      "sceneSize": [
+        235.0,
+        37.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        6.032188,
+        -9.473018,
+        7.552188,
+        -9.223018
+      ],
+      "name": "ant_05b",
+      "sceneSize": [
+        120.0,
+        20.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        8.048088,
+        -8.523918,
+        9.368088,
+        -7.883918
+      ],
+      "name": "ant_05c",
+      "sceneSize": [
+        84.0,
+        41.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        7.332098,
+        -5.40463,
+        7.332098,
+        -5.40463
+      ],
+      "name": "ant_08",
+      "sceneSize": [
+        85.0,
+        90.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        9.367698,
+        -8.285018,
+        12.214678,
+        -7.495018
+      ],
+      "name": "ant_09",
+      "sceneSize": [
+        170.0,
+        48.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        7.550188,
+        -9.492953,
+        8.050188,
+        -7.365083
+      ],
+      "name": "ant_14",
+      "sceneSize": [
+        29.0,
+        130.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        6.535188,
+        -8.404018,
+        7.555188,
+        -8.164018
+      ],
+      "name": "ant_17",
+      "sceneSize": [
+        60.0,
+        24.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        10.875188,
+        -8.858018,
+        10.875188,
+        -8.858018
+      ],
+      "name": "ant_19",
+      "sceneSize": [
+        173.0,
+        106.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        8.050189,
+        -9.444018,
+        11.280189,
+        -8.584018
+      ],
+      "name": "ant_20",
+      "sceneSize": [
+        222.0,
+        48.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        5.807188,
+        -8.790018,
+        7.937188,
+        -7.270018
+      ],
+      "name": "ant_21",
+      "sceneSize": [
+        138.0,
+        89.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        5.141288,
+        -8.144018,
+        7.551288,
+        -7.674018
+      ],
+      "name": "ant_merchant",
+      "sceneSize": [
+        152.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        18.996164,
+        -7.760025,
+        18.996164,
+        -7.760025
+      ],
+      "name": "ant_queen",
+      "sceneSize": [
+        55.0,
+        34.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        11.34,
+        8.54,
+        15.61,
+        9.24
+      ],
+      "name": "aqueduct_01",
+      "sceneSize": [
+        265.0,
+        42.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        15.608998,
+        7.27,
+        16.138998,
+        9.23
+      ],
+      "name": "aqueduct_02",
+      "sceneSize": [
+        29.0,
+        121.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        16.139,
+        7.2,
+        20.539,
+        7.86
+      ],
+      "name": "aqueduct_03",
+      "sceneSize": [
+        261.0,
+        44.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        12.794,
+        7.026,
+        15.594,
+        7.876
+      ],
+      "name": "aqueduct_04",
+      "sceneSize": [
+        185.0,
+        60.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        20.352,
+        7.138,
+        25.842,
+        8.788
+      ],
+      "name": "aqueduct_05",
+      "sceneSize": [
+        332.0,
+        100.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        17.119,
+        7.855,
+        19.569,
+        9.855
+      ],
+      "name": "aqueduct_06",
+      "sceneSize": [
+        150.0,
+        120.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        15.07525,
+        7.84,
+        15.61075,
+        8.5
+      ],
+      "name": "aqueduct_07",
+      "sceneSize": [
+        41.0,
+        40.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        16.1355,
+        7.855,
+        17.1225,
+        8.225
+      ],
+      "name": "aqueduct_08",
+      "sceneSize": [
+        60.0,
+        20.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        4.669431,
+        8.431609,
+        5.169431,
+        11.01419
+      ],
+      "name": "arborium_01",
+      "sceneSize": [
+        29.0,
+        151.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        5.1692,
+        8.9589,
+        7.3392,
+        9.4089
+      ],
+      "name": "arborium_02",
+      "sceneSize": [
+        132.0,
+        29.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        7.33855,
+        8.404,
+        7.84005,
+        10.284
+      ],
+      "name": "arborium_03",
+      "sceneSize": [
+        29.0,
+        110.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        5.16803,
+        8.502899,
+        7.34237,
+        9.062899
+      ],
+      "name": "arborium_04",
+      "sceneSize": [
+        132.0,
+        34.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        5.20507,
+        9.4329,
+        7.33933,
+        9.8829
+      ],
+      "name": "arborium_05",
+      "sceneSize": [
+        132.0,
+        29.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        5.165086,
+        9.86508,
+        7.339426,
+        10.34508
+      ],
+      "name": "arborium_06",
+      "sceneSize": [
+        132.0,
+        29.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        5.16778,
+        10.3629,
+        8.01062,
+        10.7129
+      ],
+      "name": "arborium_07",
+      "sceneSize": [
+        180.0,
+        22.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        5.1692,
+        10.712899,
+        7.1992,
+        11.632899
+      ],
+      "name": "arborium_08",
+      "sceneSize": [
+        132.0,
+        60.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.5702,
+        8.3939,
+        4.6702,
+        10.2639
+      ],
+      "name": "arborium_09",
+      "sceneSize": [
+        66.0,
+        112.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        7.8322,
+        9.0309,
+        8.3722,
+        9.3709
+      ],
+      "name": "arborium_10",
+      "sceneSize": [
+        39.0,
+        28.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        7.8392,
+        8.5629,
+        11.3492,
+        9.3229
+      ],
+      "name": "arborium_11",
+      "sceneSize": [
+        222.0,
+        61.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        4.2112,
+        10.2529,
+        4.6712,
+        10.7129
+      ],
+      "name": "arborium_tube",
+      "sceneSize": [
+        32.0,
+        22.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -14.101964,
+        -9.721018,
+        -12.861964,
+        -5.250818
+      ],
+      "name": "aspid_01",
+      "sceneSize": [
+        80.0,
+        273.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -7.460854,
+        -9.335589,
+        -6.780854,
+        -8.950464
+      ],
+      "name": "bellshrine",
+      "sceneSize": [
+        43.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        13.362486,
+        -4.883872,
+        14.07171,
+        -4.463387
+      ],
+      "name": "bellshrine_02",
+      "sceneSize": [
+        43.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -11.22456,
+        -4.672365,
+        -10.551197,
+        -4.277693
+      ],
+      "name": "bellshrine_03",
+      "sceneSize": [
+        43.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        6.255052,
+        -11.719025,
+        6.931227,
+        -11.329025
+      ],
+      "name": "bellshrine_05",
+      "sceneSize": [
+        43.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -9.45575,
+        1.980036,
+        -8.82575,
+        2.760036
+      ],
+      "name": "bellshrine_coral",
+      "sceneSize": [
+        43.0,
+        40.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        8.655661,
+        7.795593,
+        8.655661,
+        7.795593
+      ],
+      "name": "bellshrine_enclave",
+      "sceneSize": [
+        43.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "room:Bellshrine_Enclave",
+      "bounds": [
+        8.655661,
+        7.795593,
+        8.655661,
+        7.795593
+      ],
+      "inheritLastPosition": true,
+      "name": "bellshrine_lore_additive",
+      "sceneSize": [
+        43.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -2.40656,
+        -6.650035,
+        -0.52721,
+        -5.390035
+      ],
+      "name": "belltown",
+      "sceneSize": [
+        109.0,
+        75.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -2.340885,
+        -4.962035,
+        -0.760885,
+        -3.322035
+      ],
+      "name": "belltown_04",
+      "sceneSize": [
+        85.0,
+        97.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -0.532385,
+        -6.601035,
+        0.970615,
+        -5.211035
+      ],
+      "name": "belltown_06",
+      "sceneSize": [
+        80.0,
+        83.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -3.168435,
+        -6.601035,
+        -2.047335,
+        -6.321035
+      ],
+      "name": "belltown_07",
+      "sceneSize": [
+        70.0,
+        34.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -2.786882,
+        -2.475,
+        -0.696882,
+        -1.415
+      ],
+      "name": "belltown_08",
+      "sceneSize": [
+        115.0,
+        47.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        -0.981885,
+        -6.615035,
+        -0.981885,
+        -6.615035
+      ],
+      "name": "belltown_basement",
+      "sceneSize": [
+        95.0,
+        135.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -2.783885,
+        -9.394035,
+        -0.373885,
+        -6.964035
+      ],
+      "name": "belltown_basement_03",
+      "sceneSize": [
+        150.0,
+        150.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "room:Belltown",
+      "bounds": [
+        -1.4668850000000013,
+        -6.020034999999999,
+        -1.4668850000000013,
+        -6.020034999999999
+      ],
+      "inheritLastPosition": true,
+      "name": "belltown_room_doctor",
+      "sceneSize": [
+        55.0,
+        26.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "room:Belltown",
+      "bounds": [
+        -1.4668850000000013,
+        -6.020034999999999,
+        -1.4668850000000013,
+        -6.020034999999999
+      ],
+      "inheritLastPosition": true,
+      "name": "belltown_room_pinsmith",
+      "sceneSize": [
+        55.0,
+        26.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "room:Belltown",
+      "bounds": [
+        -1.4668850000000013,
+        -6.020034999999999,
+        -1.4668850000000013,
+        -6.020034999999999
+      ],
+      "inheritLastPosition": true,
+      "name": "belltown_room_relic",
+      "sceneSize": [
+        55.0,
+        26.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -3.472889,
+        -6.241031,
+        -2.522889,
+        -5.801031
+      ],
+      "name": "belltown_room_shellwood",
+      "sceneSize": [
+        55.0,
+        26.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "room:Belltown",
+      "bounds": [
+        -1.4668850000000013,
+        -6.020034999999999,
+        -1.4668850000000013,
+        -6.020034999999999
+      ],
+      "inheritLastPosition": true,
+      "name": "belltown_room_spare",
+      "sceneSize": [
+        55.0,
+        26.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -2.079885,
+        -5.451035,
+        -0.529885,
+        -4.961035
+      ],
+      "name": "belltown_shrine",
+      "sceneSize": [
+        95.0,
+        38.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "markers:[46, 47]",
+      "bounds": [
+        -10.339033181590946,
+        -10.432839765133208,
+        -10.339033181590946,
+        -10.432839765133208
+      ],
+      "inheritLastPosition": true,
+      "name": "bellway_01",
+      "sceneSize": [
+        100.0,
+        45.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.143103,
+        -12.334035,
+        2.943103,
+        -11.404035
+      ],
+      "name": "bellway_02",
+      "sceneSize": [
+        120.0,
+        50.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        12.876164,
+        -11.403025,
+        15.446164,
+        -10.373025
+      ],
+      "name": "bellway_03",
+      "sceneSize": [
+        150.0,
+        60.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        5.587098,
+        -6.001629,
+        6.967098,
+        -5.521629
+      ],
+      "name": "bellway_04",
+      "sceneSize": [
+        95.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -16.323677,
+        -0.794032,
+        -13.748117,
+        -0.214032
+      ],
+      "name": "bellway_08",
+      "sceneSize": [
+        150.0,
+        33.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        15.515,
+        8.51,
+        17.165,
+        9.85
+      ],
+      "name": "bellway_aqueduct",
+      "sceneSize": [
+        96.0,
+        78.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "marker:46",
+      "bounds": [
+        -8.780446128051562,
+        -9.17549032611074,
+        -8.780446128051562,
+        -9.17549032611074
+      ],
+      "inheritLastPosition": true,
+      "name": "bellway_centipede_arena",
+      "sceneSize": [
+        191.0,
+        43.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        5.619661,
+        3.850098,
+        7.409661,
+        4.410098
+      ],
+      "name": "bellway_city",
+      "sceneSize": [
+        112.0,
+        36.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -21.026996,
+        5.989003,
+        -20.486996,
+        6.849003
+      ],
+      "name": "bellway_peak",
+      "sceneSize": [
+        29.0,
+        55.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -20.582,
+        5.568,
+        -18.792,
+        6.228
+      ],
+      "name": "bellway_peak_02",
+      "sceneSize": [
+        101.0,
+        37.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        12.170372,
+        -0.505236,
+        13.590372,
+        0.254764
+      ],
+      "name": "bellway_shadow",
+      "sceneSize": [
+        75.0,
+        41.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -10.940854,
+        -11.443026,
+        -8.460854,
+        -9.853026
+      ],
+      "name": "bone_01",
+      "sceneSize": [
+        130.0,
+        91.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -10.942835,
+        -11.693018,
+        -10.102835,
+        -9.893018
+      ],
+      "name": "bone_01b",
+      "sceneSize": [
+        38.0,
+        91.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -10.941854,
+        -11.443026,
+        -7.141854,
+        -9.853026
+      ],
+      "name": "bone_01c",
+      "sceneSize": [
+        198.0,
+        91.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -7.142854,
+        -11.503026,
+        -4.462854,
+        -10.743026
+      ],
+      "name": "bone_02",
+      "sceneSize": [
+        155.0,
+        46.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -6.890854,
+        -10.744026,
+        -6.040854,
+        -8.564026
+      ],
+      "name": "bone_03",
+      "sceneSize": [
+        60.0,
+        138.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -10.750854,
+        -9.853026,
+        -6.840854,
+        -9.333026
+      ],
+      "name": "bone_04",
+      "sceneSize": [
+        233.0,
+        31.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -10.741854,
+        -9.333026,
+        -7.341854,
+        -8.893026
+      ],
+      "name": "bone_05",
+      "sceneSize": [
+        201.0,
+        22.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -10.741835,
+        -9.223218,
+        -9.531835,
+        -8.813218
+      ],
+      "name": "bone_05b",
+      "sceneSize": [
+        80.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -8.200854,
+        -8.565026,
+        -6.310854,
+        -7.705026
+      ],
+      "name": "bone_06",
+      "sceneSize": [
+        112.0,
+        50.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -3.705529,
+        -9.725026,
+        -2.268379,
+        -8.595026
+      ],
+      "name": "bone_07",
+      "sceneSize": [
+        92.0,
+        74.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -2.271164,
+        -10.715026,
+        -1.650544,
+        -9.105026
+      ],
+      "name": "bone_08",
+      "sceneSize": [
+        40.0,
+        95.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -2.280289,
+        -11.524026,
+        0.592581,
+        -10.704026
+      ],
+      "name": "bone_09",
+      "sceneSize": [
+        164.0,
+        45.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -6.212854,
+        -10.743026,
+        -4.472854,
+        -9.673026
+      ],
+      "name": "bone_10",
+      "sceneSize": [
+        115.0,
+        69.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -12.871946,
+        -9.873333,
+        -10.741946,
+        -9.333333
+      ],
+      "name": "bone_11",
+      "sceneSize": [
+        120.0,
+        31.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -11.632854,
+        -10.145032,
+        -10.592854,
+        -9.795032
+      ],
+      "name": "bone_11b",
+      "sceneSize": [
+        52.0,
+        18.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        -1.751854,
+        -10.252026,
+        -1.751854,
+        -10.252026
+      ],
+      "name": "bone_12",
+      "sceneSize": [
+        58.0,
+        43.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -6.041854,
+        -9.565026,
+        -3.701854,
+        -9.015026
+      ],
+      "name": "bone_14",
+      "sceneSize": [
+        135.0,
+        38.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -4.481854,
+        -10.423026,
+        -2.671854,
+        -9.913026
+      ],
+      "name": "bone_15",
+      "sceneSize": [
+        113.0,
+        29.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -4.463044,
+        -11.533926,
+        -2.268664,
+        -10.393926
+      ],
+      "name": "bone_16",
+      "sceneSize": [
+        135.0,
+        75.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -7.379334,
+        -10.224026,
+        -6.792374,
+        -9.974026
+      ],
+      "name": "bone_17",
+      "sceneSize": [
+        35.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -6.311854,
+        -8.505026,
+        -5.561854,
+        -7.915026
+      ],
+      "name": "bone_18",
+      "sceneSize": [
+        49.0,
+        33.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -4.962079,
+        -8.611026,
+        -2.499829,
+        -8.161026
+      ],
+      "name": "bone_19",
+      "sceneSize": [
+        146.0,
+        27.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        2.942103,
+        -11.834035,
+        3.632103,
+        -10.514035
+      ],
+      "name": "bone_east_01",
+      "sceneSize": [
+        47.0,
+        83.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        6.849164,
+        -11.78102,
+        9.339164,
+        -11.19102
+      ],
+      "name": "bone_east_02",
+      "sceneSize": [
+        162.0,
+        35.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        6.851164,
+        -11.781967,
+        12.211164,
+        -11.171967
+      ],
+      "name": "bone_east_02b",
+      "sceneSize": [
+        330.0,
+        35.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.630173,
+        -11.124025,
+        7.350173,
+        -10.494025
+      ],
+      "name": "bone_east_03",
+      "sceneSize": [
+        224.0,
+        42.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        6.141167,
+        -11.162024,
+        7.501167,
+        -9.472024
+      ],
+      "name": "bone_east_04",
+      "sceneSize": [
+        83.0,
+        100.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        6.16116,
+        -11.163024,
+        6.84116,
+        -9.473024
+      ],
+      "name": "bone_east_04b",
+      "sceneSize": [
+        44.0,
+        100.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        7.501174,
+        -9.872023,
+        8.531174,
+        -9.612023
+      ],
+      "name": "bone_east_04c",
+      "sceneSize": [
+        68.0,
+        17.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        2.941697,
+        -10.532893,
+        6.161697,
+        -9.772893
+      ],
+      "name": "bone_east_05",
+      "sceneSize": [
+        190.0,
+        47.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        12.195164,
+        -12.682025,
+        12.875164,
+        -9.532025
+      ],
+      "name": "bone_east_07",
+      "sceneSize": [
+        40.0,
+        190.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        12.876164,
+        -12.742025,
+        15.366164,
+        -11.862025
+      ],
+      "name": "bone_east_08",
+      "sceneSize": [
+        150.0,
+        50.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        15.365164,
+        -12.993025,
+        16.995164,
+        -11.293025
+      ],
+      "name": "bone_east_09",
+      "sceneSize": [
+        100.0,
+        97.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        15.350164,
+        -12.722025,
+        16.880164,
+        -9.672025
+      ],
+      "name": "bone_east_09b",
+      "sceneSize": [
+        100.0,
+        200.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        12.872094,
+        -9.721025,
+        14.946234,
+        -9.111025
+      ],
+      "name": "bone_east_10",
+      "sceneSize": [
+        132.0,
+        38.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        12.900164,
+        -9.743025,
+        16.060164,
+        -9.353025
+      ],
+      "name": "bone_east_10_church",
+      "sceneSize": [
+        200.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        13.977164,
+        -9.529022,
+        13.977164,
+        -9.529022
+      ],
+      "name": "bone_east_10_room",
+      "sceneSize": [
+        155.0,
+        50.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        12.213164,
+        -9.532025,
+        12.883164,
+        -4.762025
+      ],
+      "name": "bone_east_11",
+      "sceneSize": [
+        40.0,
+        278.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.631103,
+        -11.775035,
+        6.321103,
+        -11.265035
+      ],
+      "name": "bone_east_12",
+      "sceneSize": [
+        180.0,
+        32.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.539103,
+        -13.455035,
+        5.609103,
+        -12.945035
+      ],
+      "name": "bone_east_13",
+      "sceneSize": [
+        128.0,
+        35.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        16.989164,
+        -12.973225,
+        19.339164,
+        -11.643225
+      ],
+      "name": "bone_east_14",
+      "sceneSize": [
+        140.0,
+        80.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        17.004565,
+        -12.952755,
+        22.114565,
+        -11.732755
+      ],
+      "name": "bone_east_14b",
+      "sceneSize": [
+        309.0,
+        75.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        7.488164,
+        -11.168025,
+        10.258164,
+        -9.378025
+      ],
+      "name": "bone_east_15",
+      "sceneSize": [
+        173.0,
+        110.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        9.402164,
+        -11.172025,
+        10.282164,
+        -10.752025
+      ],
+      "name": "bone_east_16",
+      "sceneSize": [
+        57.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        10.269194,
+        -11.172025,
+        12.211134,
+        -9.462025
+      ],
+      "name": "bone_east_17",
+      "sceneSize": [
+        115.0,
+        107.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        10.273164,
+        -11.171025,
+        12.113164,
+        -10.161025
+      ],
+      "name": "bone_east_17b",
+      "sceneSize": [
+        115.0,
+        64.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        15.026164,
+        -9.442023,
+        17.846164,
+        -8.392023
+      ],
+      "name": "bone_east_18",
+      "sceneSize": [
+        178.0,
+        62.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        17.845164,
+        -10.471725,
+        23.505164,
+        -8.611725
+      ],
+      "name": "bone_east_18b",
+      "sceneSize": [
+        327.0,
+        108.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        14.896164,
+        -9.415025,
+        15.986164,
+        -9.125025
+      ],
+      "name": "bone_east_18c",
+      "sceneSize": [
+        80.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        12.899164,
+        -11.894025,
+        15.369164,
+        -11.364025
+      ],
+      "name": "bone_east_20",
+      "sceneSize": [
+        150.0,
+        33.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        12.879164,
+        -11.952225,
+        13.579164,
+        -11.502225
+      ],
+      "name": "bone_east_21",
+      "sceneSize": [
+        40.0,
+        20.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        12.875164,
+        -10.542025,
+        13.875164,
+        -10.292025
+      ],
+      "name": "bone_east_22",
+      "sceneSize": [
+        59.0,
+        35.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        12.876164,
+        -8.392025,
+        17.216164,
+        -7.212025
+      ],
+      "name": "bone_east_24",
+      "sceneSize": [
+        263.0,
+        76.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        18.045164,
+        -7.862025,
+        20.645164,
+        -7.472025
+      ],
+      "name": "bone_east_25",
+      "sceneSize": [
+        157.0,
+        27.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        17.279764,
+        -8.672025,
+        20.789764,
+        -7.882025
+      ],
+      "name": "bone_east_26",
+      "sceneSize": [
+        205.0,
+        48.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        17.209164,
+        -7.931025,
+        18.049164,
+        -6.901025
+      ],
+      "name": "bone_east_27",
+      "sceneSize": [
+        50.0,
+        63.0
+      ]
+    },
+    {
+      "anchorSource": "legacy-room-transform",
+      "imag": 0.0003814,
+      "legacyOnly": true,
+      "legacySketchLonLat": [
+        1699.94,
+        -1413.38
+      ],
+      "legacySource": [
+        19.055,
+        235.43
+      ],
+      "name": "bone_east_lavachallenge",
+      "real": 0.6473198,
+      "reflected": false,
+      "sceneSize": [
+        29.0,
+        289.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        16.154164,
+        -12.266025,
+        16.154164,
+        -12.266025
+      ],
+      "name": "bone_east_umbrella",
+      "sceneSize": [
+        55.0,
+        26.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        21.855565,
+        -14.350755,
+        25.345565,
+        -12.330755
+      ],
+      "name": "bone_east_weavehome",
+      "sceneSize": [
+        205.0,
+        120.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -21.807835,
+        -12.054018,
+        -19.517835,
+        -11.384018
+      ],
+      "name": "bone_steel_servant",
+      "sceneSize": [
+        130.0,
+        40.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -22.330835,
+        -11.721018,
+        -16.580835,
+        -10.251018
+      ],
+      "name": "bonegrave",
+      "sceneSize": [
+        315.0,
+        82.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -16.580835,
+        -11.462018,
+        -10.940835,
+        -9.902018
+      ],
+      "name": "bonetown",
+      "sceneSize": [
+        315.0,
+        90.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        -18.729835,
+        -11.557018,
+        -18.729835,
+        -11.557018
+      ],
+      "name": "chapel_wanderer",
+      "sceneSize": [
+        87.0,
+        140.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        18.565,
+        -5.202,
+        21.835,
+        -4.762
+      ],
+      "name": "clover_01",
+      "sceneSize": [
+        175.0,
+        22.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        18.565,
+        -5.182,
+        21.835,
+        -4.782
+      ],
+      "name": "clover_01b",
+      "sceneSize": [
+        175.0,
+        21.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        21.833,
+        -5.132,
+        25.123,
+        -3.952
+      ],
+      "name": "clover_02c",
+      "sceneSize": [
+        209.0,
+        75.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        25.123,
+        -5.672,
+        25.673,
+        -2.442
+      ],
+      "name": "clover_03",
+      "sceneSize": [
+        30.0,
+        176.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        21.834,
+        -3.703,
+        25.124,
+        -2.353
+      ],
+      "name": "clover_04b",
+      "sceneSize": [
+        200.0,
+        95.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        21.314996,
+        -4.783297,
+        21.834996,
+        -2.513297
+      ],
+      "name": "clover_05c",
+      "sceneSize": [
+        31.0,
+        134.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        19.032991,
+        -2.438,
+        23.392991,
+        -1.958
+      ],
+      "name": "clover_06",
+      "sceneSize": [
+        270.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        23.737,
+        -2.614,
+        23.737,
+        -2.614
+      ],
+      "name": "clover_10",
+      "sceneSize": [
+        136.0,
+        54.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        23.737,
+        -2.614,
+        23.737,
+        -2.614
+      ],
+      "name": "clover_10_web",
+      "sceneSize": [
+        60.0,
+        54.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        22.363,
+        -3.469,
+        23.653,
+        -2.949
+      ],
+      "name": "clover_11",
+      "sceneSize": [
+        75.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        19.026,
+        -4.023,
+        21.316,
+        -2.393
+      ],
+      "name": "clover_16",
+      "sceneSize": [
+        140.0,
+        100.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        25.669,
+        -4.342,
+        28.849,
+        -3.032
+      ],
+      "name": "clover_18",
+      "sceneSize": [
+        195.0,
+        80.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        21.833,
+        -2.793,
+        23.393,
+        -2.423
+      ],
+      "name": "clover_19",
+      "sceneSize": [
+        100.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        21.834,
+        -5.131,
+        24.264,
+        -4.371
+      ],
+      "name": "clover_20",
+      "sceneSize": [
+        150.0,
+        47.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        18.496,
+        -4.274,
+        21.316,
+        -3.774
+      ],
+      "name": "clover_21",
+      "sceneSize": [
+        170.0,
+        26.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        2.15021,
+        5.307897,
+        3.28021,
+        7.967897
+      ],
+      "name": "cog_04",
+      "sceneSize": [
+        72.0,
+        150.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -0.003783,
+        6.629112,
+        2.186217,
+        7.379112
+      ],
+      "name": "cog_05",
+      "sceneSize": [
+        125.0,
+        50.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.278267,
+        6.577897,
+        4.794167,
+        7.297897
+      ],
+      "name": "cog_06",
+      "sceneSize": [
+        90.0,
+        42.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.280217,
+        5.107697,
+        4.790217,
+        6.307697
+      ],
+      "name": "cog_07",
+      "sceneSize": [
+        90.0,
+        87.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        2.119217,
+        8.678597,
+        3.319217,
+        11.298597
+      ],
+      "name": "cog_08",
+      "sceneSize": [
+        72.0,
+        160.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        2.150225,
+        10.886375,
+        3.240225,
+        12.656375
+      ],
+      "name": "cog_09",
+      "sceneSize": [
+        72.0,
+        117.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        2.150225,
+        10.882897,
+        3.240225,
+        12.652897
+      ],
+      "name": "cog_09_destroyed",
+      "sceneSize": [
+        72.0,
+        117.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.196215,
+        6.842897,
+        2.116215,
+        7.712897
+      ],
+      "name": "cog_10",
+      "sceneSize": [
+        71.0,
+        60.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.381217,
+        8.443897,
+        3.851217,
+        11.513897
+      ],
+      "name": "cog_10_destroyed",
+      "sceneSize": [
+        29.0,
+        187.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        2.260217,
+        7.693897,
+        2.260217,
+        7.693897
+      ],
+      "name": "cog_bench",
+      "sceneSize": [
+        45.0,
+        40.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        2.019214,
+        7.910883,
+        3.369214,
+        8.680883
+      ],
+      "name": "cog_dancers",
+      "sceneSize": [
+        80.0,
+        45.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.103036,
+        7.640765,
+        3.125199,
+        8.619229
+      ],
+      "name": "cog_pass",
+      "sceneSize": [
+        40.0,
+        68.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -17.955897,
+        -3.976133,
+        -13.955897,
+        -2.566133
+      ],
+      "name": "coral_02",
+      "sceneSize": [
+        245.0,
+        80.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -13.963897,
+        -3.965032,
+        -12.963897,
+        -0.385032
+      ],
+      "name": "coral_03",
+      "sceneSize": [
+        60.0,
+        215.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -9.317767,
+        0.594964,
+        -7.380048,
+        1.034964
+      ],
+      "name": "coral_10",
+      "sceneSize": [
+        120.0,
+        35.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -16.968897,
+        -2.266032,
+        -13.962897,
+        -1.766032
+      ],
+      "name": "coral_11",
+      "sceneSize": [
+        180.0,
+        31.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -17.961697,
+        -2.145033,
+        -16.360097,
+        -1.915033
+      ],
+      "name": "coral_11b",
+      "sceneSize": [
+        100.0,
+        27.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -12.963897,
+        -3.055032,
+        -11.513897,
+        -1.835032
+      ],
+      "name": "coral_12",
+      "sceneSize": [
+        94.0,
+        78.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -19.473897,
+        -4.792032,
+        -12.673897,
+        -3.962032
+      ],
+      "name": "coral_19",
+      "sceneSize": [
+        427.0,
+        55.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -19.502897,
+        -4.530033,
+        -17.562897,
+        -2.630033
+      ],
+      "name": "coral_19b",
+      "sceneSize": [
+        118.0,
+        117.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -20.978251,
+        0.126936,
+        -15.648251,
+        1.736936
+      ],
+      "name": "coral_23",
+      "sceneSize": [
+        316.0,
+        102.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -15.162927,
+        1.510936,
+        -12.126867,
+        2.470936
+      ],
+      "name": "coral_24",
+      "sceneSize": [
+        183.0,
+        55.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -21.102012,
+        -0.850589,
+        -20.272012,
+        0.968461
+      ],
+      "name": "coral_25",
+      "sceneSize": [
+        149.0,
+        98.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -12.134521,
+        0.830836,
+        -11.641581,
+        3.250836
+      ],
+      "name": "coral_26",
+      "sceneSize": [
+        30.0,
+        141.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -18.976255,
+        3.220936,
+        -15.646255,
+        3.960936
+      ],
+      "name": "coral_27",
+      "sceneSize": [
+        202.0,
+        46.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -20.797251,
+        3.640933,
+        -18.967251,
+        4.820933
+      ],
+      "name": "coral_28",
+      "sceneSize": [
+        130.0,
+        56.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        -15.408251,
+        4.260936,
+        -15.408251,
+        4.260936
+      ],
+      "name": "coral_29",
+      "sceneSize": [
+        302.0,
+        92.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -12.963897,
+        -0.795032,
+        -10.213897,
+        1.074968
+      ],
+      "name": "coral_32",
+      "sceneSize": [
+        170.0,
+        115.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -18.608897,
+        -1.984032,
+        -17.558897,
+        -0.614032
+      ],
+      "name": "coral_33",
+      "sceneSize": [
+        58.0,
+        74.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -21.763897,
+        -2.184032,
+        -17.953897,
+        -0.824032
+      ],
+      "name": "coral_34",
+      "sceneSize": [
+        222.0,
+        83.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -15.650886,
+        -0.995032,
+        -15.159416,
+        1.484968
+      ],
+      "name": "coral_35",
+      "sceneSize": [
+        29.0,
+        153.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -15.650151,
+        1.495936,
+        -15.160151,
+        4.445936
+      ],
+      "name": "coral_35b",
+      "sceneSize": [
+        29.0,
+        168.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -15.160897,
+        -0.235032,
+        -13.990897,
+        0.704968
+      ],
+      "name": "coral_36",
+      "sceneSize": [
+        70.0,
+        58.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -11.571897,
+        -2.641032,
+        -9.981897,
+        -2.221032
+      ],
+      "name": "coral_37",
+      "sceneSize": [
+        80.0,
+        21.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -11.644251,
+        1.069936,
+        -9.454251,
+        2.549936
+      ],
+      "name": "coral_38",
+      "sceneSize": [
+        131.0,
+        95.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -21.72325,
+        1.216936,
+        -19.47325,
+        2.296936
+      ],
+      "name": "coral_39",
+      "sceneSize": [
+        192.0,
+        43.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -16.54925,
+        1.761436,
+        -15.64925,
+        2.101436
+      ],
+      "name": "coral_40",
+      "sceneSize": [
+        60.0,
+        24.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -18.144251,
+        2.100936,
+        -15.644251,
+        3.230936
+      ],
+      "name": "coral_41",
+      "sceneSize": [
+        153.0,
+        68.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -16.720497,
+        -0.105032,
+        -15.650497,
+        0.544968
+      ],
+      "name": "coral_42",
+      "sceneSize": [
+        62.0,
+        32.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -17.559897,
+        -0.934932,
+        -15.649897,
+        -0.634932
+      ],
+      "name": "coral_43",
+      "sceneSize": [
+        110.0,
+        22.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -15.16125,
+        2.620536,
+        -12.13125,
+        3.510536
+      ],
+      "name": "coral_44",
+      "sceneSize": [
+        183.0,
+        55.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -10.233897,
+        0.205068,
+        -9.193897,
+        0.925068
+      ],
+      "name": "coral_judge_arena",
+      "sceneSize": [
+        62.0,
+        42.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        -20.00625,
+        3.818936,
+        -20.00625,
+        3.818936
+      ],
+      "name": "coral_tower_01",
+      "sceneSize": [
+        138.0,
+        22.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.951315,
+        12.929,
+        3.322685,
+        14.119
+      ],
+      "name": "cradle_01",
+      "sceneSize": [
+        80.0,
+        68.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.731,
+        12.904,
+        3.171,
+        14.494
+      ],
+      "name": "cradle_01_destroyed",
+      "sceneSize": [
+        80.0,
+        89.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        0.642,
+        13.179,
+        1.952,
+        14.969
+      ],
+      "name": "cradle_02",
+      "sceneSize": [
+        81.0,
+        110.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        0.45,
+        12.96,
+        1.49,
+        14.01
+      ],
+      "name": "cradle_02b",
+      "sceneSize": [
+        48.0,
+        47.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.951,
+        13.629,
+        3.321,
+        16.379
+      ],
+      "name": "cradle_03",
+      "sceneSize": [
+        80.0,
+        160.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.949186,
+        13.637998,
+        3.319186,
+        16.897998
+      ],
+      "name": "cradle_03_destroyed",
+      "sceneSize": [
+        80.0,
+        190.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        2.682013,
+        16.501999,
+        2.682013,
+        16.501999
+      ],
+      "name": "cradle_destroyed_challenge_01",
+      "sceneSize": [
+        45.0,
+        560.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        2.682013,
+        16.643999,
+        2.682013,
+        16.643999
+      ],
+      "name": "cradle_destroyed_challenge_02",
+      "sceneSize": [
+        80.0,
+        120.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "room:Cradle_Destroyed_Challenge_01",
+      "bounds": [
+        2.682013000000003,
+        16.501999,
+        2.682013000000003,
+        16.501999
+      ],
+      "inheritLastPosition": true,
+      "name": "cradle_destroyed_challenge_bench",
+      "sceneSize": [
+        55.0,
+        28.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -16.489912,
+        -8.883028,
+        -14.099912,
+        -6.733028
+      ],
+      "name": "crawl_01",
+      "sceneSize": [
+        150.0,
+        130.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -17.010891,
+        -9.773028,
+        -16.490891,
+        -7.253028
+      ],
+      "name": "crawl_02",
+      "sceneSize": [
+        30.0,
+        150.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -20.159991,
+        -9.064028,
+        -16.939991,
+        -7.774028
+      ],
+      "name": "crawl_03",
+      "sceneSize": [
+        180.0,
+        77.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -19.290891,
+        -9.423028,
+        -17.010891,
+        -9.063028
+      ],
+      "name": "crawl_03b",
+      "sceneSize": [
+        135.0,
+        21.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -16.778891,
+        -9.462928,
+        -14.098891,
+        -9.132928
+      ],
+      "name": "crawl_04",
+      "sceneSize": [
+        165.0,
+        20.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -23.697891,
+        -8.965153,
+        -19.877891,
+        -8.506903
+      ],
+      "name": "crawl_05",
+      "sceneSize": [
+        225.0,
+        35.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -16.616891,
+        -9.085028,
+        -15.076891,
+        -8.545028
+      ],
+      "name": "crawl_06",
+      "sceneSize": [
+        85.0,
+        35.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -18.440891,
+        -10.263028,
+        -17.060891,
+        -9.423028
+      ],
+      "name": "crawl_07",
+      "sceneSize": [
+        86.0,
+        58.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -19.159891,
+        -7.775028,
+        -17.259891,
+        -7.375028
+      ],
+      "name": "crawl_08",
+      "sceneSize": [
+        105.0,
+        22.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -20.290891,
+        -10.342028,
+        -18.440891,
+        -9.442028
+      ],
+      "name": "crawl_09",
+      "sceneSize": [
+        150.0,
+        58.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -21.000891,
+        -10.032028,
+        -20.180891,
+        -9.712028
+      ],
+      "name": "crawl_10",
+      "sceneSize": [
+        53.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "label:The Surface",
+      "bounds": [
+        8.769438120738977,
+        17.898118232742142,
+        8.769438120738977,
+        17.898118232742142
+      ],
+      "inheritLastPosition": true,
+      "name": "demoend",
+      "sceneSize": [
+        33.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        2.282117,
+        -11.432595,
+        2.942117,
+        -10.042595
+      ],
+      "name": "dock_01",
+      "sceneSize": [
+        35.0,
+        84.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        5.859103,
+        -13.88301,
+        7.909103,
+        -12.248861
+      ],
+      "name": "dock_02",
+      "sceneSize": [
+        125.0,
+        101.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        7.908477,
+        -13.927049,
+        9.406929,
+        -11.975021
+      ],
+      "name": "dock_02b",
+      "sceneSize": [
+        94.0,
+        120.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        9.402103,
+        -13.729035,
+        12.192103,
+        -11.969035
+      ],
+      "name": "dock_03",
+      "sceneSize": [
+        168.0,
+        120.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        9.444164,
+        -13.903025,
+        12.214164,
+        -11.873025
+      ],
+      "name": "dock_03b",
+      "sceneSize": [
+        168.0,
+        120.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        9.401103,
+        -13.918601,
+        12.141103,
+        -12.698601
+      ],
+      "name": "dock_03c",
+      "sceneSize": [
+        163.0,
+        80.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        9.380103,
+        -13.810035,
+        11.190103,
+        -12.640035
+      ],
+      "name": "dock_03d",
+      "sceneSize": [
+        110.0,
+        78.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        2.989103,
+        -14.346035,
+        3.549103,
+        -12.456035
+      ],
+      "name": "dock_04",
+      "sceneSize": [
+        30.0,
+        105.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.631703,
+        -11.371035,
+        4.121703,
+        -11.071035
+      ],
+      "name": "dock_05",
+      "sceneSize": [
+        30.0,
+        18.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.800103,
+        -14.306035,
+        2.990103,
+        -13.646035
+      ],
+      "name": "dock_06_church",
+      "sceneSize": [
+        75.0,
+        35.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        0.582861,
+        -11.432595,
+        2.282861,
+        -10.902595
+      ],
+      "name": "dock_08",
+      "sceneSize": [
+        110.0,
+        35.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        4.560115,
+        -14.048035,
+        5.860115,
+        -13.568035
+      ],
+      "name": "dock_09",
+      "sceneSize": [
+        77.0,
+        35.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.421103,
+        -14.290035,
+        4.101103,
+        -13.900035
+      ],
+      "name": "dock_10",
+      "sceneSize": [
+        35.0,
+        60.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        4.557103,
+        -15.849035,
+        6.967103,
+        -14.609035
+      ],
+      "name": "dock_11",
+      "sceneSize": [
+        148.0,
+        77.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        6.962003,
+        -15.318035,
+        7.742003,
+        -14.238035
+      ],
+      "name": "dock_12",
+      "sceneSize": [
+        48.0,
+        67.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.601115,
+        -15.519035,
+        4.101115,
+        -14.289035
+      ],
+      "name": "dock_13",
+      "sceneSize": [
+        35.0,
+        76.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        4.557403,
+        -14.448435,
+        5.057403,
+        -14.078435
+      ],
+      "name": "dock_14",
+      "sceneSize": [
+        29.0,
+        17.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        4.100103,
+        -15.029035,
+        4.560103,
+        -13.649035
+      ],
+      "name": "dock_15",
+      "sceneSize": [
+        29.0,
+        77.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        0.709103,
+        -12.159035,
+        1.769103,
+        -11.479035
+      ],
+      "name": "dock_16",
+      "sceneSize": [
+        75.0,
+        39.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        7.981441,
+        -3.532233,
+        10.541441,
+        -3.102233
+      ],
+      "name": "dust_01",
+      "sceneSize": [
+        155.0,
+        27.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        10.540299,
+        -3.582813,
+        11.233749,
+        -1.402813
+      ],
+      "name": "dust_02",
+      "sceneSize": [
+        40.0,
+        130.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        11.23344,
+        -3.492233,
+        13.63344,
+        -2.872233
+      ],
+      "name": "dust_03",
+      "sceneSize": [
+        145.0,
+        40.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        11.232092,
+        -2.953233,
+        12.932092,
+        -1.463233
+      ],
+      "name": "dust_04",
+      "sceneSize": [
+        110.0,
+        90.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        8.26179,
+        -1.416462,
+        14.03179,
+        -0.956462
+      ],
+      "name": "dust_05",
+      "sceneSize": [
+        352.0,
+        31.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        14.023562,
+        -2.696213,
+        14.653562,
+        0.303787
+      ],
+      "name": "dust_06",
+      "sceneSize": [
+        30.0,
+        190.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        8.271442,
+        -0.233236,
+        11.121442,
+        0.666764
+      ],
+      "name": "dust_09",
+      "sceneSize": [
+        180.0,
+        52.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        7.98044,
+        -2.963233,
+        10.54044,
+        -1.673233
+      ],
+      "name": "dust_10",
+      "sceneSize": [
+        160.0,
+        80.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        14.653376,
+        -2.823233,
+        16.876906,
+        -2.163233
+      ],
+      "name": "dust_11",
+      "sceneSize": [
+        140.0,
+        40.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        14.653463,
+        -1.926233,
+        15.273463,
+        -1.606233
+      ],
+      "name": "dust_12",
+      "sceneSize": [
+        44.0,
+        16.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        12.77944,
+        -4.041233,
+        13.55944,
+        -3.491233
+      ],
+      "name": "dust_barb",
+      "sceneSize": [
+        45.0,
+        32.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        12.82223,
+        -2.874233,
+        14.03465,
+        -1.554233
+      ],
+      "name": "dust_chef",
+      "sceneSize": [
+        60.0,
+        74.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        7.17,
+        -1.01,
+        7.17,
+        -1.01
+      ],
+      "name": "dust_maze_01",
+      "sceneSize": [
+        170.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        7.170009,
+        -1.010004,
+        7.170009,
+        -1.010004
+      ],
+      "name": "dust_maze_02",
+      "sceneSize": [
+        86.0,
+        67.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        7.170009,
+        -1.010004,
+        7.170009,
+        -1.010004
+      ],
+      "name": "dust_maze_03",
+      "sceneSize": [
+        43.0,
+        150.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        7.170009,
+        -1.010004,
+        7.170009,
+        -1.010004
+      ],
+      "name": "dust_maze_04",
+      "sceneSize": [
+        147.0,
+        57.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        7.170009,
+        -1.010004,
+        7.170009,
+        -1.010004
+      ],
+      "name": "dust_maze_05",
+      "sceneSize": [
+        131.0,
+        79.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        7.170009,
+        -1.010004,
+        7.170009,
+        -1.010004
+      ],
+      "name": "dust_maze_06",
+      "sceneSize": [
+        131.0,
+        42.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        7.170009,
+        -1.010004,
+        7.170009,
+        -1.010004
+      ],
+      "name": "dust_maze_07",
+      "sceneSize": [
+        45.0,
+        70.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        7.170009,
+        -1.010004,
+        7.170009,
+        -1.010004
+      ],
+      "name": "dust_maze_08",
+      "sceneSize": [
+        90.0,
+        90.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        6.861031,
+        -1.178233,
+        8.27385,
+        0.291767
+      ],
+      "name": "dust_maze_08_completed",
+      "sceneSize": [
+        90.0,
+        80.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        7.790004,
+        -1.010004,
+        7.790004,
+        -1.010004
+      ],
+      "name": "dust_maze_09_entrance",
+      "sceneSize": [
+        70.0,
+        28.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        7.170009,
+        -1.010004,
+        7.170009,
+        -1.010004
+      ],
+      "name": "dust_maze_crossing",
+      "sceneSize": [
+        100.0,
+        24.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        7.170009,
+        -1.010004,
+        7.170009,
+        -1.010004
+      ],
+      "name": "dust_maze_last_hall",
+      "sceneSize": [
+        75.0,
+        18.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        12.57644,
+        -1.761233,
+        12.57644,
+        -1.761233
+      ],
+      "name": "dust_shack",
+      "sceneSize": [
+        38.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        11.314498,
+        -5.11133,
+        13.504498,
+        -4.22133
+      ],
+      "name": "greymoor_01",
+      "sceneSize": [
+        130.0,
+        52.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        13.501648,
+        -5.41263,
+        14.954548,
+        -2.95263
+      ],
+      "name": "greymoor_02",
+      "sceneSize": [
+        90.0,
+        150.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        6.413657,
+        -5.23213,
+        8.333657,
+        -3.00213
+      ],
+      "name": "greymoor_03",
+      "sceneSize": [
+        120.0,
+        140.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        5.734098,
+        -5.10063,
+        6.414098,
+        -2.35063
+      ],
+      "name": "greymoor_04",
+      "sceneSize": [
+        40.0,
+        170.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.882248,
+        -5.74963,
+        5.735948,
+        -4.36963
+      ],
+      "name": "greymoor_05",
+      "sceneSize": [
+        110.0,
+        75.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.211053,
+        -6.33963,
+        3.883063,
+        -2.73963
+      ],
+      "name": "greymoor_06",
+      "sceneSize": [
+        40.0,
+        207.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.958848,
+        -6.02963,
+        3.211348,
+        -4.36963
+      ],
+      "name": "greymoor_07",
+      "sceneSize": [
+        75.0,
+        100.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        0.968098,
+        -6.68063,
+        3.248098,
+        -6.02063
+      ],
+      "name": "greymoor_08",
+      "sceneSize": [
+        161.0,
+        38.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.881248,
+        -4.42063,
+        5.734948,
+        -4.05063
+      ],
+      "name": "greymoor_10",
+      "sceneSize": [
+        110.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.881323,
+        -4.050629,
+        5.736873,
+        -2.870629
+      ],
+      "name": "greymoor_11",
+      "sceneSize": [
+        110.0,
+        70.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        8.326647,
+        -4.683226,
+        11.321547,
+        -4.133226
+      ],
+      "name": "greymoor_12",
+      "sceneSize": [
+        180.0,
+        35.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        8.332118,
+        -5.14163,
+        11.318078,
+        -4.73163
+      ],
+      "name": "greymoor_13",
+      "sceneSize": [
+        180.0,
+        23.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        14.954098,
+        -5.53263,
+        16.354098,
+        -4.12263
+      ],
+      "name": "greymoor_15",
+      "sceneSize": [
+        78.0,
+        84.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        15.063098,
+        -5.49063,
+        18.653098,
+        -3.18063
+      ],
+      "name": "greymoor_15b",
+      "sceneSize": [
+        220.0,
+        141.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.246698,
+        -6.91163,
+        6.016698,
+        -5.96163
+      ],
+      "name": "greymoor_16",
+      "sceneSize": [
+        171.0,
+        60.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        15.006098,
+        -4.08763,
+        16.006098,
+        -2.84763
+      ],
+      "name": "greymoor_17",
+      "sceneSize": [
+        57.0,
+        65.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.161098,
+        -5.40963,
+        1.961098,
+        -5.06963
+      ],
+      "name": "greymoor_20b",
+      "sceneSize": [
+        50.0,
+        20.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        1.418098,
+        -5.30463,
+        1.418098,
+        -5.30463
+      ],
+      "name": "greymoor_20c",
+      "sceneSize": [
+        52.0,
+        86.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        9.565098,
+        -5.62063,
+        10.765098,
+        -5.14063
+      ],
+      "name": "greymoor_21",
+      "sceneSize": [
+        80.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        16.594098,
+        -3.204629,
+        18.594098,
+        -2.294629
+      ],
+      "name": "greymoor_22",
+      "sceneSize": [
+        110.0,
+        50.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        8.331548,
+        -4.15163,
+        9.884648,
+        -3.63163
+      ],
+      "name": "greymoor_24",
+      "sceneSize": [
+        84.0,
+        26.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        7.336098,
+        -4.96663,
+        7.336098,
+        -4.96663
+      ],
+      "name": "halfway_01",
+      "sceneSize": [
+        56.0,
+        32.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -4.20534,
+        7.714102,
+        -3.37534,
+        9.654102
+      ],
+      "name": "hang_01",
+      "sceneSize": [
+        50.0,
+        100.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -3.378108,
+        9.166726,
+        -1.618108,
+        10.036726
+      ],
+      "name": "hang_02",
+      "sceneSize": [
+        114.0,
+        48.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -1.618824,
+        9.247,
+        -1.036504,
+        10.997
+      ],
+      "name": "hang_03",
+      "sceneSize": [
+        30.0,
+        98.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -1.618824,
+        9.919,
+        -1.036504,
+        12.609
+      ],
+      "name": "hang_03_top",
+      "sceneSize": [
+        30.0,
+        170.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -1.542764,
+        8.436008,
+        -0.472764,
+        8.830883
+      ],
+      "name": "hang_04",
+      "sceneSize": [
+        71.0,
+        26.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -0.473764,
+        8.394495,
+        1.036236,
+        8.904795
+      ],
+      "name": "hang_06",
+      "sceneSize": [
+        86.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        -0.190764,
+        8.692,
+        -0.190764,
+        8.692
+      ],
+      "name": "hang_06_bank",
+      "sceneSize": [
+        129.0,
+        60.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.033236,
+        8.414292,
+        1.923236,
+        8.781708
+      ],
+      "name": "hang_06b",
+      "sceneSize": [
+        62.0,
+        22.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -0.40934,
+        7.931098,
+        2.02066,
+        8.401098
+      ],
+      "name": "hang_07",
+      "sceneSize": [
+        148.0,
+        28.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        0.465236,
+        8.88,
+        0.965236,
+        12.69
+      ],
+      "name": "hang_08",
+      "sceneSize": [
+        30.0,
+        230.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -1.522964,
+        9.79,
+        0.467036,
+        10.58
+      ],
+      "name": "hang_09",
+      "sceneSize": [
+        114.0,
+        48.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -1.113764,
+        9.28,
+        0.466236,
+        9.93
+      ],
+      "name": "hang_10",
+      "sceneSize": [
+        92.0,
+        48.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -2.772743,
+        8.50688,
+        -1.542743,
+        8.85113
+      ],
+      "name": "hang_12",
+      "sceneSize": [
+        64.0,
+        19.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -1.037764,
+        10.477,
+        0.472236,
+        11.617
+      ],
+      "name": "hang_13",
+      "sceneSize": [
+        92.0,
+        60.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        0.254236,
+        9.176,
+        0.254236,
+        9.176
+      ],
+      "name": "hang_14",
+      "sceneSize": [
+        105.0,
+        35.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -3.027764,
+        9.1376,
+        -1.617764,
+        9.9676
+      ],
+      "name": "hang_15",
+      "sceneSize": [
+        93.0,
+        48.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -1.241764,
+        8.888,
+        0.468236,
+        9.378
+      ],
+      "name": "hang_16",
+      "sceneSize": [
+        104.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        0.964336,
+        8.8881,
+        1.754336,
+        9.1981
+      ],
+      "name": "hang_17b",
+      "sceneSize": [
+        55.0,
+        21.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "label:THE ABYSS",
+      "bounds": [
+        3.2663765894342536,
+        -17.19316958185409,
+        3.2663765894342536,
+        -17.19316958185409
+      ],
+      "inheritLastPosition": true,
+      "name": "last_dive",
+      "sceneSize": [
+        1024.0,
+        500.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "label:THE ABYSS",
+      "bounds": [
+        3.2663765894342536,
+        -17.19316958185409,
+        3.2663765894342536,
+        -17.19316958185409
+      ],
+      "inheritLastPosition": true,
+      "name": "last_dive_return",
+      "sceneSize": [
+        1024.0,
+        500.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        7.621158,
+        5.419419,
+        8.645238,
+        7.279419
+      ],
+      "name": "library_01",
+      "sceneSize": [
+        60.0,
+        112.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        5.622498,
+        7.001593,
+        7.622498,
+        7.961593
+      ],
+      "name": "library_02",
+      "sceneSize": [
+        120.0,
+        64.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        5.584198,
+        5.738593,
+        7.624198,
+        6.778593
+      ],
+      "name": "library_03",
+      "sceneSize": [
+        117.0,
+        64.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        8.645198,
+        3.839593,
+        9.785198,
+        7.599593
+      ],
+      "name": "library_04",
+      "sceneSize": [
+        67.0,
+        220.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        9.785198,
+        4.639593,
+        10.545198,
+        5.959593
+      ],
+      "name": "library_05",
+      "sceneSize": [
+        49.0,
+        79.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        10.544198,
+        4.648654,
+        11.624198,
+        5.858654
+      ],
+      "name": "library_06",
+      "sceneSize": [
+        66.0,
+        78.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        11.695553,
+        3.986593,
+        12.986843,
+        6.816593
+      ],
+      "name": "library_07",
+      "sceneSize": [
+        79.0,
+        172.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        9.782198,
+        6.018593,
+        11.692198,
+        6.618593
+      ],
+      "name": "library_08",
+      "sceneSize": [
+        115.0,
+        40.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        9.707185,
+        6.811589,
+        12.397185,
+        8.571589
+      ],
+      "name": "library_09",
+      "sceneSize": [
+        160.0,
+        106.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        9.784198,
+        3.956593,
+        12.214198,
+        4.466593
+      ],
+      "name": "library_10",
+      "sceneSize": [
+        150.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        7.457131,
+        0.348739,
+        8.147101,
+        4.929917
+      ],
+      "name": "library_11",
+      "sceneSize": [
+        45.0,
+        274.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        5.596678,
+        -0.446072,
+        7.423553,
+        2.053928
+      ],
+      "name": "library_11b",
+      "sceneSize": [
+        115.0,
+        158.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        8.175145,
+        1.292928,
+        10.345145,
+        3.142928
+      ],
+      "name": "library_12",
+      "sceneSize": [
+        136.0,
+        116.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        8.363116,
+        2.319928,
+        11.753116,
+        3.969928
+      ],
+      "name": "library_12b",
+      "sceneSize": [
+        202.0,
+        100.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        5.625201,
+        4.61259,
+        7.475201,
+        5.35259
+      ],
+      "name": "library_13",
+      "sceneSize": [
+        124.0,
+        56.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        7.467223,
+        5.109593,
+        8.663173,
+        5.389593
+      ],
+      "name": "library_13b",
+      "sceneSize": [
+        73.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        9.780198,
+        6.609993,
+        10.690198,
+        7.129993
+      ],
+      "name": "library_14",
+      "sceneSize": [
+        65.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        6.224198,
+        5.329593,
+        7.714198,
+        5.699593
+      ],
+      "name": "library_15",
+      "sceneSize": [
+        90.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        7.496198,
+        4.498593,
+        8.646198,
+        4.858593
+      ],
+      "name": "library_16",
+      "sceneSize": [
+        67.0,
+        20.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "room:Ant_Queen",
+      "bounds": [
+        18.996163999999997,
+        -7.7600250000000015,
+        18.996163999999997,
+        -7.7600250000000015
+      ],
+      "inheritLastPosition": true,
+      "name": "memory_ant_queen",
+      "sceneSize": [
+        200.0,
+        47.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "room:Coral_Tower_01",
+      "bounds": [
+        -20.006250000000005,
+        3.818936,
+        -20.006250000000005,
+        3.818936
+      ],
+      "inheritLastPosition": true,
+      "name": "memory_coral_tower",
+      "sceneSize": [
+        110.0,
+        566.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "marker:561",
+      "bounds": [
+        -17.9418347599686,
+        -0.768823854221083,
+        -17.9418347599686,
+        -0.768823854221083
+      ],
+      "inheritLastPosition": true,
+      "name": "memory_first_sinner",
+      "sceneSize": [
+        205.0,
+        280.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "label:MEMORIUM",
+      "bounds": [
+        8.150733041805577,
+        10.040227409206901,
+        8.150733041805577,
+        10.040227409206901
+      ],
+      "inheritLastPosition": true,
+      "name": "memory_needolin",
+      "sceneSize": [
+        200.0,
+        210.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "label:MEMORIUM",
+      "bounds": [
+        8.150733041805577,
+        10.040227409206901,
+        8.150733041805577,
+        10.040227409206901
+      ],
+      "inheritLastPosition": true,
+      "name": "memory_red",
+      "sceneSize": [
+        950.0,
+        1024.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "label:MEMORIUM",
+      "bounds": [
+        8.150733041805577,
+        10.040227409206901,
+        8.150733041805577,
+        10.040227409206901
+      ],
+      "inheritLastPosition": true,
+      "name": "memory_silk_heart_bellbeast",
+      "sceneSize": [
+        50.0,
+        130.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "label:MEMORIUM",
+      "bounds": [
+        8.150733041805577,
+        10.040227409206901,
+        8.150733041805577,
+        10.040227409206901
+      ],
+      "inheritLastPosition": true,
+      "name": "memory_silk_heart_lacetower",
+      "sceneSize": [
+        50.0,
+        130.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "label:MEMORIUM",
+      "bounds": [
+        8.150733041805577,
+        10.040227409206901,
+        8.150733041805577,
+        10.040227409206901
+      ],
+      "inheritLastPosition": true,
+      "name": "memory_silk_heart_wardboss",
+      "sceneSize": [
+        50.0,
+        130.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -13.232835,
+        -9.343318,
+        -10.732835,
+        -8.803318
+      ],
+      "name": "mosstown_01",
+      "sceneSize": [
+        140.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -12.971835,
+        -9.356018,
+        -10.061835,
+        -8.136018
+      ],
+      "name": "mosstown_02",
+      "sceneSize": [
+        160.0,
+        65.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -10.061866,
+        -8.797018,
+        -9.201866,
+        -8.547018
+      ],
+      "name": "mosstown_02c",
+      "sceneSize": [
+        55.0,
+        16.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -8.764788,
+        -8.974031,
+        -8.174788,
+        -6.374031
+      ],
+      "name": "mosstown_03",
+      "sceneSize": [
+        34.0,
+        146.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        10.073372,
+        0.157764,
+        10.073372,
+        0.157764
+      ],
+      "name": "organ_01",
+      "sceneSize": [
+        160.0,
+        229.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -13.237999,
+        3.661,
+        -11.567999,
+        8.631
+      ],
+      "name": "peak_01",
+      "sceneSize": [
+        100.0,
+        300.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -15.019001,
+        4.671,
+        -13.229001,
+        8.221
+      ],
+      "name": "peak_02",
+      "sceneSize": [
+        100.0,
+        212.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -22.625,
+        6.1497,
+        -16.815,
+        6.8297
+      ],
+      "name": "peak_04",
+      "sceneSize": [
+        352.0,
+        41.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -22.796,
+        6.06,
+        -21.026,
+        6.85
+      ],
+      "name": "peak_04c",
+      "sceneSize": [
+        105.0,
+        48.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -16.822001,
+        6.381,
+        -14.952001,
+        6.671
+      ],
+      "name": "peak_04d",
+      "sceneSize": [
+        115.0,
+        22.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -21.706,
+        6.848002,
+        -17.936,
+        9.798002
+      ],
+      "name": "peak_05",
+      "sceneSize": [
+        232.0,
+        179.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -21.304001,
+        6.763,
+        -16.874001,
+        8.833
+      ],
+      "name": "peak_05c",
+      "sceneSize": [
+        268.0,
+        125.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -22.708001,
+        7.35,
+        -16.088001,
+        12.17
+      ],
+      "name": "peak_05d",
+      "sceneSize": [
+        366.0,
+        262.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -16.883,
+        7.793,
+        -15.003,
+        8.833
+      ],
+      "name": "peak_05e",
+      "sceneSize": [
+        115.0,
+        64.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        -14.607,
+        8.839,
+        -14.607,
+        8.839
+      ],
+      "name": "peak_06",
+      "sceneSize": [
+        51.0,
+        233.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -15.004,
+        8.1273,
+        -14.214,
+        9.0773
+      ],
+      "name": "peak_06b",
+      "sceneSize": [
+        46.0,
+        55.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -13.189999,
+        8.630656,
+        -11.169999,
+        11.313336
+      ],
+      "name": "peak_07",
+      "sceneSize": [
+        115.0,
+        150.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -19.497,
+        9.789,
+        -13.587,
+        12.959
+      ],
+      "name": "peak_08",
+      "sceneSize": [
+        343.0,
+        186.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -17.12,
+        11.308,
+        -11.49,
+        13.608
+      ],
+      "name": "peak_08b",
+      "sceneSize": [
+        336.0,
+        138.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -16.432001,
+        4.272,
+        -15.012001,
+        5.162
+      ],
+      "name": "peak_10",
+      "sceneSize": [
+        80.0,
+        50.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -12.8196,
+        12.237,
+        -12.2996,
+        12.697
+      ],
+      "name": "peak_12",
+      "sceneSize": [
+        50.0,
+        22.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        -19.755004,
+        11.94,
+        -19.755004,
+        11.94
+      ],
+      "name": "peak_mask_maker",
+      "sceneSize": [
+        33.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "label:GREYMOOR",
+      "bounds": [
+        4.384572564530368,
+        -4.102317049295044,
+        4.384572564530368,
+        -4.102317049295044
+      ],
+      "inheritLastPosition": true,
+      "name": "room_caravan_interior",
+      "sceneSize": [
+        33.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "label:GREYMOOR",
+      "bounds": [
+        4.384572564530368,
+        -4.102317049295044,
+        4.384572564530368,
+        -4.102317049295044
+      ],
+      "inheritLastPosition": true,
+      "name": "room_caravan_interior_travel",
+      "sceneSize": [
+        33.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "label:GREYMOOR",
+      "bounds": [
+        4.384572564530368,
+        -4.102317049295044,
+        4.384572564530368,
+        -4.102317049295044
+      ],
+      "inheritLastPosition": true,
+      "name": "room_caravan_spa",
+      "sceneSize": [
+        33.0,
+        30.0
+      ]
+    },
+    {
+      "anchorSource": "legacy-room-transform",
+      "imag": -0.0420598,
+      "legacyOnly": true,
+      "legacySketchLonLat": [
+        1604.77,
+        -1138.0
+      ],
+      "legacySource": [
+        29.1606,
+        25.5918
+      ],
+      "name": "room_crowcourt",
+      "real": 0.4758254,
+      "reflected": false,
+      "sceneSize": [
+        70.0,
+        80.0
+      ]
+    },
+    {
+      "anchorSource": "legacy-room-transform",
+      "imag": -0.0420598,
+      "legacyOnly": true,
+      "legacySketchLonLat": [
+        1604.77,
+        -1138.0
+      ],
+      "legacySource": [
+        19.3531,
+        63.3903
+      ],
+      "name": "room_crowcourt_02",
+      "real": 0.4758254,
+      "reflected": false,
+      "sceneSize": [
+        70.0,
+        92.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        7.439103,
+        -14.864035,
+        7.439103,
+        -14.864035
+      ],
+      "name": "room_diving_bell",
+      "sceneSize": [
+        50.0,
+        26.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        7.425,
+        -17.789999,
+        7.425,
+        -17.789999
+      ],
+      "name": "room_diving_bell_abyss",
+      "sceneSize": [
+        50.0,
+        26.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        7.425,
+        -17.789999,
+        7.425,
+        -17.789999
+      ],
+      "name": "room_diving_bell_abyss_fixed",
+      "sceneSize": [
+        50.0,
+        26.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.548328,
+        -12.817035,
+        5.869878,
+        -11.677035
+      ],
+      "name": "room_forge",
+      "sceneSize": [
+        140.0,
+        69.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        14.069,
+        7.189,
+        14.069,
+        7.189
+      ],
+      "name": "room_huntress",
+      "sceneSize": [
+        35.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        -19.587897,
+        -1.683033,
+        -19.587897,
+        -1.683033
+      ],
+      "name": "room_pinstress",
+      "sceneSize": [
+        50.0,
+        26.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "marker:123",
+      "bounds": [
+        0.7737671006794719,
+        -4.373674955310985,
+        0.7737671006794719,
+        -4.373674955310985
+      ],
+      "inheritLastPosition": true,
+      "name": "room_witch",
+      "sceneSize": [
+        33.0,
+        19.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        14.554539,
+        3.961764,
+        15.704539,
+        6.951764
+      ],
+      "name": "shadow_01",
+      "sceneSize": [
+        87.0,
+        177.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        14.554376,
+        0.273764,
+        15.694376,
+        3.713764
+      ],
+      "name": "shadow_02",
+      "sceneSize": [
+        70.0,
+        207.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        15.694372,
+        0.273764,
+        18.234372,
+        0.983764
+      ],
+      "name": "shadow_03",
+      "sceneSize": [
+        145.0,
+        43.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        11.494372,
+        -0.214236,
+        12.564372,
+        1.315764
+      ],
+      "name": "shadow_04",
+      "sceneSize": [
+        78.0,
+        89.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        11.527822,
+        -0.493236,
+        14.562922,
+        1.086764
+      ],
+      "name": "shadow_04b",
+      "sceneSize": [
+        185.0,
+        74.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        14.643842,
+        -1.417236,
+        18.248902,
+        -0.387236
+      ],
+      "name": "shadow_05",
+      "sceneSize": [
+        212.0,
+        55.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        19.726372,
+        4.073764,
+        21.126372,
+        5.003764
+      ],
+      "name": "shadow_08",
+      "sceneSize": [
+        100.0,
+        55.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        17.988782,
+        -1.637236,
+        20.583962,
+        0.632764
+      ],
+      "name": "shadow_09",
+      "sceneSize": [
+        156.0,
+        136.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        17.716372,
+        5.003764,
+        21.166372,
+        6.033764
+      ],
+      "name": "shadow_10",
+      "sceneSize": [
+        210.0,
+        70.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        16.169412,
+        2.260664,
+        16.811332,
+        4.200664
+      ],
+      "name": "shadow_11",
+      "sceneSize": [
+        29.0,
+        112.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        17.614372,
+        6.054764,
+        21.164372,
+        6.784764
+      ],
+      "name": "shadow_12",
+      "sceneSize": [
+        210.0,
+        48.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        16.805712,
+        2.819665,
+        21.475032,
+        3.799665
+      ],
+      "name": "shadow_13",
+      "sceneSize": [
+        320.0,
+        74.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        14.016372,
+        3.394764,
+        14.556372,
+        4.754764
+      ],
+      "name": "shadow_14",
+      "sceneSize": [
+        29.0,
+        71.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        14.034376,
+        4.811764,
+        14.554376,
+        5.941764
+      ],
+      "name": "shadow_15",
+      "sceneSize": [
+        55.0,
+        66.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        15.698372,
+        4.722764,
+        17.718372,
+        5.552764
+      ],
+      "name": "shadow_16",
+      "sceneSize": [
+        122.0,
+        48.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        15.703476,
+        6.044364,
+        17.617296,
+        6.784364
+      ],
+      "name": "shadow_18",
+      "sceneSize": [
+        117.0,
+        45.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        21.163372,
+        5.094764,
+        22.593372,
+        6.734764
+      ],
+      "name": "shadow_19",
+      "sceneSize": [
+        80.0,
+        96.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        10.354372,
+        1.314764,
+        14.084372,
+        2.364764
+      ],
+      "name": "shadow_20",
+      "sceneSize": [
+        230.0,
+        65.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        15.604372,
+        0.979764,
+        17.494372,
+        1.429764
+      ],
+      "name": "shadow_21",
+      "sceneSize": [
+        110.0,
+        24.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        12.366372,
+        2.374764,
+        13.406372,
+        3.994764
+      ],
+      "name": "shadow_22",
+      "sceneSize": [
+        70.0,
+        95.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        15.693872,
+        1.414264,
+        16.663872,
+        1.774264
+      ],
+      "name": "shadow_23",
+      "sceneSize": [
+        52.0,
+        19.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        20.346372,
+        6.263764,
+        25.196372,
+        6.783764
+      ],
+      "name": "shadow_24",
+      "sceneSize": [
+        296.0,
+        34.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        22.591372,
+        5.094764,
+        23.101372,
+        5.724764
+      ],
+      "name": "shadow_25",
+      "sceneSize": [
+        29.0,
+        36.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        15.694372,
+        2.473764,
+        16.244372,
+        4.493764
+      ],
+      "name": "shadow_26",
+      "sceneSize": [
+        29.0,
+        113.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        16.243372,
+        4.063764,
+        19.673372,
+        4.543764
+      ],
+      "name": "shadow_27",
+      "sceneSize": [
+        205.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        17.169372,
+        -0.319236,
+        18.489372,
+        0.300764
+      ],
+      "name": "shadow_28",
+      "sceneSize": [
+        65.0,
+        34.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        16.365372,
+        6.314764,
+        16.365372,
+        6.314764
+      ],
+      "name": "shadow_bilehaven_room",
+      "sceneSize": [
+        40.0,
+        20.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        20.475345,
+        -1.605236,
+        23.395345,
+        -0.485236
+      ],
+      "name": "shadow_weavehome",
+      "sceneSize": [
+        177.0,
+        68.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -11.300888,
+        -6.003031,
+        -8.930888,
+        -5.293031
+      ],
+      "name": "shellgrave",
+      "sceneSize": [
+        138.0,
+        22.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -5.374888,
+        -6.690031,
+        -3.164888,
+        -5.060031
+      ],
+      "name": "shellwood_01",
+      "sceneSize": [
+        132.0,
+        98.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -5.374888,
+        -5.641031,
+        -4.564888,
+        -3.861031
+      ],
+      "name": "shellwood_01b",
+      "sceneSize": [
+        48.0,
+        109.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -6.635518,
+        -6.591031,
+        -5.374258,
+        -4.991031
+      ],
+      "name": "shellwood_02",
+      "sceneSize": [
+        80.0,
+        102.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -8.742888,
+        -6.471031,
+        -8.062888,
+        -4.371031
+      ],
+      "name": "shellwood_03",
+      "sceneSize": [
+        40.0,
+        135.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -12.880889,
+        -6.488031,
+        -8.740889,
+        -5.988031
+      ],
+      "name": "shellwood_04b",
+      "sceneSize": [
+        230.0,
+        26.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -12.321649,
+        -6.004031,
+        -11.871649,
+        -4.664031
+      ],
+      "name": "shellwood_04c",
+      "sceneSize": [
+        29.0,
+        80.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -12.674409,
+        -4.66393,
+        -11.151369,
+        -4.31393
+      ],
+      "name": "shellwood_08",
+      "sceneSize": [
+        98.0,
+        19.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -12.861889,
+        -6.383031,
+        -12.291889,
+        -6.013031
+      ],
+      "name": "shellwood_08c",
+      "sceneSize": [
+        42.0,
+        24.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -8.06313,
+        -4.651174,
+        -6.85313,
+        -3.131174
+      ],
+      "name": "shellwood_10",
+      "sceneSize": [
+        79.0,
+        102.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -9.742888,
+        -3.992031,
+        -8.062888,
+        -2.702031
+      ],
+      "name": "shellwood_11",
+      "sceneSize": [
+        102.0,
+        78.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        -11.05034,
+        -1.431902,
+        -11.05034,
+        -1.431902
+      ],
+      "name": "shellwood_11b",
+      "sceneSize": [
+        120.0,
+        170.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "room:Shellwood_11b",
+      "bounds": [
+        -11.050340000000002,
+        -1.431902,
+        -11.050340000000002,
+        -1.431902
+      ],
+      "inheritLastPosition": true,
+      "name": "shellwood_11b_memory",
+      "sceneSize": [
+        120.0,
+        162.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -4.570099,
+        -4.263031,
+        -2.328949,
+        -2.933031
+      ],
+      "name": "shellwood_13",
+      "sceneSize": [
+        141.0,
+        80.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -8.064888,
+        -5.061031,
+        -5.934888,
+        -4.711031
+      ],
+      "name": "shellwood_14",
+      "sceneSize": [
+        135.0,
+        19.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -4.668888,
+        -4.953031,
+        -2.338888,
+        -4.543031
+      ],
+      "name": "shellwood_15",
+      "sceneSize": [
+        135.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -8.075888,
+        -6.461031,
+        -6.635888,
+        -6.141031
+      ],
+      "name": "shellwood_16",
+      "sceneSize": [
+        85.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -6.852888,
+        -3.790631,
+        -4.562888,
+        -3.350631
+      ],
+      "name": "shellwood_18",
+      "sceneSize": [
+        140.0,
+        35.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -10.622225,
+        -4.743031,
+        -8.742225,
+        -4.313031
+      ],
+      "name": "shellwood_19",
+      "sceneSize": [
+        127.0,
+        19.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -6.858398,
+        -4.502031,
+        -5.371378,
+        -3.832031
+      ],
+      "name": "shellwood_20",
+      "sceneSize": [
+        95.0,
+        43.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -11.42334,
+        -1.575902,
+        -8.41334,
+        -0.945902
+      ],
+      "name": "shellwood_22",
+      "sceneSize": [
+        182.0,
+        28.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -8.177888,
+        -7.258031,
+        -3.427888,
+        -6.698031
+      ],
+      "name": "shellwood_25",
+      "sceneSize": [
+        290.0,
+        40.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        -4.672889,
+        -7.081031,
+        -4.672889,
+        -7.081031
+      ],
+      "name": "shellwood_25b",
+      "sceneSize": [
+        35.0,
+        20.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -6.853888,
+        -4.291031,
+        -4.493888,
+        -2.021031
+      ],
+      "name": "shellwood_26",
+      "sceneSize": [
+        135.0,
+        130.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -7.593888,
+        -5.801031,
+        -6.633888,
+        -5.231031
+      ],
+      "name": "shellwood_witch",
+      "sceneSize": [
+        50.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -7.817755,
+        5.66199,
+        -4.304245,
+        6.40199
+      ],
+      "name": "slab_01",
+      "sceneSize": [
+        200.0,
+        38.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -9.411,
+        5.821988,
+        -7.341,
+        6.361988
+      ],
+      "name": "slab_02",
+      "sceneSize": [
+        125.0,
+        31.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -9.938403,
+        4.113992,
+        -9.395703,
+        8.803992
+      ],
+      "name": "slab_03",
+      "sceneSize": [
+        29.0,
+        285.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -11.548037,
+        5.880988,
+        -9.928037,
+        6.410988
+      ],
+      "name": "slab_04",
+      "sceneSize": [
+        100.0,
+        37.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -11.5476,
+        5.222656,
+        -9.9176,
+        5.883316
+      ],
+      "name": "slab_05",
+      "sceneSize": [
+        100.0,
+        36.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -11.576862,
+        4.672708,
+        -9.955242,
+        5.233268
+      ],
+      "name": "slab_06",
+      "sceneSize": [
+        101.0,
+        35.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -11.245089,
+        4.007995,
+        -9.881009,
+        4.647995
+      ],
+      "name": "slab_07",
+      "sceneSize": [
+        88.0,
+        40.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -9.408049,
+        5.261693,
+        -8.718049,
+        5.881693
+      ],
+      "name": "slab_08",
+      "sceneSize": [
+        35.0,
+        40.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        -8.363037,
+        4.425995,
+        -8.363037,
+        4.425995
+      ],
+      "name": "slab_10b",
+      "sceneSize": [
+        60.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -8.706047,
+        4.291989,
+        -8.066047,
+        5.331989
+      ],
+      "name": "slab_10c",
+      "sceneSize": [
+        42.0,
+        65.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -9.394034,
+        3.646995,
+        -7.564034,
+        4.316995
+      ],
+      "name": "slab_12",
+      "sceneSize": [
+        110.0,
+        40.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -11.570031,
+        6.41499,
+        -9.930031,
+        6.84499
+      ],
+      "name": "slab_13",
+      "sceneSize": [
+        100.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -11.566033,
+        6.911988,
+        -9.926033,
+        7.381988
+      ],
+      "name": "slab_14",
+      "sceneSize": [
+        100.0,
+        29.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -11.56704,
+        7.372989,
+        -9.92704,
+        7.862989
+      ],
+      "name": "slab_15",
+      "sceneSize": [
+        100.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -11.572045,
+        7.86399,
+        -9.932045,
+        9.17399
+      ],
+      "name": "slab_16",
+      "sceneSize": [
+        100.0,
+        80.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -11.805,
+        7.647,
+        -10.165,
+        8.957
+      ],
+      "name": "slab_16b",
+      "sceneSize": [
+        80.0,
+        32.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -9.412,
+        7.933988,
+        -8.162,
+        9.163988
+      ],
+      "name": "slab_17",
+      "sceneSize": [
+        81.0,
+        77.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -9.409034,
+        7.294994,
+        -7.799034,
+        8.644994
+      ],
+      "name": "slab_18",
+      "sceneSize": [
+        100.0,
+        76.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -9.395031,
+        4.701989,
+        -8.657032,
+        5.281989
+      ],
+      "name": "slab_19b",
+      "sceneSize": [
+        44.0,
+        36.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -9.406038,
+        6.87299,
+        -7.846038,
+        7.27299
+      ],
+      "name": "slab_20",
+      "sceneSize": [
+        94.0,
+        24.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -7.802031,
+        6.383989,
+        -7.362031,
+        9.183989
+      ],
+      "name": "slab_21",
+      "sceneSize": [
+        40.0,
+        163.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -11.610038,
+        9.172995,
+        -7.280038,
+        10.012995
+      ],
+      "name": "slab_22",
+      "sceneSize": [
+        260.0,
+        50.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -9.406044,
+        6.384993,
+        -7.796044,
+        6.834993
+      ],
+      "name": "slab_23",
+      "sceneSize": [
+        102.0,
+        22.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        -10.915039,
+        6.660995,
+        -10.915039,
+        6.660995
+      ],
+      "name": "slab_cell",
+      "sceneSize": [
+        100.0,
+        28.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        -8.901031,
+        6.652992,
+        -8.901031,
+        6.652992
+      ],
+      "name": "slab_cell_creature",
+      "sceneSize": [
+        100.0,
+        28.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -9.14917,
+        5.629997,
+        -9.134429,
+        6.561802
+      ],
+      "name": "slab_cell_quiet",
+      "sceneSize": [
+        53.0,
+        60.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -6.20474,
+        1.605098,
+        -3.46474,
+        4.045098
+      ],
+      "name": "song_01",
+      "sceneSize": [
+        162.0,
+        150.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -5.70034,
+        4.044098,
+        -3.38034,
+        4.404098
+      ],
+      "name": "song_01b",
+      "sceneSize": [
+        124.0,
+        19.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -6.28034,
+        1.576098,
+        -5.35034,
+        2.136098
+      ],
+      "name": "song_01c",
+      "sceneSize": [
+        44.0,
+        35.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -3.38434,
+        3.804098,
+        -0.37834,
+        4.574098
+      ],
+      "name": "song_02",
+      "sceneSize": [
+        188.0,
+        34.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -5.91634,
+        4.403098,
+        -3.38634,
+        5.063098
+      ],
+      "name": "song_03",
+      "sceneSize": [
+        140.0,
+        40.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -5.85034,
+        5.104075,
+        -3.38034,
+        6.202121
+      ],
+      "name": "song_04",
+      "sceneSize": [
+        143.0,
+        68.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -0.38058,
+        4.144098,
+        0.4359,
+        6.084098
+      ],
+      "name": "song_05",
+      "sceneSize": [
+        50.0,
+        118.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -1.53892,
+        4.827098,
+        -0.37776,
+        5.147098
+      ],
+      "name": "song_07",
+      "sceneSize": [
+        80.0,
+        24.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -4.05734,
+        7.364898,
+        -3.37734,
+        7.634898
+      ],
+      "name": "song_08",
+      "sceneSize": [
+        76.0,
+        17.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -0.41934,
+        6.586098,
+        0.39066,
+        7.966098
+      ],
+      "name": "song_09",
+      "sceneSize": [
+        50.0,
+        85.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -0.37934,
+        4.977098,
+        2.11066,
+        6.587098
+      ],
+      "name": "song_09b",
+      "sceneSize": [
+        165.0,
+        146.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -3.38234,
+        4.743098,
+        -1.39234,
+        5.843098
+      ],
+      "name": "song_10",
+      "sceneSize": [
+        127.0,
+        70.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -1.37984,
+        5.154898,
+        -0.37884,
+        8.224898
+      ],
+      "name": "song_11",
+      "sceneSize": [
+        60.0,
+        188.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -3.38199,
+        5.715098,
+        -2.84669,
+        7.625098
+      ],
+      "name": "song_12",
+      "sceneSize": [
+        35.0,
+        113.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -2.84934,
+        5.905098,
+        -1.37934,
+        6.255098
+      ],
+      "name": "song_13",
+      "sceneSize": [
+        85.0,
+        21.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -2.849344,
+        6.496098,
+        -1.619344,
+        6.806098
+      ],
+      "name": "song_14",
+      "sceneSize": [
+        72.0,
+        21.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -2.84534,
+        7.085098,
+        -1.37534,
+        7.785098
+      ],
+      "name": "song_15",
+      "sceneSize": [
+        85.0,
+        41.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -3.37934,
+        7.104098,
+        -1.37934,
+        8.814098
+      ],
+      "name": "song_17",
+      "sceneSize": [
+        135.0,
+        115.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        0.430661,
+        4.943098,
+        2.140661,
+        6.063098
+      ],
+      "name": "song_18",
+      "sceneSize": [
+        110.0,
+        72.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -7.38392,
+        0.545098,
+        -6.222759,
+        2.405098
+      ],
+      "name": "song_19_entrance",
+      "sceneSize": [
+        75.0,
+        109.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        4.792214,
+        3.909098,
+        5.622214,
+        6.689098
+      ],
+      "name": "song_20",
+      "sceneSize": [
+        50.0,
+        165.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        4.792306,
+        3.871098,
+        5.622306,
+        8.001098
+      ],
+      "name": "song_20b",
+      "sceneSize": [
+        50.0,
+        243.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.78466,
+        3.664098,
+        4.79466,
+        4.594098
+      ],
+      "name": "song_24",
+      "sceneSize": [
+        61.0,
+        55.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.36906,
+        7.962594,
+        7.67336,
+        8.432594
+      ],
+      "name": "song_25",
+      "sceneSize": [
+        252.0,
+        28.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -3.99734,
+        6.825098,
+        -3.37734,
+        7.175098
+      ],
+      "name": "song_26",
+      "sceneSize": [
+        35.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        0.380661,
+        4.935898,
+        4.840661,
+        5.405898
+      ],
+      "name": "song_27",
+      "sceneSize": [
+        215.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -4.20734,
+        6.274098,
+        -3.37734,
+        6.604098
+      ],
+      "name": "song_28",
+      "sceneSize": [
+        41.0,
+        21.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.965661,
+        7.530098,
+        4.795661,
+        7.860098
+      ],
+      "name": "song_29",
+      "sceneSize": [
+        41.0,
+        21.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        7.57066,
+        7.630098,
+        9.53066,
+        8.220098
+      ],
+      "name": "song_enclave",
+      "sceneSize": [
+        120.0,
+        33.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        7.64966,
+        8.219596,
+        8.33966,
+        8.529596
+      ],
+      "name": "song_enclave_tube",
+      "sceneSize": [
+        52.0,
+        22.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.564,
+        10.949,
+        4.124,
+        13.709
+      ],
+      "name": "song_tower_01",
+      "sceneSize": [
+        130.0,
+        140.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        2.150997,
+        10.734997,
+        3.330997,
+        13.914997
+      ],
+      "name": "song_tower_destroyed",
+      "sceneSize": [
+        130.0,
+        144.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        23.302164,
+        -8.993025,
+        23.302164,
+        -8.993025
+      ],
+      "name": "sprintmaster_cave",
+      "sceneSize": [
+        236.0,
+        51.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.048,
+        12.479,
+        5.338,
+        14.859
+      ],
+      "name": "tube_hub",
+      "sceneSize": [
+        135.0,
+        145.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -14.043303,
+        -13.516149,
+        -12.153303,
+        -11.546149
+      ],
+      "name": "tut_01",
+      "sceneSize": [
+        120.0,
+        120.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -14.077303,
+        -13.531149,
+        -11.397303,
+        -11.861149
+      ],
+      "name": "tut_01b",
+      "sceneSize": [
+        160.0,
+        99.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -16.362303,
+        -13.481149,
+        -14.042303,
+        -12.531149
+      ],
+      "name": "tut_02",
+      "sceneSize": [
+        150.0,
+        59.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -16.060303,
+        -12.001149,
+        -14.040303,
+        -11.451149
+      ],
+      "name": "tut_03",
+      "sceneSize": [
+        126.0,
+        35.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        -15.930303,
+        -11.646149,
+        -15.930303,
+        -11.646149
+      ],
+      "name": "tut_04",
+      "sceneSize": [
+        87.0,
+        36.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "room:Tut_04",
+      "bounds": [
+        -15.930303000000002,
+        -11.646148999999998,
+        -15.930303000000002,
+        -11.646148999999998
+      ],
+      "inheritLastPosition": true,
+      "name": "tut_05",
+      "sceneSize": [
+        310.0,
+        147.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -6.223153,
+        -1.344402,
+        -5.303153,
+        1.285598
+      ],
+      "name": "under_01",
+      "sceneSize": [
+        54.0,
+        160.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -5.304454,
+        -1.256072,
+        -4.554454,
+        -0.956072
+      ],
+      "name": "under_01b",
+      "sceneSize": [
+        48.0,
+        20.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -4.554675,
+        -2.146072,
+        -3.824675,
+        1.663928
+      ],
+      "name": "under_02",
+      "sceneSize": [
+        42.0,
+        230.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -3.451634,
+        -0.327072,
+        -2.290134,
+        -0.067072
+      ],
+      "name": "under_03",
+      "sceneSize": [
+        60.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -3.825384,
+        0.203928,
+        -2.292324,
+        0.523928
+      ],
+      "name": "under_03b",
+      "sceneSize": [
+        95.0,
+        32.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -2.294855,
+        -0.326072,
+        -1.804855,
+        0.723928
+      ],
+      "name": "under_03c",
+      "sceneSize": [
+        29.0,
+        66.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -1.728855,
+        0.164928,
+        -0.768855,
+        0.654928
+      ],
+      "name": "under_03d",
+      "sceneSize": [
+        65.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -1.805342,
+        -0.335821,
+        0.118498,
+        0.164179
+      ],
+      "name": "under_04",
+      "sceneSize": [
+        120.0,
+        32.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        0.117145,
+        -1.156072,
+        0.677145,
+        1.303928
+      ],
+      "name": "under_05",
+      "sceneSize": [
+        29.0,
+        141.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -2.296264,
+        0.834928,
+        0.118556,
+        1.254928
+      ],
+      "name": "under_06",
+      "sceneSize": [
+        155.0,
+        24.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -3.826232,
+        0.873928,
+        -2.291642,
+        1.363928
+      ],
+      "name": "under_07",
+      "sceneSize": [
+        85.0,
+        27.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -4.00934,
+        1.244098,
+        -2.12934,
+        3.044098
+      ],
+      "name": "under_07b",
+      "sceneSize": [
+        105.0,
+        100.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -3.824855,
+        0.902928,
+        -2.444855,
+        2.582928
+      ],
+      "name": "under_07c",
+      "sceneSize": [
+        85.0,
+        106.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -2.472884,
+        1.011028,
+        -0.142884,
+        2.031028
+      ],
+      "name": "under_08",
+      "sceneSize": [
+        135.0,
+        58.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        0.677145,
+        -0.225072,
+        1.987145,
+        0.094928
+      ],
+      "name": "under_10",
+      "sceneSize": [
+        80.0,
+        20.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        0.674841,
+        0.874928,
+        1.991391,
+        1.194928
+      ],
+      "name": "under_11",
+      "sceneSize": [
+        80.0,
+        19.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        0.676145,
+        0.364928,
+        1.336145,
+        0.774928
+      ],
+      "name": "under_12",
+      "sceneSize": [
+        40.0,
+        20.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.987146,
+        -0.645072,
+        2.817146,
+        1.464928
+      ],
+      "name": "under_13",
+      "sceneSize": [
+        52.0,
+        130.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -3.825884,
+        -2.176072,
+        -2.315884,
+        -1.856072
+      ],
+      "name": "under_14",
+      "sceneSize": [
+        115.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -5.771885,
+        -0.365072,
+        -4.551885,
+        0.664928
+      ],
+      "name": "under_16",
+      "sceneSize": [
+        80.0,
+        60.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        2.818145,
+        0.963928,
+        5.608145,
+        1.803928
+      ],
+      "name": "under_17",
+      "sceneSize": [
+        164.0,
+        48.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        2.816116,
+        0.133928,
+        5.476116,
+        0.963928
+      ],
+      "name": "under_18",
+      "sceneSize": [
+        160.0,
+        50.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        2.817116,
+        -0.655072,
+        5.677116,
+        -0.285072
+      ],
+      "name": "under_19",
+      "sceneSize": [
+        170.0,
+        24.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        2.846116,
+        -0.275972,
+        4.996116,
+        0.154028
+      ],
+      "name": "under_19b",
+      "sceneSize": [
+        135.0,
+        22.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        4.996116,
+        -0.286072,
+        5.606116,
+        0.823928
+      ],
+      "name": "under_19c",
+      "sceneSize": [
+        30.0,
+        64.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        3.198116,
+        1.612928,
+        3.198116,
+        1.612928
+      ],
+      "name": "under_20",
+      "sceneSize": [
+        71.0,
+        28.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        0.698116,
+        -0.644072,
+        1.988116,
+        -0.244072
+      ],
+      "name": "under_21",
+      "sceneSize": [
+        87.0,
+        26.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        0.408816,
+        0.504728,
+        1.988816,
+        0.914728
+      ],
+      "name": "under_22",
+      "sceneSize": [
+        81.0,
+        20.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -2.490884,
+        -0.996072,
+        0.119116,
+        -0.436072
+      ],
+      "name": "under_23",
+      "sceneSize": [
+        160.0,
+        35.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -8.41534,
+        -2.225902,
+        -6.25534,
+        -0.655902
+      ],
+      "name": "under_27",
+      "sceneSize": [
+        130.0,
+        90.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        0.431756,
+        2.594942,
+        1.641756,
+        4.454942
+      ],
+      "name": "ward_01",
+      "sceneSize": [
+        75.0,
+        111.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -2.076884,
+        2.004928,
+        0.433116,
+        3.374928
+      ],
+      "name": "ward_02",
+      "sceneSize": [
+        150.0,
+        90.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -2.076984,
+        3.373928,
+        0.433016,
+        3.963928
+      ],
+      "name": "ward_02b",
+      "sceneSize": [
+        151.0,
+        31.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.705116,
+        2.700928,
+        5.665116,
+        3.550928
+      ],
+      "name": "ward_03",
+      "sceneSize": [
+        240.0,
+        52.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.705816,
+        3.381128,
+        2.405816,
+        3.891128
+      ],
+      "name": "ward_04",
+      "sceneSize": [
+        35.0,
+        28.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.698116,
+        3.815928,
+        4.038116,
+        4.205928
+      ],
+      "name": "ward_05",
+      "sceneSize": [
+        140.0,
+        23.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        4.016116,
+        1.803478,
+        5.396116,
+        2.702378
+      ],
+      "name": "ward_06",
+      "sceneSize": [
+        120.0,
+        60.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.498116,
+        3.492928,
+        5.718116,
+        3.832928
+      ],
+      "name": "ward_07",
+      "sceneSize": [
+        130.0,
+        20.0
+      ]
+    },
+    {
+      "anchorOnly": true,
+      "anchorSource": "in-game-map-room-anchor",
+      "bounds": [
+        3.709116,
+        3.181928,
+        3.709116,
+        3.181928
+      ],
+      "name": "ward_09",
+      "sceneSize": [
+        150.0,
+        18.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -10.027303,
+        -15.407149,
+        -9.367303,
+        -11.847149
+      ],
+      "name": "weave_02",
+      "sceneSize": [
+        45.0,
+        217.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -15.684303,
+        -14.077149,
+        -11.054303,
+        -13.517149
+      ],
+      "name": "weave_03",
+      "sceneSize": [
+        284.0,
+        35.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -11.846303,
+        -14.317149,
+        -10.026303,
+        -11.887149
+      ],
+      "name": "weave_04",
+      "sceneSize": [
+        90.0,
+        127.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -9.467203,
+        -13.317849,
+        -5.667203,
+        -12.567849
+      ],
+      "name": "weave_05b",
+      "sceneSize": [
+        221.0,
+        43.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -11.136303,
+        -15.677149,
+        -10.026303,
+        -13.437149
+      ],
+      "name": "weave_07",
+      "sceneSize": [
+        60.0,
+        120.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -8.810303,
+        -13.376149,
+        -7.600303,
+        -12.296149
+      ],
+      "name": "weave_08",
+      "sceneSize": [
+        77.0,
+        67.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -9.872303,
+        -14.156149,
+        -8.242303,
+        -13.386149
+      ],
+      "name": "weave_10",
+      "sceneSize": [
+        100.0,
+        45.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -12.047103,
+        -13.457349,
+        -10.027103,
+        -12.977349
+      ],
+      "name": "weave_11",
+      "sceneSize": [
+        130.0,
+        32.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -9.367303,
+        -12.616149,
+        -8.347303,
+        -12.246149
+      ],
+      "name": "weave_12",
+      "sceneSize": [
+        55.0,
+        25.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -9.366903,
+        -12.807849,
+        -8.306903,
+        -12.617849
+      ],
+      "name": "weave_13",
+      "sceneSize": [
+        60.0,
+        20.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -11.290403,
+        -12.995149,
+        -9.920403,
+        -12.635149
+      ],
+      "name": "weave_14",
+      "sceneSize": [
+        76.0,
+        19.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -0.697896,
+        -2.684003,
+        3.262104,
+        -2.004003
+      ],
+      "name": "wisp_02",
+      "sceneSize": [
+        230.0,
+        46.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -0.127902,
+        -4.50163,
+        3.212098,
+        -3.61163
+      ],
+      "name": "wisp_03",
+      "sceneSize": [
+        179.0,
+        47.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.249733,
+        -2.774,
+        4.444483,
+        -2.344
+      ],
+      "name": "wisp_04",
+      "sceneSize": [
+        79.0,
+        30.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        1.126096,
+        -2.08425,
+        1.996096,
+        -0.96775
+      ],
+      "name": "wisp_05",
+      "sceneSize": [
+        57.0,
+        69.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        0.627098,
+        -3.62683,
+        1.327098,
+        -3.23683
+      ],
+      "name": "wisp_06",
+      "sceneSize": [
+        35.0,
+        19.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        3.461108,
+        -2.214,
+        8.091108,
+        -1.594
+      ],
+      "name": "wisp_07",
+      "sceneSize": [
+        290.0,
+        39.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        4.438108,
+        -2.694,
+        4.898108,
+        -0.704
+      ],
+      "name": "wisp_08",
+      "sceneSize": [
+        30.0,
+        125.0
+      ]
+    },
+    {
+      "anchorOnly": false,
+      "anchorSource": null,
+      "bounds": [
+        -0.591892,
+        -1.61,
+        1.208108,
+        -0.98
+      ],
+      "name": "wisp_09",
+      "sceneSize": [
+        100.0,
+        39.0
+      ]
+    }
+  ]
+}

@@ -11,6 +11,17 @@ from .schema import get_path
 def flag_status(flag, raw):
     if raw is None or not isinstance(flag,str) or not flag:
         return 'unknown'
+    if flag.startswith('@all,') or flag.startswith('@any,'):
+        head, expression = flag.split(',',1)
+        children = expression.split('|')
+        if not children or any(not child for child in children):
+            return 'unknown'
+        states = [flag_status(child,raw) for child in children]
+        if head == '@all':
+            if 'left' in states: return 'left'
+            return 'complete' if all(state == 'complete' for state in states) else 'unknown'
+        if 'complete' in states: return 'complete'
+        return 'left' if all(state == 'left' for state in states) else 'unknown'
     parts = flag.split(',')
     head = parts[0].lower()
     # This single archived source record has a mistyped predicate. Confirmed

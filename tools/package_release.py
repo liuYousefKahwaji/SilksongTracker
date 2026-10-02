@@ -13,6 +13,9 @@ def tracked_paths() -> list[Path]:
     result = subprocess.run(["git", "ls-files", "-z"], cwd=ROOT, check=True, capture_output=True)
     paths = [Path(raw.decode("utf-8")) for raw in result.stdout.split(b"\0") if raw]
     forbidden = ("data/map/", "source/", "web/assets/", ".live-bridge-token")
+    # The retired in-game overlay is kept in the source repository for recovery,
+    # but it is not part of the active tracker download.
+    paths = [path for path in paths if not path.as_posix().startswith("archive/")]
     for path in paths:
         name = path.as_posix()
         if name.startswith(forbidden) or name.endswith((".dat", ".save.json")):

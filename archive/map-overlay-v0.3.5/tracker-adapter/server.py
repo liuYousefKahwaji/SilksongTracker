@@ -18,6 +18,8 @@ from urllib.parse import parse_qs, urlparse
 from .database import ROOT, load_areas, load_content
 from .state import TrackerState
 from .codec import find_saves
+from .mapassets import MapTileDependencyError, tile_jpeg
+
 WEB = ROOT / "web"
 LIVE_TTL = 5.0
 
@@ -50,6 +52,30 @@ class App:
         with self.lock:
             if kind == "state": return self.state.state()
             if kind == "map": return self.state.map()
+            if kind == "game-map":
+                data = self.state.map()
+                def style_spec(spec, valid=None):
+                    bounds = spec["bounds"]
+                    return {"tileSize":spec["tileSize"], "maxZoom":spec["maxZoom"],
+                            "minLat":bounds[0][0], "maxLat":bounds[1][0],
+                            "minLng":bounds[0][1], "maxLng":bounds[1][1],
+                            "validTiles":spec.get("validTiles", valid or [])}
+                return {
+                    "title": data.get("title", "Pharloom"),
+                    "hasSave": data.get("hasSave", False), "slot": data.get("slot"),
+                    "saveError": data.get("saveError"),
+                    "groups": [{"id":g["id"], "name":g["name"], "icon":g["icon"],
+                                "visible":g.get("visible", False)} for g in data.get("groups", [])],
+                    "categories": [{"id":c["id"], "name":c["name"], "group":c["group"],
+                                    "icon":c["icon"]} for c in data.get("categories", [])],
+                    "markers": [{k:m[k] for k in ("id", "cat", "name", "icon", "pos", "pos2",
+                                                   "status", "tracking", "trackingNote") if k in m}
+                                for m in data.get("markers", [])],
+                    "labels": [{"name":x.get("name", ""), "pos":x.get("pos")}
+                               for x in data.get("labels", [])],
+                    "screenshots": style_spec(data["image"], data.get("validTiles", [])),
+                    "sketch": style_spec(data["sketch"]),
+                }
             if kind == "live-transforms":
                 path = ROOT / "data/live_positions.json"
                 result = json.loads(path.read_text(encoding="utf-8")) if path.is_file() else {"format": 1, "rooms": {}}
@@ -88,6 +114,24 @@ def make_handler(app: App):
             parsed = urlparse(self.path); route = parsed.path
             if route == "/api/state": return self.send_json(app.payload("state"))
             if route == "/api/map": return self.send_json(app.payload("map"))
+            if route == "/api/game-map":
+                app.refresh_if_changed()
+                return self.send_json(app.payload("game-map"))
+            if route == "/api/game-map-tile":
+                query = parse_qs(parsed.query)
+                style = query.get("style", [""])[0]
+                zoom, tile_x, tile_y = (query.get(key, [""])[0] for key in ("z", "x", "y"))
+                try:
+                    body = tile_jpeg(style, zoom, tile_x, tile_y)
+                except MapTileDependencyError as exc:
+                    return self.send_json({"error": str(exc)}, 503)
+                except (OSError, ValueError, json.JSONDecodeError):
+                    body = None
+                if body is None: return self.send_json({"error":"map tile not found or could not be converted"}, 404)
+                self.send_response(200); self.send_header("Content-Type", "image/jpeg")
+                self.send_header("Cache-Control", "private, max-age=86400")
+                self.send_header("Content-Length", str(len(body))); self.end_headers(); self.wfile.write(body)
+                return
             if route == "/api/live-position": return self.send_json(app.payload("live"))
             if route == "/api/live-transforms": return self.send_json(app.payload("live-transforms"))
             if route == "/api/meta": return self.send_json(app.payload("meta"))
@@ -158,12 +202,7 @@ def make_handler(app: App):
                         result = app.state.state()
                 except (TypeError, ValueError) as exc: return self.send_json({"error":str(exc)},400)
                 return self.send_json(result)
-            if parsed.path == "/api/refresh":
-                try:
-                    app.refresh()
-                    return self.send_json(app.payload("state"))
-                except Exception as exc:
-                    return self.send_json({"error": f"Save refresh failed: {exc}"}, 500)
+            if parsed.path == "/api/refresh": app.refresh(); return self.send_json(app.payload("state"))
             self.send_json({"error": "not found"}, 404)
 
         def serve(self, path: Path):

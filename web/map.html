@@ -5,6 +5,7 @@
 <title>Pharloom · Silksong Tracker</title>
 <link rel="icon" href="/map/icons/silkspear.png">
 <link rel="stylesheet" href="/vendor/leaflet.css"><link rel="stylesheet" href="/map.css">
+<style>#refresh-map-status{font-size:11px;color:#9aaab5;min-width:1px}#refresh-map-status.error{color:#e08b98}@media(max-width:900px){#refresh-map-status{font-size:10px}}</style>
 </head>
 <body>
 <header class="map-header">
@@ -13,7 +14,7 @@
   <span id="live-status" aria-live="polite">Live: waiting</span>
   <input id="map-search" type="search" placeholder="Search items, bosses, places…" aria-label="Search map">
   <label><input id="only-left" type="checkbox"> Only left</label>
-  <button id="map-style" title="Switch map artwork">Screenshots</button><button id="fit">Whole map</button><button id="toggle-layers" aria-expanded="true">Layers</button>
+  <button id="map-style" title="Switch map artwork">Screenshots</button><button id="refresh-map" title="Rescan save files and update map progress">↻ Refresh</button><span id="refresh-map-status" role="status" aria-live="polite"></span><button id="fit">Whole map</button><button id="toggle-layers" aria-expanded="true">Layers</button>
 </header>
 <main id="workspace">
   <aside id="sidebar" aria-label="Map filters">

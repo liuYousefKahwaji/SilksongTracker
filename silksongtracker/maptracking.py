@@ -12,7 +12,7 @@ QUESTS = {
     '1340':'Huntress Quest Runt', '1342':'Courier Delivery Songclave',
     '1343':'Courier Delivery Fixer', '463':'Courier Delivery Dustpens Slave',
     '464':'Courier Delivery Mask Maker', '468':'Belltown House Start',
-    '490':'Steel Sentinel Pt2',
+    '490':'Steel Sentinel Pt2', '1436':'Pinstress Battle',
 }
 FLAGS = {
     '695':'@,playerData.UnlockedFastTravelTeleport,true',
@@ -33,6 +33,23 @@ FLAGS = {
     '1029':'@,playerData.hasPinBench,true',
     '510':'@,playerData.hasJournal,true',
     '535':'@,playerData.CollectedHeartHunter,true',
+    # Exact marker-to-save matches reviewed against installed scene bundles.
+    '1314':'@,playerData.cog7_gateOpened,true',
+    '1464':'@,playerData.song_11_oneway,true',
+    '1319':'@,playerData.skullKingShortcut,true',
+    '1286':'@,playerData.openedDocksBackEntrance,true',
+    '1420':'@,playerData.silkFarmAbyssCoresCleared,true',
+    '1110':'@collectable,Pristine Core',
+    '296':'@collectable,Shard Pouch',
+    '375':'@bool,Organ_01,Silk Grub Large Cocoon,true',
+    '525':'@wish,Shiny Bell Goomba',
+    '950':'@bool,Cog_07,Battle Scene,true',
+    '1469':'@bool,Bone_East_LavaChallenge,Battle Scene,true',
+    # These source pins aggregate several physical pickups into one icon.
+    # @all intentionally reports complete only when every exact save record is.
+    '1468':'@all,@bool,Dock_01,Geo Small Persistent,true|@bool,Dock_01,Geo Small Persistent (1),true|@bool,Dock_01,Geo Med Persistent,true',
+    '1309':'@all,@int,Shellwood_11,Shell Shard Fossil Mid,0|@int,Shellwood_11,Shell Shard Fossil Tiny Egg,0|@int,Shellwood_11,Shell Shard Fossil Tiny Bumpy,0|@int,Shellwood_11,Shell Shard Fossil Tiny Bumpy (1),0|@int,Shellwood_11,Shell Shard Fossil Tiny Bumpy (2),0',
+    '331':'@all,@int,Greymoor_17,Shell Shard Fossil Tiny Egg (3),0|@int,Greymoor_17,Shell Shard Fossil Tiny Egg (1),0|@int,Greymoor_17,Shell Shard Fossil Tiny Front,0|@int,Greymoor_17,Shell Shard Fossil Tiny Front (1),0|@int,Greymoor_17,Shell Shard Fossil Tiny Front (2),0',
 }
 FLAGS.update({key:'@wish,'+value for key,value in QUESTS.items()})
 
@@ -52,6 +69,27 @@ CORE_LOCATIONS = {
     '1423':('Song_01','Black_Thread_Core_Citadel'),
     '1433':('Library_04','Black_Thread_Core_Citadel'),
     '1434':('Library_04','Black_Thread_Core_Citadel (1)'),
+    '1403':('Bone_East_17','Black_Thread_Core'),
+    '1404':('Bone_East_05','Black_Thread_Core'),
+    '1405':('Bone_East_03','Black_Thread_Core'),
+    '1406':('Ant_05b','Black_Thread_Core'),
+    '1408':('Shellwood_15','Black_Thread_Core'),
+    '1410':('Shellwood_02','Black_Thread_Core'),
+    '1412':('Coral_32','Black_Thread_Core'),
+    '1413':('Ant_04_left','Black_Thread_Core'),
+    '1414':('Greymoor_16','Black_Thread_Core'),
+    '1416':('Greymoor_11','Black_Thread_Core'),
+    '1417':('Greymoor_12','Black_Thread_Core'),
+    '1424':('Song_04','Black_Thread_Core'),
+    '1425':('Under_05','Black_Thread_Core'),
+    '1426':('Under_18','Black_Thread_Core'),
+    '1427':('Song_15','Black_Thread_Core_Citadel'),
+    '1428':('Song_17','Black_Thread_Core_Citadel'),
+    '1429':('Song_27','Black_Thread_Core_Citadel'),
+    '1430':('Hang_03','Black_Thread_Core_Citadel'),
+    '1431':('Hang_13','Black_Thread_Core'),
+    '1432':('Song_05','Black_Thread_Core_Citadel'),
+    '1435':('Library_06','Black_Thread_Core_Citadel'),
 }
 FLAGS.update({key:f'@bool,{scene},{item},true' for key,(scene,item) in CORE_LOCATIONS.items()})
 
@@ -62,11 +100,19 @@ SCENE_LOCATIONS = {
     '1466':('Bone_01','Bone Lever'),
     '760':('Greymoor_15b','Greymoor Stand Lever'),
     '1332':('Hang_06_bank','Geo Small Persistent (1)'),
+    '1274':('Under_05','Song_lever_side'),
+    '790':('Greymoor_08','greymoor_drop_propeller'),
+    '1236':('Library_05','attic_ladder'),
 }
 FLAGS.update({key:f'@bool,{scene},{item},true' for key,(scene,item) in SCENE_LOCATIONS.items()})
 
 # Deliberate, reviewed corrections: related story events are not ownership.
-CORRECTIONS = {'1039':'@collectable,White Flower'}
+CORRECTIONS = {
+    '1039':'@collectable,White Flower',
+    # The archived marker points at Bone_East_03, but its pin position matches
+    # Bone_East_02b. Bone_East_03's distinct core is pin 1405.
+    '1402':'@bool,Bone_East_02b,Black_Thread_Core,true',
+}
 
 
 def alternative_unavailable(marker, raw):
@@ -80,6 +126,13 @@ def supplemental_flag(marker):
     return '' if marker.get('flag') else FLAGS.get(marker['id'],'')
 
 
+def route_waypoint_reason(marker):
+    """Access hints are destinations to visit, not evidence of visiting them."""
+    if marker['cat'] == 'shortcut' and marker['name'].startswith('Requires '):
+        return 'Route waypoint. Having the required ability or opening this gate does not prove the destination was visited; mark it visited after exploring it.'
+    return None
+
+
 def reference_reason(marker):
     """Describe this pin's role, not whether the game saves visits to it."""
     cat, name = marker['cat'], marker['name']
@@ -87,8 +140,12 @@ def reference_reason(marker):
     if cat in ('npc','vendor') or (cat=='maps' and name.startswith('Map Vendor')):
         return 'Character or shop location. Individual purchases and objectives are tracked by their own pins.'
     if cat == 'info': return 'Reference location, not a one-time completion objective.'
+    if cat == 'shortcut' and name.startswith('Unlocked during '):
+        return 'Availability annotation for a wish reward, not a separately traversed route.'
     if cat == 'shortcut' and name.startswith(('Requires ', 'Intersection -', 'Requirement Unknown')):
         return 'Route information. This pin does not establish whether the route has been traversed.'
+    if marker['id'] == '1401' and cat == 'wish':
+        return 'Legacy map entry for content removed before the installed game version; it has no current save state.'
     return None
 
 
